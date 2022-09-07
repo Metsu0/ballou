@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <data>
+    <!--    ONBOARDING NOTIFICATION VIEWS    -->
+    <record id="ooto_onboarding_notification_tree_view" model="ir.ui.view">
+      <field name="name">ooto.onboarding.notification.tree.view</field>
+      <field name="model">onboarding.notification</field>
+      <field name="arch" type="xml">
+        <tree string="Notification" create="false" delete="false">
+          <field name="task_type"/>
+          <field name="title"/>
+          <field name="text"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="ooto_onboarding_notification_form_view" model="ir.ui.view">
+      <field name="name">ooto.onboarding.notification.form.view</field>
+      <field name="model">onboarding.notification</field>
+      <field name="arch" type="xml">
+        <form string="Notification" create="false" delete="false">
+          <sheet>
+            <group>
+              <group>
+                <field name="task_type"/>
+              </group>
+              <group>
+                <field name="title"/>
+                <field name="text"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="ooto_onboarding_notification_action" model="ir.actions.act_window">
+      <field name="name">Notification</field>
+      <field name="res_model">onboarding.notification</field>
+      <field name="view_mode">tree,form</field>
+      <field name="binding_view_types">form</field>
+    </record>
+
+    <menuitem id="menu_onboarding_notification_configuration"
+              name="Notification"
+              parent="ooto_onboarding.menu_ooto_onboarding_configuration"
+              action="ooto_onboarding_notification_action"
+              sequence="6"/>
+
+    <!--    ONBOARDING WEEKLY NOTIFICATION VIEWS    -->
+
+    <record id="ooto_onboarding_weekly_notification_form_view" model="ir.ui.view">
+      <field name="name">ooto.onboarding.weekly.notification.form.view</field>
+      <field name="model">onboarding.weekly.notification</field>
+      <field name="arch" type="xml">
+        <form string="Weekly Notification" create="false">
+          <sheet>
+            <group>
+              <group>
+                <field name="notification_day"/>
+                <field name="is_active"/>
+              </group>
+              <group>
+                <field name="title"/>
+                <field name="text"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="ooto_onboarding_weekly_notification_action" model="ir.actions.act_window">
+      <field name="name">Weekly Notification</field>
+      <field name="res_model">onboarding.weekly.notification</field>
+      <field name="view_mode">form</field>
+      <field name="binding_view_types">form</field>
+      <field name="res_id" eval="ref('ooto_onboarding.weekly_notification')"/>
+    </record>
+
+    <menuitem id="menu_onboarding_weekly_notification_configuration"
+              name="Weekly Notification"
+              parent="ooto_onboarding.menu_ooto_onboarding_configuration"
+              action="ooto_onboarding_weekly_notification_action"
+              sequence="7"/>
+  </data>
+</odoo>

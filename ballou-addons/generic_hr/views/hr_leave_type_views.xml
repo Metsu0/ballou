@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="generic_hr_edit_holiday_status_form" model="ir.ui.view">
+      <field name="name">generic.hr.edit.holiday.status.form</field>
+      <field name="model">hr.leave.type</field>
+      <field name="inherit_id" ref="hr_holidays.edit_holiday_status_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//group[@name='validity']" position="after">
+          <group string="Getsion de congé">
+            <field name="display_in_payslip" string="Afficher solde dans la fiche de paie?"/>
+            <field name="simple_leave_allocation" string="Gérer un seul solde de congé"/>
+            <field name="double_leave_allocation" string="Gérer deux soldes de congé"/>
+          </group>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!--  Hide administration menu in users > administration  -->
+    <record model="ir.ui.menu" id="smile_access_control.menu_action_administrators">
+      <field name="groups_id" eval="[(3,ref('ooto_base_security.make_invisible'))]"/>
+    </record>
+  </data>
+</odoo>

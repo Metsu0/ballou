@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="hr_employee_view_form_inherit_annuaire" model="ir.ui.view">
+      <field name="name">hr.employee.view.form.annuaire</field>
+      <field name="model">hr.employee</field>
+      <field name="inherit_id" ref="hr.view_employee_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//notebook/page[@name='hr_settings']" position="after">
+          <page name="annuaire" string="Annuaire">
+            <group name="annuaire">
+            </group>
+          </page>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<odoo>
+  <data>
+    <!--&lt;!&ndash; Desactive native states &ndash;&gt;-->
+    <!--<record id="survey.stage_draft" model="survey.stage">-->
+    <!--<field name="active" eval="False"/>-->
+    <!--</record>-->
+    <!--<record id="survey.stage_in_progress" model="survey.stage">-->
+    <!--<field name="active" eval="False"/>-->
+    <!--</record>-->
+    <!--<record id="survey.stage_closed" model="survey.stage">-->
+    <!--<field name="active" eval="False"/>-->
+    <!--</record>-->
+    <!--<record id="survey.stage_permanent" model="survey.stage">-->
+    <!--<field name="active" eval="False"/>-->
+    <!--</record>-->
+
+    <!--&lt;!&ndash;ooto survey stages&ndash;&gt;-->
+    <!--<record id="before_arrival" model="survey.stage">-->
+    <!--<field name="name">Before arrival</field>-->
+    <!--<field name="sequence" eval="1"/>-->
+    <!--</record>-->
+    <!--<record id="arrival_day" model="survey.stage">-->
+    <!--<field name="name">Arrival day</field>-->
+    <!--<field name="sequence" eval="2"/>-->
+    <!--</record>-->
+    <!--<record id="first_week" model="survey.stage">-->
+    <!--<field name="name">First week</field>-->
+    <!--<field name="sequence" eval="3"/>-->
+    <!--</record>-->
+    <!--<record id="first_month" model="survey.stage">-->
+    <!--<field name="name">First month</field>-->
+    <!--<field name="sequence" eval="4"/>-->
+    <!--</record>-->
+    <!--<record id="after_first_month" model="survey.stage">-->
+    <!--<field name="name">After first month</field>-->
+    <!--<field name="sequence" eval="5"/>-->
+    <!--</record>-->
+    <!--<record id="specific" model="survey.stage">-->
+    <!--<field name="name">Specific</field>-->
+    <!--<field name="sequence" eval="6"/>-->
+    <!--</record>-->
+  </data>
+</odoo>

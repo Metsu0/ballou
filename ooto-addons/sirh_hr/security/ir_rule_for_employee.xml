@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+  <data noupdate="0">
+    <record id="deputy_profil_rule" model="ir.rule">
+      <field name="name">PROFIL DEPUTY</field>
+      <field model="ir.model" name="model_id" search="[('model', '=', 'hr.employee')]"/>
+      <field name="domain_force">['|' ,('id', '=', user.partner_id.employee_id.id),('department_id.deputy_ids',
+        'child_of', [user.partner_id.employee_id.id])]
+      </field>
+      <field eval="[(4, ref('sirh_base_security.group_employee_etech_deputy'))]" name="groups"/>
+      <field eval="True" name="perm_read"/>
+      <field eval="True" name="perm_write"/>
+      <field eval="True" name="perm_create"/>
+      <field eval="True" name="perm_unlink"/>
+    </record>
+
+    <record id="manager_profil_rule" model="ir.rule">
+      <field name="name">PROFIL MANAGER</field>
+      <field model="ir.model" name="model_id" search="[('model', '=', 'hr.employee')]"/>
+      <field name="domain_force">['|' ,('id', '=', user.partner_id.employee_id.id),('department_id.manager_id', '=',
+        user.partner_id.employee_id.id)]
+      </field>
+      <field eval="[(4, ref('sirh_base_security.group_employee_etech_manager'))]" name="groups"/>
+      <field eval="True" name="perm_read"/>
+      <field eval="True" name="perm_write"/>
+      <field eval="True" name="perm_create"/>
+      <field eval="True" name="perm_unlink"/>
+    </record>
+
+    <record id="directeur_profil_rule" model="ir.rule">
+      <field name="name">PROFIL DIRECTEUR</field>
+      <field model="ir.model" name="model_id" search="[('model', '=', 'hr.employee')]"/>
+      <field name="domain_force">['|' ,('id', '=',
+        user.partner_id.employee_id.id),'|',('department_id.direction_id.executive_id', '=',
+        user.partner_id.employee_id.id),( 'child_ids','in', [user.partner_id.employee_id.id])]
+      </field>
+      <field eval="[(4, ref('sirh_base_security.group_employee_etech_directeur'))]" name="groups"/>
+      <field eval="True" name="perm_read"/>
+      <field eval="True" name="perm_write"/>
+      <field eval="True" name="perm_create"/>
+      <field eval="True" name="perm_unlink"/>
+    </record>
+  </data>
+</odoo>

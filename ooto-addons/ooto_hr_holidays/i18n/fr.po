@@ -1,0 +1,150 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ooto_hr_holidays
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0-20200409\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-11 13:13+0000\n"
+"PO-Revision-Date: 2020-12-11 13:13+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ooto_hr_holidays
+#: code:addons/ooto_hr_holidays/models/hr_leave.py:0
+#, python-format
+msgid "%s planning for %s has been approved."
+msgstr "La plannification %s pour %s a été approuvée"
+
+#. module: ooto_hr_holidays
+#: code:addons/ooto_hr_holidays/models/hr_leave.py:0
+#, python-format
+msgid "%s planning for %s has been refused."
+msgstr "La plannification %s pour %s a été refusée"
+
+#. module: ooto_hr_holidays
+#: model:ir.model.fields,field_description:ooto_hr_holidays.field_hr_leave_allocation__accrual_leaves_count
+msgid "Accrual leaves count"
+msgstr "Nombre de congés accumulés"
+
+#. module: ooto_hr_holidays
+#: model:ir.model.fields,field_description:ooto_hr_holidays.field_hr_leave_follower__admin_follower
+msgid "Admin Leave Follower"
+msgstr "Suiveur de congé"
+
+#. module: ooto_hr_holidays
+#: model:ir.model.fields,field_description:ooto_hr_holidays.field_hr_leave_allocation__balance_accrual_leaves_count
+msgid "Balance accrual leaves count"
+msgstr "Nombre de congés accumulés"
+
+#. module: ooto_hr_holidays
+#: model:ir.model,name:ooto_hr_holidays.model_res_config_settings
+msgid "Config Settings"
+msgstr "Paramètres de config"
+
+#. module: ooto_hr_holidays
+#: model:ir.model.fields,field_description:ooto_hr_holidays.field_hr_leave_allocation__confirmation_date
+msgid "Confirmation date"
+msgstr "Date de confirmation"
+
+#. module: ooto_hr_holidays
+#: model:ir.model.fields,field_description:ooto_hr_holidays.field_hr_leave_follower__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: ooto_hr_holidays
+#: model:ir.model.fields,field_description:ooto_hr_holidays.field_hr_leave_follower__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: ooto_hr_holidays
+#: model:ir.model.fields,field_description:ooto_hr_holidays.field_hr_leave_follower__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: ooto_hr_holidays
+#: model:ir.model,name:ooto_hr_holidays.model_hr_employee
+msgid "Employee"
+msgstr "Employé"
+
+#. module: ooto_hr_holidays
+#: model:ir.model.fields,field_description:ooto_hr_holidays.field_hr_leave_type__is_exceptional_permission
+msgid "Exceptional permission"
+msgstr "Permission exceptionnelle"
+
+#. module: ooto_hr_holidays
+#: model:ir.model.fields,field_description:ooto_hr_holidays.field_res_config_settings__day_exceptional_permission
+msgid "Exceptional permission day"
+msgstr "Nombre de jour de permission exceptionnelle"
+
+#. module: ooto_hr_holidays
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays.view_leave_follower_tree
+msgid "Follower"
+msgstr "Suiveur de congé"
+
+#. module: ooto_hr_holidays
+#: model:ir.actions.act_window,name:ooto_hr_holidays.open_view_holiday_follower
+#: model:ir.ui.menu,name:ooto_hr_holidays.hr_holidays_follower
+msgid "Holidays follower"
+msgstr "Suiveur de congé"
+
+#. module: ooto_hr_holidays
+#: model:ir.model.fields,field_description:ooto_hr_holidays.field_hr_leave_follower__id
+msgid "ID"
+msgstr ""
+
+#. module: ooto_hr_holidays
+#: model:ir.model.fields,field_description:ooto_hr_holidays.field_hr_leave_follower____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: ooto_hr_holidays
+#: model:ir.model.fields,field_description:ooto_hr_holidays.field_hr_leave_follower__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: ooto_hr_holidays
+#: model:ir.model.fields,field_description:ooto_hr_holidays.field_hr_leave_follower__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: ooto_hr_holidays
+#: model:ir.model,name:ooto_hr_holidays.model_resource_calendar
+msgid "Resource Working Time"
+msgstr "Temps de travail de la ressource"
+
+#. module: ooto_hr_holidays
+#: model:ir.model.fields,field_description:ooto_hr_holidays.field_hr_leave__first_approver_can_confirm
+msgid "The first approver can confirm a second time"
+msgstr "Le premier approbateur peut confirmer une deuxième fois"
+
+#. module: ooto_hr_holidays
+#: code:addons/ooto_hr_holidays/models/hr_leave.py:0
+#, python-format
+msgid "The number of exceptional leave remaining is not sufficient"
+msgstr "Le nombre de congés exceptionnels restants n'est pas suffisant"
+
+#. module: ooto_hr_holidays
+#: model:ir.model,name:ooto_hr_holidays.model_hr_leave
+msgid "Time Off"
+msgstr "Congés"
+
+#. module: ooto_hr_holidays
+#: model:ir.model,name:ooto_hr_holidays.model_hr_leave_allocation
+msgid "Time Off Allocation"
+msgstr "Allocation de congés"
+
+#. module: ooto_hr_holidays
+#: model:ir.model,name:ooto_hr_holidays.model_hr_leave_type
+msgid "Time Off Type"
+msgstr "Type de congés"
+
+#. module: ooto_hr_holidays
+#: model:ir.model,name:ooto_hr_holidays.model_hr_leave_follower
+msgid "hr.leave.follower"
+msgstr "Suiveur de congé"

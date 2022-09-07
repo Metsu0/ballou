@@ -1,0 +1,1288 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+$font_family_oswald: 'Oswald',
+sans-serif;
+$font_family_nunito: 'Nunito',
+sans-serif;
+$font_family_roboto: 'Roboto',
+sans-serif;
+//HRN ADD
+// Theme color
+$as-theme: 			#ff0000;
+$rose: $as-theme;
+
+.dashboard
+{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+.content-top_profil {
+    margin: 0 -15px;
+    background: #fff;
+    padding: 20px;
+    & > .container {
+        display: -webkit-box; 
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex; 
+        display: flex;
+        -moz-justify-content: space-between;
+        -ms-justify-content: space-between;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        -moz-align-items: center;
+        -ms-align-items: center;
+        -webkit-align-items: center;
+        align-items: center;
+        .content-profil {
+            display: -webkit-box; 
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex; 
+            display: flex;
+            -moz-align-items: center;
+            -ms-align-items: center;
+            -webkit-align-items: center;
+            align-items: center;
+            .avatar-right {
+                border-radius: 50%;
+                overflow: hidden;
+                width: 132px;
+                height: 132px;
+                position: relative;
+                margin-right: 40px;
+                .form-control-file {
+                    display: block !important;
+                    opacity: 0;
+                    position: absolute;
+                    height: 100%;
+                    width: 100%;
+                    top: 0;
+                    bottom: 0;
+                    margin: 0;
+                    cursor: pointer;
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            .content-topTxt {
+                color: #7a8488;
+                font-family: $font_family_nunito;
+                .content-topName {
+                    color: #4a4a4a;
+                    font-family: 'oswald', sans-serif;
+                    font-weight: 700;
+                }
+            }
+            .avatar {
+                margin-left: 30px;
+                margin-top: -60px;
+                .avatar-edit {
+                    background: url('/ooto_hr_account/static/src/img/modifier.png');
+                    background-size: contain;
+                    display: block;
+                    height: 38px;
+                    width: 38px;
+                }
+            } 
+        }
+        .contrat {
+            & > button {
+                background: #c9e6f1;
+                color: #00bd9c;
+                border-radius: 18px;
+                padding: 10px 15px;
+                font-family: $font_family_nunito;
+                font-weight: 700;
+                font-size: 12px;
+                border: none;
+                &:hover {
+                    background:#00bd9c;
+                    color:#c9e6f1;
+                }
+            }
+        }
+    }
+}
+.content-top_profil + .tab-style-1 {
+    .nav-tabs {
+        margin: 0 -15px;
+        background: #fff;
+        padding-left: 190px;
+        @media (max-width:768px) {
+            padding-left: 0;
+            -moz-justify-content: center;
+            -ms-justify-content: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+        }
+        .nav-item {
+            .nav-link {
+                font-family: $font_family_nunito;
+                font-size: 13px;
+                font-weight: 700;
+                font-style: normal;
+                line-height: 1.85;
+                letter-spacing: normal;
+            }
+            text-align: center;
+            width: 150px;
+        }
+    }
+    .tab-content {
+        margin-top: 30px;
+        
+        .annuaire-dashboard {
+            .annuaire-dasboard-content {
+                background: #6c7185;
+                padding: 20px;
+                border-radius: 5px;
+                background-image: url('/ooto_hr_account/static/src/img/illu-annuaire.png');
+                background-repeat: no-repeat;
+                background-position: center right -10px;
+                padding-right: 130px;
+                .title {
+                    color: #ffffff;
+                    font-family: $font_family_nunito;
+                    font-size: 22px;
+                    font-weight: 700;
+                    font-style: normal;
+                    line-height: normal;
+                }
+                .description {
+                    font-family: $font_family_nunito;
+                    font-size: 14px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.36;
+                    letter-spacing: normal;
+                    color: #ffffff;
+                }
+                .annuaire-link {
+                    margin-top: 20px;
+                    a {
+                        background: #585c6b;
+                        padding: 8px 15px;
+                        color: #fff;
+                        border-radius: 18px;
+                        box-shadow: 0 4px 8px 0 rgba(140, 151, 158, 0.3);
+                        font-family: $font_family_nunito;
+                        font-size: 12px;
+                        font-weight: 700;
+                        line-height: normal;
+                        &:hover {
+                            opacity: 0.8;
+                        }
+                    }
+                }
+            }
+        }
+        .form-info-container {
+            width: 50%;
+            h4 {
+                color: #4a4a4a;
+                font-family: $font_family_nunito;
+                font-size: 24px;
+                font-weight: 700;
+                font-style: normal;
+                line-height: normal;
+            }
+            .col-form-label {
+                color: #6d7278;
+                font-family: $font_family_nunito;
+                font-size: 14px;
+                font-weight: 700;
+                font-style: normal;
+                line-height: normal;
+            }
+            .form-control {
+                background-color: #ffffff;
+                border: solid 1px #e4e7ee;
+                border-radius: 5px;
+                color: #8c979e;
+                font-family: $font_family_nunito;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                margin-bottom: 0;
+                margin-top: 0;
+                text-align: left!important;
+                &::-webkit-input-placeholder {
+                    color: #8c979e;
+                }
+                &::-moz-placeholder {
+                    color: #8c979e;
+                }
+                &::-ms-input-placeholder {
+                    color: #8c979e;
+                }
+            }
+            select.form-control {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                background-image: url('/ooto_hr_account/static/src/img/drop.png');
+                background-repeat: no-repeat;
+                background-position: center right 5px;
+                padding-right: 20px;
+            }
+            &.full {
+                width: 100%;
+            }
+        }
+        .submit_info {
+            .btn {
+                /*font-family: $font_family_roboto;
+                font-size: 12px;
+                font-weight: 700;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: 1px;
+                padding: 15px 10px;
+                text-align: center;
+                border-radius: 22.5px !important;*/
+                font-family: $font_family_roboto;
+                font-size: 12px;
+                font-weight: 700;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: 1px;
+                padding: 15px 10px;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                border-radius: 0 !important;
+                margin-bottom: 0 !important;
+                background-color: $as-theme;
+                border: none;
+                &:hover
+                {
+                    color: #fff;
+                }
+            }
+        }
+        #dashboard-1 {
+            .pignose-calendar {
+                max-width: inherit;
+                box-shadow: 0 8px 16px 0 rgba(124, 134, 138, 0.2) !important;
+                margin-bottom: 10px;
+                border-radius: 5px;
+                border: none;
+                .pignose-calendar-top {
+                    border-radius: 5px 5px 0 0;
+                }
+            }
+        }
+    }
+}
+
+/********** account code scss**************/
+.pt0account
+{
+    padding-top: 0 !important;
+}
+
+.content-top_profil
+{
+    position: relative;
+    &:before
+    {
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 215px;
+        background-color: #fff;
+        top: 0;
+        left: -90px;
+    }
+    &:after
+    {
+        content: "";
+        position: absolute;
+        width: 100px;
+        height: 215px;
+        top: 0;
+        right: -90px;
+        background-color: #fff;
+    }
+    @media (max-width:768px) {
+        &:after,
+        &:before {
+            height: 190px;
+        }
+    }
+}
+/********** fin account code scss**************/
+
+/**********  formulaire dashboard code scss**************/
+
+
+.block_dashboard_multicolor_title
+{
+    font-family: $font_family_nunito;
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-stretch: normal;
+    font-style: normal;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.block_dashboard_multicolor_text
+{
+    font-family: $font_family_nunito;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.36;
+    letter-spacing: normal;
+    color: #ffffff;
+}
+
+.block_dashboard_multicolor_link
+{
+    margin-top: 20px;
+    margin-bottom: 6px;
+    a
+    {
+        background-color: #32A69A;
+        padding: 8px 15px;
+        color: #fff;
+        border-radius: 18px;
+        box-shadow: 0 4px 8px 0 rgba(140, 151, 158, 0.3);
+        font-family: $font_family_nunito;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: normal;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
+/*********************** code pour bloack timeleine dashboard ******************/
+.banniere_timeline_dashboard
+{
+    font-family: $font_family_nunito;
+    font-size: 10px;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 5px;
+    padding: 2px 5px;
+}
+
+.titre_timeline_dashboard
+{
+    font-family: $font_family_nunito;
+    font-size: 12px;
+    font-weight: 700;
+    color: #4a4a4a;
+    margin-left: 9px;
+    width: 145px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+/*********************** fin code pour bloack timeleine dashboard ******************/
+
+.bloc_dashboard
+{
+    background-color: #3ad4c3;
+    padding: 20px;
+    border-radius: 5px;
+
+    padding-right: 130px;
+    &.formulaire  {
+        &.something
+        {
+            background: url("../img/card-formulaire.svg") no-repeat center center #3ad4c3; //no-repeat center right -16px
+            .block_dashboard_multicolor_text
+            {
+                br
+                {
+                    display: none;
+                }
+            }
+
+        }
+        &.nothing
+        {
+            margin-bottom: 30px;
+            background: url("../img/card-no-formulaire.svg") no-repeat center -12px #2EAA9C;
+            padding-right: 195px;
+            .block_dashboard_multicolor_title
+            {
+                margin-top: 32px;
+            }
+            .block_dashboard_multicolor_text
+            {
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    &.timeline_dashboard  {
+        &.something
+        {
+            background: url("../img/card-onboarding-timelinetacheon.svg") no-repeat center -8px #FC3571; //no-repeat center right -16px
+            padding-right: 140px;
+            .block_dashboard_multicolor_text
+            {
+                br
+                {
+                    display: none;
+                }
+            }
+            .block_dashboard_multicolor_link
+            {
+                margin-bottom: 70px;
+                a
+                {
+                    background-color: #C52E5C;
+                    box-shadow: 0 4px 8px 0 rgba(140, 151, 158, 0.3);
+                }
+            }
+
+        }
+        &.nothing
+        {
+            margin-bottom: 30px;
+            background: url("../img/card-onboarding-2.svg") no-repeat center -8px transparent;
+            padding-right: 195px;
+            .block_dashboard_multicolor_title
+            {
+                margin-top: 32px;
+            }
+            .block_dashboard_multicolor_text
+            {
+                margin-bottom: 53px;
+            }
+        }
+    }
+
+    &.information  {
+        &.something
+        {
+            background: url("../img/card-onboarding_some-info.svg") no-repeat center -9px #22223D; //no-repeat center right -16px
+            //margin-bottom: 30px;
+        }
+        &.nothing
+        {
+            margin-bottom: 30px;
+            //background: url("../img/card-onboarding-2.png") no-repeat center center #FC3471;
+            background: url("../img/card-onboarding-info.svg") no-repeat center -8px #22223D;
+            //padding-right: 195px;
+            .block_dashboard_multicolor_title
+            {
+                //margin-top: 32px;
+                margin-bottom: 119px;
+            }
+            .block_dashboard_multicolor_text
+            {
+                margin-bottom: 53px;
+            }
+        }
+        .block_dashboard_multicolor_link
+        {
+            a
+            {
+                background-color: #000;
+                box-shadow: 0 4px 8px 0 rgba(140, 151, 158, 0.3);
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+    &.docafournir {
+        background-color: #6235FF;
+        &.something
+        {
+            background: url("../img/card-doc-a-fournir.svg") no-repeat center -5px #6235FF;
+        }
+        &.nothing
+        {
+            margin-bottom: 30px;
+            background: url("../img/card-doc-complets.svg") no-repeat center -9px #4D2ACC;
+            padding-right: 190px;
+            .block_dashboard_multicolor_title
+            {
+                margin-top: 32px;
+            }
+            .block_dashboard_multicolor_text
+            {
+                margin-bottom: 34px;
+            }
+        }
+        .block_dashboard_multicolor_link
+        {
+            a
+            {
+                background-color: #502FC8;
+                box-shadow: 0 4px 8px 0 rgba(140, 151, 158, 0.3);
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}
+
+.dropdown_list_dashboard_ensemble
+{
+    margin-top: 3px;
+    margin-bottom: 30px;
+    &.onboarding
+    {
+        display: inline-flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+}
+
+.dropdown_list_dashboard_ensemble_liste
+{
+    margin-bottom: 2px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: solid 0.3px #c7cedb;
+    padding: 7px 20px;
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    &.documentafournir
+    {
+        position: relative;
+        flex-wrap: wrap;
+    }
+}
+
+.dropdown_list_dashboard_ensemble_liste_text
+{
+    font-family: $font_family_nunito;
+    font-size: 14px;
+    color: #7a8488;
+    margin-bottom: 0;
+    &.p_timeline_dashboard
+    {
+        font-size: 12px;
+    }
+}
+
+.emplacement_tachetimeline_dashboard .dropdown_list_dashboard_ensemble_liste_text
+{
+    font-size: 12px;
+}
+
+.dropdown_list_dashboard_ensemble_liste_link
+{
+    button
+    {
+        box-shadow: 0 4px 8px 0 rgba(140, 151, 158, 0.3);
+        background-color: rgba(0, 189, 156, 0.3);
+        color: #00bd9c;
+        padding: 10px 15px;
+        border-radius: 18px;
+        display: inline-block;
+        font-family: $font_family_nunito;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: normal;
+        &:hover {
+            background-color: rgba(0, 189, 156, 1);
+            color: #fff;
+        }
+        &.remove-downloaded-content
+        {
+            display: none;
+            padding: 10px 15px;
+            background-color: rgba(0, 189, 156, 0.1);
+            border-radius: 0;
+            box-shadow: none;
+        }
+    }
+    a
+    {
+        box-shadow: 0 4px 8px 0 rgba(140, 151, 158, 0.3);
+        background-color: rgba(0, 189, 156, 0.3);
+        color: #00bd9c;
+        padding: 10px 15px;
+        border-radius: 18px;
+        display: inline-block;
+        font-family: $font_family_nunito;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: normal;
+        &:hover {
+            background-color: rgba(0, 189, 156, 1);
+            color: #fff;
+        }
+    }
+    &.documentafournir
+    {
+        position: relative;
+        display: inline-flex;
+    }
+}
+
+.col-max-width350center
+{
+    max-width: 350px;
+    margin: 0 0 0 auto;
+}
+/**********  fin formulaire dashboard code scss**************/
+/*********************** code scss page formulaire liste ***********************/
+main.formulaire_page
+{
+    background-color: #eff1f6;
+}
+
+.formulaire_page_block
+{
+    width: 920px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.formulaire_banner
+{
+    background: url("../img/fond-formulaires.svg") center center no-repeat #3AD4C3;
+}
+
+.formulaire_banner.documentafournir
+{
+    background: url("../img/fond-doc-fournir.svg") center center no-repeat #6235FF;
+}
+
+
+
+.titre_formulaire_banner
+{
+    font-family: $font_family_nunito;
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 44px;
+    color: #fff;
+}
+
+.formulaire_banner.info
+{
+    background: url("../img/fond-formulaires-info.svg") center center no-repeat #2C294C;
+    .titre_formulaire_banner
+    {
+
+    }
+}
+
+.texte_formulaire_banner
+{
+    font-family: $font_family_nunito;
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 50px;
+    color: #fff;
+}
+
+.bouton_retour {
+    font-family: $font_family_roboto;
+    font-size: 12px;
+    color: #6d7278;
+    background-color: #fff !important;
+    padding: 8px 10px;
+    border-radius: 17px;
+    margin-bottom: 22px;
+    display: inline-block;
+    &:before {
+        content: '';
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        margin-right: 5px;
+        transform: rotate(90deg);
+        vertical-align: sub;
+        background: url("../img/dropleft.svg") center center no-repeat transparent;
+    }
+    &:hover {
+        color: #6d7278;
+    }
+}
+
+.annuaire-dashboard
+{
+    margin-bottom: 30px;
+}
+
+.pagedocensemble
+{
+    display: inline-block;
+     margin-bottom: 30px;
+    margin-right: 30px;
+}
+
+.upload_pagedocensemble
+{
+    position: relative;
+}
+
+.p_pagedocensemble
+{
+    font-family: $font_family_roboto;
+    font-size: 11px;
+    font-weight: 700;
+    color: #6d7278;
+    margin-bottom: 5px;
+}
+.button_pagedocensemble
+{
+    display: block;
+    font-family: $font_family_nunito;
+    font-size: 10px;
+    font-weight: 700;
+    color: #4a4a4a;
+    border-radius: 5px;
+    background-color: #dadce3;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    padding: 10px;
+    &.docafournir
+    {
+        margin-bottom: 0;
+        text-transform: capitalize;
+        color: #00bd9c !important;
+        &:hover
+        {
+            color: #fff !important;
+        }
+    }
+}
+.show_name_pagedocensemble
+{
+    font-family: $font_family_nunito;
+    font-size: 11px;
+    color: #6d7278;
+    display: inline-block;
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    &:after
+    {
+        content: '';
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background: url("../img/thick.svg") center center no-repeat transparent;
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        bottom: -1px;
+        right: -31px;
+    }
+    &.checked
+    {
+        &:after
+        {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: url("../img/thick.svg") center center no-repeat transparent;
+            visibility: visible;
+            opacity: 1;
+            -webkit-transition: opacity 3s linear;
+            -moz-transition: opacity 3s linear;
+            -ms-transition: opacity 3s linear;
+            -o-transition: opacity 3s linear;
+            transition: opacity 3s linear;
+            transition-delay: 2s;
+            position: absolute;
+            bottom: -1px;
+            right: -31px;
+        }
+    }
+    &.documentafournir
+    {
+        display: none;
+        position: static;
+        padding: 10px 5px;
+        //padding-right: 30px;
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin-bottom: 0;
+        width: 170px;
+        text-transform: uppercase;
+        cursor: pointer;
+        text-decoration: underline;
+        background-color: rgba(0, 189, 156, 0.1);
+        &.checked
+        {
+            &:after
+            {
+                content: none;
+                /*top: 6px;
+                right: 0;
+                position: absolute;*/
+            }
+        }
+    }
+    &.onboarding
+    {
+        &.checked
+        {
+            position: relative;
+            margin-top: 10px;
+            padding-right: 40px;
+            bottom: auto;
+            left: auto;
+            &:after
+            {
+                right: 7px;
+                bottom: -4px;
+            }
+        }
+    }
+}
+
+.bouton_docfournir,
+.bouton_inforemplir
+{
+    color: #6236ff !important;
+    cursor: pointer;
+    &.realized {
+        color: #fff !important;
+    }
+}
+
+.inforemplirblockensemble
+{
+    display: inline-flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: flex-start; //center
+}
+
+.inforemplirblock
+{
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-right: 40px;
+    .label_inforemplirblock
+    {
+        font-family: $font_family_roboto;
+        font-size: 11px;
+        font-weight: 700;
+        color: #6d7278;
+        padding: 0;
+        padding-bottom: 5px;
+    }
+    .input_inforemplir
+    {
+        height: 32px;
+        border-radius: 5px;
+        background-color: #ffffff;
+        font-family: $font_family_roboto;
+        font-size: 12px;
+        color: #8c979e;
+        padding: 10px;
+        margin: 0;
+        width: 290px;
+        border: none;
+        &.date
+        {
+            width: 201px;
+        }
+        &.selection
+        {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: url("../img/drop.png") right 11px center no-repeat #fff;
+            line-height: 1;
+            cursor: pointer;
+        }
+        &.boolean
+        {
+            width: auto;
+        }
+    }
+}
+
+.switch {
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 32px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider:not(.o_not_editable) { //notok a voir ce que fait .slider
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 24px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: $as-theme;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px $as-theme;;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.required_champ
+{
+    font-family: $font_family_nunito;
+    font-size: 10px;
+    color: red;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+/*********************** fin code scss page formulaire liste ***********************/
+
+.lien_add_bloc_dashboard.mobile
+{
+    display: none;
+}
+
+.DansSoldeAbsenceBoutonMobile
+{
+    display: none !important;
+}
+//AjoutNatif
+/*@media (min-width: 1439px) {
+    .container {
+        max-width: 95% !important;
+    }
+}*/
+//fin AjoutNatif
+
+//OTO-3022
+
+.breadcrumb_portal_shop.container
+{
+    max-width: 100% !important;
+    margin: 4px 0 4px 0 !important;
+    padding: 0;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.1);
+    .o_portal_submenu.breadcrumb
+    {
+        padding: 0 5%;
+    }
+}
+
+//fin OTO-3022
+
+@media screen and (max-width: 768px) {
+    .content-top_profil + .tab-style-1 {
+        .tab-content {
+            .form-info-container {
+                width: 100%;
+            }
+        }
+    }
+    #dashboard-1 {
+        & > div {
+            margin: 10px 0;
+            padding-left: 0;
+            padding-right: 0;
+            .calendar_dashboard {
+                // oto-2475  margin-left: -15px;
+                // oto-2475  margin-right: -15px;
+            }
+        }
+        .bloc-dashboard {
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+        }
+    }
+
+    .formulaire_page .mobile-toggle {
+        display: none;
+    }
+    .formulaire_page .bouton_retour {
+        display: none;
+    }
+
+    .bouton_retour.mobile {
+        position: absolute;
+        bottom: 11px;
+        z-index: 17;
+        left: 0;
+        margin-bottom: 0;
+        background-color: transparent!important;
+        display: block;
+    }
+
+    /*.titre_bloc_dashboard.mobile
+    {
+        text-align: left;
+        margin-bottom: 10px !important;
+    }
+
+    .lien_add_bloc_dashboard
+    {
+        display: none !important;
+    }
+
+    .lien_add_bloc_dashboard.mobile
+    {
+        display: inline-block !important;
+        text-align: left;
+    }*/
+    /*OTO-2682*/
+    .DansSoldeAbsenceBoutonMobile
+    {
+        display: block !important;
+    }
+    .DansSoldeAbsenceBouton
+    {
+        display: none !important;
+    }
+    /*fin OTO-2682*/
+}
+
+@media screen and (max-width: 768px) {
+    .content-top_profil {
+        & > .container {
+            .content-profil {
+                width: 100%;
+                position: relative;
+                -moz-flex-wrap: wrap;
+                -ms-flex-wrap: wrap;
+                -webkit-flex-wrap: wrap;
+                flex-wrap: wrap;
+                padding-right: 50px;
+                .avatar-right {
+                    width: 90px;
+                    height: 90px;
+                    margin-bottom: 20px;
+                }
+                .avatar {
+                    margin: 0;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                } 
+            }
+            .contrat {
+                display: none;
+            }
+        }
+    }
+    .content-top_profil + .tab-style-1 {
+        .nav-tabs {
+            .nav-item {
+                .nav-link {
+                    font-family: $font_family_nunito;
+                    font-size: 13px;
+                    font-weight: 700;
+                    font-style: normal;
+                    line-height: 1.85;
+                    letter-spacing: normal;
+                }
+                text-align: center;
+                width: 150px;
+            }
+        }
+    }
+
+    .formulaire_page_block
+    {
+        width: 100%;
+    }
+    .formulaire_banner
+    {
+        background: url("../img/fond-formulaires.svg") right -245px center no-repeat #3AD4C3;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .texte_formulaire_banner
+    {
+        width: 180px;
+    }
+
+    .formulaire_banner
+    {
+        background: url("../img/fond-formulaires-mobile.svg") center right no-repeat #3AD4C3;
+    }
+
+    .formulaire_banner.documentafournir
+    {
+        background: url("../img/fond-doc-fournir-mobile.svg") no-repeat right bottom #6235FF;
+    }
+
+    .formulaire_banner.info
+    {
+        background: url("../img/fond-formulaires-info-mobile.svg") no-repeat right -15px bottom #2C294C;
+    }
+
+    .pagedocensemble
+    {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .show_name_pagedocensemble
+    {
+        left: 0;
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+    .bloc_dashboard
+    {
+        &.information
+        {
+            &.something
+            {
+                padding-right: 100px;
+                background: url("../img/card-onboarding_some-info.svg") no-repeat -76px -7px #22223D;
+                .block_dashboard_multicolor_title
+                {
+                    margin-bottom: 20px;
+                }
+                .block_dashboard_multicolor_text
+                {
+                    margin-bottom: 24px;
+                }
+            }
+            &.nothing
+            {
+                padding-right: 170px;
+                .block_dashboard_multicolor_text
+                {
+                    margin-bottom: 51px;
+                }
+            }
+        }
+        &.docafournir
+        {
+            &.something
+            {
+                padding-right: 115px;
+                background: url("../img/card-doc-a-fournir.svg") no-repeat -40px -7px #6235FF;
+                .block_dashboard_multicolor_title
+                {
+                    margin-bottom: 20px;
+                }
+                .block_dashboard_multicolor_text
+                {
+                    margin-bottom: 24px;
+                }
+            }
+            &.nothing
+            {
+                padding-right: 125px;
+            }
+        }
+
+        &.formulaire
+        {
+            &.something
+            {
+                padding-right: 103px;
+                background: url("../img/card-formulaire.svg") no-repeat -77px 1px #3ad4c3;
+                .block_dashboard_multicolor_text
+                {
+                    margin-bottom: 24px;
+                    br
+                    {
+                        display: none;
+                    }
+                }
+                .block_dashboard_multicolor_title
+                {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        &.timeline_dashboard
+        {
+            &.something
+            {
+                .block_dashboard_multicolor_link
+                {
+                    margin-bottom: 82px;
+                }
+            }
+            &.nothing
+            {
+                padding-right: 0;
+            }
+
+        }
+    }
+
+    .emplacement_tachetimeline_dashboard .dropdown_list_dashboard_ensemble_liste_text
+    {
+        display: inline-block;
+        width: 175px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .titre_timeline_dashboard
+    {
+        width: 95px;
+    }
+
+    .block_dashboard_multicolor_text
+    {
+        font-size: 12px;
+    }
+}

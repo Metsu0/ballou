@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <data>
+    <!-- set confirmation date -->
+    <function name="_set_allocation_confirmation_date" model="hr.leave.allocation"/>
+  </data>
+</odoo>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <template id="print_employee_badge_inherit" inherit_id="hr.print_employee_badge">
+      <xpath expr="//table/td[2]/table/tr[2]/td/div/t" position="replace">
+        <t t-esc="employee.job_name"/>
+      </xpath>
+    </template>
+  </data>
+</odoo>

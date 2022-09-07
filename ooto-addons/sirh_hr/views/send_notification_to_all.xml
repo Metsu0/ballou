@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <data noupdate="0">
+    <record id="view_send_notif" model="ir.ui.view">
+      <field name="name">front.notification.all.form</field>
+      <field name="model">front.notification.all</field>
+      <field name="arch" type="xml">
+        <form string="Choose your date">
+          <group>
+            <group>
+              <field name="subject" required="1"/>
+              <field name="email_to_ids" widget="many2many_tags" required="1"/>
+            </group>
+          </group>
+          <group>
+            <group>
+              <field name="newsletter"/>
+              <field name="good_to_know"/>
+              <field name="we_hire"/>
+              <field name="know_how"/>
+              <field name="base_url" invisible="1"/>
+            </group>
+          </group>
+          <footer>
+            <button name="send_notification" string="Notify by mail" type="object" class="btn-primary"/>
+          </footer>
+        </form>
+      </field>
+    </record>
+
+    <record id="open_wizard_send_notif" model="ir.actions.act_window">
+      <field name="name">Notification via Mail</field>
+      <field name="res_model">front.notification.all</field>
+      <field name="view_mode">form</field>
+      <field name="view_id" ref="view_send_notif"/>
+      <field name="target">new</field>
+    </record>
+    <menuitem
+            action="open_wizard_send_notif"
+            id="send_notif_to_all"
+            parent="website.menu_website_configuration"
+            sequence="90"
+            groups="hr.group_hr_user"/>
+  </data>
+</odoo>

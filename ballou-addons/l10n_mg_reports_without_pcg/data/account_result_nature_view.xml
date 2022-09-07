@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data noupdate="0">
+  
+		<!-- INCOME STATEMENT BY NATURE -->
+    <!-- COMPTE DE RESULTAT PAR NATURE -->
+    
+    <!-- report -->
+		<record id = "report_income_statement_nature" model = "account.financial.html.report">
+			<field name = "name">Compte de résultat par Nature</field>
+			<field name='parent_id' ref='account_reports_mg_statements_menu'/>
+			<field name='type_financial_report_mg'>cr_n</field>
+			<field name="unfold_all_filter" eval="True"/>
+			<field name='note_mg' eval="True"/>
+		</record>
+    
+    <!-- lines -->
+    
+      <!-- I -->
+      <record id = "report_income_statement_nature_pe" model = "account.financial.html.report.line">
+				<field name="name">I- Production de l'excercice</field>
+				<field name="code">N_PDE_ISN</field>
+				<field name="financial_report_id" ref="report_income_statement_nature"/>
+				<field name="formulas">NPDE_CDA_ISN + NPDE_PS_ISN + NPDE_PI_ISN</field>
+				<field name="sequence" eval="1"/>
+				<field name="level" eval="1"/>
+			</record>
+    
+        <record id = "report_income_statement_nature_ca" model = "account.financial.html.report.line">
+					<field name="name">Chiffres d'affaires</field>
+					<field name="code">NPDE_CDA_ISN</field>
+					<field name="parent_id" ref='report_income_statement_nature_pe'/>
+					<field name="formulas">-sum</field>
+					<field name="domain">[('account_id.code', '=like', '70%')]</field>
+					<field name="groupby">account_id</field>
+					<field name="sequence" eval="1"/>
+					<field name="level" eval="2"/>
+					<field name="green_on_positive" eval="False"/>
+				</record>
+    
+        <record id = "report_income_statement_nature_ps" model = "account.financial.html.report.line">
+					<field name="name">Production stockée</field>
+					<field name="code">NPDE_PS_ISN</field>
+					<field name="parent_id" ref='report_income_statement_nature_pe'/>
+					<field name="formulas">-sum</field>
+<!--					<field name="formulas">-sum</field>-->
+					<field name="domain">[('account_id.code', '=like', '71%')]</field>
+<!--					<field name="domain">['|', ('account_id.code', '=like', '713%'), ('account_id.code', '=like', '714%')]</field>-->
+					<field name="groupby">account_id</field>
+					<field name="sequence" eval="2"/>
+					<field name="level" eval="2"/>
+					<field name="green_on_positive" eval="False"/>
+				</record>
+    
+        <record id = "report_income_statement_nature_pi" model = "account.financial.html.report.line">
+					<field name="name">Production immobilisée</field>
+					<field name="code">NPDE_PI_ISN</field>
+					<field name="parent_id" ref='report_income_statement_nature_pe'/>
+					<field name="formulas">-sum</field>
+					<field name="domain">[('account_id.code', '=like', '72%')]</field>
+<!--					<field name="domain">['|', ('account_id.code', '=like', '721%'), ('account_id.code', '=like', '722%')]</field>-->
+					<field name="groupby">account_id</field>
+					<field name="sequence" eval="3"/>
+					<field name="level" eval="2"/>
+					<field name="green_on_positive" eval="False"/>
+				</record>
+    
+      <!-- II -->
+      <record id = "report_income_statement_nature_ce" model = "account.financial.html.report.line">
+        <field name="name">II- Consommation de l’exercice</field>
+        <field name="code">N_CDE_ISN</field>
+        <field name="financial_report_id" ref="report_income_statement_nature"/>
+        <field name="formulas">NCDE_AC_ISN + NCDE_SEAC_ISN</field>
+        <field name="sequence" eval="2"/>
+        <field name="level" eval="1"/>
+      </record>
+    
+        <record id = "report_income_statement_nature_ac" model = "account.financial.html.report.line">
+          <field name="name">Achats consommés</field>
+          <field name="code">NCDE_AC_ISN</field>
+          <field name="parent_id" ref='report_income_statement_nature_ce'/>
+          <field name="formulas">-sum</field>
+          <field name="domain">[('account_id.code', '=like', '60%')]</field>
+          <field name="groupby">account_id</field>
+          <field name="sequence" eval="1"/>
+          <field name="level" eval="2"/>
+          <field name="green_on_positive" eval="False"/>
+        </record>
+    
+        <record id = "report_income_statement_nature_seac" model = "account.financial.html.report.line">
+          <field name="name">Services extérieurs et autres consommations</field>
+          <field name="code">NCDE_SEAC_ISN</field>
+          <field name="parent_id" ref='report_income_statement_nature_ce'/>
+          <field name="formulas">-sum</field>
+          <field name="domain">['|', ('account_id.code', '=like', '61%'), ('account_id.code', '=like', '62%')]</field>
+          <field name="groupby">account_id</field>
+          <field name="sequence" eval="2"/>
+          <field name="level" eval="2"/>
+          <field name="green_on_positive" eval="False"/>
+        </record>
+      
+      <!-- III -->
+      <record id = "report_income_statement_nature_vae" model = "account.financial.html.report.line">
+        <field name="name">III- VALEUR AJOUTEE D’EXPLOITATION (I - II)</field>
+        <field name="code">N_VAE_ISN</field>
+        <field name="financial_report_id" ref="report_income_statement_nature"/>
+        <field name="formulas">N_PDE_ISN + N_CDE_ISN</field>
+        <field name="sequence" eval="3"/>
+        <field name="level" eval="1"/>
+      </record>
+    
+      <!-- IV -->
+      <record id = "report_income_statement_nature_ebe" model = "account.financial.html.report.line">
+        <field name="name">IV- EXCEDENT BRUT D’EXPLOITATION</field>
+        <field name="code">N_EBE_ISN</field>
+        <field name="financial_report_id" ref="report_income_statement_nature"/>
+        <field name="formulas">N_VAE_ISN + NEBE_ITVA_ISN + NEBE_CP_ISN + NEBE_SE_ISN</field>
+        <field name="sequence" eval="4"/>
+        <field name="level" eval="1"/>
+      </record>
+    
+        <record id = "report_income_statement_nature_se" model = "account.financial.html.report.line">
+          <field name="name">Subvention d’exploitation</field>
+          <field name="code">NEBE_SE_ISN</field>
+          <field name="parent_id" ref='report_income_statement_nature_ebe'/>
+          <field name="formulas">-sum</field>
+          <field name="domain">[('account_id.code', '=like', '74%')]</field>
+<!--          <field name="domain">['|', ('account_id.code', '=like', '741%'), ('account_id.code', '=like', '748%')]</field>-->
+          <field name="groupby">account_id</field>
+          <field name="sequence" eval="1"/>
+          <field name="level" eval="2"/>
+          <field name="green_on_positive" eval="False"/>
+        </record>
+    
+        <record id = "report_income_statement_nature_cp" model = "account.financial.html.report.line">
+          <field name="name">Charges de personnel (A)</field>
+          <field name="code">NEBE_CP_ISN</field>
+          <field name="parent_id" ref='report_income_statement_nature_ebe'/>
+          <field name="formulas">-sum</field>
+          <field name="domain">[('account_id.code', '=like', '64%')]</field>
+          <field name="groupby">account_id</field>
+          <field name="sequence" eval="2"/>
+          <field name="level" eval="2"/>
+          <field name="green_on_positive" eval="False"/>
+        </record>
+    
+        <record id = "report_income_statement_nature_itva" model = "account.financial.html.report.line">
+          <field name="name">Impôts, taxes et versements assimilés</field>
+          <field name="code">NEBE_ITVA_ISN</field>
+          <field name="parent_id" ref='report_income_statement_nature_ebe'/>
+          <field name="formulas">-sum</field>
+          <field name="domain">[('account_id.code', '=like', '63%')]</field>
+          <field name="groupby">account_id</field>
+          <field name="sequence" eval="3"/>
+          <field name="level" eval="2"/>
+          <field name="green_on_positive" eval="False"/>
+        </record>
+    
+      <!-- V -->
+      <record id = "report_income_statement_nature_ro" model = "account.financial.html.report.line">
+        <field name="name">V- RESULTAT OPERATIONNEL</field>
+        <field name="code">N_RO_ISN</field>
+        <field name="financial_report_id" ref="report_income_statement_nature"/>
+        <field name="formulas">N_EBE_ISN + NRO_APO_ISN + NRO_ACO_ISN + NRO_DAPPV_ISN + NRO_RPPV_ISN</field>
+        <field name="sequence" eval="5"/>
+        <field name="level" eval="1"/>
+      </record>
+    
+        <record id = "report_income_statement_nature_apo" model = "account.financial.html.report.line">
+          <field name="name">Autres produits opérationnels</field>
+          <field name="code">NRO_APO_ISN</field>
+          <field name="parent_id" ref='report_income_statement_nature_ro'/>
+          <field name="formulas">-sum</field>
+          <field name="domain">[('account_id.code', '=like', '75%')]</field>
+          <field name="groupby">account_id</field>
+          <field name="sequence" eval="1"/>
+          <field name="level" eval="2"/>
+          <field name="green_on_positive" eval="False"/>
+        </record>
+    
+        <record id = "report_income_statement_nature_aco" model = "account.financial.html.report.line">
+          <field name="name">Autres charges opérationnelles</field>
+          <field name="code">NRO_ACO_ISN</field>
+          <field name="parent_id" ref='report_income_statement_nature_ro'/>
+          <field name="formulas">-sum</field>
+          <field name="domain">[('account_id.code', '=like', '65%')]</field>
+          <field name="groupby">account_id</field>
+          <field name="sequence" eval="2"/>
+          <field name="level" eval="2"/>
+          <field name="green_on_positive" eval="False"/>
+        </record>
+    
+        <record id = "report_income_statement_nature_dappv" model = "account.financial.html.report.line">
+          <field name="name">Dotations aux amortissements, aux provisions et pertes de valeur</field>
+          <field name="code">NRO_DAPPV_ISN</field>
+          <field name="parent_id" ref='report_income_statement_nature_ro'/>
+          <field name="formulas">-sum</field>
+          <field name="domain">[('account_id.code', '=like', '68%')]</field>
+          <field name="groupby">account_id</field>
+          <field name="sequence" eval="3"/>
+          <field name="level" eval="2"/>
+          <field name="green_on_positive" eval="False"/>
+        </record>
+    
+        <record id = "report_income_statement_nature_rppv" model = "account.financial.html.report.line">
+          <field name="name">Reprise sur provisions et pertes de valeurs</field>
+          <field name="code">NRO_RPPV_ISN</field>
+          <field name="parent_id" ref='report_income_statement_nature_ro'/>
+          <field name="formulas">-sum</field>
+          <field name="domain">[('account_id.code', '=like', '78%')]</field>
+          <field name="groupby">account_id</field>
+          <field name="sequence" eval="4"/>
+          <field name="level" eval="2"/>
+          <field name="green_on_positive" eval="False"/>
+        </record>
+    
+      <!-- VI -->
+      <record id = "report_income_statement_nature_rf" model = "account.financial.html.report.line">
+        <field name="name">VI- RESULTAT FINANCIER</field>
+        <field name="code">N_RF_ISN</field>
+        <field name="financial_report_id" ref="report_income_statement_nature"/>
+        <field name="formulas">NRF_PF_ISN + NRF_CF_ISN</field>
+        <field name="sequence" eval="6"/>
+        <field name="level" eval="1"/>
+      </record>
+    
+        <record id = "report_income_statement_nature_pf" model = "account.financial.html.report.line">
+          <field name="name">Produits financiers</field>
+          <field name="code">NRF_PF_ISN</field>
+          <field name="parent_id" ref='report_income_statement_nature_rf'/>
+          <field name="formulas">-sum</field>
+          <field name="domain">[('account_id.code', '=like', '76%')]</field>
+<!--          <field name="domain">['|', ('account_id.code', '=like', '76%'), ('account_id.code', '=like', '786%')]</field>-->
+          <field name="groupby">account_id</field>
+          <field name="sequence" eval="1"/>
+          <field name="level" eval="2"/>
+          <field name="green_on_positive" eval="False"/>
+        </record>
+    
+        <record id = "report_income_statement_nature_cf" model = "account.financial.html.report.line">
+          <field name="name">Charges financières</field>
+          <field name="code">NRF_CF_ISN</field>
+          <field name="parent_id" ref='report_income_statement_nature_rf'/>
+          <field name="formulas">-sum</field>
+          <field name="domain">[('account_id.code', '=like', '66%')]</field>
+<!--          <field name="domain">['|', ('account_id.code', '=like', '66%'), ('account_id.code', '=like', '686%')]</field>-->
+          <field name="groupby">account_id</field>
+          <field name="sequence" eval="2"/>
+          <field name="level" eval="2"/>
+          <field name="green_on_positive" eval="False"/>
+        </record>
+    
+      <!-- VII -->
+      <record id = "report_income_statement_nature_rai" model = "account.financial.html.report.line">
+        <field name="name">VII- RESULTAT AVANT IMPOTS (V + VI)</field>
+        <field name="code">N_RAI_ISN</field>
+        <field name="financial_report_id" ref="report_income_statement_nature"/>
+        <field name="formulas">N_RO_ISN + N_RF_ISN</field>
+        <field name="sequence" eval="7"/>
+        <field name="level" eval="1"/>
+      </record>
+    
+      <!-- VIII -->
+      <record id = "report_income_statement_nature_rnao" model = "account.financial.html.report.line">
+        <field name="name">VIII- RESULTAT NET DES ACTIVITES ORDINAIRES</field>
+        <field name="code">N_RNAO_ISN</field>
+        <field name="financial_report_id" ref="report_income_statement_nature"/>
+        <field name="formulas">N_RAI_ISN + NRNAO_IER_ISN + NRNAO_ID_ISN</field>
+        <field name="sequence" eval="10"/>
+        <field name="level" eval="1"/>
+      </record>
+    
+        <record id = "report_income_statement_nature_ier" model = "account.financial.html.report.line">
+          <field name="name">Impôts exigibles sur résultats</field>
+          <field name="code">NRNAO_IER_ISN</field>
+          <field name="parent_id" ref='report_income_statement_nature_rnao'/>
+          <field name="formulas">-sum</field>
+          <field name="domain">[('account_id.code', '=like', '695%')]</field>
+<!--          <field name="domain">['|', ('account_id.code', '=like', '695%'), ('account_id.code', '=like', '698%')]</field>-->
+          <field name="groupby">account_id</field>
+          <field name="sequence" eval="1"/>
+          <field name="level" eval="2"/>
+          <field name="green_on_positive" eval="False"/>
+        </record>
+    
+        <record id = "report_income_statement_nature_id" model = "account.financial.html.report.line">
+          <field name="name">Impôts différés</field>
+          <field name="code">NRNAO_ID_ISN</field>
+          <field name="parent_id" ref='report_income_statement_nature_rnao'/>
+          <field name="formulas">-sum</field>
+          <field name="domain">[('account_id.code', '=like', '692%')]</field>
+<!--          <field name="domain">['|', ('account_id.code', '=like', '692%'), ('account_id.code', '=like', '693%')]</field>-->
+          <field name="groupby">account_id</field>
+          <field name="sequence" eval="2"/>
+          <field name="level" eval="2"/>
+          <field name="green_on_positive" eval="False"/>
+        </record>
+    
+        <record id = "report_income_statement_nature_tpao" model = "account.financial.html.report.line">
+          <field name="name">TOTAL DES PRODUITS DES ACTIVITES ORDINAIRES</field>
+          <field name="code">	NRNAO_TPAO_ISN</field>
+          <field name="parent_id" ref='report_income_statement_nature_rnao'/>
+          <field name="formulas">-sum</field>
+          <field name="domain">[('account_id.code', '=like', '7%')]</field>
+          <field name="groupby"></field>
+          <field name="sequence" eval="8"/>
+          <field name="level" eval="1"/>
+          <field name="green_on_positive" eval="True"/>
+        </record>
+    
+        <record id = "report_income_statement_nature_tcao" model = "account.financial.html.report.line">
+          <field name="name">TOTAL DES CHARGES DES ACTIVITES ORDINAIRES</field>
+          <field name="code">NRNAO_TCAO_ISN</field>
+          <field name="parent_id" ref='report_income_statement_nature_rnao'/>
+          <field name="formulas">-sum</field>
+          <field name="domain">[('account_id.code', '=like', '6%')]</field>
+          <field name="groupby"></field>
+          <field name="sequence" eval="9"/>
+          <field name="level" eval="1"/>
+          <field name="green_on_positive" eval="True"/>
+        </record>
+    
+      <!-- IX -->
+      <record id = "report_income_statement_nature_re" model = "account.financial.html.report.line">
+        <field name="name">IX- RESULTAT EXTRAORDINAIRE</field>
+        <field name="code">N_RE_ISN</field>
+        <field name="financial_report_id" ref="report_income_statement_nature"/>
+        <field name="formulas">NRE_EEP_ISN + NRE_EEC_ISN</field>
+        <field name="sequence" eval="11"/>
+        <field name="level" eval="1"/>
+      </record>
+    
+        <record id = "report_income_statement_nature_eepap" model = "account.financial.html.report.line">
+          <field name="name">Eléments extraordinaires (produits) – à préciser</field>
+          <field name="code">NRE_EEP_ISN</field>
+          <field name="parent_id" ref='report_income_statement_nature_re'/>
+          <field name="formulas">-sum</field>
+          <field name="domain">[('account_id.code', '=like', '77%')]</field>
+          <field name="sequence" eval="1"/>
+          <field name="level" eval="2"/>
+          <field name="green_on_positive" eval="False"/>
+        </record>
+    
+        <record id = "report_income_statement_nature_eecap" model = "account.financial.html.report.line">
+          <field name="name">	Eléments extraordinaires (charges) – à préciser</field>
+          <field name="code">NRE_EEC_ISN</field>
+          <field name="parent_id" ref='report_income_statement_nature_re'/>
+          <field name="formulas">-sum</field>
+          <field name="domain">[('account_id.code', '=like', '67%')]</field>
+          <field name="sequence" eval="2"/>
+          <field name="level" eval="2"/>
+          <field name="green_on_positive" eval="False"/>
+        </record>
+    
+      <!-- X -->
+      <record id = "report_income_statement_nature_rne" model = "account.financial.html.report.line">
+        <field name="name">X- RESULTAT NET DE L’EXERCICE</field>
+        <field name="code">N_RNEN_ISN</field>
+        <field name="financial_report_id" ref="report_income_statement_nature"/>
+        <field name="formulas">N_RE_ISN + N_RNAO_ISN</field>
+        <field name="sequence" eval="12"/>
+        <field name="level" eval="1"/>
+        <field name="green_on_positive" eval="True"/>
+      </record>
+    
+      <!-- XI -->
+      <record id = "report_income_statement_nature_rnec" model = "account.financial.html.report.line">
+        <field name="name">XI- RESULTAT NET DE L’ENSEMBLE CONSOLIDE</field>
+        <field name="code">N_RNEC_ISN</field>
+        <field name="financial_report_id" ref="report_income_statement_nature"/>
+        <field name="formulas"></field>
+        <field name="sequence" eval="13"/>
+        <field name="level" eval="1"/>
+        <field name="green_on_positive" eval="True"/>
+      </record>
+    
+	</data>
+</odoo>

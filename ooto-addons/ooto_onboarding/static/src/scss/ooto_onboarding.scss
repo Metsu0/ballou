@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+$font_family_oswald: 'Oswald',
+sans-serif;
+$font_family_nunito: 'Nunito',
+sans-serif;
+$font_family_roboto: 'Roboto',
+sans-serif;
+
+.o_task_filter {
+    @include o-text-overflow();
+    width: 64%;
+    color: grey;
+    vertical-align: top;
+    &:hover {
+        color: $o-brand-primary;
+    }
+    &.o_task_bold {
+        font-weight: bold;
+    }
+}
+
+.oe_kanban_content {
+    width: 100%;
+    .o_kanban_record_bottom {
+        .row {
+            .col-8 {
+                padding-left: 32px;
+            }
+        }
+    }
+}
+
+/*
+!*********************** code scss page formulaire liste ***********************!
+.dropdown_list_dashboard_ensemble
+{
+    margin-top: 3px;
+    margin-bottom: 30px;
+}
+
+.dropdown_list_dashboard_ensemble_liste
+{
+    margin-bottom: 2px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: solid 0.3px #c7cedb;
+    padding: 7px 20px;
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.dropdown_list_dashboard_ensemble_liste_text
+{
+    font-size: 14px;
+    color: #7a8488;
+    margin-bottom: 0;
+}
+
+.dropdown_list_dashboard_ensemble_liste_link
+{
+    a
+    {
+        box-shadow: 0 4px 8px 0 rgba(140, 151, 158, 0.3);
+        background-color: rgba(0, 189, 156, 0.3);
+        color: #00bd9c;
+        padding: 10px 15px;
+        border-radius: 18px;
+        display: inline-block;
+        font-family: $font_family_nunito;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: normal;
+        &:hover {
+            background-color: rgba(0, 189, 156, 1);
+            color: #fff;
+        }
+    }
+}
+
+.formulaire_page_block
+{
+    width: 920px;
+    padding: 15px;
+}
+
+
+!*********************** fin code scss page formulaire liste ***********************!*/

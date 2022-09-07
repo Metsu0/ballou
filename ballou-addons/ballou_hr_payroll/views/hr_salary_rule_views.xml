@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="hr_salary_rule_form_view" model="ir.ui.view">
+        <field name="name">hr.salary.rule.form.view</field>
+        <field name="model">hr.salary.rule</field>
+        <field name="inherit_id" ref="hr_payroll.hr_salary_rule_form"/>
+        <field name="arch" type="xml">
+            <field name="appears_on_payslip" position="after">
+                <field name="parent_id"/>
+                <field name="regulatory_deduction" attrs="{'invisible':[('appears_on_payslip', '=', False)]}"/>
+                <field name="show_on_amount_column" attrs="{'invisible':[('appears_on_payslip', '=', False)]}"/>
+                <field name="amount_column_position" attrs="{'required':[('show_on_amount_column', '=', True)], 
+                                                                                                'invisible':['|',('show_on_amount_column', '=', False),('appears_on_payslip', '=', False)]}"/>
+            </field>
+        </field>
+    </record>
+</odoo>

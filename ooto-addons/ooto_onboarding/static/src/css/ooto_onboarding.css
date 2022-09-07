@@ -1,0 +1,126 @@
+.onboarding_progressbar .o_progress {
+    border: solid 1px;
+    padding: 1px;
+}
+
+.onboarding_progressbar_period .o_progressbar_value {
+    display: none;
+}
+
+.onboarding_progressbar_form {
+    margin: 40px;
+}
+
+option[value='"appointment"'] {
+    display: none !important;
+}
+
+option[value='"specific"'] {
+    display: none !important;
+}
+
+.task_kanban_container.form {
+    border-left: 5px solid #3AC4B5 !important;
+}
+
+.task_kanban_container.content {
+    border-left: 5px solid #6135E5 !important;
+}
+
+.task_kanban_container.software {
+    border-left: 5px solid #8821A2 !important;
+}
+
+.task_kanban_container.signature {
+    border-left: 5px solid #4B4B4B !important;
+}
+
+.task_kanban_container.others {
+    border-left: 5px solid #E55F00 !important;
+}
+
+.task_kanban_container.administrative {
+    border-left: 5px solid #32B7E5 !important;
+}
+
+.task_kanban_container.appointment {
+    border-left: 5px solid #DFAB00 !important;
+}
+
+.task_kanban_container.equipment {
+    border-left: 5px solid #66BA00 !important;
+}
+
+.task_kanban_container.advice {
+    border-left: 5px solid #2876E5 !important;
+}
+
+.task_label {
+    color: #FFF;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px #ccc;
+    height: 22px;
+    padding: 0;
+    padding-top: 2px;
+    font-size: 10px;
+}
+
+.task_label.form {
+    background-color: #3AC4B5;
+}
+
+.task_label.content {
+    background-color: #6135E5;
+}
+
+.task_label.software {
+    background-color: #8821A2;
+}
+
+.task_label.signature {
+    background-color: #4B4B4B;
+}
+
+.task_label.others {
+    background-color: #E55F00;
+}
+
+.task_label.administrative {
+    background-color: #32B7E5;
+}
+
+.task_label.appointment {
+    background-color: #DFAB00;
+}
+
+.task_label.equipment {
+    background-color: #66BA00;
+}
+
+.task_label.advice {
+    background-color: #2876E5;
+}
+
+.period-1 {
+    /*border: 1px solid black;*/
+    height: 30px;
+    background-color: #959595;
+}
+
+.period-2 {
+    /*border: 1px solid black;*/
+    height: 30px;
+    background-color: #707070;
+}
+
+.period-3 {
+    /*border: 1px solid black;*/
+    height: 30px;
+    background-color: #555555;
+}
+
+.period-4 {
+    /*border: 1px solid black;*/
+    height: 30px;
+    background-color: #464646;
+}

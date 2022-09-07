@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+  <record id="sirh_base_security.default_deputy_profile" model="res.users">
+    <field name="menu_hide_ids"
+           eval="[
+           (3,ref('base.menu_administration')),
+           (4,ref('stock.menu_stock_root')),
+           (4,ref('account.menu_finance'))]"/>
+  </record>
+
+  <record id="sirh_base_security.default_directeur_profile" model="res.users">
+    <field name="menu_hide_ids"
+           eval="[
+           (3,ref('base.menu_administration')),
+           (4,ref('stock.menu_stock_root')),
+           (4,ref('account.menu_finance'))]"/>
+  </record>
+
+  <record id="sirh_base_security.default_manager_profile" model="res.users">
+    <field name="menu_hide_ids"
+           eval="[
+           (3,ref('base.menu_administration')),
+           (4,ref('stock.menu_stock_root')),
+           (4,ref('account.menu_finance'))]"/>
+  </record>
+
+  <record id="sirh_base_security.default_rh_profile" model="res.users">
+    <field name="menu_hide_ids"
+           eval="[
+           (3,ref('base.menu_administration')),
+           (4,ref('stock.menu_stock_root')),
+           (4,ref('account.menu_finance'))]"/>
+  </record>
+
+  <record id="sirh_base_security.default_administration_profile" model="res.users">
+    <field name="menu_hide_ids"
+           eval="[
+           (3,ref('base.menu_administration')),
+           (4,ref('stock.menu_stock_root')),
+           (4,ref('account.menu_finance'))]"/>
+  </record>
+</odoo>

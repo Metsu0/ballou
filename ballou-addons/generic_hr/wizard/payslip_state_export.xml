@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record id="generic_hr_payslip_state_export_form" model="ir.ui.view">
+      <field name="name">generic.hr.paie.state.export.form.inherit</field>
+      <field name="model">payslip.state.export</field>
+      <field name="inherit_id" ref="ballou_payslip_state_export.payslip_state_export_form"/>
+      <field name="arch" type="xml">
+        <field name="year" position="attributes">
+          <attribute name="attrs">{
+            'required': [('name','in',('annexe_hs'))],
+            }
+          </attribute>
+        </field>
+        <field name="period" position="attributes">
+          <attribute name="attrs">{
+            'required': [('name','in',('irsa','annexe_hs'))],
+            }
+          </attribute>
+        </field>
+      </field>
+    </record>
+
+
+    <record id="paperformat_frenchcheck" model="report.paperformat">
+      <field name="name">French Bank Check</field>
+      <field name="format">A3</field>
+      <field name="header_line" eval="True"/>
+      <field name="orientation">Landscape</field>
+      <field name="margin_top">4</field>
+      <field name="margin_bottom">3</field>
+      <field name="margin_left">2</field>
+      <field name="margin_right">2</field>
+      <field name="dpi">80</field>
+    </record>
+
+    <record id="action_export_annexe" model="ir.actions.report">
+      <field name="name">Annexe Heures supplémentaires</field>
+      <field name="model">hr.payslip</field>
+      <field name="report_name">generic_hr.payslip_state_pdf_export_template</field>
+      <field name="report_file">generic_hr.payslip_state_pdf_export_template</field>
+      <!--      <field name="binding_model_id" ref="model_payslip_state_export"/>-->
+      <!--      <field name="binding_type">report</field>-->
+      <field name="report_type">qweb-pdf</field>
+      <field name="paperformat_id" ref="generic_hr.paperformat_frenchcheck"/>
+    </record>
+
+    <!--    <record id="action_payslip_state_export_pdf" model="ir.actions.report">-->
+    <!--      <field name="name">Ballou Payslip</field>-->
+    <!--      <field name="model">hr.payslip</field>-->
+    <!--      <field name="report_name">ballou_hr_payroll.ballou_payslip_template</field>-->
+    <!--      <field name="report_file">ballou_hr_payroll.ballou_payslip_template</field>-->
+    <!--      <field name="binding_model_id" ref="model_hr_payslip"/>-->
+    <!--      <field name="binding_type">report</field>-->
+    <!--      <field name="report_type">qweb-pdf</field>-->
+    <!--      <field name="paperformat_id" ref="generic_hr.paperformat_frenchcheck"/>-->
+    <!--    </record>-->
+
+  </data>
+</odoo>

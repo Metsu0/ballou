@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <data noupdate="1">
+    <record id="email_file_task" model="onboarding.notification">
+      <field name="task_type">email</field>
+      <field name="title">Envoyez l'email</field>
+      <field name="text">Vous n'avez pas encore envoyé l'email.</field>
+    </record>
+  </data>
+</odoo>

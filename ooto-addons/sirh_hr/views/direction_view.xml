@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <data noupdate="0">
+    <record id="view_direction_tree" model="ir.ui.view">
+      <field name="name">hr.direction.tree</field>
+      <field name="model">hr.direction</field>
+      <field name="arch" type="xml">
+        <tree string="Executives">
+          <field name="executive_id"/>
+          <field name="name" string="Direction of CC"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="view_direction_form" model="ir.ui.view">
+      <field name="name">hr.direction.form</field>
+      <field name="model">hr.direction</field>
+      <field name="arch" type="xml">
+        <form string="Executives">
+          <sheet>
+            <group>
+              <group>
+                <field name="executive_id"/>
+              </group>
+              <group>
+                <field name="name" string="Direction of CC"/>
+                <field name="company_id"/>
+              </group>
+            </group>
+            <group>
+              <field name="department_ids"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="open_module_tree_direction_etech" model="ir.actions.act_window">
+      <field name="name">Executives</field>
+      <field name="res_model">hr.direction</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+          Create a new executive of department
+        </p>
+      </field>
+    </record>
+    <menuitem
+            action="open_module_tree_direction_etech"
+            id="menu_hr_direction_tree"
+            parent="sirh_hr.skill_matrix_menu"
+            sequence="89"
+            groups="hr.group_hr_user"/>
+  </data>
+</odoo>

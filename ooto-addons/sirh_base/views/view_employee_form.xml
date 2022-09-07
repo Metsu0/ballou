@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="sirh_base_view_employee_form_inherit" model="ir.ui.view">
+      <field name="name">sirh.base.view.employee.form.inherit</field>
+      <field name="model">hr.employee</field>
+      <field name="inherit_id" ref="hr.view_employee_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//group[@name='departure']/following::group" position="replace">
+          <group string="Schedule">
+            <field name="resource_calendar_id" required="1"/>
+            <field name="tz" groups="base.group_no_one"/>
+          </group>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

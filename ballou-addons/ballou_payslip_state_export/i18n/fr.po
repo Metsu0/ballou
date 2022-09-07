@@ -1,0 +1,831 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ballou_payslip_state_export
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-05 07:04+0000\n"
+"PO-Revision-Date: 2022-07-05 07:04+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__year__2012
+msgid "2012"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__year__2013
+msgid "2013"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__year__2014
+msgid "2014"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__year__2015
+msgid "2015"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__year__2016
+msgid "2016"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__year__2017
+msgid "2017"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__year__2018
+msgid "2018"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__year__2019
+msgid "2019"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__year__2020
+msgid "2020"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__year__2021
+msgid "2021"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__year__2022
+msgid "2022"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__year__2023
+msgid "2023"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__year__2024
+msgid "2024"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__year__2025
+msgid "2025"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__year__2026
+msgid "2026"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__year__2027
+msgid "2027"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__year__2028
+msgid "2028"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__year__2029
+msgid "2029"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__year__2030
+msgid "2030"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__year__2031
+msgid "2031"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/cnaps_xlsx_export.py:0
+#: code:addons/ballou_payslip_state_export/controllers/ostie_xlsx_export.py:0
+#, python-format
+msgid "AOUT"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/cnaps_xlsx_export.py:0
+#: code:addons/ballou_payslip_state_export/controllers/ostie_xlsx_export.py:0
+#, python-format
+msgid "AVRIL"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_hr_payroll_structure__additional_hour_id
+msgid "Additional Hour"
+msgstr "Heure supplémentaire"
+
+#. module: ballou_payslip_state_export
+#: model_terms:ir.ui.view,arch_db:ballou_payslip_state_export.view_hr_employee_grade_form_inheritance
+msgid "Additional hour"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_hr_payroll_structure__advantage_ids
+msgid "Advantage category"
+msgstr "Catégorie des avantages"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#, python-format
+msgid "All fields are mandatory"
+msgstr "Tous les champs sont obligatoires"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#, python-format
+msgid "Allowance"
+msgstr "Indemnités"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/wizard/payslip_state_export.py:0
+#, python-format
+msgid "Annex IRSA"
+msgstr "Annexe IRSA"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__name__annex_irsa
+msgid "Annexe IRSA"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__period__8
+msgid "Août"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#: code:addons/ballou_payslip_state_export/wizard/payslip_state_export.py:0
+#, python-format
+msgid "April"
+msgstr "Avril"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#: code:addons/ballou_payslip_state_export/wizard/payslip_state_export.py:0
+#, python-format
+msgid "August"
+msgstr "Août"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__period__4
+msgid "Avril"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#, python-format
+msgid "Base Salary"
+msgstr "Salaire de base"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#, python-format
+msgid "Benefits in kind"
+msgstr "Avantage en nature"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_hr_payroll_structure__bonus_and_gratuity_ids
+#, python-format
+msgid "Bonus and gratuity"
+msgstr "Prime et gratification"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#, python-format
+msgid "CIN/Resident Card"
+msgstr "CIN/Carte de résident"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__name__cnaps
+#, python-format
+msgid "CNAPS"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#, python-format
+msgid "CNAPS N°"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_hr_payroll_structure__cnaps_id
+msgid "CNAPS employee"
+msgstr "CNAPS"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_hr_payroll_structure__cnaps_employer_id
+msgid "CNAPS employer"
+msgstr "CNAPS patronale"
+
+#. module: ballou_payslip_state_export
+#: model_terms:ir.ui.view,arch_db:ballou_payslip_state_export.payslip_state_export_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: ballou_payslip_state_export
+#: model_terms:ir.ui.view,arch_db:ballou_payslip_state_export.view_hr_employee_grade_form_inheritance
+msgid "Categories"
+msgstr "Catégories"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_payslip_state_export__company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: ballou_payslip_state_export
+#: model_terms:ir.ui.view,arch_db:ballou_payslip_state_export.view_hr_employee_grade_form_inheritance
+msgid "Configuration"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#, python-format
+msgid "Corresponding tax"
+msgstr "Impôt correspondant"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_payslip_state_export__create_uid
+msgid "Created by"
+msgstr "Créer par"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_payslip_state_export__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/cnaps_xlsx_export.py:0
+#: code:addons/ballou_payslip_state_export/controllers/ostie_xlsx_export.py:0
+#, python-format
+msgid "DECEMBRE"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#: code:addons/ballou_payslip_state_export/wizard/payslip_state_export.py:0
+#, python-format
+msgid "December"
+msgstr "Décembre"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__quarter__01
+msgid "Deuxième Trimestre (Avril. Mai. Juin.)"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#, python-format
+msgid "Dismissal date"
+msgstr "Date de débauche"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_hr_payroll_structure__display_name
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_hr_payslip__display_name
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_payslip_state_export__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__period__12
+msgid "Décembre"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/cnaps_xlsx_export.py:0
+#, python-format
+msgid "EMPLOYER"
+msgstr "EMPLOYEUR"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#, python-format
+msgid "Exempt"
+msgstr "Exonérés"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_hr_payroll_structure__exempt_benefits_in_kind_ids
+msgid "Exempt benefits in kind"
+msgstr "Avantage en nature exonérés"
+
+#. module: ballou_payslip_state_export
+#: model_terms:ir.ui.view,arch_db:ballou_payslip_state_export.payslip_state_export_form
+msgid "Export"
+msgstr "Exporter"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/cnaps_xlsx_export.py:0
+#: code:addons/ballou_payslip_state_export/controllers/ostie_xlsx_export.py:0
+#, python-format
+msgid "FEVRIER"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_hr_payroll_structure__fmfp_id
+msgid "FMFP"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#: code:addons/ballou_payslip_state_export/wizard/payslip_state_export.py:0
+#, python-format
+msgid "February"
+msgstr "Février"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/wizard/payslip_state_export.py:0
+#, python-format
+msgid "First Quarter (Jan. Feb. March.)"
+msgstr "Premier Trimestre (Jan. Fév. Mars.)"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/wizard/payslip_state_export.py:0
+#, python-format
+msgid "Forth Quarter (Oct. Nov. Dec.)"
+msgstr "Quatrième Trimestre (Oct. Nov. Déc.)"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#, python-format
+msgid "Fullname"
+msgstr "Nom et prénoms"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__period__2
+msgid "Février"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#, python-format
+msgid "Generate XML in folder /Documents"
+msgstr "Génération du XML dans le dossier"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#, python-format
+msgid "Gross Salary"
+msgstr "Salaire Brut"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_hr_payroll_structure__gross_daily_id
+msgid "Gross daily salary"
+msgstr "Salaire selon jour travaillé"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_hr_payroll_structure__gross_salary_id
+msgid "Gross salary"
+msgstr "Salaire brut"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#, python-format
+msgid "Hiring date"
+msgstr "Date d'embauche"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_hr_payroll_structure__id
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_hr_payslip__id
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_payslip_state_export__id
+msgid "ID"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_hr_payroll_structure__irsa_id
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__name__irsa
+msgid "IRSA"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model_terms:ir.ui.view,arch_db:ballou_payslip_state_export.view_hr_employee_grade_form_inheritance
+msgid "Inputs"
+msgstr "Entrées"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/cnaps_xlsx_export.py:0
+#: code:addons/ballou_payslip_state_export/controllers/ostie_xlsx_export.py:0
+#, python-format
+msgid "JANVIER"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/cnaps_xlsx_export.py:0
+#: code:addons/ballou_payslip_state_export/controllers/ostie_xlsx_export.py:0
+#, python-format
+msgid "JUILLET"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/cnaps_xlsx_export.py:0
+#: code:addons/ballou_payslip_state_export/controllers/ostie_xlsx_export.py:0
+#, python-format
+msgid "JUIN"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#: code:addons/ballou_payslip_state_export/wizard/payslip_state_export.py:0
+#, python-format
+msgid "January"
+msgstr "Janvier"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__period__1
+msgid "Janvier"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#, python-format
+msgid "Job"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__period__7
+msgid "Juillet"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__period__6
+msgid "Juin"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#: code:addons/ballou_payslip_state_export/wizard/payslip_state_export.py:0
+#, python-format
+msgid "July"
+msgstr "Juillet"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#: code:addons/ballou_payslip_state_export/wizard/payslip_state_export.py:0
+#, python-format
+msgid "June"
+msgstr "Juin"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_hr_payroll_structure____last_update
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_hr_payslip____last_update
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_payslip_state_export____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_payslip_state_export__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_payslip_state_export__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/cnaps_xlsx_export.py:0
+#: code:addons/ballou_payslip_state_export/controllers/ostie_xlsx_export.py:0
+#, python-format
+msgid "MAI"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/cnaps_xlsx_export.py:0
+#: code:addons/ballou_payslip_state_export/controllers/ostie_xlsx_export.py:0
+#, python-format
+msgid "MARS"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__period__5
+msgid "Mai"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#: code:addons/ballou_payslip_state_export/wizard/payslip_state_export.py:0
+#, python-format
+msgid "March"
+msgstr "Mars"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__period__3
+msgid "Mars"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#: code:addons/ballou_payslip_state_export/wizard/payslip_state_export.py:0
+#, python-format
+msgid "May"
+msgstr "Mai"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#, python-format
+msgid "Month:"
+msgstr "Mois:"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#, python-format
+msgid "NIF:"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/cnaps_xlsx_export.py:0
+#: code:addons/ballou_payslip_state_export/controllers/ostie_xlsx_export.py:0
+#, python-format
+msgid "NOVEMBRE"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_payslip_state_export__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#, python-format
+msgid "Net Salary"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_hr_payroll_structure__net_salary_id
+msgid "Net salary"
+msgstr "Salaire net"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#, python-format
+msgid "Non Taxable"
+msgstr "Non imposable"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_hr_payroll_structure__non_taxable_additional_hour
+msgid "Non taxable additional hour"
+msgstr "Heure suplémentaire Non Imposable"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_hr_payroll_structure__non_taxable_allowance_ids
+msgid "Non taxable allowance"
+msgstr "Indémnité non imposable"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#: code:addons/ballou_payslip_state_export/wizard/payslip_state_export.py:0
+#, python-format
+msgid "November"
+msgstr "Novembre"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__period__11
+msgid "Novembre"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/cnaps_xlsx_export.py:0
+#: code:addons/ballou_payslip_state_export/controllers/ostie_xlsx_export.py:0
+#, python-format
+msgid "OCTOBRE"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__name__ostie
+msgid "OSTIE"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_hr_payroll_structure__ostie_id
+msgid "OSTIE employee or assimilated"
+msgstr "OSTIE ou assimilé"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_hr_payroll_structure__ostie_employer_id
+msgid "OSTIE employer"
+msgstr "OSTIE patronale"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#, python-format
+msgid "OSTIE or assimiated"
+msgstr "OSTIE ou assimilé"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#: code:addons/ballou_payslip_state_export/wizard/payslip_state_export.py:0
+#, python-format
+msgid "October"
+msgstr "Octobre"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__period__10
+msgid "Octobre"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_hr_payroll_structure__other_deduction_ids
+#, python-format
+msgid "Other deduction"
+msgstr "Autre déduction"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_hr_payroll_structure__others_ids
+#, python-format
+msgid "Others"
+msgstr "Autres"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#, python-format
+msgid "Overtime"
+msgstr "Heures suplémentaires"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model,name:ballou_payslip_state_export.model_hr_payslip
+msgid "Pay Slip"
+msgstr "Feuille de paie"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model,name:ballou_payslip_state_export.model_payslip_state_export
+msgid "Payslip State Export"
+msgstr "Export des déclarations sociaux et fiscaux"
+
+#. module: ballou_payslip_state_export
+#: model:ir.actions.act_window,name:ballou_payslip_state_export.action_payslip_state_export
+#: model:ir.ui.menu,name:ballou_payslip_state_export.menu_hr_payslip_state_report
+msgid "Payslip state export"
+msgstr "Export des déclarations sociaux et fiscaux"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_payslip_state_export__period
+msgid "Period"
+msgstr "Période"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__quarter__00
+msgid "Premier Trimestre (Jan. Fév. Mars.)"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_payslip_state_export__quarter
+msgid "Quarter"
+msgstr "Trimestre"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__quarter__03
+msgid "Quatrième Trimestre (Oct. Nov. Déc.)"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#, python-format
+msgid "Reduction for dependents"
+msgstr "Réduction pour charge de famille"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#, python-format
+msgid "Registration N°"
+msgstr "Matricule"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/cnaps_xlsx_export.py:0
+#: code:addons/ballou_payslip_state_export/controllers/ostie_xlsx_export.py:0
+#, python-format
+msgid "SEPTEMBRE"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model,name:ballou_payslip_state_export.model_hr_payroll_structure
+msgid "Salary Structure"
+msgstr "Structure salariale"
+
+#. module: ballou_payslip_state_export
+#: model_terms:ir.ui.view,arch_db:ballou_payslip_state_export.view_hr_employee_grade_form_inheritance
+msgid "Salary rules"
+msgstr "Règles de salaires"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/wizard/payslip_state_export.py:0
+#, python-format
+msgid "Second Quarter (April. May. June.)"
+msgstr "Deuxième Trimestre (Avril. Mai. Juin.)"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#: code:addons/ballou_payslip_state_export/wizard/payslip_state_export.py:0
+#, python-format
+msgid "September"
+msgstr "Septembre"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__period__9
+msgid "Septembre"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#, python-format
+msgid "Tax Wording:"
+msgstr "Libellé impôt:"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#, python-format
+msgid "Tax code:"
+msgstr "Code impôt:"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#, python-format
+msgid "Tax due"
+msgstr "Impôt dû"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#, python-format
+msgid "Tax on salaries and assimilated incomes"
+msgstr "Impôt sur les revenus salariaux et assimilés"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#, python-format
+msgid "Taxable"
+msgstr "Imposable"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_hr_payroll_structure__taxable_amount_id
+msgid "Taxable Amount"
+msgstr "Montant Imposable"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_hr_payroll_structure__taxable_allowance_ids
+msgid "Taxable allowance"
+msgstr "Indémnité imposable"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#, python-format
+msgid "Taxable amount"
+msgstr "Montant imposable"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_hr_payroll_structure__taxable_benefit_in_kind_ids
+msgid "Taxable benefit in kind"
+msgstr "Avantage en nature imposable"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/wizard/payslip_state_export.py:0
+#, python-format
+msgid "Third Quarter (July. Aug. Sept.)"
+msgstr "Troisième Trimestre (Juillet. Août. Sept.)"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields.selection,name:ballou_payslip_state_export.selection__payslip_state_export__quarter__02
+msgid "Troisième Trimestre (Juillet. Août. Sept.)"
+msgstr ""
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_hr_payroll_structure__workday_code
+msgid "Worked days code"
+msgstr "Code des jours travaillés"
+
+#. module: ballou_payslip_state_export
+#: model:ir.model.fields,field_description:ballou_payslip_state_export.field_payslip_state_export__year
+msgid "Year"
+msgstr "Année"
+
+#. module: ballou_payslip_state_export
+#: code:addons/ballou_payslip_state_export/controllers/annex_irsa_xlsx_export.py:0
+#, python-format
+msgid "Year:"
+msgstr "Année:"
+
+#. module: ballou_payslip_state_export
+#: model_terms:ir.ui.view,arch_db:ballou_payslip_state_export.payslip_state_export_form
+msgid "or"
+msgstr "ou"

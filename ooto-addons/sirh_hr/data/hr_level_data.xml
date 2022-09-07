@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+        <record id="no_level" model="hr.level">
+          <field name="name">Pas de niveau</field>
+          <field name="sequence" eval="0"/>
+        </record>
+        <record id="trainee" model="hr.level">
+          <field name="name">Stagiaire</field>
+          <field name="sequence" eval="1"/>
+        </record>
+        <record id="junior" model="hr.level">
+          <field name="name">Junior</field>
+          <field name="sequence" eval="2"/>
+        </record>
+        <record id="confirmed" model="hr.level">
+          <field name="name">Confirmé</field>
+          <field name="sequence" eval="3"/>
+        </record>
+        <record id="senoir" model="hr.level">
+          <field name="name">Sénior</field>
+          <field name="sequence" eval="4"/>
+        </record>
+  </data>
+</odoo>

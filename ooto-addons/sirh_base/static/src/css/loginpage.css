@@ -1,0 +1,49 @@
+@charset "UTF-8";
+main .oe_website_login_container {
+    /* vertical-align: middle; */
+    /* padding: 40px 65px 0px; */
+    /* border: 1px solid #ccc; */
+    /* border-radius: 5px; */
+    /* float: none; */
+    /*
+    background-color: #FFF;
+    height: 100vh;*/
+    background-image: url('/sirh_base/static/src/img/SIRH_ETECH.jpg');
+    background-size: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.oe_login_form,
+.oe_signup_form,
+.oe_reset_password_form {
+    max-width: 300px;
+    position: relative;
+    margin: 50px auto;
+    border: 1px solid #ddd;
+    padding: 15px;
+    background: #fff;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+    color: #FFFFFF;
+    background-color: #0f0f0f;
+    border-color: #999999;
+    /* padding-top: 3px; */
+    margin-top: auto;
+}
+
+.btn-primary {
+    color: #FFFFFF;
+    background-color: #42b9dd;
+    border-color: #54aec6;
+}
+
+.oe_website_login_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

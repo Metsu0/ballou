@@ -1,0 +1,290 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ballou_contract_category
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-12 13:16+0000\n"
+"PO-Revision-Date: 2021-04-12 13:16+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ballou_contract_category
+#: code:addons/ballou_contract_category/models/hr_trial_period.py:0
+#, python-format
+msgid ""
+"A contract cannot have two trial periods at the same status. (Excluding "
+"Renew)"
+msgstr "Un contrat ne peut pas avoir deux périodes d'essai de même statut.(À l'exclusion "
+"Renouveler)"
+
+#. module: ballou_contract_category
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_contract__category_id
+msgid "Categorie Professionel"
+msgstr "Categorie Professionel"
+
+#. module: ballou_contract_category
+#: model:ir.actions.act_window,name:ballou_contract_category.hr_contract_category_view_action
+msgid "Categorie de Contrat"
+msgstr "Categorie de Contrat"
+
+#. module: ballou_contract_category
+#: model_terms:ir.ui.view,arch_db:ballou_contract_category.view_hr_contract_category_tree
+msgid "Categorie de contrat"
+msgstr ""
+
+#. module: ballou_contract_category
+#: model:ir.ui.menu,name:ballou_contract_category.menu_category_view
+msgid "Catégorie professionnelle"
+msgstr ""
+
+#. module: ballou_contract_category
+#: model:ir.model,name:ballou_contract_category.model_hr_contract
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_trial_period__contract_id
+msgid "Contract"
+msgstr "Contrat"
+
+#. module: ballou_contract_category
+#: model:ir.ui.menu,name:ballou_contract_category.contrat_root
+msgid "Contrat"
+msgstr ""
+
+#. module: ballou_contract_category
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_contract_category__create_uid
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_contract_group__create_uid
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_trial_period__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: ballou_contract_category
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_contract_category__create_date
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_contract_group__create_date
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_trial_period__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: ballou_contract_category
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_contract_category__description
+msgid "Description"
+msgstr ""
+
+#. module: ballou_contract_category
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_contract__display_name
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_contract_category__display_name
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_contract_group__display_name
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_trial_period__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: ballou_contract_category
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_contract_group__month
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_trial_period__duration
+msgid "Duration"
+msgstr "Durée"
+
+#. module: ballou_contract_category
+#: model:ir.model,name:ballou_contract_category.model_hr_employee
+msgid "Employee"
+msgstr "Employé"
+
+#. module: ballou_contract_category
+#: model:ir.model,name:ballou_contract_category.model_hr_contract
+msgid "Employee Contract"
+msgstr "Contrat de l'employer"
+
+#. module: ballou_contract_category
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_trial_period__end_date
+msgid "End date"
+msgstr "Date de fin"
+
+#. module: ballou_contract_category
+#: model:ir.actions.act_window,name:ballou_contract_category.hr_contract_group_view_action
+msgid "Goupe de categorie de Contrat"
+msgstr ""
+
+#. module: ballou_contract_category
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_contract__group_id
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_contract_category__group
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_contract_category__group_id
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_trial_period__group_id
+msgid "Group"
+msgstr "Groupe"
+
+#. module: ballou_contract_category
+#: model:hr.contract.group,name:ballou_contract_category.group1
+#: model:ir.model.fields.selection,name:ballou_contract_category.selection__hr_contract_category__group__group_1
+msgid "Group 1"
+msgstr "Groupe 1"
+
+#. module: ballou_contract_category
+#: model:hr.contract.group,name:ballou_contract_category.group2
+#: model:ir.model.fields.selection,name:ballou_contract_category.selection__hr_contract_category__group__group_2
+msgid "Group 2"
+msgstr "Groupe 2"
+
+#. module: ballou_contract_category
+#: model:hr.contract.group,name:ballou_contract_category.group3
+#: model:ir.model.fields.selection,name:ballou_contract_category.selection__hr_contract_category__group__group_3
+msgid "Group 3"
+msgstr "Groupe 3"
+
+#. module: ballou_contract_category
+#: model:hr.contract.group,name:ballou_contract_category.group4
+#: model:ir.model.fields.selection,name:ballou_contract_category.selection__hr_contract_category__group__group_4
+msgid "Group 4"
+msgstr "Groupe 4"
+
+#. module: ballou_contract_category
+#: model:hr.contract.group,name:ballou_contract_category.group5
+#: model:ir.model.fields.selection,name:ballou_contract_category.selection__hr_contract_category__group__group_5
+msgid "Group 5"
+msgstr "Groupe 5"
+
+#. module: ballou_contract_category
+#: model_terms:ir.ui.view,arch_db:ballou_contract_category.view_hr_contract_group_tree
+msgid "Group de categorie de contrat"
+msgstr ""
+
+#. module: ballou_contract_category
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_contract_category__group_id
+msgid "Groupe"
+msgstr ""
+
+#. module: ballou_contract_category
+#: model:ir.ui.menu,name:ballou_contract_category.menu_group_view
+msgid "Groupe de Catégorie"
+msgstr ""
+
+#. module: ballou_contract_category
+#: model:ir.actions.act_window,name:ballou_contract_category.hr_contract_group_view_action
+msgid "Groupe de catégorie de Contrat"
+msgstr ""
+
+#. module: ballou_contract_category
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_contract__id
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_contract_category__id
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_contract_group__id
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_employee__id
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_trial_period__id
+msgid "ID"
+msgstr ""
+
+#. module: ballou_contract_category
+#: model:ir.model.fields.selection,name:ballou_contract_category.selection__hr_trial_period__state__progress
+msgid "In progress"
+msgstr "En cours"
+
+#. module: ballou_contract_category
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_contract____last_update
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_contract_category____last_update
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_contract_group____last_update
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_employee____last_update
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_trial_period____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: ballou_contract_category
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_contract_category__write_uid
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_contract_group__write_uid
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_trial_period__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: ballou_contract_category
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_contract_category__write_date
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_contract_group__write_date
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_trial_period__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: ballou_contract_category
+#: model_terms:ir.ui.view,arch_db:ballou_contract_category.view_hr_contract_group_form
+msgid "Mois"
+msgstr ""
+
+#. module: ballou_contract_category
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_contract_category__name
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_contract_group__name
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_trial_period__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: ballou_contract_category
+#: model_terms:ir.ui.view,arch_db:ballou_contract_category.view_hr_contract_category_form
+msgid "Nom de la Catégorie"
+msgstr ""
+
+#. module: ballou_contract_category
+#: model_terms:ir.ui.view,arch_db:ballou_contract_category.view_hr_contract_group_form
+msgid "Nom du Group"
+msgstr ""
+
+#. module: ballou_contract_category
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_employee__preavis
+msgid "Preavis"
+msgstr ""
+
+#. module: ballou_contract_category
+#: model:ir.model.fields.selection,name:ballou_contract_category.selection__hr_trial_period__state__refuse
+msgid "Refuse"
+msgstr "Refuser"
+
+#. module: ballou_contract_category
+#: model:ir.model.fields.selection,name:ballou_contract_category.selection__hr_trial_period__state__renew
+msgid "Renew"
+msgstr "Renouveler"
+
+#. module: ballou_contract_category
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_trial_period__start_date
+msgid "Start date"
+msgstr "Date de début"
+
+#. module: ballou_contract_category
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_trial_period__state
+msgid "Status"
+msgstr "Statut"
+
+#. module: ballou_contract_category
+#: model:ir.model.fields,field_description:ballou_contract_category.field_hr_contract__period_ids
+#: model_terms:ir.ui.view,arch_db:ballou_contract_category.view_inherit_hr_contract_form
+msgid "Trial Period"
+msgstr "Période d'essai"
+
+#. module: ballou_contract_category
+#: model:ir.model.fields.selection,name:ballou_contract_category.selection__hr_trial_period__state__validate
+msgid "Validate"
+msgstr "Valider"
+
+#. module: ballou_contract_category
+#: code:addons/ballou_contract_category/models/hr_trial_period.py:0
+#, python-format
+msgid ""
+"Veuillez renseigner une categorie Professionnel au Contrat de l'employer"
+msgstr ""
+
+#. module: ballou_contract_category
+#: model:ir.model,name:ballou_contract_category.model_hr_contract_category
+msgid "hr.contract.category"
+msgstr ""
+
+#. module: ballou_contract_category
+#: model:ir.model,name:ballou_contract_category.model_hr_contract_group
+msgid "hr.contract.group"
+msgstr ""
+
+#. module: ballou_contract_category
+#: model:ir.model,name:ballou_contract_category.model_hr_trial_period
+msgid "hr.trial.period"
+msgstr ""
+
+#. module: ballou_contract_category
+#: model_terms:ir.ui.view,arch_db:ballou_contract_category.view_hr_employee_form_inherit
+msgid "jours"
+msgstr ""

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+  <!-- REMOVE DEFAULT LINK CREATED WHEN CREATING PROFILE -->
+  <record id="hr.group_hr_manager" model="res.groups">
+    <field name="users" eval="[(3, ref('default_deputy_profile'))]"/>
+  </record>
+
+  <record id="hr.group_hr_manager" model="res.groups">
+    <field name="users" eval="[(3, ref('default_directeur_profile'))]"/>
+  </record>
+
+  <record id="hr.group_hr_manager" model="res.groups">
+    <field name="users" eval="[(3, ref('default_manager_profile'))]"/>
+  </record>
+
+  <!-- adding RH to administration>configuration by default -->
+  <record id="base.group_system" model="res.groups">
+    <field name="name">RH</field>
+    <field name="users" eval="[(4, ref('sirh_base_security.default_rh_profile'))]"/>
+  </record>
+
+  <record id="base.group_system" model="res.groups">
+    <field name="name">Administration eTech</field>
+    <field name="users" eval="[(4, ref('sirh_base_security.default_administration_profile'))]"/>
+  </record>
+
+  <!-- adding RH to contrats>gestionnaire  by default -->
+  <record id="hr_contract.group_hr_contract_manager" model="res.groups">
+    <field name="name">RH</field>
+    <field name="users" eval="[(4, ref('sirh_base_security.default_rh_profile'))]"/>
+  </record>
+
+  <record id="hr_contract.group_hr_contract_manager" model="res.groups">
+    <field name="name">Administration eTech</field>
+    <field name="users" eval="[(4, ref('sirh_base_security.default_administration_profile'))]"/>
+  </record>
+</odoo>

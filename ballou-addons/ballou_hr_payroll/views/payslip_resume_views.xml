@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="payslip_resume_view_graph2" model="ir.ui.view">
+      <field name="name">payslip.resume.graph</field>
+      <field name="model">payslip.resume</field>
+      <field name="arch" type="xml">
+        <graph string="Etat de Paie Graph" type="line">
+          <field name="nom_employe"/>
+          <field name="sal_net"/>
+        </graph>
+      </field>
+    </record>
+
+    <record id="payslip_resume_view_search2" model="ir.ui.view">
+      <field name="name">payslip.resume.search</field>
+      <field name="model">payslip.resume</field>
+      <field name="type">search</field>
+      <field name="arch" type="xml">
+        <search string="Recherche Etat de Paie">
+          <group expand="1" string="Group By...">
+            <filter string="Service" name="department_id" icon="terp-personal" domain="[]"
+                    context="{'group_by':'department_id'}"/>
+            <filter string="Société" name="company_id" icon="terp-personal" domain="[]"
+                    context="{'group_by':'company_id'}"/>
+            <filter string="Matricule" name="matricule" icon="terp-personal" domain="[]"
+                    context="{'group_by':'matricule'}"/>
+            <filter string="Employé" name="employee_id" icon="terp-personal" domain="[]"
+                    context="{'group_by':'employee_id'}"/>
+            <filter string="Date" name="debut_fiche_bulletin" icon="terp-personal" domain="[]"
+                    context="{'group_by':'debut_fiche_bulletin'}"/>
+            <filter string="Lot" name="payslip_run_id" icon="terp-personal" domain="[]"
+                    context="{'group_by':'payslip_run_id'}"/>
+            <filter string="Mode de paiement" name="mode_paiement" icon="terp-personal" domain="[]"
+                    context="{'group_by':'mode_paiement'}"/>
+            <filter string="Etat du bulletin de paie" name="etat_bulletin" icon="terp-personal" domain="[]"
+                    context="{'group_by':'etat_bulletin'}"/>
+            <filter string="Date de fin" name="fin_fiche_bulletin" icon="terp-personal" domain="[]"
+                    context="{'group_by':'fin_fiche_bulletin'}"/>
+            <filter string="Date" name="debut_fiche_bulletin" icon="terp-personal" domain="[]"
+                    context="{'group_by':'debut_fiche_bulletin'}"/>
+            <filter string="Banque" name="banque" icon="terp-personal" domain="[]"
+                    context="{'group_by':'banque'}"/>
+            <filter string="Poste occupé" name="poste" icon="terp-personal" domain="[]"
+                    context="{'group_by':'poste'}"/>
+            <filter string="N° CNAPS" name="numero_cnaps" icon="terp-personal" domain="[]"
+                    context="{'group_by':'numero_cnaps'}"/>
+            <filter string="Numéro de compte" name="numero_compte" icon="terp-personal" domain="[]"
+                    context="{'group_by':'numero_compte'}"/>
+          </group>
+          <field name="department_id" string="Service"/>
+          <field name="company_id" string="Société"/>
+          <field name="matricule" string="Matricule"/>
+          <field name="employee_id" string="Employé"/>
+          <field name="debut_fiche_bulletin" string="Date"/>
+          <field name="payslip_run_id" string="Lot"/>
+          <field name="mode_paiement" string="Mode de paiement"/>
+          <field name="etat_bulletin" string="Etat du bulletin de paie"/>
+          <field name="fin_fiche_bulletin" string="Date de fin"/>
+          <field name="banque" string="Banque"/>
+          <field name="poste" string="Poste occupé"/>
+          <field name="numero_cnaps" string="N° CNAPS"/>
+          <field name="numero_compte" string="Numéro de compte"/>
+        
+        </search>
+      </field>
+    </record>
+
+
+
+    <!-- Simple views -->
+    <record id="simple_payslip_resume_view_tree2" model="ir.ui.view">
+      <field name="name">payslip.resume.tree.simple</field>
+      <field name="model">payslip.resume</field>
+      <field name="arch" type="xml">
+        <tree string="Etat de Paie" create="false" edit="false" delete="false">
+          <field name="id" invisible='1'/>
+          <field name="payslip_reference"/>
+          <field name="employee_id" invisible='1'/>
+          <field name="payslip_run_id" invisible='1'/>
+          <field name="nom_lot_bulletin"/>
+          <field name="debut_fiche_bulletin"/>
+          <field name="matricule"/>
+          <field name="nom_employe"/>
+          <field name="department_id"/>
+          <field name="department_parent_id"/>
+          <field name="poste"/>
+          <!-- <field name="categorie"/>
+          <field name="salaire_net"/>
+          <field name="augmentation"/>
+          <field name="prime_qualitative"/>
+          <field name="ferie_maj_nuit"/>
+          <field name="prime_naissance_mariage"/>
+          <field name="autres_primes_etc"/>
+          <field name="repas"/>
+          <field name="allocation"/>
+          <field name="remboursement_medical"/>
+          <field name="remboursement_lunette"/>
+          <field name="avance"/>
+          <field name="mode_paiement"/>
+          <field name="net_a_payer"/> -->
+          <field name="etat_bulletin" string="Etat de bulletin"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="action_payslip_resume_view_simple2" model="ir.actions.act_window">
+      <field name="name">Etat de paie (vue simplifiée)</field>
+      <field name="res_model">payslip.resume</field>
+      <field name="view_mode">tree,graph</field>
+      <field name="search_view_id" ref="payslip_resume_view_search2"/>
+      <field name="view_id" ref="simple_payslip_resume_view_tree2"/>
+    </record>
+
+    <!-- Detailed views -->
+    <record id="detailed_payslip_resume_view_tree2" model="ir.ui.view">
+      <field name="name">payslip.resume.tree.detailed</field>
+      <field name="model">payslip.resume</field>
+      <field name="arch" type="xml">
+        <tree string="Etat de paie" create="false" edit="false" delete="false">
+          <field name="id" invisible='1'/>
+          <field name="company_id" invisible='1'/>
+          <field name="payslip_reference"/>
+          <field name="employee_id" invisible='1'/>
+          <field name="payslip_run_id" invisible='1'/>
+          <field name="nom_employe"/>
+          <field name="matricule"/>
+          <field name="department_id"/>
+          <field name="department_parent_id"/>
+          <field name="poste"/>          
+          <field name="sexe"/>
+          <field name="numero_cnaps"/>
+          <field name="code_banque"/>
+          <field name="guichet"/>
+          <field name="numero_compte"/>
+          <field name="banque"/>
+          <field name="numero_cin"/>
+          <field name="nom_lot_bulletin"/>
+          <field name="debut_fiche_bulletin"/>
+          <field name="fin_fiche_bulletin"/> 
+          <field name="sb"/>
+          <field name="tj"/>
+          <field name="th"/>
+          <field name="sb_j"/>
+          <field name="avtg_nat"/>
+          <field name="idmt_alg_frs"/>
+          <field name="idmt_logement"/>
+          <field name="idmt_depl"/>
+          <field name="idmt_diverses"/>
+          <field name="idmt_var_depl"/>
+          <field name="compl_repas"/>
+          <field name="coms"/>
+          <field name="prime_chnt"/>
+          <field name="prime_chnt_air"/>
+          <field name="prime_prod"/>
+          <field name="prime_fct"/>
+          <field name="prime_expt"/>
+          <field name="prime_asdt"/>
+          <field name="prime_rdmnt"/>
+          <field name="prime_cpmnt"/>
+          <field name="primes_diverses"/>
+          <field name="prime_astr"/>
+          <field name="prime_grtf"/>
+          <field name="prime_fin_annee"/>
+          <field name="prime_var_mens"/>
+          <field name="prime_obj_m1"/>
+          <field name="prime_ca_m1"/>
+          <field name="prime_hyg_srv_m1"/>
+          <field name="prime_clo_exr"/>
+          <field name="prime_anciennete"/>
+          <field name="prime_intrs"/>
+          <field name="hs_130"/>
+          <field name="hs_150"/>
+          <field name="hn_30"/>
+          <field name="hn_50"/>
+          <field name="md_40"/>
+          <field name="mf_100"/>
+          <field name="alloc_conge"/>
+          <field name="icc"/>
+          <field name="abs_conge"/>
+          <field name="abs_rem_aut"/>
+          <field name="abs_non_rem"/>
+          <field name="brut"/>
+          <field name="cnaps_pat"/>
+          <field name="ostie_pat"/>
+          <field name="fmfp"/>
+          <field name="cnaps"/>
+          <field name="ostie"/>
+          <field name="rappel_salaire"/>
+          <field name="rappel_alloc_conge"/>
+          <field name="rappel_prime_clo_exr"/>
+          <field name="rappel_prime_fin_annee"/>
+          <field name="rappel_prime_asdt"/>
+          <field name="rappel_prime_prod"/>
+          <field name="rappel_prime_ca_m1"/>
+          <field name="rappel_prime_cpmnt"/>
+          <field name="rappel_prime_expt"/>
+          <field name="rappel_prime_rdmnt"/>
+          <field name="rappel_prime_astr"/>
+          <field name="rappel_prime_anciennete"/>
+          <field name="rappel_prime_fct"/>
+          <field name="rappel_prime_grtf"/>
+          <field name="rappel_prime_chantier"/>
+          <field name="rappel_prime_intrs"/>
+          <field name="rappel_prime_chantier_air"/>
+          <field name="rappel_prime_hyg_srv_m1"/>
+          <field name="rappel_prime_obj_m1"/>
+          <field name="rappel_prime_var_mens"/>
+          <field name="rappel_primes_diverses"/> 
+          <field name="avc_quinzaine"/>
+          <field name="avc_spec"/>
+          <field name="alloc_fam"/>
+
+          <field name="avance_scolaire"/>
+          <field name="prime_rappel_risque"/>
+          <field name="indemnite_preavis"/>
+          <field name="demi_salaire_maternite"/>
+          <field name="absence_pour_conge_maternite"/>
+          <field name="prime_de_risque"/>
+          <field name="indmt_stage"/>
+
+          <field name="commission_sur_vente"/>
+          <field name="ded_enfant_a_charge"/>
+          <field name="indemnite_de_licenciement"/>
+          <field name="indemnite_de_logement_non_imposable"/>
+          <field name="irsa_brut"/>
+          <field name="mise_a_pied"/>
+          <field name="preavis_non_effectue"/>
+          <field name="prime_de_depart"/>
+          <field name="prime_de_retraite"/>
+          <field name="prime_interessement"/>
+          <field name="prime_d_interessement"/>
+          <field name="rappel"/>
+          <field name="regul_cnaps"/>
+          <field name="regul_ostie"/>
+          <field name="retraite_complementaire"/>
+
+          <field name="mi"/>
+          <field name="irsa"/>
+          <field name="sal_net"/>
+
+          <field name="mode_paiement"/>
+          <field name="etat_bulletin"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="action_payslip_resume_view_detailed2" model="ir.actions.act_window">
+      <field name="name">Etat de paie</field>
+      <field name="res_model">payslip.resume</field>
+      <field name="view_mode">tree,graph</field>
+      <field name="search_view_id" ref="payslip_resume_view_search2"/>
+      <field name="view_id" ref="simple_payslip_resume_view_tree2"/>
+    </record>
+
+  </data>
+</odoo>

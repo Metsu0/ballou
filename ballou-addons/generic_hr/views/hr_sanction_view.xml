@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- Inherit Form View to Modify it -->
+    <record id="hr_sanction_type_view_form_inherit" model="ir.ui.view">
+      <field name="name">view.hr.sanction.type.form.inherit</field>
+      <field name="model">hr.sanction.type</field>
+      <field name="inherit_id" ref="ballou_sanction.hr_sanction_type_view_form"/>
+      <field name="arch" type="xml">
+
+        <xpath expr="//field[@name='name']" position="after">
+          <!-- Add your fields or attributes here -->
+          <field name="type"/>
+        </xpath>
+
+      </field>
+    </record>
+
+  </data>
+</odoo>

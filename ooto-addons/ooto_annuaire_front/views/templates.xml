@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <template id="my_portal_annuaire" name="My annuaire"
+              inherit_id="ooto_hr_account.portal_my_details_inherit">
+      <xpath expr="//div[@class='emplacement_annuaire_dashboard animationblockeffect']" position="inside">
+        <t t-call="ooto_annuaire_front.bloc_annuaire"/>
+      </xpath>
+    </template>
+  </data>
+</odoo>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="mail_template_notify_all" model="mail.template">
+      <field name="name">Notification to all employees eTech: Send by Email</field>
+      <field name="model_id" ref="sirh_hr.model_front_notification_all"/>
+      <field name="subject">ALLO ALLO etech!</field>
+      <field name="email_from">noreply@noreply.nr</field>
+<!--      <field name="partner_to">l.razafindrabe@etechconsulting-mg.com</field>-->
+      <field name="body_html" type="html">
+        <div>
+          Hi folks,
+          <br/>
+          <br/>
+          Some news update are available on:
+          <br/>
+          <br/>
+          % if object.newsletter:
+          <strong>
+            <span style="margin-left:5px">NEWSLETTER</span>: ${object.base_url}/check/newsletter
+          </strong>
+          <br/>
+          % endif
+          % if object.good_to_know:
+          <strong>
+            <span style="margin-left:5px">BON A SAVOIR</span>: ${object.base_url}/check/bon-a-savoir
+          </strong>
+          <br/>
+          % endif
+          % if object.we_hire:
+          <strong>
+            <span style="margin-left:5px">NOUS RECRUTONS</span>: ${object.base_url}/check/nous-recrutons
+          </strong>
+          <br/>
+          % endif
+          % if object.know_how:
+          <strong>
+            <span style="margin-left:5px">COIN BIEN ETRE</span>: ${object.base_url}/check/coin-bien-etre
+          </strong>
+          <br/>
+          % endif
+
+          <br/><br/>
+          We invite you to check them out when it's possible.
+          <br/><br/>
+          Regards,
+          <br/>
+          HR Team
+        </div>
+      </field>
+    </record>
+  </data>
+</odoo>

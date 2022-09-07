@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_direction,access_direction,model_hr_direction,,1,1,1,1
+access_hr_level_user,hr.level.user,sirh_hr.model_hr_level,hr.group_hr_user,1,0,0,0
+access_hr_level_manager,hr.level.manager,sirh_hr.model_hr_level,hr.group_hr_manager,1,1,1,1
+access_hr_spinneret_user,hr.spinneret user,sirh_hr.model_hr_spinneret,hr.group_hr_user,1,1,1,1
+access_hr_contract_category_user,hr.contract.category.user,model_hr_contract_category,hr.group_hr_user,1,0,0,0
+access_hr_contract_category_manager,hr.contract.category.manager,model_hr_contract_category,hr.group_hr_manager,1,1,1,1
+access_hr_payslip_payment_mode_user,hr.payslip.payment.mode.user,model_hr_payslip_payment_mode,hr.group_hr_user,1,0,0,0
+access_hr_payslip_payment_mode_manager,hr.payslip.payment.mode.manager,model_hr_payslip_payment_mode,hr.group_hr_manager,1,1,1,1
+access_hr_employee_children,hr.employee.children,sirh_hr.model_hr_employee_children,hr.group_hr_user,1,1,1,1

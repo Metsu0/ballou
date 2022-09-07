@@ -1,0 +1,27 @@
+-
+  Manage natives translations
+-
+  !python {model: ir.translation}: |
+    to_do_translations = [{'module':'hr', 'src':'Departments', 'value':'Centres de Compétence'},
+      {'module':'hr', 'src':'Department', 'value':'Centre de Compétence'},
+      {'module':'hr', 'src':'department', 'value':'Centre de Compétence'},
+      {'module':'hr', 'src':'Department Name', 'value':'Nom du Centre de Compétence'},
+      {'module':'hr', 'src':'Parent Department', 'value':'Centre de Compétence parent'},
+      {'module':'hr', 'src':'ou cannot create recursive departments.', 'value':'Vous ne pouvez pas créer des Centres de Compétences récursifs.'},
+      {'module':'hr', 'src':'The name of the job position must be unique per department in company!', 'value':'Le nom du poste doit être unique par Centre de Compétence de la société !'},
+      {'module':'hr_contrat', 'src':'Department', 'value':'Centre de Compétence'},
+      {'module':'hr_holidays', 'src':'Report by Department', 'value':'Rapport par Centre de Compétence'},
+      {'module':'hr_holidays', 'src':'My Department Leaves', 'value':'Les congés de mon Centre de Compétence'},
+      {'module':'hr_recruitment', 'src':'Departments', 'value':'Centres de Compétences'},
+      {'module':'hr_recruitment', 'src':'Department', 'value':'Centre de Compétence'},
+      {'module':'hr_recruitment', 'src':'By Department', 'value':'Par Centre de Compétence'},
+      {'module':'hr_recruitment', 'src':'HR Department', 'value':'Centre de Compétence RH'},
+      {'module':'hr_recruitment', 'src':'Department Manager', 'value':'Gestionnaire du Centre de Compétence'},
+      {'module':'hr_recruitment', 'src':'The name of the job position must be unique per department in company!', 'value':'Le nom du poste doit être unique par Centre de Compétence de la société !'}]
+
+    for vals in to_do_translations:
+      if vals.get('module', False) and vals.get('src', False) and vals.get('value', False):
+        domain = [('lang', '=', 'fr_FR'), ('module', '=', vals['module']), ('src', '=', vals['src'])]
+        if vals.get('name', False):
+          domain.append(('name', '=', vals['name']))
+        self.search(domain).write({'value': vals['value']})

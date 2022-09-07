@@ -1,0 +1,509 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ooto_annuaire
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-03 09:40+0000\n"
+"PO-Revision-Date: 2020-03-03 09:40+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_employee_section__an_configuration_id_1
+msgid "An Configuration Id 1"
+msgstr ""
+
+#. module: ooto_annuaire
+#: model:ir.actions.act_window,name:ooto_annuaire.ooto_annuaire_action
+#: model:ir.actions.act_window,name:ooto_annuaire.ooto_annuaire_configuration_action
+#: model:ir.actions.act_window,name:ooto_annuaire.ooto_employee_section_action
+#: model:ir.ui.menu,name:ooto_annuaire.menu_ooto_annuaire_configuration_parameter_annuaire
+#: model:ir.ui.menu,name:ooto_annuaire.menu_root_annuaire
+#: model_terms:ir.ui.view,arch_db:ooto_annuaire.hr_employee_view_form_inherit_annuaire
+msgid "Annuaire"
+msgstr ""
+
+#. module: ooto_annuaire
+#: model:ir.model,name:ooto_annuaire.model_an_tuto
+msgid "Annuaire Tutoriel"
+msgstr ""
+
+#. module: ooto_annuaire
+#: model:ir.model,name:ooto_annuaire.model_annuaire_configuration
+msgid "Annuaire configuration"
+msgstr ""
+
+#. module: ooto_annuaire
+#: model:ir.model,name:ooto_annuaire.model_annuaire_associated_contacts
+msgid "Annuaire configuration associated contacts"
+msgstr ""
+
+#. module: ooto_annuaire
+#: model:ir.model,name:ooto_annuaire.model_annuaire_employee_section
+msgid "Annuaire configuration employee section"
+msgstr ""
+
+#. module: ooto_annuaire
+#: model:ir.actions.act_window,name:ooto_annuaire.ooto_annuaire_rules_action
+msgid "Annuaire rules"
+msgstr "Règles"
+
+#. module: ooto_annuaire
+#: model_terms:ir.ui.view,arch_db:ooto_annuaire.view_ooto_annuaire_filter
+msgid "Annuaire search"
+msgstr ""
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_configuration__contact_fields_ids
+#: model:ir.model.fields,field_description:ooto_annuaire.field_hr_employee__contact_fields_ids
+msgid "Associated Contact"
+msgstr "Contact associé"
+
+#. module: ooto_annuaire
+#: model:ir.model.fields.selection,name:ooto_annuaire.selection__ir_model_fields__ttype_annuaire__binary
+msgid "Binary"
+msgstr "Binaire"
+
+#. module: ooto_annuaire
+#: model:ir.model.fields.selection,name:ooto_annuaire.selection__ir_model_fields__ttype_annuaire__boolean
+msgid "Boolean"
+msgstr "Booléen"
+
+#. module: ooto_annuaire
+#: code:addons/ooto_annuaire/models/ir_model.py:0
+#, python-format
+msgid "Can only rename one field at a time!"
+msgstr ""
+
+#. module: ooto_annuaire
+#: code:addons/ooto_annuaire/models/ir_model.py:0
+#, python-format
+msgid "Changing the model of a field is forbidden!"
+msgstr ""
+
+#. module: ooto_annuaire
+#: code:addons/ooto_annuaire/models/ir_model.py:0
+#, python-format
+msgid "Changing the storing system for field \"%s\" is not allowed."
+msgstr ""
+
+#. module: ooto_annuaire
+#: code:addons/ooto_annuaire/models/ir_model.py:0
+#, python-format
+msgid ""
+"Changing the type of a field is not yet supported. Please drop it and create"
+" it again!"
+msgstr ""
+
+#. module: ooto_annuaire
+#: model:ir.model.fields.selection,name:ooto_annuaire.selection__ir_model_fields__ttype_annuaire__char
+msgid "Char"
+msgstr "Caractère"
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_associated_contacts__an_configuration_id_2
+msgid "Configuration"
+msgstr ""
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_an_tuto__count_page
+msgid "Count Page"
+msgstr ""
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_an_tuto__create_uid
+#: model:ir.model.fields,field_description:ooto_annuaire.field_an_tuto_page__create_uid
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_associated_contacts__create_uid
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_configuration__create_uid
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_employee_section__create_uid
+#: model:ir.model.fields,field_description:ooto_annuaire.field_ooto_annuaire_rules__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_an_tuto__create_date
+#: model:ir.model.fields,field_description:ooto_annuaire.field_an_tuto_page__create_date
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_associated_contacts__create_date
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_configuration__create_date
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_employee_section__create_date
+#: model:ir.model.fields,field_description:ooto_annuaire.field_ooto_annuaire_rules__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: ooto_annuaire
+#: model:ir.model.fields.selection,name:ooto_annuaire.selection__ir_model_fields__ttype_annuaire__date
+msgid "Date"
+msgstr ""
+
+#. module: ooto_annuaire
+#: model:ir.model.fields.selection,name:ooto_annuaire.selection__ir_model_fields__ttype_annuaire__datetime
+msgid "Datetime"
+msgstr ""
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_an_tuto_page__description
+msgid "Description"
+msgstr ""
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_an_tuto__display_name
+#: model:ir.model.fields,field_description:ooto_annuaire.field_an_tuto_page__display_name
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_associated_contacts__display_name
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_configuration__display_name
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_employee_section__display_name
+#: model:ir.model.fields,field_description:ooto_annuaire.field_ooto_annuaire_rules__display_name
+msgid "Display Name"
+msgstr "Afficher Nom"
+
+#. module: ooto_annuaire
+#: model:ir.actions.act_window,name:ooto_annuaire.ooto_annuaire_dynamic_fields
+msgid "Dynamic Fields"
+msgstr "Champs dynamiques"
+
+#. module: ooto_annuaire
+#: model:ir.ui.menu,name:ooto_annuaire.menu_ooto_annuaire_dynamic_fields
+msgid "Dynamic fields"
+msgstr "Champs dynamiques"
+
+#. module: ooto_annuaire
+#: model:ir.model,name:ooto_annuaire.model_hr_employee
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_associated_contacts__employee_id
+#: model:ir.model.fields,field_description:ooto_annuaire.field_ooto_annuaire_rules__emp_id_1
+#: model_terms:ir.ui.view,arch_db:ooto_annuaire.annuaire_kanban_view
+msgid "Employee"
+msgstr "Employé"
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_ir_model_fields__ttype_annuaire
+msgid "Field Type"
+msgstr "Type de Champ"
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_associated_contacts__fields_id
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_employee_section__fields_id
+msgid "Field name"
+msgstr "Champs"
+
+#. module: ooto_annuaire
+#: model:ir.model,name:ooto_annuaire.model_ir_model_fields
+msgid "Fields"
+msgstr "Champs"
+
+#. module: ooto_annuaire
+#: model:ir.model.fields.selection,name:ooto_annuaire.selection__ir_model_fields__ttype_annuaire__float
+msgid "Float"
+msgstr "Flottant"
+
+#. module: ooto_annuaire
+#: model:ir.model.fields.selection,name:ooto_annuaire.selection__ir_model_fields__ttype_annuaire__html
+msgid "Html"
+msgstr ""
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_an_tuto__id
+#: model:ir.model.fields,field_description:ooto_annuaire.field_an_tuto_page__id
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_associated_contacts__id
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_configuration__id
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_employee_section__id
+#: model:ir.model.fields,field_description:ooto_annuaire.field_ooto_annuaire_rules__id
+msgid "ID"
+msgstr ""
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_an_tuto_page__support
+msgid "Image"
+msgstr ""
+
+#. module: ooto_annuaire
+#: model:ir.model.fields.selection,name:ooto_annuaire.selection__ir_model_fields__ttype_annuaire__integer
+msgid "Integer"
+msgstr "Entier"
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_res_users__is_connected_front
+msgid "Is Connected Front"
+msgstr ""
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_hr_employee__is_empty
+msgid "Is empty"
+msgstr ""
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_employee_section__is_readonly
+msgid "Is readonly"
+msgstr ""
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_an_tuto____last_update
+#: model:ir.model.fields,field_description:ooto_annuaire.field_an_tuto_page____last_update
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_associated_contacts____last_update
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_configuration____last_update
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_employee_section____last_update
+#: model:ir.model.fields,field_description:ooto_annuaire.field_ooto_annuaire_rules____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_an_tuto__write_uid
+#: model:ir.model.fields,field_description:ooto_annuaire.field_an_tuto_page__write_uid
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_associated_contacts__write_uid
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_configuration__write_uid
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_employee_section__write_uid
+#: model:ir.model.fields,field_description:ooto_annuaire.field_ooto_annuaire_rules__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_an_tuto__write_date
+#: model:ir.model.fields,field_description:ooto_annuaire.field_an_tuto_page__write_date
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_associated_contacts__write_date
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_configuration__write_date
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_employee_section__write_date
+#: model:ir.model.fields,field_description:ooto_annuaire.field_ooto_annuaire_rules__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_ir_model_fields__model_id
+msgid "Model"
+msgstr "Modèle"
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_configuration__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_an_tuto__page_number
+msgid "Number of page"
+msgstr "Nombre de page"
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_ooto_annuaire_rules__target_employee_number
+msgid "Number of target collaborator"
+msgstr "Nombre de collaborateur cible"
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_ooto_annuaire_rules__visible_contact_number
+msgid "Number of visible contact"
+msgstr "Nombre de contact visible"
+
+#. module: ooto_annuaire
+#: model:ir.model,name:ooto_annuaire.model_ooto_annuaire_rules
+msgid "OOTO ANNUAIRE RULES"
+msgstr ""
+
+#. module: ooto_annuaire
+#: model_terms:ir.ui.view,arch_db:ooto_annuaire.otoo_annuaire_tutoriel_page_form_view
+msgid "Page"
+msgstr ""
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_an_tuto_page__number
+msgid "Page concerned"
+msgstr "Page concernée"
+
+#. module: ooto_annuaire
+#: model:ir.model,name:ooto_annuaire.model_an_tuto_page
+msgid "Page of tutorial"
+msgstr ""
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_an_tuto__page_id
+msgid "Pages"
+msgstr ""
+
+#. module: ooto_annuaire
+#: code:addons/ooto_annuaire/models/ir_model.py:0
+#, python-format
+msgid "Renaming sparse field \"%s\" is not allowed"
+msgstr ""
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_hr_employee__rule_id_2
+msgid "Rule"
+msgstr ""
+
+#. module: ooto_annuaire
+#: model:ir.ui.menu,name:ooto_annuaire.menu_ooto_annuaire_rules
+msgid "Rules"
+msgstr "Règles"
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_configuration__employees_fields_ids
+msgid "Section employee"
+msgstr "Section Employé"
+
+#. module: ooto_annuaire
+#: model:ir.model.fields.selection,name:ooto_annuaire.selection__ir_model_fields__ttype_annuaire__selection
+msgid "Selection"
+msgstr "Sélection"
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_ooto_annuaire_rules__target_employee_ids
+msgid "Target employee"
+msgstr ""
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_ooto_annuaire_rules__target_employee_domain
+msgid "Target employee domain"
+msgstr "Collaborateur ciblé"
+
+#. module: ooto_annuaire
+#: model:ir.model.fields.selection,name:ooto_annuaire.selection__ir_model_fields__ttype_annuaire__text
+msgid "Text"
+msgstr "Texte"
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,help:ooto_annuaire.field_ir_model_fields__model_id
+msgid "The model this field belongs to"
+msgstr "Le modèle auquel ce champ appartient"
+
+#. module: ooto_annuaire
+#: code:addons/ooto_annuaire/models/ooto_annuaire_tutoriel.py:0
+#: code:addons/ooto_annuaire/models/ooto_annuaire_tutoriel.py:0
+#, python-format
+msgid "The value of page number must be positive ."
+msgstr "La valeur du numero de page doit être un entier positif. "
+
+#. module: ooto_annuaire
+#: code:addons/ooto_annuaire/models/ooto_annuaire_tutoriel.py:0
+#: code:addons/ooto_annuaire/models/ooto_annuaire_tutoriel.py:0
+#, python-format
+msgid "The value of page number must be positve and lower or equal to %s ."
+msgstr "La valeur du numero de page doit être positive et inférieue à %s ."
+
+#. module: ooto_annuaire
+#: code:addons/ooto_annuaire/models/ooto_annuaire_tutoriel.py:0
+#: code:addons/ooto_annuaire/models/ooto_annuaire_tutoriel.py:0
+#: code:addons/ooto_annuaire/models/ooto_annuaire_tutoriel.py:0
+#, python-format
+msgid ""
+"The value of page number must be unique. Please choose another number or "
+"change the other pages "
+msgstr ""
+"La valeur du numero de page doit être unique. Veuillez choisir un autre "
+"numero ou changer celui des autres pages. "
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_an_tuto__title
+#: model:ir.model.fields,field_description:ooto_annuaire.field_an_tuto_page__title
+#: model:ir.model.fields,field_description:ooto_annuaire.field_ooto_annuaire_rules__title
+msgid "Title"
+msgstr "Titre"
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_an_tuto_page__tuto
+msgid "Tuto"
+msgstr ""
+
+#. module: ooto_annuaire
+#: model:ir.actions.act_window,name:ooto_annuaire.ooto_annuaire_tutoriel_action
+#: model:ir.ui.menu,name:ooto_annuaire.menu_ooto_annuaire_configuration_parameter_tutoriel
+#: model_terms:ir.ui.view,arch_db:ooto_annuaire.otoo_annuaire_tutoriel_form_view
+msgid "Tutoriel"
+msgstr ""
+
+#. module: ooto_annuaire
+#: model:ir.model,name:ooto_annuaire.model_res_users
+msgid "Users"
+msgstr "Utilisateurs"
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_ooto_annuaire_rules__visible_contact_employee_ids
+#: model:ir.model.fields,field_description:ooto_annuaire.field_res_users__visible_contact_employee_ids
+msgid "Visible contact"
+msgstr ""
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_ooto_annuaire_rules__visible_contact_domain
+msgid "Visible contact domain"
+msgstr "Contact visible"
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_associated_contacts__is_visible_front_contact
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_employee_section__is_visible_front_employee
+msgid "Visible front"
+msgstr ""
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_ir_model_fields__is_visible_front_contact
+msgid "Visible front Contact"
+msgstr ""
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_ir_model_fields__is_visible_front_employee
+msgid "Visible front Employee"
+msgstr ""
+
+#. module: ooto_annuaire
+#: code:addons/ooto_annuaire/models/ooto_annuaire_configuration.py:0
+#, python-format
+msgid "You can not remove image, name or email"
+msgstr ""
+"Vous ne pouvez pas supprimer les champs image, nom et adresse electronique "
+"professionnelle. "
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_associated_contacts__logo
+msgid "logo"
+msgstr ""
+
+#. module: ooto_annuaire
+#: model:ir.ui.menu,name:ooto_annuaire.menu_ooto_annuaire_configuration
+msgid "Parameters annuaires"
+msgstr "Parametres annuaires"
+
+
+#. module: ooto_annuaire
+#: model:ir.model,name:ooto_annuaire.model_annuaire_tuto
+msgid "Annuaire Tutorial"
+msgstr "Tutoriel pour l'annuaire"
+
+#. module: ooto_annuaire
+#: model:ir.model,name:ooto_annuaire.model_annuaire_tuto_page
+msgid "Annuaire tutorial page in website"
+msgstr "Tutoriel pour l'annuaire"
+
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_tuto_page__tuto_id
+msgid "Concerned tutorial"
+msgstr "Tutoriel concerné"
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_tuto_page__page_number
+msgid "Page number"
+msgstr "Numéro de page"
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_tuto__name
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_tuto_page__name
+#: model:ir.model.fields,field_description:ooto_annuaire.field_ooto_annuaire_rules__title
+msgid "Title"
+msgstr "Titre"
+
+
+#. module: ooto_annuaire
+#: model:ir.ui.menu,name:ooto_annuaire.menu_ooto_annuaire_configuration_parameter_tutoriel
+msgid "Tutorial"
+msgstr "Tutoriel"
+
+#. module: ooto_annuaire
+#: model:ir.model.fields,field_description:ooto_annuaire.field_annuaire_tuto__page_ids
+msgid "Tutorial pages"
+msgstr "Pages du tutoriel"
+
+#. module: ooto_annuaire
+#: model:ir.actions.act_window,name:ooto_annuaire.ooto_annuaire_tutorial_action
+msgid "Tutorial pages configuration"
+msgstr "Configuration des pages du tutoriel"
+

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- OOTO Onboarding users -->
+    <record model="res.groups" id="group_ooto_onboarding_user">
+      <field name="name">OOTO Onboarding User</field>
+    </record>
+
+    <!-- OOTO Onboarding managers -->
+    <record model="res.groups" id="group_ooto_onboarding_manager">
+      <field name="name">OOTO Onboarding Manager</field>
+      <field name="implied_ids" eval="[(4, ref('ooto_onboarding.group_ooto_onboarding_user'))]"/>
+      <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+    </record>
+
+    <record id="only_draft_can_delete" model="ir.rule">
+      <field name="name">Only Draft can delete Onboarding</field>
+      <field name="model_id" ref="model_hr_onboarding"/>
+      <field name="perm_read" eval="0"/>
+      <field name="perm_write" eval="0"/>
+      <field name="perm_create" eval="0"/>
+      <field name="perm_unlink" eval="1"/>
+      <field name="domain_force">
+        [('onboarding_state','=','draft')]
+      </field>
+    </record>
+
+    <!--Record rules for active/inactive survey stage-->
+    <!--<record id="survey_stage_users_access" model="ir.rule">-->
+    <!--<field name="name">Access to survey stage</field>-->
+    <!--<field name="model_id" ref="survey.model_survey_stage"/>-->
+    <!--<field name="domain_force">[('active', '=', True)]</field>-->
+    <!--<field eval="1" name="perm_unlink"/>-->
+    <!--<field eval="1" name="perm_write"/>-->
+    <!--<field eval="1" name="perm_read"/>-->
+    <!--<field eval="1" name="perm_create"/>-->
+    <!--</record>-->
+
+    <!-- Profiles access security -->
+    <record id="ooto_base_security.superadmin_profile" model="res.users">
+      <field name="groups_id" eval="[
+           (4,ref('hr_contract.group_hr_contract_manager')),
+           (4,ref('ooto_onboarding.group_ooto_onboarding_user')),
+           (4,ref('ooto_onboarding.group_ooto_onboarding_manager')),
+           (4,ref('survey.group_survey_manager')
+           )]"/>
+    </record>
+    <record id="ooto_base_security.admin_cse_profile" model="res.users">
+      <field name="groups_id" eval="[
+          (4,ref('hr_contract.group_hr_contract_manager')),
+          (4,ref('ooto_onboarding.group_ooto_onboarding_user')),
+          (4,ref('ooto_onboarding.group_ooto_onboarding_manager')),
+          (4,ref('survey.group_survey_manager')
+
+          )]"/>
+    </record>
+      <record id="ooto_base_security.open_right_profile" model="res.users">
+          <field name="groups_id" eval="[
+          (4, ref('ooto_onboarding.group_ooto_onboarding_user')),
+          (4,ref('survey.group_survey_manager'))]"/>
+      </record>
+  </data>
+</odoo>

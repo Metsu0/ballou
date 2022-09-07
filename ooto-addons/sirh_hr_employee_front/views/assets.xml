@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <template id="assets_frontend_sirh_hr_employee" name="sirh hr employee assets" inherit_id="web.assets_frontend">
+      <xpath expr="." position="inside">
+        <link rel="stylesheet" type="text/scss" href="/sirh_hr_employee_front/static/src/scss/sirh_portal.scss"/>
+        <!--<script type="text/javascript" src="/sirh_hr_employee_front/static/src/js/jquery-ui_min.js"></script>-->
+        <script type="text/javascript" src="/sirh_hr_employee_front/static/src/js/portal_sirh.js"></script>
+			</xpath>
+    </template>
+  </data>
+</odoo>

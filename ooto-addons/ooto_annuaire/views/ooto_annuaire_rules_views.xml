@@ -1,0 +1,57 @@
+<odoo>
+  <data>
+    <record id="ooto_annuaire_rules_tree_view" model="ir.ui.view">
+      <field name="name">ooto.annuaire.rules.tree.view</field>
+      <field name="model">ooto.annuaire.rules</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="target_employee_number"/>
+          <field name="visible_contact_number"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="ooto_annuaire_rules_form_view" model="ir.ui.view">
+      <field name="name">ooto.annuaire.rules.form.view</field>
+      <field name="model">ooto.annuaire.rules</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="target_employee_number" invisible="1"/>
+              <field name="visible_contact_number" invisible="1"/>
+              <field name="target_employee_ids" invisible="1"/>
+              <field name="visible_contact_employee_ids" invisible="1"/>
+            </group>
+            <group>
+              <field name="target_employee_domain" widget="domain" options="{'model': 'hr.employee'}"/>
+            </group>
+            <group>
+              <field name="visible_contact_domain" widget="domain" options="{'model': 'hr.employee'}"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="ooto_annuaire_rules_action" model="ir.actions.act_window">
+      <field name="name">Annuaire rules</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">ooto.annuaire.rules</field>
+      <field name="view_mode">tree,form</field>
+      <field name="context">{
+        'tree_view_ref':'ooto_annuaire.ooto_annuaire_rules_tree_view',
+        'form_view_ref':'ooto_annuaire.ooto_annuaire_rules_form_view'
+        }
+      </field>
+    </record>
+
+    <menuitem id="menu_ooto_annuaire_rules"
+              name="Rules"
+              parent="ooto_annuaire.menu_ooto_annuaire_configuration"
+              action="ooto_annuaire_rules_action"
+              sequence="5"/>
+  </data>
+</odoo>

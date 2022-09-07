@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <!--<template id="assets_hr_holidays" inherit_id="web.assets_frontend">-->
+    <!--<xpath expr="." position="inside">-->
+      <!--<link href="/ooto_hr_holidays_front/static/src/css/pignose.calendar.min.css" rel="stylesheet"/>-->
+      <!--<script type="text/javascript" src="/ooto_hr_holidays_front/static/src/js/hr_holidays.js"></script>-->
+      <!--<script type="text/javascript" src="/ooto_hr_holidays_front/static/src/js/moment.min.js"></script>-->
+      <!--<script type="text/javascript" src="/ooto_hr_holidays_front/static/src/js/pignose.calendar.js"></script>-->
+
+    <!--</xpath>-->
+  <!--</template>-->
+
+  <template id="assets_frontend" inherit_id="web.assets_frontend">
+    <xpath expr="." position="inside">
+      <link href="/ooto_hr_holidays_front/static/src/scss/loader_confirm_leaves.scss" rel="stylesheet"/>
+      <link href="/ooto_hr_holidays_front/static/src/scss/hr_holidays.scss" rel="stylesheet"/>
+      <link href="/ooto_hr_holidays_front/static/src/scss/holidays.scss" rel="stylesheet"/>
+      <link href="/ooto_hr_holidays_front/static/src/css/pignose.calendar.min.css" rel="stylesheet"/>
+      <!--<script type="text/javascript" src="/web/static/lib/moment/moment.js"></script>-->
+      <script type="text/javascript" src="/ooto_hr_holidays_front/static/src/js/pignose.calendar.js"></script>
+      <script type="text/javascript" src="/ooto_hr_holidays_front/static/src/js/hr_holidays.js"></script>
+    </xpath>
+  </template>
+
+</odoo>

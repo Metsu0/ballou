@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <data>
+    <record id="contract_paper_format" model="report.paperformat">
+      <field name="name">Contract paper format</field>
+      <field name="default" eval="True"/>
+      <field name="format">A4</field>
+      <field name="orientation">Portrait</field>
+      <field name="header_line" eval="False"/>
+      <field name="header_spacing">40</field>
+      <field name="margin_top">35</field>
+      <field name="margin_left">0</field>
+      <field name="margin_right">0</field>
+      <field name="margin_bottom">20</field>
+      <field name="dpi">90</field>
+    </record>
+
+    <report
+        id="action_report_contract"
+        model="hr.contract"
+        string="Contract"
+        report_type="qweb-pdf"
+        paperformat="contract_paper_format"
+        name="sirh_hr.report_contract"
+        file="sirh_hr.report_contract"
+        print_report_name="'Contract of - %s' % (object.employee_id.name)"
+    />
+  </data>
+</odoo>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <template id="receipt_template">
+      <t t-call="web.basic_layout">
+        <t t-foreach="docs" t-as="o">
+          <div class="receipt">
+            <div>
+              <div style="text-align: center;">
+                <t t-set="web_base_url"
+                 t-value="request.env['ir.config_parameter'].sudo().search([('key', '=', 'web.base.url')])[0].value"/>
+                  <t t-set="receipt_logo_url"
+                     t-value="web_base_url + '/ballou_sales/static/src/img/black_logo.png'"/>
+                  <img t-attf-src="{{receipt_logo_url}}" width="170" />
+                  <br/>
+              </div>
+              <div style="margin:1px">
+                <table style="width:100%;">
+                  <tr style="line-height: 16px">
+                    <td style="text-align:center;font-size:13px"><span t-field=" o.company_id.name"/></td>
+                  </tr>
+                  <tr style="line-height: 16px">
+                    <td style="text-align:center;font-size:13px"><span t-field=" o.company_id.phone"/></td>
+                  </tr>
+                  <tr style="line-height: 16px">
+                    <td style="text-align:center;font-size:13px;"><span t-field=" o.company_id.email"/></td>
+                  </tr>
+                  <tr style="line-height: 16px">
+                    <td style="text-align:center;font-size:13px;"><span t-field=" o.company_id.website"/></td>
+                  </tr>
+                  <tr style="line-height: 16px">
+                    <td style="text-align:center;font-size:13px;">
+                      <t t-if="o.company_id.partner_id.nif">
+                        <span>
+                          NIF:
+                          <t t-esc="o.company_id.partner_id.nif"/>
+                          <br/>
+                        </span>
+                      </t>
+                    </td>
+                  </tr>
+                  <tr style="line-height: 16px">
+                    <td style="text-align:center;font-size:13px;">
+                      <t t-if="o.company_id.partner_id.stat">
+                        <span>
+                          STAT:
+                          <t t-esc="o.company_id.partner_id.stat"/>
+                        </span>
+                        <br/>
+                      </t>
+                    </td>
+                  </tr>
+                  <tr style="line-height: 16px">
+                    <td style="text-align:center;">-----------------------------</td>
+                  </tr>
+                  <tr style="line-height: 16px">
+                    <td style="text-align:center;font-size:13px;">Servi par <span t-field=" o.user_id"/></td>
+                  </tr>
+                  <tr style="line-height: 16px">
+                    <td style="text-align:center;font-size:13px;">Client: <span t-field=" o.partner_id"/></td>
+                  </tr>
+                  <tr style="line-height: 16px">
+                    <td style="text-align:center;font-size:13px;">NO: <span t-field=" o.name"/></td>
+                  </tr>
+                  <tr style="line-height: 16px">
+                    <td style="text-align:center;font-size:13px;">Du: <span t-field=" o.invoice_date" widget="heure"/></td>
+                  </tr>
+                  <tr style="line-height: 16px">
+                    <td style="text-align:center;font-size:13px;"><span t-field=" o.invoice_origin"/></td>
+                  </tr>
+                </table>
+              </div>
+
+              <div >
+                <table style="width:100%;">
+                  <t t-foreach="o.invoice_line_ids" t-as="line">
+                    <tr style="line-height: 16px">
+                      <tr style="line-height: 16px">
+                        <td colspan="2" style="font-size:13px;">[<span t-field="line.product_id.default_code"/>] <span t-field="line.product_id.name"/></td>
+                      </tr>
+                      <tr style="line-height: 16px">
+                        <td style="font-size:13px;">
+                          <span t-field="line.quantity"/> <span t-field="line.product_uom_id"/> X <span t-field="line.price_unit"/>
+                        </td>
+                        <td class="amount" style="font-size:13px; text-align:right;">
+                          <b><span t-field=" line.price_subtotal" /></b>
+                        </td>
+                      </tr>
+                      <tr style="line-height: 16px">
+                        <td style="font-size:13px;">
+                          Remise <span t-field=" line.discount" /> %
+                        </td>
+                      </tr>
+                      <tr style="line-height: 16px">
+                        <td></td>
+                        <td>----------</td>
+                      </tr>
+                    </tr>
+                  </t>
+                  <tr style="line-height: 16px">
+                    <td style="font-size:13px;">Sous-total</td>
+                    <td class="amount" style="font-size:13px; text-align:right;"><b><span t-field="o.amount_untaxed"/></b></td>
+                  </tr>
+                  <tr style="line-height: 16px">
+                    <td style="font-size:13px;">TVA (Vente) 20%</td>
+                    <td class="amount" style="font-size:13px; text-align:right;"><b><span t-field="o.amount_tax"/></b></td>
+                  </tr>
+                  <tr style="line-height: 16px">
+                    <td></td>
+                    <td>---------</td>
+                  </tr>
+                  <tr style="line-height: 16px">
+                    <td style="font-size:13px;">TOTAL</td>
+                    <td class="amount" style="font-size:13px; text-align:right;"><b><span t-field="o.amount_total"/></b></td>
+                  </tr>
+                </table>
+				<br/>
+                <div style="font-size:13px; text-align:center;">
+                  <span t-field="o.company_id.report_footer_receipt"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </t>
+      </t>
+    </template>
+  </data>
+</odoo>

@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="report_pcec_balance_sheet_active" model="account.financial.html.report">
+      <field name="name">Bilan actif</field>
+      <field name="analytic" eval="True"/>
+      <field name="unfold_all_filter" eval="True"/>
+      <field name="show_journal_filter" eval="True"/>
+      <field name='parent_id' ref='pcec_mg_reports.account_reports_mg_menu'/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac" model="account.financial.html.report.line">
+      <field name="name">ACTIFS</field>
+      <!--      <field name="code">ACTV_BS_MG</field>-->
+      <field name="financial_report_id" ref="pcec_mg_reports.report_pcec_balance_sheet_active"/>
+      <field name="formulas"/>
+      <field name="sequence" eval="0"/>
+      <field name="level" eval="0"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_tofau" model="account.financial.html.report.line">
+      <field name="name">TRÉSORERIE ET OPÉRATIONS FINANCIÈRES AVEC INST. FIN. ET AUTRES PARTENAIRES</field>
+      <field name="code">AC_TOFAU</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac"/>
+      <field name="formulas"/>
+      <field name="level" eval="1"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_tofau_enc" model="account.financial.html.report.line">
+      <field name="name">ENCAISSE</field>
+      <field name="code">TOFAU_ENC</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_tofau"/>
+      <field name="formulas">ENC_CA</field>
+      <field name="level" eval="2"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_tofau_en_ca" model="account.financial.html.report.line">
+      <field name="name">Caisse</field>
+      <field name="code">ENC_CA</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_tofau_enc"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','101%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_tofau_dep" model="account.financial.html.report.line">
+      <field name="name">DÉPÔTS</field>
+      <field name="code">TOFAU_DEP</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_tofau"/>
+      <field name="formulas">DEP_DAV + DEP_DAT + DEP_ICD</field>
+      <field name="level" eval="2"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_tofau_dep_dav" model="account.financial.html.report.line">
+      <field name="name">Dépôts à vue</field>
+      <field name="code">DEP_DAV</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_tofau_dep"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','111%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_tofau_dep_dat" model="account.financial.html.report.line">
+      <field name="name">Dépôts à terme</field>
+      <field name="code">DEP_DAT</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_tofau_dep"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','112%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_tofau_dep_icd" model="account.financial.html.report.line">
+      <field name="name">Intérêts courus sur les dépôts</field>
+      <field name="code">DEP_ICD</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_tofau_dep"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','113%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_tofau_vae" model="account.financial.html.report.line">
+      <field name="name">VALEURS À ENCAISSER</field>
+      <field name="code">TOFAU_VAE</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_tofau"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','12%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="2"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_tofau_paif" model="account.financial.html.report.line">
+      <field name="name">PRÊTS AUX INSTITUTIONS FINANCIERS</field>
+      <field name="code">TOFAU_PAIF</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_tofau"/>
+      <field name="formulas">PAIF_PCT + PAIF_PMT + PAIF_PLT + PAIF_ICP</field>
+      <field name="level" eval="2"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_tofau_paif_pct" model="account.financial.html.report.line">
+      <field name="name">Prêts à court terme</field>
+      <field name="code">PAIF_PCT</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_tofau_paif"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','141%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_tofau_paif_pmt" model="account.financial.html.report.line">
+      <field name="name">Prêts à moyen terme</field>
+      <field name="code">PAIF_PMT</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_tofau_paif"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','142%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_tofau_paif_plt" model="account.financial.html.report.line">
+      <field name="name">Prêts à long terme</field>
+      <field name="code">PAIF_PLT</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_tofau_paif"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','143%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_tofau_paif_icp" model="account.financial.html.report.line">
+      <field name="name">Intérêts courus sur prêts</field>
+      <field name="code">PAIF_ICP</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_tofau_paif"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','146%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_omcb" model="account.financial.html.report.line">
+      <field name="name">OPÉRATIONS AVEC LES MEMBRES, CLIENTS ET BÉNÉFICIAIRES</field>
+      <field name="code">AC_OMCB</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac"/>
+      <field name="formulas"/>
+      <field name="level" eval="1"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_omcb_ce" model="account.financial.html.report.line">
+      <field name="name">CRÉDITS À L'ÉCONOMIE</field>
+      <field name="code">OMCB_CE</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_omcb"/>
+      <field name="formulas">CE_CSRNA + CE_CSRA + CE_CRR + CE_CS</field>
+      <field name="level" eval="2"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_omcb_ce_csrna" model="account.financial.html.report.line">
+      <field name="name">Crédits sains sur ressources non affectées</field>
+      <field name="code">CE_CSRNA</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_omcb_ce"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','211%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_omcb_ce_csra" model="account.financial.html.report.line">
+      <field name="name">Crédits sains sur ressources affectées</field>
+      <field name="code">CE_CSRA</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_omcb_ce"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','212%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_omcb_ce_crr" model="account.financial.html.report.line">
+      <field name="name">Crédits restructurés ou rééchelonnés</field>
+      <field name="code">CE_CRR</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_omcb_ce"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','213%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_omcb_ce_cs" model="account.financial.html.report.line">
+      <field name="name">Crédits en souffrance</field>
+      <field name="code">CE_CS</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_omcb_ce"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','214%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_omcb_icc" model="account.financial.html.report.line">
+      <field name="name">INTÉRÊTS COURUS SUR CRÉDITS</field>
+      <field name="code">OMCB_ICC</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_omcb"/>
+      <field name="formulas">ICC_ICCSRNA + ICC_ICCSRA + ICC_ICCRR</field>
+      <field name="level" eval="2"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_omcb_icc_iccsrna" model="account.financial.html.report.line">
+      <field name="name">Intérêts courus sur crédits sains sur ressources non affectées</field>
+      <field name="code">ICC_ICCSRNA</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_omcb_icc"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','261%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_omcb_icc_iccsra" model="account.financial.html.report.line">
+      <field name="name">Intérêts courus sur crédits sains sur ressources affectées</field>
+      <field name="code">ICC_ICCSRA</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_omcb_icc"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','262%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_omcb_icc_iccrr" model="account.financial.html.report.line">
+      <field name="name">Intérêts courus sur crédits restructurés ou réechelonnés</field>
+      <field name="code">ICC_ICCRR</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_omcb_icc"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','263%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_od" model="account.financial.html.report.line">
+      <field name="name">OPÉRATIONS DIVERSES</field>
+      <field name="code">AC_OD</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac"/>
+      <field name="formulas"/>
+      <field name="level" eval="1"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_od_stc" model="account.financial.html.report.line">
+      <field name="name">STOCKS</field>
+      <field name="code">OD_STC</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_od"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','30%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="2"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_od_dd" model="account.financial.html.report.line">
+      <field name="name">DÉBITEURS DIVERS</field>
+      <field name="code">OD_DD</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_od"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','31%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="2"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_od_cl" model="account.financial.html.report.line">
+      <field name="name">COMPTE DE LIAISON</field>
+      <field name="code">OD_CL</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_od"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','32%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="2"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_od_appd" model="account.financial.html.report.line">
+      <field name="name">AVANCES ET PRÊTS AU PERSONNEL ET AUX DIRIGEANTS</field>
+      <field name="code">OD_APPD</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_od"/>
+      <field name="formulas">APPD_PAS + APPD_DD + APPD_PP + APPD_DP + APPD_ICPPD</field>
+      <field name="level" eval="2"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_od_appd_pas" model="account.financial.html.report.line">
+      <field name="name">Personnel - avances sur salaires</field>
+      <field name="code">APPD_PAS</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_od_appd"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','351%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_od_appd_dd" model="account.financial.html.report.line">
+      <field name="name">Dirigeants - Découvert</field>
+      <field name="code">APPD_DD</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_od_appd"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','352%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_od_appd_pp" model="account.financial.html.report.line">
+      <field name="name">Personnel - Prêts</field>
+      <field name="code">APPD_PP</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_od_appd"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','353%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_od_appd_dp" model="account.financial.html.report.line">
+      <field name="name">Dirigeants - Prêts</field>
+      <field name="code">APPD_DP</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_od_appd"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','354%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_od_appd_icppd" model="account.financial.html.report.line">
+      <field name="name">Intérêts courus sur prêts au personnel et aux dirigeants</field>
+      <field name="code">APPD_ICPPD</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_od_appd"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','356%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_od_crac" model="account.financial.html.report.line">
+      <field name="name">COMPTES DE RÉGULARISATION DE L'ACTIF</field>
+      <field name="code">OD_CRAC</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_od"/>
+      <field name="formulas">CRAC_CPA + CRAC_PR + CRAC_ACRAC</field>
+      <field name="level" eval="2"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_od_crac_cpa" model="account.financial.html.report.line">
+      <field name="name">Charges payées d'avance</field>
+      <field name="code">CRAC_CPA</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_od_crac"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','361%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_od_crac_pr" model="account.financial.html.report.line">
+      <field name="name">Produits à recevoir</field>
+      <field name="code">CRAC_PR</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_od_crac"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','362%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_od_crac_acrac" model="account.financial.html.report.line">
+      <field name="name">Autres comptes de régularisation d'actif</field>
+      <field name="code">CRAC_ACRAC</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_od_crac"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','363%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_immo" model="account.financial.html.report.line">
+      <field name="name">IMMOBILISATIONS</field>
+      <field name="code">AC_IMMO</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac"/>
+      <field name="formulas"/>
+      <field name="level" eval="1"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_immo_immof" model="account.financial.html.report.line">
+      <field name="name">IMMOBILISATIONS FINANCIÈRES</field>
+      <field name="code">IMMO_IMMOF</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_immo"/>
+      <field name="formulas">IMMOF_DCV + IMMOF_AIF</field>
+      <field name="level" eval="2"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_immo_immof_dcv" model="account.financial.html.report.line">
+      <field name="name">Dépôts et cautionnements versés</field>
+      <field name="code">IMMOF_DCV</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_immo_immof"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','401%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_immo_immof_aif" model="account.financial.html.report.line">
+      <field name="name">Autres immobilisations financières</field>
+      <field name="code">IMMOF_AIF</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_immo_immof"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','408%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_immo_immoec" model="account.financial.html.report.line">
+      <field name="name">IMMOBILISATIONS EN COURS</field>
+      <field name="code">IMMO_IMMOEC</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_immo"/>
+      <field name="formulas">IMMOEC_AVII + IMMOEC_AVIC</field>
+      <field name="level" eval="2"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_immo_immoec_avii" model="account.financial.html.report.line">
+      <field name="name">Avances versées sur immobilisations incorporelles</field>
+      <field name="code">IMMOEC_AVII</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_immo_immoec"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','411%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_immo_immoec_avic" model="account.financial.html.report.line">
+      <field name="name">Avances versées sur immobilisations corporelles</field>
+      <field name="code">IMMOEC_AVIC</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_immo_immoec"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','412%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_immo_immoi" model="account.financial.html.report.line">
+      <field name="name">IMMOBILISATIONS INCORPORELLES</field>
+      <field name="code">IMMO_IMMOI</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_immo"/>
+      <field name="formulas">IMMOI_FE + IMMOI_AIC</field>
+      <field name="level" eval="2"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_immo_immoi_fe" model="account.financial.html.report.line">
+      <field name="name">Frais d'établissement</field>
+      <field name="code">IMMOI_FE</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_immo_immoi"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','421%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_immo_immoi_aic" model="account.financial.html.report.line">
+      <field name="name">Autres immobilisations incorporelles</field>
+      <field name="code">IMMOI_AIC</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_immo_immoi"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','428%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_immo_immoc" model="account.financial.html.report.line">
+      <field name="name">IMMOBILISATIONS CORPORELLES</field>
+      <field name="code">IMMO_IMMOC</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_immo"/>
+      <field name="formulas">IMMOC_TAT + IMMOC_IM + IMMOC_AL + IMMOC_MM + IMMOC_MR + IMMOC_AIC</field>
+      <field name="level" eval="2"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_immo_immoc_tat" model="account.financial.html.report.line">
+      <field name="name">Terrains et aménagements de terrains</field>
+      <field name="code">IMMOC_TAT</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_immo_immoc"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','431%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_immo_immoc_im" model="account.financial.html.report.line">
+      <field name="name">Immeubles</field>
+      <field name="code">IMMOC_IM</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_immo_immoc"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','432%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_immo_immoc_al" model="account.financial.html.report.line">
+      <field name="name">Améliorations locatives</field>
+      <field name="code">IMMOC_AL</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_immo_immoc"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','433%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_immo_immoc_mm" model="account.financial.html.report.line">
+      <field name="name">Matériel et mobilier</field>
+      <field name="code">IMMOC_MM</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_immo_immoc"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','434%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_immo_immoc_mr" model="account.financial.html.report.line">
+      <field name="name">Matériel roulant</field>
+      <field name="code">IMMOC_MR</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_immo_immoc"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','435%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+    <record id="account_financial_report_pcec_bs_ac_immo_immoc_aic" model="account.financial.html.report.line">
+      <field name="name">Autres immobilisations corporelles</field>
+      <field name="code">IMMOC_AIC</field>
+      <field name="parent_id" ref="account_financial_report_pcec_bs_ac_immo_immoc"/>
+      <field name="formulas">sum</field>
+      <field name="domain"
+             eval="[('account_id.code', '=like','438%')]"/>
+      <field name="groupby">account_id</field>
+      <field name="level" eval="3"/>
+    </record>
+
+  </data>
+</odoo>

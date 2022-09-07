@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <template id="assets__portal_login" inherit_id="web.assets_frontend">
+    <xpath expr="." position="inside">
+      <link rel="stylesheet" href="/sirh_base/static/src/css/loginpage.css"/>
+    </xpath>
+  </template>
+
+  <template id="portal_login" inherit_id="website.login_layout" name="Login Layout Inherit">
+    <xpath expr="//div[@class='oe_website_login_container']" position="after">
+      <style type="text/css">
+        #wrapwrap {
+        background-color: #00aee3 !important;
+        }
+        .oe_login_form .small a{
+          width: 100%;
+        }
+        .navbar {
+        display: none;
+        }
+        footer {
+        visibility: hidden;
+        }
+        header{
+        visibility: hidden;
+        }
+      </style>
+    </xpath>
+  </template>
+</odoo>

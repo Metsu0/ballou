@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <data>
+    <record id="ooto_hr_contract_view_form" model="ir.ui.view">
+      <field name="name">ooto.hr.contract.view.form</field>
+      <field name="model">hr.contract</field>
+      <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+      <field name="arch" type="xml">
+        <header position="inside">
+          <button string="Renew Contract"
+                  name="action_renew_trial"
+                  type="object"
+                  class="oe_highlight"
+                  attrs="{'invisible': [('renew_date_end_trial','=',False)]}"/>
+        </header>
+        <field name="date_end" position="after">
+          <field name="trial_date_end"/>
+          <field name="renew_date_end_trial"/>
+        </field>
+      </field>
+    </record>
+  </data>
+</odoo>

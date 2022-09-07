@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="350" height="324" viewBox="0 0 350 324">
+    <defs>
+        <rect id="b" width="166" height="177" rx="18"/>
+        <filter id="a" width="167.5%" height="163.3%" x="-33.7%" y="-22.6%" filterUnits="objectBoundingBox">
+            <feOffset dy="16" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="16"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.223753183 0 0 0 0 0.289837416 0 0 0 0 0.355921649 0 0 0 0.103775131 0"/>
+        </filter>
+        <rect id="d" width="166" height="177" rx="18"/>
+        <filter id="c" width="167.5%" height="163.3%" x="-33.7%" y="-22.6%" filterUnits="objectBoundingBox">
+            <feOffset dy="16" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="16"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.223753183 0 0 0 0 0.289837416 0 0 0 0 0.355921649 0 0 0 0.103775131 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <ellipse cx="155.09" cy="18.798" fill="#BBCBD1" rx="4.192" ry="4.177"/>
+            <ellipse cx="277.345" cy="254.823" fill="#BBCBD1" rx="4.192" ry="4.177"/>
+            <ellipse cx="38.772" cy="65.098" stroke="#BBCBD1" stroke-width="3" rx="5.24" ry="5.222"/>
+            <ellipse cx="341.267" cy="104.087" stroke="#BBCBD1" stroke-width="3" rx="5.24" ry="5.222"/>
+            <ellipse cx="4.192" cy="183.11" fill="#BBCBD1" rx="4.192" ry="4.177"/>
+            <g fill="#BBCBD1" transform="translate(225.649)">
+                <rect width="1.397" height="10.444" x="3.493" rx=".699"/>
+                <path d="M0 5.222c0-.385.312-.696.696-.696h6.991a.696.696 0 0 1 0 1.392H.697A.696.696 0 0 1 0 5.222z"/>
+            </g>
+            <g fill="#BBCBD1" transform="translate(0 88.422)">
+                <rect width="1.397" height="10.444" x="3.493" rx=".699"/>
+                <path d="M0 5.222c0-.385.312-.696.696-.696h6.991a.696.696 0 0 1 0 1.392H.697A.696.696 0 0 1 0 5.222z"/>
+            </g>
+            <g fill="#BBCBD1" transform="translate(341.617 168.49)">
+                <rect width="1.397" height="10.444" x="3.493" rx=".699"/>
+                <path d="M0 5.222c0-.385.312-.696.696-.696h6.991a.696.696 0 0 1 0 1.392H.697A.696.696 0 0 1 0 5.222z"/>
+            </g>
+        </g>
+        <g transform="translate(133 39)">
+            <use fill="#000" filter="url(#a)" xlink:href="#b"/>
+            <use fill="#FFF" xlink:href="#b"/>
+            <rect width="57.435" height="5.553" x="21.013" y="21.518" fill="#CFD7DF" rx="2.776"/>
+            <rect width="28.717" height="5.553" x="21.013" y="103.424" fill="#CFD7DF" rx="2.776"/>
+            <rect width="123.975" height="29.153" x="21.013" y="60.388" fill="#CFD7DF" opacity=".3" rx="4"/>
+            <rect width="63.038" height="5.553" x="51.131" y="36.788" fill="#F4F4F4" rx="2.776"/>
+            <rect width="41.325" height="5.553" x="35.021" y="120.082" fill="#F4F4F4" rx="2.776"/>
+            <rect width="97.359" height="5.553" x="47.629" y="140.906" fill="#F4F4F4" rx="2.776"/>
+            <ellipse cx="31.519" cy="39.565" fill="#CFD7DF" rx="7.004" ry="6.941"/>
+            <ellipse cx="28.017" cy="143.682" fill="#CFD7DF" rx="7.004" ry="6.941"/>
+            <ellipse cx="23.814" cy="122.859" fill="#6DD400" rx="2.802" ry="2.776"/>
+        </g>
+        <g transform="translate(69 99)">
+            <use fill="#000" filter="url(#c)" xlink:href="#d"/>
+            <use fill="#FFF" xlink:href="#d"/>
+            <rect width="57.435" height="5.553" x="21.013" y="21.518" fill="#CFD7DF" rx="2.776"/>
+            <rect width="28.717" height="5.553" x="21.013" y="103.424" fill="#CFD7DF" rx="2.776"/>
+            <rect width="123.975" height="29.153" x="21.013" y="60.388" fill="#CFD7DF" opacity=".3" rx="4"/>
+            <rect width="63.038" height="5.553" x="51.131" y="36.788" fill="#F4F4F4" rx="2.776"/>
+            <rect width="41.325" height="5.553" x="35.021" y="120.082" fill="#F4F4F4" rx="2.776"/>
+            <rect width="97.359" height="5.553" x="47.629" y="140.906" fill="#F4F4F4" rx="2.776"/>
+            <ellipse cx="31.519" cy="39.565" fill="#CFD7DF" rx="7.004" ry="6.941"/>
+            <ellipse cx="28.017" cy="143.682" fill="#CFD7DF" rx="7.004" ry="6.941"/>
+            <ellipse cx="23.814" cy="122.859" fill="#6DD400" rx="2.802" ry="2.776"/>
+        </g>
+    </g>
+</svg>

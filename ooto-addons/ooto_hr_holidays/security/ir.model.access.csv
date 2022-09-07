@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_leave_follower,ooto_hr_holidays.access.hr.leave.follower,model_hr_leave_follower,,1,1,1,1
+

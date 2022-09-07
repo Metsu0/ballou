@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <data noupdate="1">
+    <record id="default_deputy_profile" model="res.users">
+      <field name="lastname">Profil</field>
+      <field name="firstname">Deputy</field>
+      <field name="login">profil@deputy.mg</field>
+      <field name="active" eval="True"/>
+      <field name="is_user_profile" eval="True"/>
+    </record>
+
+    <record id="default_directeur_profile" model="res.users">
+      <field name="lastname">Profil</field>
+      <field name="firstname">Directeur</field>
+      <field name="login">profil@directeur.mg</field>
+      <field name="active" eval="True"/>
+      <field name="is_user_profile" eval="True"/>
+    </record>
+
+    <record id="default_manager_profile" model="res.users">
+      <field name="lastname">Profil</field>
+      <field name="firstname">Manager</field>
+      <field name="login">profil@manager.mg</field>
+      <field name="active" eval="True"/>
+      <field name="is_user_profile" eval="True"/>
+    </record>
+
+    <record id="default_rh_profile" model="res.users">
+      <field name="lastname">Profil</field>
+      <field name="firstname">RH</field>
+      <field name="login">profil@RH.mg</field>
+      <field name="active" eval="True"/>
+      <field name="is_user_profile" eval="True"/>
+    </record>
+
+    <record id="default_administration_profile" model="res.users">
+      <field name="lastname">Profil</field>
+      <field name="firstname">Administration</field>
+      <field name="login">profil@administration.mg</field>
+      <field name="active" eval="True"/>
+      <field name="is_user_profile" eval="True"/>
+    </record>
+  </data>
+</odoo>

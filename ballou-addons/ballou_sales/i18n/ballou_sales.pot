@@ -1,0 +1,450 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ballou_sales
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-17 07:19+0000\n"
+"PO-Revision-Date: 2021-08-17 07:19+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.sale_report_templates_inherit
+msgid ""
+"<span groups=\"account.group_show_line_subtotals_tax_excluded\">Amount</span>\n"
+"                  <span groups=\"account.group_show_line_subtotals_tax_included\">Total Price</span>"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.account_report_invoice_document_inherit
+msgid ""
+"<span groups=\"account.group_show_line_subtotals_tax_excluded\">Amount</span>\n"
+"            <span groups=\"account.group_show_line_subtotals_tax_included\">Total Price</span>"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.account_report_invoice_document_inherit
+msgid "<span>Description</span>"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.account_report_invoice_document_inherit
+#: model_terms:ir.ui.view,arch_db:ballou_sales.sale_report_templates_inherit
+msgid "<span>Disc.%</span>"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.account_report_invoice_document_inherit
+msgid "<span>Quantity</span>"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.account_report_invoice_document_inherit
+msgid "<span>Unit Price</span>"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.sale_report_templates_inherit
+msgid "<strong class=\"mr16\">Subtotal</strong>"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.account_report_invoice_document_inherit
+msgid "<strong>Amount Due</strong>"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.account_report_invoice_document_inherit
+msgid "<strong>Customer Code:</strong>"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.account_report_invoice_document_inherit
+msgid "<strong>Due Date:</strong>"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.account_report_invoice_document_inherit
+msgid "<strong>Invoice Date:</strong>"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.account_report_invoice_document_inherit
+msgid "<strong>Reference:</strong>"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.account_report_invoice_document_inherit
+msgid "<strong>Source:</strong>"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.account_report_invoice_document_inherit
+msgid "<strong>Subtotal</strong>"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.account_report_invoice_document_inherit
+msgid "<strong>Total</strong>"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model,name:ballou_sales.model_report_account_report_invoice
+msgid "Account report without payment lines"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model.fields,field_description:ballou_sales.field_base_document_layout__report_footer_receipt
+#: model:ir.model.fields,field_description:ballou_sales.field_res_company__report_footer_receipt
+msgid "Bas de page du ticket de caisse"
+msgstr ""
+
+#. module: ballou_sales
+#: model:res.groups,name:ballou_sales.group_account_move
+msgid "Cacher bouton créer"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model.fields,field_description:ballou_sales.field_res_partner__category_ids
+#: model:ir.model.fields,field_description:ballou_sales.field_res_users__category_ids
+#: model_terms:ir.ui.view,arch_db:ballou_sales.view_res_partner_filter
+msgid "Catégorie"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model.fields,field_description:ballou_sales.field_base_document_layout__city
+msgid "City"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.receipt_template
+msgid "Client:"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model.fields,field_description:ballou_sales.field_res_partner_personalized_category__color
+msgid "Color"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model,name:ballou_sales.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model,name:ballou_sales.model_base_document_layout
+msgid "Company Document Layout"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model.fields,field_description:ballou_sales.field_base_document_layout__name
+msgid "Company Name"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model,name:ballou_sales.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model.fields,field_description:ballou_sales.field_base_document_layout__country_id
+msgid "Country"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.ballou_external_layout_standard
+msgid "Courriel:"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model.fields,field_description:ballou_sales.field_res_partner_personalized_category__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model.fields,field_description:ballou_sales.field_res_partner_personalized_category__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.sale_report_templates_inherit
+msgid "Description"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model.fields,field_description:ballou_sales.field_account_journal__display_name
+#: model:ir.model.fields,field_description:ballou_sales.field_account_move__display_name
+#: model:ir.model.fields,field_description:ballou_sales.field_base_document_layout__display_name
+#: model:ir.model.fields,field_description:ballou_sales.field_product_template__display_name
+#: model:ir.model.fields,field_description:ballou_sales.field_report_account_report_invoice__display_name
+#: model:ir.model.fields,field_description:ballou_sales.field_report_sale_report_saleorder__display_name
+#: model:ir.model.fields,field_description:ballou_sales.field_res_company__display_name
+#: model:ir.model.fields,field_description:ballou_sales.field_res_partner__display_name
+#: model:ir.model.fields,field_description:ballou_sales.field_res_partner_personalized_category__display_name
+#: model:ir.model.fields,field_description:ballou_sales.field_sale_order__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.receipt_template
+msgid "Du:"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model.fields,field_description:ballou_sales.field_base_document_layout__state_id
+msgid "Fed. State"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model.fields,field_description:ballou_sales.field_account_journal__id
+#: model:ir.model.fields,field_description:ballou_sales.field_account_move__id
+#: model:ir.model.fields,field_description:ballou_sales.field_base_document_layout__id
+#: model:ir.model.fields,field_description:ballou_sales.field_product_template__id
+#: model:ir.model.fields,field_description:ballou_sales.field_report_account_report_invoice__id
+#: model:ir.model.fields,field_description:ballou_sales.field_report_sale_report_saleorder__id
+#: model:ir.model.fields,field_description:ballou_sales.field_res_company__id
+#: model:ir.model.fields,field_description:ballou_sales.field_res_partner__id
+#: model:ir.model.fields,field_description:ballou_sales.field_res_partner_personalized_category__id
+#: model:ir.model.fields,field_description:ballou_sales.field_sale_order__id
+msgid "ID"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.base_view_partner_form_inherit
+msgid "Informations fiscales"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model,name:ballou_sales.model_account_journal
+msgid "Journal"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model,name:ballou_sales.model_account_move
+msgid "Journal Entry"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model.fields,field_description:ballou_sales.field_account_journal____last_update
+#: model:ir.model.fields,field_description:ballou_sales.field_account_move____last_update
+#: model:ir.model.fields,field_description:ballou_sales.field_base_document_layout____last_update
+#: model:ir.model.fields,field_description:ballou_sales.field_product_template____last_update
+#: model:ir.model.fields,field_description:ballou_sales.field_report_account_report_invoice____last_update
+#: model:ir.model.fields,field_description:ballou_sales.field_report_sale_report_saleorder____last_update
+#: model:ir.model.fields,field_description:ballou_sales.field_res_company____last_update
+#: model:ir.model.fields,field_description:ballou_sales.field_res_partner____last_update
+#: model:ir.model.fields,field_description:ballou_sales.field_res_partner_personalized_category____last_update
+#: model:ir.model.fields,field_description:ballou_sales.field_sale_order____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model.fields,field_description:ballou_sales.field_res_partner_personalized_category__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model.fields,field_description:ballou_sales.field_res_partner_personalized_category__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.account_report_invoice_document_inherit
+#: model_terms:ir.ui.view,arch_db:ballou_sales.sale_report_templates_inherit
+msgid "Montant arrêté à la somme de:"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model.fields,field_description:ballou_sales.field_base_document_layout__nif
+#: model:ir.model.fields,field_description:ballou_sales.field_res_partner__nif
+#: model:ir.model.fields,field_description:ballou_sales.field_res_users__nif
+msgid "NIF"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.account_report_invoice_document_inherit
+#: model_terms:ir.ui.view,arch_db:ballou_sales.ballou_external_layout_standard
+#: model_terms:ir.ui.view,arch_db:ballou_sales.receipt_template
+#: model_terms:ir.ui.view,arch_db:ballou_sales.sale_report_templates_inherit
+msgid "NIF:"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.receipt_template
+msgid "NO:"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model.fields,field_description:ballou_sales.field_res_partner_personalized_category__name
+msgid "Name"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model.fields.selection,name:ballou_sales.selection__account_journal__sale_type__occasional
+msgid "Occasional"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.ballou_external_layout_standard
+msgid "Page: <span class=\"page\"/> / <span class=\"topage\"/>"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.account_report_invoice_document_inherit
+msgid "Paid on"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model.fields,field_description:ballou_sales.field_product_product__ati_price
+#: model:ir.model.fields,field_description:ballou_sales.field_product_template__ati_price
+#: model_terms:ir.ui.view,arch_db:ballou_sales.product_template_only_form_view
+msgid "Prix TTC"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model,name:ballou_sales.model_product_template
+msgid "Product Template"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.sale_report_templates_inherit
+msgid "Quantity"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model.fields,field_description:ballou_sales.field_base_document_layout__rcs
+#: model:ir.model.fields,field_description:ballou_sales.field_res_partner__rcs
+#: model:ir.model.fields,field_description:ballou_sales.field_res_users__rcs
+msgid "RCS"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.account_report_invoice_document_inherit
+#: model_terms:ir.ui.view,arch_db:ballou_sales.ballou_external_layout_standard
+#: model_terms:ir.ui.view,arch_db:ballou_sales.sale_report_templates_inherit
+msgid "RCS:"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.ballou_external_layout_standard
+msgid "RIB:"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model.fields.selection,name:ballou_sales.selection__account_journal__sale_type__reference
+msgid "Reference"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.receipt_template
+msgid "Remise"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model.fields,field_description:ballou_sales.field_base_document_layout__stat
+#: model:ir.model.fields,field_description:ballou_sales.field_res_partner__stat
+#: model:ir.model.fields,field_description:ballou_sales.field_res_users__stat
+msgid "STAT"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.account_report_invoice_document_inherit
+#: model_terms:ir.ui.view,arch_db:ballou_sales.ballou_external_layout_standard
+#: model_terms:ir.ui.view,arch_db:ballou_sales.receipt_template
+#: model_terms:ir.ui.view,arch_db:ballou_sales.sale_report_templates_inherit
+msgid "STAT:"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model.fields,field_description:ballou_sales.field_account_bank_statement_import_journal_creation__sale_type
+#: model:ir.model.fields,field_description:ballou_sales.field_account_journal__sale_type
+msgid "Sale Type"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model,name:ballou_sales.model_sale_order
+msgid "Sales Order"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.receipt_template
+msgid "Servi par"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.ballou_external_layout_standard
+msgid "Signature client"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.receipt_template
+msgid "Sous-total"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model.fields,field_description:ballou_sales.field_base_document_layout__street
+msgid "Street"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model.fields,field_description:ballou_sales.field_base_document_layout__street2
+msgid "Street2"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.receipt_template
+msgid "TOTAL"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.receipt_template
+msgid "TVA (Vente) 20%"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.account_report_invoice_document_inherit
+#: model_terms:ir.ui.view,arch_db:ballou_sales.sale_report_templates_inherit
+msgid "Tax ID"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.actions.report,name:ballou_sales.report_account_move_receipt
+msgid "Ticket de caisse"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.ballou_external_layout_standard
+msgid "Téléphone:"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.sale_report_templates_inherit
+msgid "Unit Price"
+msgstr ""
+
+#. module: ballou_sales
+#: model_terms:ir.ui.view,arch_db:ballou_sales.ballou_external_layout_standard
+msgid "Validation direction"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model.fields,field_description:ballou_sales.field_base_document_layout__zip
+msgid "Zip"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model,name:ballou_sales.model_report_sale_report_saleorder
+msgid "report.sale.report_saleorder"
+msgstr ""
+
+#. module: ballou_sales
+#: model:ir.model,name:ballou_sales.model_res_partner_personalized_category
+msgid "res.partner.personalized.category"
+msgstr ""

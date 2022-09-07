@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <data>
+
+    <!--  Inherit hr payroll structure view  -->
+    <record id="view_hr_employee_grade_form_inheritance" model="ir.ui.view">
+      <field name="name">view_hr_employee_grade_form_inheritance</field>
+      <field name="model">hr.payroll.structure</field>
+      <field name="inherit_id" ref="hr_payroll.view_hr_employee_grade_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//notebook" position="inside">
+          <page string="Configuration">
+            <group>
+              <group string="Salary rules">
+                <field name="gross_daily_id"/>
+                <field name="gross_salary_id"/>
+                <field name="cnaps_employer_id"/>
+                <field name="ostie_employer_id"/>
+                <field name="cnaps_id"/>
+                <field name="ostie_id"/>
+                <field name="irsa_id"/>
+                <field name="fmfp_id"/>
+                <field name="net_salary_id"/>
+                <field name="taxable_amount_id"/>
+                <field name="taxable_allowance_ids" widget="many2many_tags"/>
+                <field name="non_taxable_allowance_ids" widget="many2many_tags"/>
+                <field name="taxable_benefit_in_kind_ids" widget="many2many_tags"/>
+                <field name="exempt_benefits_in_kind_ids" widget="many2many_tags"/>
+                <field name="bonus_and_gratuity_ids" widget="many2many_tags"/>
+                <field name="others_ids" widget="many2many_tags"/>
+                <field name="other_deduction_ids" widget="many2many_tags"/>
+              </group>
+              <group>
+                <group string="Categories">
+                  <field name="advantage_ids" widget="many2many_tags"/>
+                  <field name="additional_hour_id"/>
+                </group>
+                <group string="Inputs">
+                  <field name="workday_code"/>
+                </group>
+                <group string="Additional hour">
+                  <field name="non_taxable_additional_hour"/>
+                </group>
+              </group>
+            </group>
+          </page>
+        </xpath>
+        <!-- <xpath>
+          
+        </xpath> -->
+      </field>
+    </record>
+  </data>
+</odoo>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <data>
+    <record id="ooto_onboarding_tutorial_form_view" model="ir.ui.view">
+      <field name="name">ooto.onboarding.tutorial.form.view</field>
+      <field name="model">onboarding.tutorial</field>
+      <field name="arch" type="xml">
+        <form string="Tutorial" create="false">
+          <sheet>
+            <group>
+              <group>
+                <field name="title"/>
+              </group>
+              <group>
+                <label for="page_number"/>
+                <div class="o_row">
+                  <field name="page_number"/>
+                </div>
+              </group>
+              <group col="2" colspan="2">
+                <field name="page_id" context="{'default_number': page_number + 1,'max_number': page_number + 1}">
+                  <tree>
+                    <field name="title"/>
+                    <field name="number"/>
+                  </tree>
+                </field>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="ooto_onboarding_tutorial_page_form_view" model="ir.ui.view">
+      <field name="name">ooto.onboarding.tutorial.page.form.view</field>
+      <field name="model">onboarding.tutorial.page</field>
+      <field name="arch" type="xml">
+        <form string="Page">
+          <sheet>
+            <group>
+              <group>
+                <field name="title"/>
+                <field name="support" widget="image"/>
+              </group>
+              <group>
+                <field name="description"/>
+                <label for="number"/>
+                <div class="o_row">
+                  <field name="number" required="True"/>
+                </div>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="ooto_onboarding_tutorial_action" model="ir.actions.act_window">
+      <field name="name">Tutorial</field>
+      <field name="res_model">onboarding.tutorial</field>
+      <field name="view_mode">form</field>
+      <field name="binding_view_types">form</field>
+      <field name="res_id" eval="ref('ooto_onboarding.tutorial_title')"/>
+    </record>
+
+    <menuitem id="menu_onboarding_tutorial_configuration"
+              name="Tutorial"
+              parent="ooto_onboarding.menu_ooto_onboarding_configuration"
+              action="ooto_onboarding_tutorial_action"
+              sequence="8"/>
+  </data>
+</odoo>

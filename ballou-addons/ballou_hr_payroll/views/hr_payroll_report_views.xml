@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="payroll_report_view_dashboard_inheritance" model="ir.ui.view">
+        <field name="name">payroll.report.view.dashboard.inheritance</field>
+        <field name="model">hr.payroll.report</field>
+        <field name="inherit_id" ref="hr_payroll.payroll_report_view_dashboard"/>
+        <field name="arch" type="xml">
+            <xpath expr="//formula[@name='avg_gross']" position="after">
+                <aggregate name="hourly_rate_productif" string="Total Hourly Rate Productif" field="hourly_rate_productif" widget="monetary"/>
+                <aggregate name="hourly_rate_non_productif" string="Total Hourly Rate Non Productif" field="hourly_rate_non_productif" widget="monetary"/>
+                <formula name="avg_hourly_rate_productif" string="average Hourly Rate Productif" value="record.hourly_rate_productif / record.count" widget="monetary"/>
+                <formula name="avg_hourly_rate_productif" string="average Hourly Rate Non Productif" value="record.hourly_rate_non_productif / record.count" widget="monetary"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="payroll_report_view_pivot_inheritance" model="ir.ui.view">
+        <field name="name">payroll.report.view.pivot.inheritance</field>
+        <field name="model">hr.payroll.report</field>
+        <field name="inherit_id" ref="hr_payroll.payroll_report_view_pivot"/>
+        <field name="arch" type="xml">
+            <field name="count_leave_unpaid" position="after">
+                <field name="hourly_rate_productif" type="measure"/>
+                <field name="hourly_rate_non_productif" type="measure"/>
+            </field>
+        </field>
+    </record>
+</odoo>

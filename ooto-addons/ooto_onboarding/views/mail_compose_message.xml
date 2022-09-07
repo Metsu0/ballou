@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="email_compose_onboarding_employee">
+      <field name="name">mail.compose.message.form.employee_onboarding</field>
+      <field name="model">mail.compose.message</field>
+      <field name="inherit_id" ref="mail.email_compose_message_wizard_form"/>
+      <field name="priority">1</field>
+      <field name="mode">primary</field>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='template_id']" position="after">
+          <field name="user_onboarding_id" invisible="1"/>
+        </xpath>
+        <xpath expr="//footer/button[1]" position="attributes">
+          <attribute name="attrs">{'invisible': ['|',('is_log', '=', True),('user_onboarding_id', '!=', False)]}</attribute>
+        </xpath>
+        <xpath expr="//footer/button[2]" position="attributes">
+          <attribute name="attrs">{'invisible': ['|',('is_log', '=', False),('user_onboarding_id', '!=', False)]}</attribute>
+        </xpath>
+      </field>
+    </record>
+
+  </data>
+</odoo>

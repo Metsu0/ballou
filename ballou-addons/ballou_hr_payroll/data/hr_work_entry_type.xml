@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hr_work_entry_type_worked_days" model="hr.work.entry.type">
+        <field name="name">Nombre de jours travaillés</field>
+        <field name="code">NBR_JOURS_TRAVAILLES</field>
+        <field name="is_unforeseen" eval="False"/>
+    </record>
+
+</odoo>

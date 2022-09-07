@@ -1,0 +1,1088 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sirh_hr
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0-20200409\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-18 08:15+0000\n"
+"PO-Revision-Date: 2021-05-18 08:15+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sirh_hr
+#: code:addons/sirh_hr/models/hr_contract.py:0
+#: code:addons/sirh_hr/models/hr_contract.py:0
+#, python-format
+msgid " day(s)"
+msgstr " jour(s)"
+
+#. module: sirh_hr
+#: code:addons/sirh_hr/models/hr_contract.py:0
+#: code:addons/sirh_hr/models/hr_contract.py:0
+#, python-format
+msgid " month(s) "
+msgstr " mois(s)"
+
+#. module: sirh_hr
+#: code:addons/sirh_hr/models/hr_contract.py:0
+#: code:addons/sirh_hr/models/hr_contract.py:0
+#, python-format
+msgid " year(s) "
+msgstr " année(s) "
+
+#. module: sirh_hr
+#: code:addons/sirh_hr/models/hr_employee.py:0
+#: code:addons/sirh_hr/models/hr_employee_children.py:0
+#, python-format
+msgid " {} jour(s)"
+msgstr ""
+
+#. module: sirh_hr
+#: code:addons/sirh_hr/models/hr_employee.py:0
+#: code:addons/sirh_hr/models/hr_employee_children.py:0
+#, python-format
+msgid " {} mois"
+msgstr ""
+
+#. module: sirh_hr
+#: model:ir.actions.report,print_report_name:sirh_hr.action_report_certificate_work
+msgid "'Certificate of work for - %s' % (object.employee_id.name)"
+msgstr "'Certificat de travail pour %s' % (object.employee_id.name)"
+
+#. module: sirh_hr
+#: model:ir.actions.report,print_report_name:sirh_hr.action_report_contract
+msgid "'Contract of - %s' % (object.employee_id.name)"
+msgstr "'Contrat de %s' % (object.employee_id.name)"
+
+#. module: sirh_hr
+#: model:mail.template,body_html:sirh_hr.mail_template_notify_all
+msgid ""
+"<div>\n"
+"          Hi folks,\n"
+"          <br/>\n"
+"          <br/>\n"
+"          Some news update are available on:\n"
+"          <br/>\n"
+"          <br/>\n"
+"          % if object.newsletter:\n"
+"          <strong>\n"
+"            <span style=\"margin-left:5px\">NEWSLETTER</span>: ${object.base_url}/check/newsletter\n"
+"          </strong>\n"
+"          <br/>\n"
+"          % endif\n"
+"          % if object.good_to_know:\n"
+"          <strong>\n"
+"            <span style=\"margin-left:5px\">BON A SAVOIR</span>: ${object.base_url}/check/bon-a-savoir\n"
+"          </strong>\n"
+"          <br/>\n"
+"          % endif\n"
+"          % if object.we_hire:\n"
+"          <strong>\n"
+"            <span style=\"margin-left:5px\">NOUS RECRUTONS</span>: ${object.base_url}/check/nous-recrutons\n"
+"          </strong>\n"
+"          <br/>\n"
+"          % endif\n"
+"          % if object.know_how:\n"
+"          <strong>\n"
+"            <span style=\"margin-left:5px\">COIN BIEN ETRE</span>: ${object.base_url}/check/coin-bien-etre\n"
+"          </strong>\n"
+"          <br/>\n"
+"          % endif\n"
+"\n"
+"          <br/><br/>\n"
+"          We invite you to check them out when it's possible.\n"
+"          <br/><br/>\n"
+"          Regards,\n"
+"          <br/>\n"
+"          HR Team\n"
+"        </div>\n"
+"      "
+msgstr ""
+"<div>\n"
+"          Bonjour à tous,\n"
+"          <br/>\n"
+"          <br/>\n"
+"          Des mises à jour sont disponibles sur:\n"
+"          <br/>\n"
+"          <br/>\n"
+"          % if object.newsletter:\n"
+"          <strong>\n"
+"            <span style=\"margin-left:5px\">NEWSLETTER</span>: ${object.base_url}/check/newsletter\n"
+"          </strong>\n"
+"          <br/>\n"
+"          % endif\n"
+"          % if object.good_to_know:\n"
+"          <strong>\n"
+"            <span style=\"margin-left:5px\">BON A SAVOIR</span>: ${object.base_url}/check/bon-a-savoir\n"
+"          </strong>\n"
+"          <br/>\n"
+"          % endif\n"
+"          % if object.we_hire:\n"
+"          <strong>\n"
+"            <span style=\"margin-left:5px\">NOUS RECRUTONS</span>: ${object.base_url}/check/nous-recrutons\n"
+"          </strong>\n"
+"          <br/>\n"
+"          % endif\n"
+"          % if object.know_how:\n"
+"          <strong>\n"
+"            <span style=\"margin-left:5px\">COIN BIEN ETRE</span>: ${object.base_url}/check/coin-bien-etre\n"
+"          </strong>\n"
+"          <br/>\n"
+"          % endif\n"
+"\n"
+"          <br/><br/>\n"
+"          Nous vous invitons à y jetter un coup d'oeil dès que possible.\n"
+"          <br/><br/>\n"
+"          Cordialement,\n"
+"          <br/>\n"
+"          L'équipe RH\n"
+"        </div>\n"
+"      "
+
+#. module: sirh_hr
+#: model_terms:ir.ui.view,arch_db:sirh_hr.hr_level_view_kanban
+#: model_terms:ir.ui.view,arch_db:sirh_hr.hr_spinneret_view_kanban
+msgid "<i class=\"fa fa-ellipsis-v\" role=\"img\" aria-label=\"Manage\" title=\"Manage\"/>"
+msgstr "<i class=\"fa fa-ellipsis-v\" role=\"img\" aria-label=\"Gérer\" title=\"Gérer\"/>"
+
+#. module: sirh_hr
+#: model_terms:ir.ui.view,arch_db:sirh_hr.sirh_hr_contract_view_form
+msgid ""
+"<span attrs=\"{'invisible': ['|', ('calendar_mismatch', '=', False), ('state', '!=', 'open')]}\" class=\"fa fa-exclamation-triangle text-danger o_calendar_warning pl-3\">\n"
+"              </span>\n"
+"              <span class=\"o_calendar_warning_tooltip text-danger\">\n"
+"                Calendar Mismatch : The employee's calendar does not match this contract's calendar. This could lead to\n"
+"                unexpected behaviors.\n"
+"              </span>"
+msgstr ""
+
+#. module: sirh_hr
+#: model:mail.template,subject:sirh_hr.mail_template_notify_all
+msgid "ALLO ALLO etech!"
+msgstr ""
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_contract_category__active
+msgid "Active"
+msgstr ""
+
+#. module: sirh_hr
+#: model_terms:ir.actions.act_window,help:sirh_hr.act_employee_from_job
+#: model_terms:ir.actions.act_window,help:sirh_hr.act_employee_from_level
+#: model_terms:ir.actions.act_window,help:sirh_hr.action_hr_job_no_employee
+msgid "Add a new employee"
+msgstr "Ajouter un nouvel employé"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee_children__age
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee_children__age_txt
+msgid "Age"
+msgstr "Âge"
+
+#. module: sirh_hr
+#: model_terms:ir.ui.view,arch_db:sirh_hr.view_employee_level_filter
+msgid "Archived"
+msgstr "Archivé"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_front_notification_all__base_url
+msgid "Base Url"
+msgstr "Url base"
+
+#. module: sirh_hr
+#: model_terms:ir.ui.view,arch_db:sirh_hr.view_job_form_inherit
+msgid "Base salary range"
+msgstr "Fourchette de salaire de base"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee_children__birthdate
+msgid "Birthdate"
+msgstr "Date de naissance"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_direction__department_ids
+msgid "CC"
+msgstr "Département"
+
+#. module: sirh_hr
+#: model:ir.model.fields.selection,name:sirh_hr.selection__hr_contract__contract_type__cdd
+msgid "CDD"
+msgstr ""
+
+#. module: sirh_hr
+#: model:ir.model.fields.selection,name:sirh_hr.selection__hr_contract__contract_type__cdi
+msgid "CDI"
+msgstr ""
+
+#. module: sirh_hr
+#: model_terms:ir.ui.view,arch_db:sirh_hr.report_certificate_work_document
+msgid "CERTIFICATE OF WORK"
+msgstr "CERTIFICAT DE TRAVAIL"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__cin
+msgid "CIN"
+msgstr ""
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__date_cin
+msgid "CIN Deliver date"
+msgstr "Date de délivrance du CIN"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__place_cin
+msgid "CIN Delver place"
+msgstr "Lieu de délivrance du CIN"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__duplicate_date
+msgid "CIN duplicate date"
+msgstr "Date de duplicatat CIN"
+
+#. module: sirh_hr
+#: model_terms:ir.ui.view,arch_db:sirh_hr.hr_employee_confirm_view
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_contract__contract_category_id
+msgid "Category"
+msgstr "Catégorie"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__certificate
+msgid "Certificate Level"
+msgstr "Niveau du certificat"
+
+#. module: sirh_hr
+#: model:ir.actions.report,name:sirh_hr.action_report_certificate_work
+msgid "Certificate of work"
+msgstr "Certificat de travail"
+
+#. module: sirh_hr
+#: model_terms:ir.ui.view,arch_db:sirh_hr.etech_hr_employee_view_form_inherit
+msgid "Children Information"
+msgstr "Information sur les enfants"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__children_ids
+msgid "Children lines"
+msgstr "Information sur les enfants"
+
+#. module: sirh_hr
+#: model_terms:ir.ui.view,arch_db:sirh_hr.view_send_notif
+msgid "Choose your date"
+msgstr "Choisir la date"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__cnaps_number
+msgid "Cnaps number"
+msgstr "N° CNAPS"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_contract__coach_id
+#: model_terms:ir.ui.view,arch_db:sirh_hr.view_employee_level_filter
+msgid "Coach"
+msgstr "N+1"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_department__code
+msgid "Code"
+msgstr ""
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_department__company_ids
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_direction__company_id
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__company_ids
+#: model_terms:ir.ui.view,arch_db:sirh_hr.view_employee_level_filter
+msgid "Company"
+msgstr "Société"
+
+#. module: sirh_hr
+#: model:ir.actions.report,name:sirh_hr.action_report_contract
+msgid "Contract"
+msgstr "Contrat"
+
+#. module: sirh_hr
+#: model_terms:ir.ui.view,arch_db:sirh_hr.sirh_hr_contract_view_form
+msgid "Contract Terms"
+msgstr "Conditions du contrat"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_contract__contract_type
+msgid "Contract Type"
+msgstr "Type de contrat"
+
+#. module: sirh_hr
+#: model:ir.actions.act_window,name:sirh_hr.open_contract_category_action
+#: model:ir.ui.menu,name:sirh_hr.menu_hr_contract_category
+#: model_terms:ir.ui.view,arch_db:sirh_hr.contract_category_form_view
+#: model_terms:ir.ui.view,arch_db:sirh_hr.contract_category_tree_view
+msgid "Contract category"
+msgstr "Catégorie du contract"
+
+#. module: sirh_hr
+#: model:ir.model,name:sirh_hr.model_hr_contract_category
+msgid "Contract category (ex: HC)"
+msgstr "Catégorie du contract (ex: HC)"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_contract_category__contract_ids
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_payslip_payment_mode__contract_ids
+#: model_terms:ir.ui.view,arch_db:sirh_hr.hr_hr_employee_view_form_sirh_2
+msgid "Contracts"
+msgstr "Contrats"
+
+#. module: sirh_hr
+#: model_terms:ir.actions.act_window,help:sirh_hr.open_contract_category_action
+msgid "Create a new contract category"
+msgstr "Créer une nouvelle catégorie de contrat"
+
+#. module: sirh_hr
+#: model_terms:ir.actions.act_window,help:sirh_hr.open_module_tree_direction_etech
+msgid "Create a new executive of department"
+msgstr "Créer un directeur pour le centre de compétence"
+
+#. module: sirh_hr
+#: model_terms:ir.actions.act_window,help:sirh_hr.custom_jobs_menu_action
+msgid "Create a new job"
+msgstr "Créer un nouveau poste"
+
+#. module: sirh_hr
+#: model_terms:ir.actions.act_window,help:sirh_hr.custom_levels_menu_action
+msgid "Create a new level"
+msgstr ""
+
+#. module: sirh_hr
+#: model_terms:ir.actions.act_window,help:sirh_hr.open_payslip_payment_mode_action
+msgid "Create a new payslip payment mode"
+msgstr "Créer un nouveau mode de paiement"
+
+#. module: sirh_hr
+#: model_terms:ir.actions.act_window,help:sirh_hr.open_spinneret
+msgid "Create a new spinneret"
+msgstr ""
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_front_notification_all__create_uid
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_contract_category__create_uid
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_direction__create_uid
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee_children__create_uid
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee_regen__create_uid
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_level__create_uid
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_payslip_payment_mode__create_uid
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_spinneret__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_front_notification_all__create_date
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_contract_category__create_date
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_direction__create_date
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee_children__create_date
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee_regen__create_date
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_level__create_date
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_payslip_payment_mode__create_date
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_spinneret__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_contract__duration_days
+msgid "Day(s)"
+msgstr "Jour(s)"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_department__default_company_ids
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__default_company_ids
+msgid "Default Company"
+msgstr "Société"
+
+#. module: sirh_hr
+#: model_terms:ir.ui.view,arch_db:sirh_hr.view_employee_level_filter
+msgid "Department"
+msgstr "Département"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__departure_date
+msgid "Departure date"
+msgstr "Date de départ"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__departure_notice_group
+msgid "Departure notice group"
+msgstr "Groupe"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_department__deputy_ids
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__deputy_ids
+#: model_terms:ir.ui.view,arch_db:sirh_hr.etech_hr_employee_view_form_inherit
+msgid "Deputy"
+msgstr "RRH"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_contract_category__note
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_payslip_payment_mode__note
+msgid "Description"
+msgstr ""
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_department__direction_id
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__direction_id
+#: model_terms:ir.ui.view,arch_db:sirh_hr.custom_hr_department_view_addfield_inherit
+#: model_terms:ir.ui.view,arch_db:sirh_hr.etech_hr_employee_view_form_inherit
+msgid "Direction"
+msgstr ""
+
+#. module: sirh_hr
+#: model_terms:ir.ui.view,arch_db:sirh_hr.view_direction_form
+#: model_terms:ir.ui.view,arch_db:sirh_hr.view_direction_tree
+msgid "Direction of CC"
+msgstr "Direction"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_front_notification_all__display_name
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_contract_category__display_name
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_direction__display_name
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee_children__display_name
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee_regen__display_name
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_level__display_name
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_payslip_payment_mode__display_name
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_spinneret__display_name
+msgid "Display Name"
+msgstr "Afficher Nom"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__documents_count
+msgid "Document Count"
+msgstr "Nombre de document"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__document_ids
+#: model_terms:ir.ui.view,arch_db:sirh_hr.etech_hr_employee_view_form_inherit
+msgid "Documents"
+msgstr ""
+
+#. module: sirh_hr
+#: model_terms:ir.ui.view,arch_db:sirh_hr.contract_template
+msgid ""
+"Download\n"
+"                                  <span class=\"fa fa-download\"/>"
+msgstr ""
+"Télécharger\n"
+"                                  <span class=\"fa fa-download\"/>"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_contract__duration
+msgid "Duration"
+msgstr "Durée"
+
+#. module: sirh_hr
+#: model_terms:ir.ui.view,arch_db:sirh_hr.report_contract_document
+msgid "EMPLOYMENT CONTRACT"
+msgstr "CONTRAT DE TRAVAIL"
+
+#. module: sirh_hr
+#: model:ir.model,name:sirh_hr.model_hr_employee
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee_children__employee_id
+msgid "Employee"
+msgstr "Employé"
+
+#. module: sirh_hr
+#: model:ir.model,name:sirh_hr.model_hr_contract
+msgid "Employee Contract"
+msgstr "Contrat de l'Employé"
+
+#. module: sirh_hr
+#: model:ir.model,name:sirh_hr.model_hr_level
+msgid "Employee Level"
+msgstr "Niveau des employés"
+
+#. module: sirh_hr
+#: model:ir.actions.act_window,name:sirh_hr.act_employee_from_job
+#: model:ir.actions.act_window,name:sirh_hr.act_employee_from_level
+#: model:ir.actions.act_window,name:sirh_hr.act_employee_from_spinneret
+#: model:ir.actions.act_window,name:sirh_hr.action_hr_job_no_employee
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_job__employee_ids
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_level__employee_ids
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_spinneret__employee_ids
+#: model_terms:ir.ui.view,arch_db:sirh_hr.hr_job_survey
+#: model_terms:ir.ui.view,arch_db:sirh_hr.hr_level_view_kanban
+#: model_terms:ir.ui.view,arch_db:sirh_hr.hr_spinneret_view_kanban
+#: model_terms:ir.ui.view,arch_db:sirh_hr.view_employee_level_filter
+#: model_terms:ir.ui.view,arch_db:sirh_hr.view_employee_spinneret_filter
+#: model_terms:ir.ui.view,arch_db:sirh_hr.view_job_kanban_inherit
+msgid "Employees"
+msgstr "Employés"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_contract__date_end
+msgid "End Date"
+msgstr "Date de fin"
+
+#. module: sirh_hr
+#: model:ir.model.fields,help:sirh_hr.field_hr_contract__date_end
+msgid "End date of the contract (if it's a fixed-term contract)."
+msgstr "Date de fin du contrat (s'il s'agit d'un contrat à durée déterminée)."
+
+#. module: sirh_hr
+#: model:ir.model.fields,help:sirh_hr.field_hr_contract__trial_date_end
+msgid "End date of the trial period (if there is one)."
+msgstr "Date de fin de la période d'essai (le cas échéant)."
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_contract__trial_date_end
+msgid "End of Trial Period"
+msgstr "Fin de la période d'essai"
+
+#. module: sirh_hr
+#: code:addons/sirh_hr/models/hr_employee.py:0
+#: model:ir.model.fields.selection,name:sirh_hr.selection__hr_employee__certificate__engeneer
+#, python-format
+msgid "Engeneer"
+msgstr "Ingénieur"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_direction__executive_id
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__executive_id
+#: model_terms:ir.ui.view,arch_db:sirh_hr.etech_hr_employee_view_form_inherit
+msgid "Executive"
+msgstr "Directeur"
+
+#. module: sirh_hr
+#: model:ir.actions.act_window,name:sirh_hr.open_module_tree_direction_etech
+#: model:ir.ui.menu,name:sirh_hr.menu_hr_direction_tree
+#: model_terms:ir.ui.view,arch_db:sirh_hr.view_direction_form
+#: model_terms:ir.ui.view,arch_db:sirh_hr.view_direction_tree
+msgid "Executives"
+msgstr "Direction"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__expatriate
+msgid "Expatriate"
+msgstr "Expatrié(e)"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__firstname_tmp
+msgid "First name"
+msgstr "Prénom (Import/Export)"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee_children__firstname
+msgid "Firstname"
+msgstr "Nom"
+
+#. module: sirh_hr
+#: model:ir.model,name:sirh_hr.model_hr_employee_regen
+msgid "For the re write of direction value"
+msgstr "Pour la réécriture de la valeur de direction"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee_children__gender
+msgid "Gender"
+msgstr "Genre"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_front_notification_all__good_to_know
+msgid "Good to know"
+msgstr "Bon à savoir"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__gpec_responsible_id
+msgid "Gpec responsible"
+msgstr "Responsable gpec"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_contract_category__group
+msgid "Group"
+msgstr ""
+
+#. module: sirh_hr
+#: code:addons/sirh_hr/models/hr_contract_category.py:0
+#: model:ir.model.fields.selection,name:sirh_hr.selection__hr_contract_category__group__group_1
+#, python-format
+msgid "Group 1"
+msgstr "Groupe 1"
+
+#. module: sirh_hr
+#: code:addons/sirh_hr/models/hr_contract_category.py:0
+#: model:ir.model.fields.selection,name:sirh_hr.selection__hr_contract_category__group__group_2
+#, python-format
+msgid "Group 2"
+msgstr "Groupe 2"
+
+#. module: sirh_hr
+#: code:addons/sirh_hr/models/hr_contract_category.py:0
+#: model:ir.model.fields.selection,name:sirh_hr.selection__hr_contract_category__group__group_3
+#, python-format
+msgid "Group 3"
+msgstr "Groupe 3"
+
+#. module: sirh_hr
+#: code:addons/sirh_hr/models/hr_contract_category.py:0
+#: model:ir.model.fields.selection,name:sirh_hr.selection__hr_contract_category__group__group_4
+#, python-format
+msgid "Group 4"
+msgstr "Groupe 4"
+
+#. module: sirh_hr
+#: code:addons/sirh_hr/models/hr_contract_category.py:0
+#: model:ir.model.fields.selection,name:sirh_hr.selection__hr_contract_category__group__group_5
+#, python-format
+msgid "Group 5"
+msgstr "Groupe 5"
+
+#. module: sirh_hr
+#: model_terms:ir.ui.view,arch_db:sirh_hr.view_employee_level_filter
+msgid "Group By"
+msgstr "Regrouper par"
+
+#. module: sirh_hr
+#: model:ir.model,name:sirh_hr.model_hr_department
+msgid "HR Department"
+msgstr "Département RH"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__hiring_date
+msgid "Hiring date"
+msgstr "Date d'embauche"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_front_notification_all__id
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_contract_category__id
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_direction__id
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee_children__id
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee_regen__id
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_level__id
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_payslip_payment_mode__id
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_spinneret__id
+msgid "ID"
+msgstr ""
+
+#. module: sirh_hr
+#: model:ir.model.fields.selection,name:sirh_hr.selection__hr_contract__trial_period_state__in_progress
+msgid "In progress"
+msgstr "En cours"
+
+#. module: sirh_hr
+#: model_terms:ir.ui.view,arch_db:sirh_hr.view_employee_level_filter
+msgid "Job"
+msgstr "Poste"
+
+#. module: sirh_hr
+#: model:ir.model,name:sirh_hr.model_hr_job
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_contract__job_id
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__job_id
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__job_name
+msgid "Job Position"
+msgstr "Poste Occupé"
+
+#. module: sirh_hr
+#: model_terms:ir.ui.view,arch_db:sirh_hr.etech_hr_employee_view_form_inherit
+msgid "Job description"
+msgstr "FICHE DE POSTE"
+
+#. module: sirh_hr
+#: model:ir.actions.act_window,name:sirh_hr.custom_jobs_menu_action
+#: model:ir.ui.menu,name:sirh_hr.custom_jobs_menu
+msgid "Jobs"
+msgstr "Postes"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_front_notification_all__know_how
+msgid "Know How"
+msgstr "Coin bien-être"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_front_notification_all____last_update
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_contract_category____last_update
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_direction____last_update
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee_children____last_update
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee_regen____last_update
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_level____last_update
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_payslip_payment_mode____last_update
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_spinneret____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_front_notification_all__write_uid
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_contract_category__write_uid
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_direction__write_uid
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee_children__write_uid
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee_regen__write_uid
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_level__write_uid
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_payslip_payment_mode__write_uid
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_spinneret__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_front_notification_all__write_date
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_contract_category__write_date
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_direction__write_date
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee_children__write_date
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee_regen__write_date
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_level__write_date
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_payslip_payment_mode__write_date
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_spinneret__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__lastname_tmp
+msgid "Last name"
+msgstr "Nom (Import/Export)"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee_children__lastname
+msgid "Lastname"
+msgstr "Prénom"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__level_id
+#: model_terms:ir.ui.view,arch_db:sirh_hr.view_employee_level_form
+msgid "Level"
+msgstr "Niveau"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_level__name
+msgid "Level name"
+msgstr "Nom du niveau"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_level__sequence
+msgid "Level sequence"
+msgstr "Sequence du niveau"
+
+#. module: sirh_hr
+#: model:ir.actions.act_window,name:sirh_hr.custom_levels_menu_action
+#: model:ir.ui.menu,name:sirh_hr.custom_levels_menu
+#: model_terms:ir.ui.view,arch_db:sirh_hr.view_employee_level_tree
+#: model_terms:ir.ui.view,arch_db:sirh_hr.view_level_filter
+msgid "Levels"
+msgstr "Niveaux"
+
+#. module: sirh_hr
+#: code:addons/sirh_hr/models/hr_employee.py:0
+#: model:ir.model.fields.selection,name:sirh_hr.selection__hr_employee__certificate__license
+#, python-format
+msgid "Licence"
+msgstr ""
+
+#. module: sirh_hr
+#: model_terms:ir.ui.view,arch_db:sirh_hr.sirh_certificate_work_layout
+#: model_terms:ir.ui.view,arch_db:sirh_hr.sirh_contract_layout
+msgid "Logo"
+msgstr ""
+
+#. module: sirh_hr
+#: model_terms:ir.ui.view,arch_db:sirh_hr.view_employee_level_filter
+msgid "Manager"
+msgstr ""
+
+#. module: sirh_hr
+#: code:addons/sirh_hr/models/hr_employee.py:0
+#: model:ir.model.fields.selection,name:sirh_hr.selection__hr_employee__certificate__master_2
+#, python-format
+msgid "Master 2"
+msgstr ""
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_job__maximum_salary
+msgid "Maximum salary"
+msgstr "Salaire maximun"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_job__minimal_salary
+msgid "Minimal salary"
+msgstr "Salaire minimum"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_contract__duration_months
+msgid "Month(s)"
+msgstr "Mois"
+
+#. module: sirh_hr
+#: model_terms:ir.ui.view,arch_db:sirh_hr.contract_template
+msgid "My Contracts"
+msgstr "Mes contrats"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_contract_category__name
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_direction__name
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_payslip_payment_mode__name
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_spinneret__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_front_notification_all__newsletter
+msgid "Newsletter"
+msgstr ""
+
+#. module: sirh_hr
+#: model_terms:ir.ui.view,arch_db:sirh_hr.contract_template
+msgid "No <strong>Contract</strong> found"
+msgstr "Aucun <strong>Contrat</strong> trouvé"
+
+#. module: sirh_hr
+#: model:ir.actions.act_window,name:sirh_hr.open_wizard_send_notif
+#: model:ir.ui.menu,name:sirh_hr.send_notif_to_all
+msgid "Notification via Mail"
+msgstr "Notification par Mail"
+
+#. module: sirh_hr
+#: model_terms:ir.ui.view,arch_db:sirh_hr.view_send_notif
+msgid "Notify by mail"
+msgstr "Notifier par mail "
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__children
+msgid "Number of Children"
+msgstr "Nombre d'enfants"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_job__number_of_employees
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_level__number_of_employees
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_spinneret__number_of_employees
+msgid "Number of employees"
+msgstr "Nombre d'employées"
+
+#. module: sirh_hr
+#: code:addons/sirh_hr/models/hr_employee_children.py:0
+#: model:ir.model.fields.selection,name:sirh_hr.selection__hr_employee_children__gender__other
+#, python-format
+msgid "Other"
+msgstr "Autre"
+
+#. module: sirh_hr
+#: model_terms:ir.ui.view,arch_db:sirh_hr.etech_hr_employee_view_form_inherit
+msgid "Others"
+msgstr "Autres"
+
+#. module: sirh_hr
+#: code:addons/sirh_hr/models/hr_employee.py:0
+#: model:ir.model.fields.selection,name:sirh_hr.selection__hr_employee__certificate__patent
+#, python-format
+msgid "Patent"
+msgstr "Brevet"
+
+#. module: sirh_hr
+#: model:ir.model,name:sirh_hr.model_hr_payslip_payment_mode
+msgid "Payment Mode (ex: Virement, Cheque, ...)"
+msgstr "Mode de paiement (ex: Virement, Cheque, ...)"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_contract__payslip_payment_mode_id
+msgid "Payment mode"
+msgstr "Mode de paiement"
+
+#. module: sirh_hr
+#: model:ir.actions.act_window,name:sirh_hr.open_payslip_payment_mode_action
+#: model:ir.ui.menu,name:sirh_hr.menu_hr_payslip_payment_mode
+msgid "Payslip Payment Mode"
+msgstr "Mode de paiement Fiche de Paie"
+
+#. module: sirh_hr
+#: model_terms:ir.ui.view,arch_db:sirh_hr.payslip_payment_mode_form_view
+#: model_terms:ir.ui.view,arch_db:sirh_hr.payslip_payment_mode_tree_view
+msgid "Payslip payment mode"
+msgstr "Mode de paiement Fiche de Paie"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__quality_responsible_id
+msgid "Quality responsible"
+msgstr "Responsable qualité"
+
+#. module: sirh_hr
+#: model:ir.model.fields.selection,name:sirh_hr.selection__hr_contract__trial_period_state__refused
+msgid "Refused"
+msgstr "Refuser"
+
+#. module: sirh_hr
+#: model:ir.actions.act_window,name:sirh_hr.launch_the_wizard
+#: model_terms:ir.ui.view,arch_db:sirh_hr.hr_employee_confirm_view
+msgid "Regenerate Direction"
+msgstr "Regénérer les valeurs Directions et Directeurs"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__resignation_notice_days
+msgid "Resignation notice days"
+msgstr "Nombre de préavis (en jour)"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_contract__struct_id
+msgid "Salary Structure"
+msgstr "Structure salariale"
+
+#. module: sirh_hr
+#: model:ir.model,name:sirh_hr.model_front_notification_all
+msgid "Sending notification for all modification made by user"
+msgstr ""
+
+#. module: sirh_hr
+#: model_terms:ir.ui.view,arch_db:sirh_hr.hr_level_view_kanban
+#: model_terms:ir.ui.view,arch_db:sirh_hr.hr_spinneret_view_kanban
+msgid "Settings"
+msgstr "Configuration"
+
+#. module: sirh_hr
+#: model:res.groups,name:sirh_hr.group_base_salary_range
+msgid "Show base salary range"
+msgstr "Afficher fourchette de salaire"
+
+#. module: sirh_hr
+#: model:ir.ui.menu,name:sirh_hr.skill_matrix_menu
+msgid "Skill matrix"
+msgstr "Matrice de compétences"
+
+#. module: sirh_hr
+#: model:ir.actions.act_window,name:sirh_hr.open_spinneret
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__spinneret_id
+#: model:ir.ui.menu,name:sirh_hr.menu_hr_spinneret
+msgid "Spinneret"
+msgstr "Filières"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_contract__date_start
+msgid "Start Date"
+msgstr "Date de début"
+
+#. module: sirh_hr
+#: model:ir.model.fields,help:sirh_hr.field_hr_contract__date_start
+msgid "Start date of the contract."
+msgstr "Date de début du contrat."
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_contract__trial_period_state
+msgid "State of the trial period"
+msgstr "Etat du période d'essai"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_front_notification_all__subject
+msgid "Subject"
+msgstr "Sujet"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_front_notification_all__email_to_ids
+msgid "To"
+msgstr "Vers"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_contract__date_trial_period_refused
+msgid "Trial period refused"
+msgstr "Période d'essai refusé le"
+
+#. module: sirh_hr
+#: model_terms:ir.ui.view,arch_db:sirh_hr.view_employee_level_filter
+msgid "Unread Messages"
+msgstr "Messages non lus"
+
+#. module: sirh_hr
+#: model:ir.actions.server,name:sirh_hr.ir_actions_server_validate_contracts
+msgid "Validate contracts"
+msgstr "Valider les contrats"
+
+#. module: sirh_hr
+#: model:ir.model.fields.selection,name:sirh_hr.selection__hr_contract__trial_period_state__validated
+msgid "Validated"
+msgstr "Valider"
+
+#. module: sirh_hr
+#: model_terms:ir.ui.view,arch_db:sirh_hr.portal_my_details_contract_inherit
+msgid "Voir mon contrat"
+msgstr ""
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_front_notification_all__we_hire
+msgid "We hire"
+msgstr "Nous recrutons"
+
+#. module: sirh_hr
+#: model_terms:ir.actions.act_window,help:sirh_hr.action_hr_job_no_employee
+msgid ""
+"With just a quick glance on the Odoo employee screen, you\n"
+"                can easily find all the information you need for each person;\n"
+"                contact data, job position, availability, etc."
+msgstr ""
+"Avec un coup d’œil rapide sur l'écran Odoo des employés, vous pouvez "
+"aisément trouver toute l'information dont vous avez besoin sur chaque "
+"personne; informations de contact, position de travail, disponibilité, etc."
+
+#. module: sirh_hr
+#: model_terms:ir.actions.act_window,help:sirh_hr.act_employee_from_job
+#: model_terms:ir.actions.act_window,help:sirh_hr.act_employee_from_level
+msgid ""
+"With just a quick glance on the Odoo employee screen, you\n"
+"          can easily find all the information you need for each person;\n"
+"          contact data, job position, availability, etc."
+msgstr ""
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_contract__duration_years
+msgid "Year(s)"
+msgstr "Année(s)"
+
+#. module: sirh_hr
+#: code:addons/sirh_hr/models/hr_employee_children.py:0
+#: model:ir.model.fields.selection,name:sirh_hr.selection__hr_employee_children__gender__female
+#, python-format
+msgid "female"
+msgstr "Féminin"
+
+#. module: sirh_hr
+#: model:ir.model,name:sirh_hr.model_hr_direction
+msgid "hr.direction"
+msgstr ""
+
+#. module: sirh_hr
+#: model:ir.model,name:sirh_hr.model_hr_employee_children
+msgid "hr.employee.children"
+msgstr ""
+
+#. module: sirh_hr
+#: model:ir.model,name:sirh_hr.model_hr_spinneret
+msgid "hr_spinneret"
+msgstr ""
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__is_gpec_responsible
+msgid "is gpec responsible"
+msgstr "Est un responsable gpec"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__is_manager
+msgid "is manager"
+msgstr "Est un gestionnaire"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__is_quality_responsible
+msgid "is quality responsible"
+msgstr "Est un responsable qualité"
+
+#. module: sirh_hr
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_department__is_rrh
+#: model:ir.model.fields,field_description:sirh_hr.field_hr_employee__is_rrh
+msgid "is rrh"
+msgstr "Est un rrh"
+
+#. module: sirh_hr
+#: code:addons/sirh_hr/models/hr_employee_children.py:0
+#: model:ir.model.fields.selection,name:sirh_hr.selection__hr_employee_children__gender__male
+#, python-format
+msgid "male"
+msgstr "Male"
+
+#. module: sirh_hr
+#: code:addons/sirh_hr/models/hr_employee.py:0
+#: code:addons/sirh_hr/models/hr_employee_children.py:0
+#, python-format
+msgid "{} an(s)"
+msgstr ""

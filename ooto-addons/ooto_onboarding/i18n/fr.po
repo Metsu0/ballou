@@ -1,0 +1,3453 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ooto_onboarding
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0-20200409\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-18 08:13+0000\n"
+"PO-Revision-Date: 2021-05-18 08:13+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ooto_onboarding
+#: model:mail.template,body_html:ooto_onboarding.email_template_task_reminder
+msgid ""
+"\n"
+"<p>Dear ${object.task_id.onboarding_id.employee_id.name}, </p>\n"
+"Task reminder : ${object.task_id.name} <br/>\n"
+"To do before : ${object.task_id.date_end_char}\n"
+msgstr ""
+"\n"
+"<p>Chère ${object.task_id.onboarding_id.employee_id.name}, </p>\n"
+"Rappel de la tâche : ${object.task_id.name} <br/>\n"
+"A faire avant : ${object.task_id.date_end_char}\n"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/mail_message.py:0
+#, python-format
+msgid " day "
+msgstr " jour"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/mail_message.py:0
+#, python-format
+msgid " days "
+msgstr " jours"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/mail_message.py:0
+#, python-format
+msgid " hour "
+msgstr " heure"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/mail_message.py:0
+#, python-format
+msgid " hours "
+msgstr ""
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/mail_message.py:0
+#, python-format
+msgid " minute "
+msgstr ""
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/mail_message.py:0
+#, python-format
+msgid " minutes "
+msgstr ""
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/mail_message.py:0
+#: code:addons/ooto_onboarding/models/mail_message.py:0
+#, python-format
+msgid " month "
+msgstr " mois "
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/mail_message.py:0
+#: code:addons/ooto_onboarding/models/mail_message.py:0
+#, python-format
+msgid " months "
+msgstr " mois "
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/mail_message.py:0
+#, python-format
+msgid " year "
+msgstr " an "
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/mail_message.py:0
+#, python-format
+msgid " years "
+msgstr " ans "
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_appointment.py:0
+#, python-format
+msgid "%s (Waiting for validation)"
+msgstr "%s (En attente de validation)"
+
+#. module: ooto_onboarding
+#. openerp-web
+#: code:addons/ooto_onboarding/static/src/xml/base_calendar.xml:0
+#, python-format
+msgid "&times;"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.password_initialization_mail_content
+msgid ""
+", please initialize your password\n"
+"                  by clicking on the following button:\n"
+"                  <br/>"
+msgstr ""
+", Veuillez initialiser votre mot de passe\n"
+"                 en cliquant sur le bouton suivant:\n"
+"                  <br/>"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.survey_onboarding_form
+msgid ""
+"<span attrs=\"{'invisible': [('is_attempts_limited', '=', "
+"False)]}\">attempts</span>"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.survey_onboarding_form
+msgid ""
+"<span attrs=\"{'invisible': [('is_time_limited', '=', "
+"False)]}\">minutes</span>"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.survey_onboarding_kanban
+msgid "<span class=\"text-muted\">Answers</span>"
+msgstr "<span class=\"text-muted\">Réponses</span>"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.survey_onboarding_kanban
+msgid "<span class=\"text-muted\">Success</span>"
+msgstr "<span class=\"text-muted\">Succès</span>"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_form_view
+msgid ""
+"<span style=\"font-weight:bold;\" attrs=\"{'invisible': [('employee_id','=',False)]}\">\n"
+"                    Tasks of\n"
+"                  </span>\n"
+"                  <span style=\"font-weight:bold;\" attrs=\"{'invisible': [('employee_id','!=',False)]}\">\n"
+"                    Select employee\n"
+"                  </span>"
+msgstr ""
+"<span style=\"font-weight:bold;\" attrs=\"{'invisible': [('employee_id','=',False)]}\">\n"
+"                    Tâches de\n"
+"                  </span>\n"
+"                  <span style=\"font-weight:bold;\" attrs=\"{'invisible': [('employee_id','!=',False)]}\">\n"
+"                    Sélectionnez un employé\n"
+"                  </span>"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_kanban_view
+msgid ""
+"<span>\n"
+"                          <i class=\"fa fa-calendar\" aria-label=\"calendar\" title=\"calendar\"/>\n"
+"                        </span>\n"
+"                        <span>\n"
+"                          Dans\n"
+"                        </span>"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_form_view
+msgid "<span>After first month</span>"
+msgstr "<span>Après le premier mois</span"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_form_view
+msgid "<span>Arrival day</span>"
+msgstr "<span>Le jour d'arrivée</span>"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_form_view
+msgid "<span>Before arrival</span>"
+msgstr "<span>Avant l'arrivée</span>"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_form_view
+msgid "<span>First month</span>"
+msgstr "<span>Le premier mois</span>"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_form_view
+msgid "<span>First week</span>"
+msgstr "<span>La première semaine</span>"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_form_view
+msgid "<span>Percentage of overall progress</span>"
+msgstr "<span>Pourcentage d'avancement globale </span>"
+
+#. module: ooto_onboarding
+#: model:mail.template,body_html:ooto_onboarding.set_password_email_ooto
+msgid ""
+"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"padding-top: 16px; background-color: #F1F1F1; font-family:Verdana, Arial,sans-serif; color: #454748; width: 100%; border-collapse:separate;\">\n"
+"          <tr>\n"
+"            <td align=\"center\">\n"
+"              <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"padding: 16px; background-color: white; color: #454748; border-collapse:separate;\">\n"
+"                <tbody>\n"
+"                  <!-- CONTENT -->\n"
+"                  <tr>\n"
+"                    <td align=\"center\" style=\"min-width: 590px;\">\n"
+"                      <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;\">\n"
+"                        <tr>\n"
+"                          <td valign=\"top\" style=\"font-size: 13px;\">\n"
+"                            <div>\n"
+"                              Dear ${object.name},\n"
+"                              <br/>\n"
+"                              <br/>\n"
+"                              You are invited to register on your collaborators area\n"
+"                              <div style=\"margin: 26px 0px 16px 210px;\">\n"
+"                                <a href=\"${object.get_signup_url()}\" style=\"background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size:13px;\">\n"
+"                                  Accept invitation\n"
+"                                </a>\n"
+"                              </div>\n"
+"                              <br/>\n"
+"                              Your sign in email is: ${object.email}\n"
+"                              <br/>\n"
+"                              <br/>\n"
+"                              Your password remains to be set by accepting the invitation above\n"
+"                              <br/>\n"
+"                              <br/>The ${object.env.cr.dbname} Team\n"
+"                            </div>\n"
+"                          </td>\n"
+"                        </tr>\n"
+"                        <tr>\n"
+"                          <td style=\"text-align:center;\">\n"
+"                            <hr width=\"100%\" style=\"background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin: 16px 0px 16px 0px;\"/>\n"
+"                          </td>\n"
+"                        </tr>\n"
+"                      </table>\n"
+"                    </td>\n"
+"                  </tr>\n"
+"                </tbody>\n"
+"              </table>\n"
+"            </td>\n"
+"          </tr>\n"
+"        </table>\n"
+"      "
+msgstr ""
+"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"padding-top: 16px; background-color: #F1F1F1; font-family:Verdana, Arial,sans-serif; color: #454748; width: 100%; border-collapse:separate;\">\n"
+"          <tr>\n"
+"            <td align=\"center\">\n"
+"              <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"padding: 16px; background-color: white; color: #454748; border-collapse:separate;\">\n"
+"                <tbody>\n"
+"                  <!-- CONTENT -->\n"
+"                  <tr>\n"
+"                    <td align=\"center\" style=\"min-width: 590px;\">\n"
+"                      <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;\">\n"
+"                        <tr>\n"
+"                          <td valign=\"top\" style=\"font-size: 13px;\">\n"
+"                            <div>\n"
+"                              Bonjour ${object.name},\n"
+"                              <br/>\n"
+"                              <br/>\n"
+"                              Vous êtes invité à vous inscrire sur votre espace collaborateurs\n"
+"                              <div style=\"margin: 26px 0px 16px 210px;\">\n"
+"                                <a href=\"${object.get_signup_url()}\" style=\"background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size:13px;\">\n"
+"                                  Accepter l'invitation\n"
+"                                </a>\n"
+"                              </div>\n"
+"                              <br/>\n"
+"                              Votre identifiant est: ${object.email}\n"
+"                              <br/>\n"
+"                              <br/>\n"
+"                              Votre mot de passe rester à définir en acceptant l'invitation ci-dessus\n"
+"                              <br/>\n"
+"                              <br/>L'équipe ${object.env.cr.dbname}\n"
+"                            </div>\n"
+"                          </td>\n"
+"                        </tr>\n"
+"                        <tr>\n"
+"                          <td style=\"text-align:center;\">\n"
+"                            <hr width=\"100%\" style=\"background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin: 16px 0px 16px 0px;\"/>\n"
+"                          </td>\n"
+"                        </tr>\n"
+"                      </table>\n"
+"                    </td>\n"
+"                  </tr>\n"
+"                </tbody>\n"
+"              </table>\n"
+"            </td>\n"
+"          </tr>\n"
+"        </table>\n"
+"      "
+
+#. module: ooto_onboarding
+#: model:mail.template,body_html:ooto_onboarding.onboarding_task_email
+msgid ""
+"<table width=\"600\" border=\"1\" cellpadding=\"0\" cellspacing=\"0\" bgcolor=\"#fff\" style=\"border:#f2f2f2 1px solid;\">\n"
+"          <tr>\n"
+"            <td valign=\"top\" style=\"padding: 0px 10px;\">\n"
+"              <div style=\"font-size: 13px; margin: 0px; padding: 0px;\">\n"
+"                Hello,\n"
+"                <br/>\n"
+"                <br/>\n"
+"                Here are the new collaborator(s) of the week :\n"
+"                <table>\n"
+"                  % set employee_ids = object.get_all_new_employee()\n"
+"                  %if employee_ids:\n"
+"                    % for employee_id in employee_ids:\n"
+"                        <tr>\n"
+"                          <td width=\"75\">\n"
+"                            <img src=\"/web/image/hr.employee/${employee_id.id}/image_128\" alt=\"Avatar\" style=\"vertical-align:baseline; width: 64px; height: 64px; object-fit: cover;\"/>\n"
+"                          </td>\n"
+"                          <td>\n"
+"                            <strong>${employee_id.name}</strong>\n"
+"                            <br/>\n"
+"                            <span>Post: ${employee_id.job_id.name or ''}</span>\n"
+"                          </td>\n"
+"                      </tr>\n"
+"                    % endfor\n"
+"                  %endif\n"
+"                </table>\n"
+"              </div>\n"
+"            </td>\n"
+"          </tr>\n"
+"        </table>\n"
+"      "
+msgstr ""
+"<table width=\"600\" border=\"1\" cellpadding=\"0\" cellspacing=\"0\" bgcolor=\"#fff\" style=\"border:#f2f2f2 1px solid;\">\n"
+"          <tr>\n"
+"            <td valign=\"top\" style=\"padding: 0px 10px;\">\n"
+"              <div style=\"font-size: 13px; margin: 0px; padding: 0px;\">\n"
+"                Bonjour,\n"
+"                <br/>\n"
+"                <br/>\n"
+"                Voici les nouveau(x) collaborateur(s) de la semaine :\n"
+"                <table>\n"
+"                  % set employee_ids = object.get_all_new_employee()\n"
+"                  %if employee_ids:\n"
+"                    % for employee_id in employee_ids:\n"
+"                        <tr>\n"
+"                          <td width=\"75\">\n"
+"                            <img src=\"/web/image/hr.employee/${employee_id.id}/image_128\" alt=\"Avatar\" style=\"vertical-align:baseline; width: 64px; height: 64px; object-fit: cover;\"/>\n"
+"                          </td>\n"
+"                          <td>\n"
+"                            <strong>${employee_id.name}</strong>\n"
+"                            <br/>\n"
+"                            <span>Poste: ${employee_id.job_id.name or ''}</span>\n"
+"                          </td>\n"
+"                      </tr>\n"
+"                    % endfor\n"
+"                  %endif\n"
+"                </table>\n"
+"              </div>\n"
+"            </td>\n"
+"          </tr>\n"
+"        </table>\n"
+"      "
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.password_initialization_mail_content
+msgid "Access to the platform"
+msgstr "Accéder à la plateforme"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__message_needaction
+msgid "Action Needed"
+msgstr "Nécessite une action"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_weekly_notification__is_active
+msgid "Activate"
+msgstr "Activer"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__timer_check
+msgid "Activate timer"
+msgstr "Activé le minuteur"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding.py:0
+#: model:ir.model.fields,field_description:ooto_onboarding.field_email_template_preview__active
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__active
+#: model:ir.model.fields,field_description:ooto_onboarding.field_mail_mail__active
+#: model:ir.model.fields,field_description:ooto_onboarding.field_mail_message__active
+#: model:ir.model.fields,field_description:ooto_onboarding.field_mail_template__active
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding__state__active
+#, python-format
+msgid "Active"
+msgstr "Actif"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__activity_ids
+#: model:ir.ui.menu,name:ooto_onboarding.menu_ooto_onboarding_activities
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.activity_tree_view
+msgid "Activities"
+msgstr "Activités"
+
+#. module: ooto_onboarding
+#: model:ir.actions.act_window,name:ooto_onboarding.ooto_onboarding_activity_action
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_form_view
+msgid "Activity"
+msgstr "Activité"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Activité d'exception de décoration"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__activity_state
+msgid "Activity State"
+msgstr "Status de l'activité"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding.py:0
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_form_view
+#, python-format
+msgid "Activity list"
+msgstr "Activité"
+
+#. module: ooto_onboarding
+#: model_terms:ir.actions.act_window,help:ooto_onboarding.action_survey_onboarding_form
+msgid "Add a new survey onboarding"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.survey_onboarding_form
+msgid "Add a question"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.survey_onboarding_form
+msgid "Add a section"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__departure_description
+msgid "Additional Information"
+msgstr "Information complémentaire"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__additional_note
+msgid "Additional Note"
+msgstr "Note additionnelle"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__address_home_id
+msgid "Address"
+msgstr "Adresse"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__admin_responsible_id
+msgid "Admin responsible"
+msgstr "Responsable administratif"
+
+#. module: ooto_onboarding
+#: model:ir.ui.menu,name:ooto_onboarding.menu_ooto_onboarding_configuration_administrative
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_form_view
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_task_search
+msgid "Administrative"
+msgstr "Administratif"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.view_employee_form
+msgid "Administrative Personal Information"
+msgstr "Information personnelle administratif"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.view_employee_form
+msgid "Administrative Work Information"
+msgstr "Information professionnelle administratif"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_form_view
+#, python-format
+msgid "Administrative list"
+msgstr "Administratif"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__administrative_type
+msgid "Administrative type"
+msgstr ""
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__task_type__advice
+#: model:ir.ui.menu,name:ooto_onboarding.menu_ooto_onboarding_configuration_advice
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_task_search
+#, python-format
+msgid "Advice"
+msgstr "Conseil"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__after_first_month
+msgid "After First Month"
+msgstr "Après le premier mois"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__after_first_month_n_x
+msgid "After First Month N X"
+msgstr "Après le premier mois"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_dashboard.py:0
+#: code:addons/ooto_onboarding/models/hr_employee.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: code:addons/ooto_onboarding/models/survey.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_employee__period__after_first_month
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding__onboarding_state__after_first_month
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding__period__after_first_month
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding__period_display__5after_first_month
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__period__after_first_month
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__period_display__5after_first_month
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__survey_survey__period__after_first_month
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__survey_survey__state_onboarding__after_first_month
+#, python-format
+msgid "After first month"
+msgstr "Après le premier mois"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__to_do_for__after_x_month
+#, python-format
+msgid "After the first X months"
+msgstr "Après le X premier mois"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_appointment_postpone__allday
+msgid "All days"
+msgstr "Tous les jours"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.survey_onboarding_form
+msgid "Answers"
+msgstr "Réponses"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__task_type__appointment
+#: model:ir.ui.menu,name:ooto_onboarding.menu_ooto_onboarding_appointment
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_form_view
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_task_search
+#, python-format
+msgid "Appointment"
+msgstr "Rendez-vous"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.view_onboarding_appointment_postpone_form
+msgid "Appointment Postpone Form"
+msgstr "Report de Rendez-vous"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.view_onboarding_appointment_postpone_tree
+msgid "Appointment Postpone List"
+msgstr "Report de Rendez-vous"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding.py:0
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_form_view
+#, python-format
+msgid "Appointment list"
+msgstr "Rendez-vous"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_calendar_event__appointment_task_id
+msgid "Appointment task"
+msgstr "Tâche Rendez-vous"
+
+#. module: ooto_onboarding
+#: model:ir.actions.act_window,name:ooto_onboarding.action_onboarding_appointment
+#: model:ir.ui.menu,name:ooto_onboarding.menu_ooto_onboarding_appointment_list
+msgid "Appointments"
+msgstr "Rendez-vous"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_task_kanban_view
+msgid "Après le premier mois"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_kanban_view
+msgid "Archive / Unarchive"
+msgstr "Archiver/Désarchiver"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.survey_onboarding_form
+msgid "Archived"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__arrival_x
+msgid "Arrival X"
+msgstr "Arrivée X"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__arrival_date
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__arrival_date
+msgid "Arrival date"
+msgstr "Date d'arrivée"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_dashboard.py:0
+#: code:addons/ooto_onboarding/models/hr_employee.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: code:addons/ooto_onboarding/models/survey.py:0
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__arrival_day
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__arrival_day_n_x
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_employee__period__arrival_day
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding__period__arrival_day
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding__period_display__2arrival_day
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__period__arrival_day
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__period_display__2arrival_day
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__survey_survey__period__arrival_day
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__survey_survey__state_onboarding__arrival_day
+#, python-format
+msgid "Arrival day"
+msgstr "Jour d'arrivée"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__message_attachment_count
+msgid "Attachment Count"
+msgstr "Compte des pièces jointes"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.survey_onboarding_form
+msgid "Attempts Limit"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_task_kanban_view
+msgid "Avant arrivée"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.survey_onboarding_form
+msgid "Back Button"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__barcode
+msgid "Badge ID"
+msgstr "ID du badge"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__bank_account_id
+msgid "Bank Account Number"
+msgstr "Numéro de Compte Bancaire"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.personal_binary_fields_to_fill
+msgid "Base64 will appear here"
+msgstr ""
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_dashboard.py:0
+#: code:addons/ooto_onboarding/models/hr_employee.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: code:addons/ooto_onboarding/models/survey.py:0
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__before_arrival
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__before_arrival_n_x
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_employee__period__before_arrival
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding__period__before_arrival
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding__period_display__1before_arrival
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__period__before_arrival
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__period_display__1before_arrival
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__survey_survey__period__before_arrival
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__survey_survey__state_onboarding__before_arrival
+#, python-format
+msgid "Before arrival"
+msgstr "Avant arrivée"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding__onboarding_state__before_the_arrival
+msgid "Before the arrival"
+msgstr "Avant arrivé"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__to_do_for__before_x_month
+#, python-format
+msgid "Before the first X months"
+msgstr "Avant le X premier mois"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_task_reminder_notif__alarm_id
+msgid "Calendar alarm"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_ir_model_fields__can_not_be_modified_by_employee
+msgid "Can not be modified by employee"
+msgstr "Ne peut pas être modifié par l'employé"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_appointment.py:0
+#, python-format
+msgid "Can't accept modification. Start date is waiting for validation."
+msgstr ""
+"La modification ne peut pas être acceptée. L'heure de début est encore en "
+"attente de validation."
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.employee_option_wizard_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.survey_onboarding_form
+msgid "Candidates"
+msgstr ""
+
+#. module: ooto_onboarding
+#. openerp-web
+#: code:addons/ooto_onboarding/static/src/xml/hr_dashboard.xml:0
+#, python-format
+msgid "Ce mois"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__certificate
+msgid "Certificate Level"
+msgstr "Niveau du certificat"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.survey_onboarding_form
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.survey_onboarding_kanban
+msgid "Certified"
+msgstr "Certifié"
+
+#. module: ooto_onboarding
+#. openerp-web
+#: code:addons/ooto_onboarding/static/src/xml/hr_dashboard.xml:0
+#: code:addons/ooto_onboarding/static/src/xml/hr_dashboard.xml:0
+#, python-format
+msgid "Cette semaine"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__child_ids
+msgid "Childs task"
+msgstr "Tâches enfant"
+
+#. module: ooto_onboarding
+#. openerp-web
+#: code:addons/ooto_onboarding/static/src/xml/base_calendar.xml:0
+#, python-format
+msgid "Close"
+msgstr "Fermer"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.survey_onboarding_kanban
+msgid "Color"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__color
+msgid "Color Index"
+msgstr "Couleur"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.view_employee_form
+msgid "Compose mail"
+msgstr "Composer l'email d'invitation"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_tutorial_page__number
+msgid "Concerned page"
+msgstr "Page concernée"
+
+#. module: ooto_onboarding
+#: model:ir.ui.menu,name:ooto_onboarding.menu_ooto_onboarding_configuration
+msgid "Configuration"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_employee_option__confirm_password
+msgid "Confirm Password"
+msgstr "Confirmer le mot de passe"
+
+#. module: ooto_onboarding
+#. openerp-web
+#: code:addons/ooto_onboarding/static/src/xml/hr_dashboard.xml:0
+#, python-format
+msgid "Conseils diffusés"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model,name:ooto_onboarding.model_res_partner
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__type_domain__contact
+msgid "Contact"
+msgstr ""
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__task_type__content
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_task_search
+#, python-format
+msgid "Content"
+msgstr "Contenu"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__content_type
+msgid "Content type"
+msgstr "Type de contenu"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_form_view
+msgid "Contents"
+msgstr "Contenus"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding.py:0
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_form_view
+#, python-format
+msgid "Contents list"
+msgstr "Contenu"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_tutorial__count_page
+msgid "Count Page"
+msgstr "Nombre de page"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__country_of_birth
+msgid "Country of Birth"
+msgstr "Pays de Naissance"
+
+#. module: ooto_onboarding
+#: model_terms:ir.actions.act_window,help:ooto_onboarding.ooto_onboarding_action
+msgid "Create new Onboarding"
+msgstr "Créer un nouveau Onboarding"
+
+#. module: ooto_onboarding
+#: model_terms:ir.actions.act_window,help:ooto_onboarding.onboarding_role_action
+msgid "Create new Onboarding role"
+msgstr "Créer un nouveau rôle d'intégration"
+
+#. module: ooto_onboarding
+#: model_terms:ir.actions.act_window,help:ooto_onboarding.ooto_activity_task_action
+#: model_terms:ir.actions.act_window,help:ooto_onboarding.ooto_task_action
+#: model_terms:ir.actions.act_window,help:ooto_onboarding.ooto_task_admin_action
+#: model_terms:ir.actions.act_window,help:ooto_onboarding.ooto_task_advice_action
+#: model_terms:ir.actions.act_window,help:ooto_onboarding.ooto_task_form_action
+msgid "Create new Task"
+msgstr "Créer une nouvelle tâche"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_employee_option__create_uid
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_dashboard__create_uid
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__create_uid
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_appointment_postpone__create_uid
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__create_uid
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task_type__create_uid
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_task_state__create_uid
+#: model:ir.model.fields,field_description:ooto_onboarding.field_ir_model_task__create_uid
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_employee_fields_document__create_uid
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_employee_fields_upload__create_uid
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_notification__create_uid
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_role__create_uid
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_tutorial__create_uid
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_tutorial_page__create_uid
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_weekly_notification__create_uid
+#: model:ir.model.fields,field_description:ooto_onboarding.field_task_reminder_notif__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_employee_option__create_date
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_dashboard__create_date
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__create_date
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_appointment_postpone__create_date
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__create_date
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task_type__create_date
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_task_state__create_date
+#: model:ir.model.fields,field_description:ooto_onboarding.field_ir_model_task__create_date
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_employee_fields_document__create_date
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_employee_fields_upload__create_date
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_notification__create_date
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_role__create_date
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_tutorial__create_date
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_tutorial_page__create_date
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_weekly_notification__create_date
+#: model:ir.model.fields,field_description:ooto_onboarding.field_task_reminder_notif__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_employee_option__option
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__option
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__option
+msgid "Creation Option"
+msgstr "Options"
+
+#. module: ooto_onboarding
+#: model:ir.model,name:ooto_onboarding.model_onboarding_employee_fields_document
+#: model:ir.model,name:ooto_onboarding.model_onboarding_employee_fields_upload
+msgid "Creation fields dynamic task"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model,name:ooto_onboarding.model_ir_model_task
+msgid "Creation fields model task"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_ir_model_fields__custom_ttype
+msgid "Custom field type"
+msgstr "Type de champ personnalisé"
+
+#. module: ooto_onboarding
+#: model:ir.actions.client,name:ooto_onboarding.action_hr_onboarding_dashboard
+#: model:ir.ui.menu,name:ooto_onboarding.menu_ooto_onboarding_dashboard
+msgid "Dashboard"
+msgstr "Tableau de bord"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__date_end
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__date_end_char
+msgid "Date end"
+msgstr "Date de fin"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__birthday
+msgid "Date of Birth"
+msgstr "Date de naissance"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/wizard/employee_option_wizard.py:0
+#, python-format
+msgid "Date sending invitation empty"
+msgstr "Date d'envoi de l'invitation vide"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_employee_option__date_sending_invitation
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__date_sending_invitation
+msgid "Date sending invitation mail"
+msgstr "Date d'envoi des notifications"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__date_start
+msgid "Date start"
+msgstr "Date de début"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.password_initialization_mail_content
+msgid "Dear"
+msgstr "Cher"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,help:ooto_onboarding.field_hr_onboarding_task__resource_calendar_id
+msgid "Define the schedule of resource"
+msgstr "Définir la planification de la ressource"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_mail_mail__date_format
+#: model:ir.model.fields,field_description:ooto_onboarding.field_mail_message__date_format
+msgid "Delay"
+msgstr "Délai"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__delay
+msgid "Delay (Month nb)"
+msgstr "Délai (Nb mois)"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_kanban_view
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_task_kanban_view
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.survey_onboarding_kanban
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.view_onboarding_appointment_kanban
+msgid "Delete"
+msgstr "Supprimer"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__departure_reason
+msgid "Departure Reason"
+msgstr "Raison du départ"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__description
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_tutorial_page__description
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.onboarding_task_form_views
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.survey_onboarding_form
+msgid "Description"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model_terms:ir.actions.act_window,help:ooto_onboarding.action_survey_onboarding_form
+msgid "Design easily your survey, send invitations and analyze answers."
+msgstr ""
+"Concevez facilement votre sondage, envoyez des invitations et analysez les "
+"réponses"
+
+#. module: ooto_onboarding
+#. openerp-web
+#: code:addons/ooto_onboarding/static/src/xml/base_calendar.xml:0
+#, python-format
+msgid "Details"
+msgstr "Détails"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_employee_option__display_name
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_dashboard__display_name
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__display_name
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_appointment_postpone__display_name
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__display_name
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task_type__display_name
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_task_state__display_name
+#: model:ir.model.fields,field_description:ooto_onboarding.field_ir_model_task__display_name
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_employee_fields_document__display_name
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_employee_fields_upload__display_name
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_notification__display_name
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_role__display_name
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_tutorial__display_name
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_tutorial_page__display_name
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_weekly_notification__display_name
+#: model:ir.model.fields,field_description:ooto_onboarding.field_task_reminder_notif__display_name
+msgid "Display Name"
+msgstr "Afficher Nom"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_employee.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding.py:0
+#: code:addons/ooto_onboarding/wizard/employee_option_wizard.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__employee_option__option__do_nothing
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_employee__option__do_nothing
+#, python-format
+msgid "Do Nothing"
+msgstr "Ne rien faire"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__content_type__document
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__onboarding_notification__task_type__document
+msgid "Document"
+msgstr ""
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/onboarding_notification.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__administrative_type__document_fill
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__onboarding_notification__task_type__document_fill
+#, python-format
+msgid "Document to fill"
+msgstr "Information à renseigner"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.personal_binary_fields_to_fill
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.portal_my_details_onboarding_inherit
+msgid "Documents to provide"
+msgstr "Documents à fournir"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_appointment.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__calendar_event__status__done
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__task_state__done
+#, python-format
+msgid "Done"
+msgstr "Fait"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding__onboarding_state__draft
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding__state__draft
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__publication_state__draft
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__task_state__draft
+#, python-format
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_kanban_view
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_task_kanban_view
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.survey_onboarding_kanban
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.view_onboarding_appointment_kanban
+msgid "Dropdown menu"
+msgstr "Menu déroulant"
+
+#. module: ooto_onboarding
+#. openerp-web
+#: code:addons/ooto_onboarding/static/src/xml/hr_dashboard.xml:0
+#, python-format
+msgid "Départs"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_task_kanban_view
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.view_onboarding_appointment_kanban
+msgid "Edit"
+msgstr "Modifier"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.survey_onboarding_kanban
+msgid "Edit Survey"
+msgstr ""
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: code:addons/ooto_onboarding/models/onboarding_notification.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__task_type__email
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__onboarding_notification__task_type__email
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_form_view
+#, python-format
+msgid "Email"
+msgstr "Courriel"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__email_ratio
+msgid "Email Ratio"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model,name:ooto_onboarding.model_mail_template
+msgid "Email Templates"
+msgstr "Modèles de courriels"
+
+#. module: ooto_onboarding
+#: model:ir.model,name:ooto_onboarding.model_mail_compose_message
+msgid "Email composition wizard"
+msgstr "Assistant de composition d'emails"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__embed_code
+msgid "Embed Code"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__emergency_contact
+msgid "Emergency Contact"
+msgstr "Contact d'urgence"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__emergency_phone
+msgid "Emergency Phone"
+msgstr "Téléphone d'urgence"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding.py:0
+#: model:ir.model,name:ooto_onboarding.model_hr_employee
+#: model:ir.model.fields,field_description:ooto_onboarding.field_calendar_event__employee_ids
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__employee_id
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__employee_ids
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__type_domain__employee
+#, python-format
+msgid "Employee"
+msgstr "Employé"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_employee_fields_document__employee_ids
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_employee_fields_document__onboarding_task
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_employee_fields_upload__employee_ids
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_employee_fields_upload__onboarding_task
+msgid "Employee Fields"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,help:ooto_onboarding.field_hr_employee__bank_account_id
+msgid "Employee bank salary account"
+msgstr "Compte bancaire du salaire de l'employé"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__employee_department_id
+msgid "Employee department"
+msgstr "Département"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_calendar_event__employee_domain
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__employee_domain
+msgid "Employee domain"
+msgstr "Domaine employé"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__employee_image
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__employee_image
+msgid "Employee image"
+msgstr "Image de l'employée"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__employee_position_id
+msgid "Employee position"
+msgstr "Poste occupé"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_mail_message_search_view
+msgid "En cours"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_mail_message_search_view
+msgid "En retard"
+msgstr ""
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/reminder_notif.py:0
+#, python-format
+msgid "End date: %s"
+msgstr "Date de fin: %s"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__trial_date_end
+msgid "End of Trial Period"
+msgstr "Fin de la période d'essai"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,help:ooto_onboarding.field_hr_employee__address_home_id
+msgid ""
+"Enter here the private address of the employee, not the one linked to your "
+"company."
+msgstr ""
+"Saisissez ici l'adresse personnelle de l'employé, mais pas celle associée à "
+"votre entreprise."
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: code:addons/ooto_onboarding/models/onboarding_notification.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__task_type__equipment
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__onboarding_notification__task_type__equipment
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_task_search
+#, python-format
+msgid "Equipment"
+msgstr "Organisation"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_task_reminder_notif__display_time
+msgid "Event Time"
+msgstr "Heure de l'événement"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: code:addons/ooto_onboarding/models/onboarding_notification.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__content_type__url
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__onboarding_notification__task_type__url
+#, python-format
+msgid "External URL"
+msgstr "URL Externe"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_ir_model_task__description
+msgid "Field Description"
+msgstr "Description du champ"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_ir_model_task__field_description
+msgid "Field Label"
+msgstr "Étiquette de Champ"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_ir_model_task__name
+msgid "Field Name"
+msgstr "Nom de Champ"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_ir_model_task__title
+msgid "Field Title"
+msgstr "Titre du champ"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_ir_model_task__ttype
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.annuaire_ir_model_form_view
+msgid "Field Type"
+msgstr "Type de Champ"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_employee_fields_document__fields_id
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_employee_fields_upload__fields_id
+msgid "Field name"
+msgstr "Champs"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__study_field
+msgid "Field of Study"
+msgstr "Champ d’étude"
+
+#. module: ooto_onboarding
+#: model:ir.model,name:ooto_onboarding.model_ir_model_fields
+msgid "Fields"
+msgstr "Champs"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.document_tasks
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.portal_my_details_onboarding_inherit
+msgid "Fill in"
+msgstr "Remplir"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.portal_my_details_onboarding_inherit
+msgid ""
+"Fill in your personal information so that we can get to know\n"
+"              you better!"
+msgstr ""
+"Renseignez vos informations personnelles afin qu’on fasse\n"
+"                plus ample connaissance !"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.document_tasks
+msgid ""
+"Fill in your personal information so that we can get to know you\n"
+"                  better!"
+msgstr ""
+"Renseignez vos informations personnelles afin qu’on fasse plus ample\n"
+"                  connaissance !!"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__finished_in_time
+msgid "Finished in time"
+msgstr "Fini à temps"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_dashboard.py:0
+#: code:addons/ooto_onboarding/models/hr_employee.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: code:addons/ooto_onboarding/models/survey.py:0
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__first_month
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__first_month_n_x
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_employee__period__first_month
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding__onboarding_state__first_month
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding__period__first_month
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding__period_display__4first_month
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__period__first_month
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__period_display__4first_month
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__survey_survey__period__first_month
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__survey_survey__state_onboarding__first_month
+#, python-format
+msgid "First month"
+msgstr "Le premier mois"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_dashboard.py:0
+#: code:addons/ooto_onboarding/models/hr_employee.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: code:addons/ooto_onboarding/models/survey.py:0
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__first_week
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__first_week_n_x
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_employee__period__first_week
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding__onboarding_state__first_week
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding__period__first_week
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding__period_display__3first_week
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__period__first_week
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__period_display__3first_week
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__survey_survey__period__first_week
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__survey_survey__state_onboarding__first_week
+#, python-format
+msgid "First week"
+msgstr "La première semaine"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__message_follower_ids
+msgid "Followers"
+msgstr "Abonnés"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Abonnés (Canaux)"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Abonnés (Partenaires)"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: code:addons/ooto_onboarding/models/onboarding_notification.py:0
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__survey_id
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__task_type__form
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__onboarding_notification__task_type__form
+#: model:ir.ui.menu,name:ooto_onboarding.menu_ooto_onboarding_configuration_form
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_form_view
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_task_search
+#, python-format
+msgid "Form"
+msgstr "Formulaire"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__form_ratio
+msgid "Form Ratio"
+msgstr ""
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding.py:0
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_form_view
+#, python-format
+msgid "Form list"
+msgstr "Formulaire"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.personal_form_task
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.portal_my_details_onboarding_inherit
+msgid "Forms"
+msgstr "Formulaires"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/onboarding_notification.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__onboarding_weekly_notification__notification_day__4
+#, python-format
+msgid "Friday"
+msgstr "Vendredi"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__is_from_onboarding
+msgid "From onboarding"
+msgstr "Depuis onboarding"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__gender
+msgid "Gender"
+msgstr "Genre"
+
+#. module: ooto_onboarding
+#: model:ir.model,name:ooto_onboarding.model_hr_dashboard
+msgid "HR Dashboard"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model,name:ooto_onboarding.model_hr_onboarding
+msgid "HR onboarding"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.password_initialization_mail_content
+msgid "Hello,"
+msgstr "Bonjour,"
+
+#. module: ooto_onboarding
+#: model:ir.model,name:ooto_onboarding.model_calendar_event
+msgid "Hr Onboarding Appointment"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model,name:ooto_onboarding.model_hr_onboarding_appointment_postpone
+msgid "Hr Onboarding Appointment Postpone"
+msgstr "RH Onboarding Report de Rendez-vous"
+
+#. module: ooto_onboarding
+#: model:ir.model,name:ooto_onboarding.model_hr_onboarding_task
+msgid "Hr Onboarding Task"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model,name:ooto_onboarding.model_hr_onboarding_task_type
+msgid "Hr Onboarding Task type"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model,name:ooto_onboarding.model_hr_task_state
+msgid "Hr tasks state"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_employee_option__id
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_dashboard__id
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__id
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_appointment_postpone__id
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__id
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task_type__id
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_task_state__id
+#: model:ir.model.fields,field_description:ooto_onboarding.field_ir_model_task__id
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_employee_fields_document__id
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_employee_fields_upload__id
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_notification__id
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_role__id
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_tutorial__id
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_tutorial_page__id
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_weekly_notification__id
+#: model:ir.model.fields,field_description:ooto_onboarding.field_task_reminder_notif__id
+msgid "ID"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,help:ooto_onboarding.field_hr_employee__barcode
+msgid "ID used for employee identification."
+msgstr "Identifiant utilisé pour l'identification de l'employé."
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__activity_exception_icon
+msgid "Icon"
+msgstr "Icône"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__icon_task
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__icon_task_child
+msgid "Icon task"
+msgstr "Icône de la tâche"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,help:ooto_onboarding.field_hr_onboarding_task__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icône pour indiquer une activité d'exception."
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__identification_id
+msgid "Identification No"
+msgstr "N° d'identification"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,help:ooto_onboarding.field_hr_onboarding_task__message_needaction
+#: model:ir.model.fields,help:ooto_onboarding.field_hr_onboarding_task__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "Si coché, de nouveaux messages demandent votre attention."
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,help:ooto_onboarding.field_hr_onboarding_task__message_has_error
+#: model:ir.model.fields,help:ooto_onboarding.field_hr_onboarding_task__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si actif, certains messages ont une erreur de livraison."
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__role_image
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_role__image
+msgid "Image"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_role__image_name
+msgid "Image name"
+msgstr "Nom de l'image"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__image_task
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__image_task_child
+msgid "Image task"
+msgstr "Image de la tâche"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.password_initialization_mail_content
+msgid "In order for you to access the platform"
+msgstr "Pour que vous puissiez accéder à la plateforme"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.document_tasks
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.portal_my_details_onboarding_inherit
+msgid "Information to be completed"
+msgstr "Infos à renseigner"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: code:addons/ooto_onboarding/models/onboarding_notification.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__content_type__internal_url
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__onboarding_notification__task_type__internal_url
+#, python-format
+msgid "Internal URL"
+msgstr "URL Interne"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__is_invitation_send
+msgid "Invitation Send"
+msgstr "Invitation envoyée"
+
+#. module: ooto_onboarding
+#: model:mail.template,subject:ooto_onboarding.set_password_email_ooto
+msgid "Invitation to reset the password"
+msgstr "Invitation pour initialisation de mot de passe"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__message_is_follower
+msgid "Is Follower"
+msgstr "Est un abonné"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_res_users__is_onboarding_first_connection
+msgid "Is Onboarding First Connection"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.annuaire_ir_model_form_view
+msgid "Is a personal information"
+msgstr "Information personnelle"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_task_reminder_notif__is_done
+msgid "Is done"
+msgstr "Est fait"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_task_reminder_notif__is_mail_send
+msgid "Is mail sent"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.actions.server,name:ooto_onboarding.ir_actions_server_action_is_new_employee
+msgid "Is new employee ?"
+msgstr "Est un nouveau employé ?"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__is_published
+msgid "Is published"
+msgstr "Est publié"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_task_reminder_notif__is_showed
+msgid "Is showed"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_survey_survey__task_belong
+msgid "Is survey belong to a task"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__is_survey_filled
+#: model:ir.model.fields,field_description:ooto_onboarding.field_survey_survey__is_filled
+msgid "Is survey filled"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__is_unpublished
+msgid "Is unpublished"
+msgstr "Est non publié"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__is_youtube
+msgid "Is youtube"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__job_id
+msgid "Job Position"
+msgstr "Poste Occupé"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__km_home_work
+msgid "Km Home-Work"
+msgstr "Km Domicile - Bureau"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_task_kanban_view
+msgid "La première semaine"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_employee_option____last_update
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_dashboard____last_update
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding____last_update
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_appointment_postpone____last_update
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task____last_update
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task_type____last_update
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_task_state____last_update
+#: model:ir.model.fields,field_description:ooto_onboarding.field_ir_model_task____last_update
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_employee_fields_document____last_update
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_employee_fields_upload____last_update
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_notification____last_update
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_role____last_update
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_tutorial____last_update
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_tutorial_page____last_update
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_weekly_notification____last_update
+#: model:ir.model.fields,field_description:ooto_onboarding.field_task_reminder_notif____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_employee_option__write_uid
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_dashboard__write_uid
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__write_uid
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_appointment_postpone__write_uid
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__write_uid
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task_type__write_uid
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_task_state__write_uid
+#: model:ir.model.fields,field_description:ooto_onboarding.field_ir_model_task__write_uid
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_employee_fields_document__write_uid
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_employee_fields_upload__write_uid
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_notification__write_uid
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_role__write_uid
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_tutorial__write_uid
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_tutorial_page__write_uid
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_weekly_notification__write_uid
+#: model:ir.model.fields,field_description:ooto_onboarding.field_task_reminder_notif__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_employee_option__write_date
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_dashboard__write_date
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__write_date
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_appointment_postpone__write_date
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__write_date
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task_type__write_date
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_task_state__write_date
+#: model:ir.model.fields,field_description:ooto_onboarding.field_ir_model_task__write_date
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_employee_fields_document__write_date
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_employee_fields_upload__write_date
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_notification__write_date
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_role__write_date
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_tutorial__write_date
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_tutorial_page__write_date
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_weekly_notification__write_date
+#: model:ir.model.fields,field_description:ooto_onboarding.field_task_reminder_notif__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__task_state__late
+#, python-format
+msgid "Late"
+msgstr "En retard"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__late_days
+msgid "Late days"
+msgstr "Jours de retard"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_survey_survey__questions_layout
+msgid "Layout"
+msgstr "Agencement"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_task_kanban_view
+msgid "Le premier mois"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__leaving_date
+msgid "Leaving date"
+msgstr "Date de départ"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__location
+msgid "Location"
+msgstr "Lieu"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.doc_sign_inherit
+msgid "Logo"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Pièce jointe principale"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_form_view
+msgid "Manage onboardee task"
+msgstr "Gérer la tâche de l'onboardé"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_form_view
+msgid "Manage task"
+msgstr "Gérer la tâche"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__marital
+msgid "Marital Status"
+msgstr "État Civil"
+
+#. module: ooto_onboarding
+#: model:ir.model,name:ooto_onboarding.model_mailing_mailing
+msgid "Mass Mailing"
+msgstr "Publipostage"
+
+#. module: ooto_onboarding
+#: model:ir.model,name:ooto_onboarding.model_mail_message
+msgid "Message"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__message_has_error
+msgid "Message Delivery error"
+msgstr "Erreur d'envoi du message"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/onboarding_notification.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__onboarding_weekly_notification__notification_day__0
+#, python-format
+msgid "Monday"
+msgstr "Lundi"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_task_search
+msgid "My Tasks"
+msgstr "Mes tâches"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_dashboard__name
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_task_state__name
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_role__name
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_weekly_notification__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__country_id
+msgid "Nationality (Country)"
+msgstr "Nationalité (Pays)"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_ir_model_task__need_validation
+msgid "Need validation"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:mail.template,subject:ooto_onboarding.onboarding_task_email
+msgid "New Collaborators"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_appointment_postpone__new_date
+msgid "New date"
+msgstr "Nouvelle date"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__new_user_ids
+msgid "New employee"
+msgstr "Nouveau(x) employé(s)"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Date limite de l'activité à venir"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__activity_summary
+msgid "Next Activity Summary"
+msgstr "Résumé d'activité suivant"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__activity_type_id
+msgid "Next Activity Type"
+msgstr "Type d'activités à venir"
+
+#. module: ooto_onboarding
+#: model_terms:ir.actions.act_window,help:ooto_onboarding.action_onboarding_appointment_postpone
+msgid "No request yet ..."
+msgstr "Il n'y a pas encore de demande"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__notes
+msgid "Notes"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.actions.act_window,name:ooto_onboarding.ooto_onboarding_notification_action
+#: model:ir.ui.menu,name:ooto_onboarding.menu_onboarding_notification_configuration
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_onboarding_notification_form_view
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_onboarding_notification_tree_view
+msgid "Notification"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_weekly_notification__notification_day
+msgid "Notification Day"
+msgstr "Jour d'envoi"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_task_reminder_notif__notify_date
+msgid "Notify date"
+msgstr ""
+
+#. module: ooto_onboarding
+#. openerp-web
+#: code:addons/ooto_onboarding/static/src/xml/hr_dashboard.xml:0
+#, python-format
+msgid "Nouveau ce mois"
+msgstr ""
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/mail_message.py:0
+#, python-format
+msgid "Now"
+msgstr "Maintenant"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Nombre d'actions"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__appointment_count
+msgid "Number of Appointment"
+msgstr "Nombre de rendez-vous"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__children
+msgid "Number of Children"
+msgstr "Nombre d'enfants"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__message_has_error_counter
+msgid "Number of errors"
+msgstr "Nombre d'erreurs"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,help:ooto_onboarding.field_hr_onboarding_task__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Nombre de messages exigeant une action"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,help:ooto_onboarding.field_hr_onboarding_task__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Nombre de messages avec des erreurs d'envoi"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,help:ooto_onboarding.field_hr_onboarding_task__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Nombre de messages non lus"
+
+#. module: ooto_onboarding
+#. openerp-web
+#: code:addons/ooto_onboarding/static/src/xml/base_calendar.xml:0
+#, python-format
+msgid "OK"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:res.groups,name:ooto_onboarding.group_ooto_onboarding_manager
+msgid "OOTO Onboarding Manager"
+msgstr "Gestionnaire d'intégration OOTO"
+
+#. module: ooto_onboarding
+#: model:res.groups,name:ooto_onboarding.group_ooto_onboarding_user
+msgid "OOTO Onboarding User"
+msgstr "Utilisateur OOTO Onboarding"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_appointment_postpone__old_date
+msgid "Old date"
+msgstr "Ancienne date"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__onboarding_id
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__onboarding_ids
+msgid "On Boarding"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_form_view
+msgid "On boarded"
+msgstr "On boarder"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding.py:0
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_form_view
+#, python-format
+msgid "On boarded list"
+msgstr "On boarder"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__onboarding_ids
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.onboarding_task_form_views
+msgid "On boarding"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__onboarding_count
+msgid "On boarding count"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.onboarding_task_form_views
+msgid "On boarding list"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__onb_emp_fields_document_ids
+msgid "Onb Emp Fields Document"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__onb_emp_fields_upload_ids
+msgid "Onb Emp Fields Upload"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__is_onboarder
+msgid "Onboarder"
+msgstr ""
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_employee.py:0
+#: model_terms:ir.actions.act_window,help:ooto_onboarding.ooto_onboarding_action
+#: model:ir.actions.act_window,name:ooto_onboarding.ooto_onboarding_action
+#: model:ir.model.fields,field_description:ooto_onboarding.field_mail_mail__onboarding_id
+#: model:ir.model.fields,field_description:ooto_onboarding.field_mail_message__onboarding_id
+#: model:ir.ui.menu,name:ooto_onboarding.menu_ooto_onboarding
+#: model:ir.ui.menu,name:ooto_onboarding.menu_root_ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.inherit_onboarding_survey_form
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.survey_onboarding_form
+#, python-format
+msgid "Onboarding"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_appointment_postpone__onboarding_appointment_id
+msgid "Onboarding Appointment"
+msgstr "Rendez-vous onboarding"
+
+#. module: ooto_onboarding
+#: model:ir.model,name:ooto_onboarding.model_onboarding_notification
+msgid "Onboarding Notification"
+msgstr "Notification Onboarding"
+
+#. module: ooto_onboarding
+#: model:ir.ui.menu,name:ooto_onboarding.menu_ooto_onboarding_role_configuration
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.onboarding_role_form_view
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.onboarding_role_tree_view
+msgid "Onboarding Role"
+msgstr "Onboarding Rôle"
+
+#. module: ooto_onboarding
+#: model:ir.model,name:ooto_onboarding.model_onboarding_weekly_notification
+msgid "Onboarding Weekly Notification"
+msgstr "Notification Hebdomadaire Onboarding"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_calendar_event__is_onboarding_appointment
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.view_onboarding_appointment_search
+msgid "Onboarding appointment"
+msgstr "Rendez-vous onboarding"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__type_domain
+msgid "Onboarding filter"
+msgstr "Filtre On boarding"
+
+#. module: ooto_onboarding
+#: model_terms:ir.actions.act_window,help:ooto_onboarding.onboarding_role_action
+#: model:ir.actions.act_window,name:ooto_onboarding.onboarding_role_action
+msgid "Onboarding role"
+msgstr "Onboarding rôle"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.onboarding_task_form_views
+msgid "Onboarding task form views"
+msgstr ""
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/res_users.py:0
+#, python-format
+msgid "Onboarding tasks"
+msgstr "Tâches Onboarding"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_tree_view
+msgid "Onboarding tree views"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model,name:ooto_onboarding.model_onboarding_tutorial
+msgid "Onboarding tutorial"
+msgstr "Tutoriel Onboarding"
+
+#. module: ooto_onboarding
+#: model:ir.model,name:ooto_onboarding.model_onboarding_tutorial_page
+msgid "Onboarding tutorial page"
+msgstr "Page tutoriel onboarding"
+
+#. module: ooto_onboarding
+#: model:ir.actions.server,name:ooto_onboarding.reminder_mail_cron_ir_actions_server
+#: model:ir.cron,cron_name:ooto_onboarding.reminder_mail_cron
+#: model:ir.cron,name:ooto_onboarding.reminder_mail_cron
+msgid "Onboarding: Task reminder"
+msgstr "Onboarding: Rappel des tâches"
+
+#. module: ooto_onboarding
+#: model:ir.actions.server,name:ooto_onboarding.ir_cron_data_otoo_onboarding_update_period_state_ir_actions_server
+#: model:ir.cron,cron_name:ooto_onboarding.ir_cron_data_otoo_onboarding_update_period_state
+#: model:ir.cron,name:ooto_onboarding.ir_cron_data_otoo_onboarding_update_period_state
+msgid "Ooto onboarding: update period state"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_form_view
+msgid "Open Employee form"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_onboarding_hr_employee_form
+msgid "Open Onboarding form"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.portal_my_details_onboarding_inherit
+msgid "Open task"
+msgstr "Ouvrir"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__content_ratio
+msgid "Opened Ratio"
+msgstr "Ratio d'ouverture"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.survey_onboarding_form
+msgid "Options"
+msgstr ""
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__task_type__others
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_form_view
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_task_search
+#, python-format
+msgid "Others"
+msgstr "Autres"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding.py:0
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_form_view
+#, python-format
+msgid "Others list"
+msgstr "Autres"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__pin
+msgid "PIN"
+msgstr "Code"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,help:ooto_onboarding.field_hr_employee__pin
+msgid "PIN used to Check In/Out in Kiosk Mode (if enabled in Configuration)."
+msgstr ""
+"Code PIN utilisé pour le pointage à l'entrée/à la sortie en mode kiosque (si"
+" cette option est activée dans Configuration)."
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__page_id
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_onboarding_tutorial_page_form_view
+msgid "Page"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_tutorial__page_number
+msgid "Page number"
+msgstr "Numéro de page"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_tutorial__page_id
+msgid "Pages"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_form_view
+msgid "Parent task state"
+msgstr "Statut tâche parent"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.survey_onboarding_kanban
+msgid "Passed"
+msgstr "Passé"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__passport_id
+msgid "Passport No"
+msgstr "N° de passeport"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_employee_option__password
+msgid "Password"
+msgstr "Mot de passe"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/wizard/employee_option_wizard.py:0
+#, python-format
+msgid "Password incorrect"
+msgstr "Mot de passe incorrect"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__period
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__period
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__period_display
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__period
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__period_display
+#: model:ir.model.fields,field_description:ooto_onboarding.field_survey_survey__period
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_task_search
+msgid "Period"
+msgstr "Période"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_ir_model_fields__is_personal_information
+msgid "Personal information"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__place_of_birth
+msgid "Place of Birth"
+msgstr "Lieu de Naissance"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__private_email
+msgid "Private Email"
+msgstr "Adresse électronique privée"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__phone
+msgid "Private Phone"
+msgstr "Numéro de téléphone privé"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__onboarding_progression
+msgid "Progression"
+msgstr "Avancement"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.onboarding_task_form_views
+msgid "Publish"
+msgstr "Publier"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__publication_state__published
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__task_state__published
+#, python-format
+msgid "Published"
+msgstr "Publié"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.survey_onboarding_form
+msgid "Questions"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__task_recall_ids
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.onboarding_task_form_views
+msgid "Recall"
+msgstr "Rappel"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__admin_ratio
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__others_ratio
+msgid "Received Ratio"
+msgstr "Ratio réception"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.view_onboarding_appointment_postpone_form
+msgid "Refuse request"
+msgstr "Refuser demande"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_appointment_postpone__state__refused
+msgid "Refused"
+msgstr "Refusée"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.survey_onboarding_form
+msgid "Registered"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__remaining_day
+msgid "Remaining dat"
+msgstr "Jours restant"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__renewal_contract_name
+msgid "Renewal Contract Name"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__signature_ratio
+msgid "Replied Ratio"
+msgstr "Ratio de répondu"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.portal_my_details_onboarding_inherit
+msgid "Reply"
+msgstr "Répondre"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_appointment_postpone__request_sender_id
+msgid "Request Sender"
+msgstr "Envoyé par"
+
+#. module: ooto_onboarding
+#: model:ir.actions.act_window,name:ooto_onboarding.action_onboarding_appointment_postpone
+#: model:ir.ui.menu,name:ooto_onboarding.menu_ooto_onboarding_appointment_postpone
+msgid "Requests to postpone appointment"
+msgstr "Demandes de report de rendez-vous"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_ir_model_task__required
+msgid "Required"
+msgstr "Requis"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__resource_id
+msgid "Resource"
+msgstr "Ressource"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__activity_user_id
+msgid "Responsible User"
+msgstr "Responsable"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__responsible_ids
+msgid "Responsibles"
+msgstr "Responsables"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__is_retroactive
+msgid "Retroactive"
+msgstr "Retroactif"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.document_tasks
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.personal_binary_fields_to_fill
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.personal_form_task
+msgid "Return"
+msgstr "Retour"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__role_id
+msgid "Role"
+msgstr "Rôle"
+
+#. module: ooto_onboarding
+#. openerp-web
+#: code:addons/ooto_onboarding/static/src/xml/hr_dashboard.xml:0
+#, python-format
+msgid "Réalisation des tâches (%)"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.personal_form_task
+msgid "Répondre"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__sinid
+msgid "SIN No"
+msgstr "Numéro d'assurance Sociale"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Erreur d'envoi SMS"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__ssnid
+msgid "SSN No"
+msgstr "Numéro de sécurité sociale"
+
+#. module: ooto_onboarding
+#. openerp-web
+#: code:addons/ooto_onboarding/static/src/xml/hr_dashboard.xml:0
+#, python-format
+msgid "Salariés"
+msgstr ""
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/onboarding_notification.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__onboarding_weekly_notification__notification_day__5
+#, python-format
+msgid "Saturday"
+msgstr "Samedi"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.view_employee_form
+msgid "Schedule"
+msgstr "Planifier"
+
+#. module: ooto_onboarding
+#: model_terms:ir.actions.act_window,help:ooto_onboarding.action_onboarding_appointment
+msgid "Schedule a new appointment"
+msgstr "Planifier un nouveau RDV"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__study_school
+msgid "School"
+msgstr "École"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.survey_onboarding_form
+msgid "Scoring"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.view_onboarding_appointment_search
+msgid "Search Onboarding Appointment"
+msgstr "Recherche de rendez-vous onboarding"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__employee_fields_documents_ids
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__employee_fields_uploads_ids
+msgid "Section employee"
+msgstr "Section Employé"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.portal_my_details_onboarding_inherit
+msgid "See all"
+msgstr "Voir tout"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.portal_my_details_onboarding_inherit
+msgid "See all task"
+msgstr "Voir toutes"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_form_view
+msgid "See employee sheet"
+msgstr "Employé"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_onboarding_hr_employee_form
+msgid "See onboarding sheet"
+msgstr "Onboarding"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_employee.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding.py:0
+#: code:addons/ooto_onboarding/wizard/employee_option_wizard.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__employee_option__option__send_notification
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_employee__option__send_notification
+#, python-format
+msgid "Send / schedule an invitation by email"
+msgstr "Envoyer/ programmer une invitation par email"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_employee.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding.py:0
+#: code:addons/ooto_onboarding/wizard/employee_option_wizard.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__employee_option__option__send_email_onboarding
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_employee__option__send_email_onboarding
+#, python-format
+msgid "Send an email to the creation of onboarding"
+msgstr "Envoyer un Email à la création de l'onboarding"
+
+#. module: ooto_onboarding
+#. openerp-web
+#: code:addons/ooto_onboarding/static/src/xml/base.xml:0
+#, python-format
+msgid "Send invitation email"
+msgstr "Envoyer un Email d'invitation"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_employee.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding.py:0
+#: code:addons/ooto_onboarding/wizard/employee_option_wizard.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__employee_option__option__set_password
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_employee__option__set_password
+#, python-format
+msgid "Set the password (without sending an email)"
+msgstr "Définir le mot de passe (sans envoi d'email)"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__sign_request_id
+msgid "Sign request"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__sign_template_id
+msgid "Sign template"
+msgstr "Modèle de signature"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: code:addons/ooto_onboarding/models/onboarding_notification.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__task_type__signature
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__onboarding_notification__task_type__signature
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_form_view
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_task_search
+#, python-format
+msgid "Signature"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.ui.menu,name:ooto_onboarding.sign_menu
+msgid "Signature Model"
+msgstr "Modèle de signature"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding.py:0
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_form_view
+#, python-format
+msgid "Signature list"
+msgstr "Signature"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,help:ooto_onboarding.field_hr_employee__sinid
+msgid "Social Insurance Number"
+msgstr "Numéro d'assurance sociale"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,help:ooto_onboarding.field_hr_employee__ssnid
+msgid "Social Security Number"
+msgstr "Numéro de sécurité sociale"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: code:addons/ooto_onboarding/models/onboarding_notification.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__task_type__software
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__onboarding_notification__task_type__software
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_task_search
+#, python-format
+msgid "Software"
+msgstr "Equipement"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: code:addons/ooto_onboarding/models/survey.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__period__specific
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__period_display__6specific
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__to_do_for__specific
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__survey_survey__period__specific
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__survey_survey__state_onboarding__specific
+#, python-format
+msgid "Specific"
+msgstr "Spécifique"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__spouse_birthdate
+msgid "Spouse Birthdate"
+msgstr "Date de Naissance de l'Epouse"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__spouse_complete_name
+msgid "Spouse Complete Name"
+msgstr "Nom complet de l'Epouse"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__stain_label
+msgid "Stain label"
+msgstr "Etiquette de tâche"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_calendar_event__validation_msg
+msgid "Starting at"
+msgstr "Heure de début"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_calendar_event__status
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__onboarding_state
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_appointment_postpone__state
+msgid "State"
+msgstr "État"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__state_late
+msgid "State Late"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_mail_mail__state_task
+#: model:ir.model.fields,field_description:ooto_onboarding.field_mail_message__state_task
+msgid "State Task"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.survey_survey_onboarding_view_search
+msgid "State onboarding"
+msgstr "Période"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__state
+msgid "Status"
+msgstr "État"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__status_late
+msgid "Status Late"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__status_terminated
+msgid "Status Terminated"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__status_to_do
+msgid "Status To Do"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,help:ooto_onboarding.field_hr_onboarding_task__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Statut basé sur les activités\n"
+"En retard : la date d'échéance est déjà dépassée\n"
+"Aujourd'hui : la date d'activité est aujourd'hui\n"
+"Planifiée : activités futures"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__subject
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.view_onboarding_appointment_postpone_form
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.view_onboarding_appointment_postpone_tree
+msgid "Subject"
+msgstr "Sujet"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__subordinate_id
+msgid "Subordinate"
+msgstr "Subordonné"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/onboarding_notification.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__onboarding_weekly_notification__notification_day__6
+#, python-format
+msgid "Sunday"
+msgstr "Dimanche"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__support
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__support_child
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_tutorial_page__support
+msgid "Support"
+msgstr "Assistance"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__support_name
+msgid "Support Name"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model,name:ooto_onboarding.model_survey_survey
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.survey_onboarding_form
+msgid "Survey"
+msgstr "Sondage"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_survey_survey__state_onboarding
+msgid "Survey onboarding state"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_survey_survey__with_onboarding
+msgid "Survey with onboarding"
+msgstr "Sondage avec onboarding"
+
+#. module: ooto_onboarding
+#: model:ir.actions.act_window,name:ooto_onboarding.action_survey_onboarding_form
+#: model:ir.ui.menu,name:ooto_onboarding.menu_survey_form
+msgid "Surveys onboarding"
+msgstr "Onboarding Sondages"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__category_ids
+msgid "Tags"
+msgstr "Étiquettes"
+
+#. module: ooto_onboarding
+#: model_terms:ir.actions.act_window,help:ooto_onboarding.ooto_activity_task_action
+#: model_terms:ir.actions.act_window,help:ooto_onboarding.ooto_task_action
+#: model_terms:ir.actions.act_window,help:ooto_onboarding.ooto_task_admin_action
+#: model_terms:ir.actions.act_window,help:ooto_onboarding.ooto_task_advice_action
+#: model_terms:ir.actions.act_window,help:ooto_onboarding.ooto_task_form_action
+#: model:ir.actions.act_window,name:ooto_onboarding.ooto_task_action
+#: model:ir.actions.act_window,name:ooto_onboarding.ooto_task_admin_action
+#: model:ir.actions.act_window,name:ooto_onboarding.ooto_task_advice_action
+#: model:ir.actions.act_window,name:ooto_onboarding.ooto_task_form_action
+#: model:ir.model.fields,field_description:ooto_onboarding.field_calendar_event__task_id
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__task_ids
+#: model:ir.model.fields,field_description:ooto_onboarding.field_task_reminder_notif__task_id
+#: model:ir.ui.menu,name:ooto_onboarding.menu_ooto_onboarding_configuration_task
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.onboarding_task_form_views
+msgid "Task"
+msgstr "Tâche"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#, python-format
+msgid "Task %s : Set delay field (month number)"
+msgstr "Tâche %s: Renseigner le champ délai (nombre de mois)"
+
+#. module: ooto_onboarding
+#: model:ir.model,name:ooto_onboarding.model_task_reminder_notif
+msgid "Task Reminder Notification"
+msgstr "Notification de rappel de tâche"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__task_type_id
+msgid "Task Type"
+msgstr "Type"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__calendar_event_id
+msgid "Task event"
+msgstr ""
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_dashboard.py:0
+#, python-format
+msgid "Task finished on time"
+msgstr "Tâche terminée à temps"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_dashboard.py:0
+#, python-format
+msgid "Task late"
+msgstr "Tâche en retard"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__parent_id
+msgid "Task parent"
+msgstr "Tâche parent"
+
+#. module: ooto_onboarding
+#: model:mail.template,subject:ooto_onboarding.email_template_task_reminder
+msgid "Task reminder"
+msgstr "Rappel tâche"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__parent_task_state
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__publication_state
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__task_state
+msgid "Task state"
+msgstr "Statut"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__task_type
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_notification__task_type
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_task_search
+msgid "Task type"
+msgstr "Type de tâche"
+
+#. module: ooto_onboarding
+#: model:ir.actions.act_window,name:ooto_onboarding.ooto_activity_open_task_action
+#: model:ir.actions.act_window,name:ooto_onboarding.ooto_activity_task_action
+msgid "Tasks"
+msgstr "Tâches"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_form_view
+msgid "Tasks of"
+msgstr "Les tâches de "
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__task_state__terminated
+#, python-format
+msgid "Terminated"
+msgstr "Terminé"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_mail_message_search_view
+msgid "Terminée"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_notification__text
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_weekly_notification__text
+msgid "Text to display"
+msgstr "Texte à afficher"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.portal_my_details_onboarding_inherit
+msgid "Thank you !"
+msgstr "Merci !"
+
+#. module: ooto_onboarding
+#: model_terms:ir.actions.act_window,help:ooto_onboarding.action_onboarding_appointment
+msgid ""
+"The calendar is shared between employees and fully integrated with\n"
+"          other applications such as the employee leaves or the business\n"
+"          opportunities."
+msgstr ""
+"Le calendrier est partagé entre les employés et entièrement intégré à\n"
+"                    d'autres applications telles que les congés des employés ou les \n"
+"                    opportunités commerciales."
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__to_do_for__first_month
+#, python-format
+msgid "The first month"
+msgstr "Le premier mois"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__to_do_for__first_week
+#, python-format
+msgid "The first week"
+msgstr "La première semaine"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__to_do_for__day_arrival
+#, python-format
+msgid "The of day arrival"
+msgstr "Le jour d'arrivée"
+
+#. module: ooto_onboarding
+#. openerp-web
+#: code:addons/ooto_onboarding/static/src/js/basic_controller.js:0
+#, python-format
+msgid ""
+"The record has been modified, your changes will be discarded. Do you want to"
+" proceed?"
+msgstr ""
+"L'enregistrement a été modifié. Vos modifications vont être annulées. "
+"Voulez-vous continuer ?"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#, python-format
+msgid "The value of arrival x must be positve and greater than 0"
+msgstr "La valeur de X doit être positive/supérieure à 0"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/onboarding_tutorial.py:0
+#: code:addons/ooto_onboarding/models/onboarding_tutorial.py:0
+#, python-format
+msgid "The value of page number must be positive ."
+msgstr ""
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/onboarding_tutorial.py:0
+#: code:addons/ooto_onboarding/models/onboarding_tutorial.py:0
+#, python-format
+msgid "The value of page number must be positve and lower or equal to %s ."
+msgstr ""
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/onboarding_tutorial.py:0
+#: code:addons/ooto_onboarding/models/onboarding_tutorial.py:0
+#: code:addons/ooto_onboarding/models/onboarding_tutorial.py:0
+#, python-format
+msgid ""
+"The value of page number must be unique. Please choose another number or "
+"change the other pages "
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,help:ooto_onboarding.field_hr_onboarding_task__tz
+msgid ""
+"This field is used in order to define in which timezone the resources will "
+"work."
+msgstr ""
+"Ce champ est utilisé pour définir dans quel fuseau horaire la ressource "
+"travaillera."
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/onboarding_notification.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__onboarding_weekly_notification__notification_day__3
+#, python-format
+msgid "Thursday"
+msgstr "Jeudi"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.survey_onboarding_form
+msgid "Time Limit"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__timer
+msgid "Timer"
+msgstr "Minuteur"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__tz
+msgid "Timezone"
+msgstr "Fuseau horaire"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__name
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task_type__name
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_notification__title
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_tutorial__title
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_tutorial_page__title
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_weekly_notification__title
+msgid "Title"
+msgstr "Titre"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__email_to_ids
+msgid "To"
+msgstr "Vers"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_appointment.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__calendar_event__status__to_do
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__task_state__to_do
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.portal_my_details_onboarding_inherit
+#, python-format
+msgid "To do"
+msgstr "A faire"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__to_do_for
+msgid "To do for"
+msgstr "A faire pour "
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.personal_binary_fields_to_fill
+msgid ""
+"To finalize your account please send us these\n"
+"                  documents."
+msgstr ""
+"Afin de finaliser votre compte veuillez nous faire parvenir ces\n"
+"                  documents."
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.portal_my_details_onboarding_inherit
+msgid ""
+"To finalize your account please send us these\n"
+"              documents."
+msgstr ""
+"Pour finaliser votre compte, veuillez nous envoyer ces\n"
+"              documents."
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.onboarding_task_tree_views
+msgid "Tree views"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding__trial_date_end_name
+msgid "Trial Date End Name"
+msgstr ""
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/onboarding_notification.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__onboarding_weekly_notification__notification_day__1
+#, python-format
+msgid "Tuesday"
+msgstr "Mardi"
+
+#. module: ooto_onboarding
+#: model:ir.actions.act_window,name:ooto_onboarding.ooto_onboarding_tutorial_action
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_tutorial_page__tutorial
+#: model:ir.ui.menu,name:ooto_onboarding.menu_onboarding_tutorial_configuration
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_onboarding_tutorial_form_view
+msgid "Tutorial"
+msgstr "Tutoriel"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,help:ooto_onboarding.field_hr_onboarding_task__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Type d'activité d'exception enregistrée"
+
+#. module: ooto_onboarding
+#. openerp-web
+#: code:addons/ooto_onboarding/static/src/xml/hr_dashboard.xml:0
+#, python-format
+msgid "Tâches en retard"
+msgstr ""
+
+#. module: ooto_onboarding
+#. openerp-web
+#: code:addons/ooto_onboarding/static/src/xml/hr_dashboard.xml:0
+#, python-format
+msgid "Tâches finis à temps"
+msgstr ""
+
+#. module: ooto_onboarding
+#. openerp-web
+#: code:addons/ooto_onboarding/static/src/xml/hr_dashboard.xml:0
+#, python-format
+msgid "Tâches par période (%)"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__url
+msgid "URL"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.onboarding_task_form_views
+msgid "Unpublish"
+msgstr "Dépublier"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__publication_state__unpublished
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__task_state__unpublished
+#, python-format
+msgid "Unpublished"
+msgstr "Non publié"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__message_unread
+msgid "Unread Messages"
+msgstr "Messages non lus"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Compteur de messages non lus"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/onboarding_notification.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__administrative_type__upload_file
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__onboarding_notification__task_type__upload_file
+#, python-format
+msgid "Upload file"
+msgstr "Document à fournir"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.personal_binary_fields_to_fill
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.portal_my_details_onboarding_inherit
+msgid "Uploader"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.employee_option_wizard_form
+msgid "User access"
+msgstr "Accès utilisateur"
+
+#. module: ooto_onboarding
+#: model:ir.model,name:ooto_onboarding.model_res_users
+#: model:ir.model.fields,field_description:ooto_onboarding.field_account_invoice_send__user_onboarding_id
+#: model:ir.model.fields,field_description:ooto_onboarding.field_email_template_preview__user_onboarding_id
+#: model:ir.model.fields,field_description:ooto_onboarding.field_mail_compose_message__user_onboarding_id
+#: model:ir.model.fields,field_description:ooto_onboarding.field_mail_template__user_onboarding_id
+msgid "Users"
+msgstr "Utilisateurs"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.onboarding_task_form_views
+msgid "Valid"
+msgstr "Valider"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_appointment_postpone__state__validate
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.employee_option_wizard_form
+msgid "Validate"
+msgstr "Valider"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__is_terminated_validator
+msgid "Validate by responsible"
+msgstr "Valider par le reponsable"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.view_onboarding_appointment_postpone_form
+msgid "Validate request"
+msgstr "Valider la demande"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_appointment_postpone__validator_ids
+#: model:ir.model.fields,field_description:ooto_onboarding.field_res_partner__validator_id
+#: model:ir.model.fields,field_description:ooto_onboarding.field_res_users__validator_id
+msgid "Validator"
+msgstr "Valideur"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__scroll_check
+msgid "Verification scroll"
+msgstr "Vérification scroll"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__content_type__video
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__onboarding_notification__task_type__video
+msgid "Video"
+msgstr "Vidéo"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__visa_expire
+msgid "Visa Expire Date"
+msgstr "Date d'expiration du visa"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__visa_no
+msgid "Visa No"
+msgstr "Visa n°"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_employee_fields_document__is_visible_front_employee
+#: model:ir.model.fields,field_description:ooto_onboarding.field_onboarding_employee_fields_upload__is_visible_front_employee
+msgid "Visible front"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.portal_my_details_onboarding_inherit
+msgid "Votre profil est à jour !"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_appointment_postpone__state__waiting_for_validation
+msgid "Waiting for validation"
+msgstr "En attente de validation"
+
+#. module: ooto_onboarding
+#. openerp-web
+#: code:addons/ooto_onboarding/static/src/js/basic_controller.js:0
+#, python-format
+msgid "Warning"
+msgstr "Avertissement"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.portal_my_details_onboarding_inherit
+msgid "We have all the informations about you."
+msgstr "Nous avons toutes les infos vous concernant."
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__website_message_ids
+msgid "Website Messages"
+msgstr "Messages du site web"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,help:ooto_onboarding.field_hr_onboarding_task__website_message_ids
+msgid "Website communication history"
+msgstr "Historique de communication du site web"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/onboarding_notification.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__onboarding_weekly_notification__notification_day__2
+#, python-format
+msgid "Wednesday"
+msgstr "Mercredi"
+
+#. module: ooto_onboarding
+#: model:ir.actions.act_window,name:ooto_onboarding.ooto_onboarding_weekly_notification_action
+#: model:ir.ui.menu,name:ooto_onboarding.menu_onboarding_weekly_notification_configuration
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_onboarding_weekly_notification_form_view
+msgid "Weekly Notification"
+msgstr "Notification Hébdomadaire"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.portal_my_details_onboarding_inherit
+msgid "Welcome !"
+msgstr "Bienvenue !"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.password_initialization_mail_content
+msgid "Welcome to"
+msgstr "Bienvenue à"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.portal_my_details_onboarding_inherit
+msgid "Well done, no form in sight !"
+msgstr "Bravo, pas de formulaire en vue !"
+
+#. module: ooto_onboarding
+#: model:ir.model,name:ooto_onboarding.model_employee_option
+msgid "Wizard Option for employee creation"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_ir_model_fields__is_work_information
+msgid "Work Information"
+msgstr "Information professionnelle"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__permit_no
+msgid "Work Permit No"
+msgstr "N° de permis de travail"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__resource_calendar_id
+msgid "Working Hours"
+msgstr "Heures de travail"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__to_do_for__x_day_after
+#, python-format
+msgid "X days after arrival"
+msgstr "X jours après arrivée"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__to_do_for__x_day_before
+#, python-format
+msgid "X days before arrival"
+msgstr "X jours avant arrivée"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.portal_my_details_onboarding_inherit
+msgid "You are up to date"
+msgstr "Vous êtes à jour"
+
+#. module: ooto_onboarding
+#: model_terms:ir.actions.act_window,help:ooto_onboarding.action_survey_onboarding_form
+msgid ""
+"You can create surveys for different purposes: customer opinion, services feedback, recruitment interviews,\n"
+"          employee's periodical evaluations, marketing campaigns, etc."
+msgstr ""
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.portal_my_details_onboarding_inherit
+msgid "You still have"
+msgstr "Il vous reste"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.personal_form_task
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.portal_my_details_onboarding_inherit
+msgid "Your employer has submitted"
+msgstr "Votre employeur vous a soumis"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__hr_onboarding_task__task_type__administrative
+#, python-format
+msgid "administrative"
+msgstr "Administratif"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/mail_message.py:0
+#: code:addons/ooto_onboarding/models/mail_message.py:0
+#: code:addons/ooto_onboarding/models/mail_message.py:0
+#: code:addons/ooto_onboarding/models/mail_message.py:0
+#: code:addons/ooto_onboarding/models/mail_message.py:0
+#: code:addons/ooto_onboarding/models/mail_message.py:0
+#, python-format
+msgid "ago "
+msgstr "il y a "
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_appointment.py:0
+#, python-format
+msgid "appointment"
+msgstr "Rendez-vous"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/ir_model.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__ir_model_fields__custom_ttype__binary
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__ir_model_task__ttype__binary
+#, python-format
+msgid "binary"
+msgstr "binaire"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/ir_model.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__ir_model_fields__custom_ttype__boolean
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__ir_model_task__ttype__boolean
+#, python-format
+msgid "boolean"
+msgstr "booléen"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/ir_model.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__ir_model_fields__custom_ttype__char
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__ir_model_task__ttype__char
+#, python-format
+msgid "char"
+msgstr "caractère"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/ir_model.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__ir_model_fields__custom_ttype__date
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__ir_model_task__ttype__date
+#, python-format
+msgid "date"
+msgstr ""
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/ir_model.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__ir_model_fields__custom_ttype__datetime
+#, python-format
+msgid "date/time"
+msgstr "date/heure"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__ir_model_task__ttype__datetime
+msgid "datetime"
+msgstr "date/heure"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.ooto_hr_onboarding_kanban_view
+msgid "days ("
+msgstr "jours ("
+
+#. module: ooto_onboarding
+#. openerp-web
+#: code:addons/ooto_onboarding/static/src/xml/hr_dashboard.xml:0
+#, python-format
+msgid "de connection avant l'arrivée"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.survey_onboarding_form
+msgid "e.g. Satisfaction Survey"
+msgstr ""
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/ir_model.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__ir_model_fields__custom_ttype__float
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__ir_model_task__ttype__float
+#, python-format
+msgid "float"
+msgstr "flottant"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.personal_form_task
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.portal_my_details_onboarding_inherit
+msgid "forms to you. Don't wait any longer to answer it !"
+msgstr "formulaires.<br></br>N’attendez plus pour y répondre !"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__ir_model_task__ttype__html
+msgid "html"
+msgstr ""
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/ir_model.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__ir_model_fields__custom_ttype__integer
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__ir_model_task__ttype__integer
+#, python-format
+msgid "integer"
+msgstr "entier"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__is_new_employee
+msgid "is a new employee ?"
+msgstr "Est un nouveau employé ?"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__is_resp_admin
+msgid "is responsable administrative"
+msgstr "Est un responsable administratif"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__is_resp_soft
+msgid "is responsable software"
+msgstr "Est un responsable équipement"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__ir_model_task__ttype__many2many
+msgid "many2many"
+msgstr ""
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/ir_model.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__ir_model_fields__custom_ttype__many2one
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__ir_model_task__ttype__many2one
+#, python-format
+msgid "many2one"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__ir_model_task__ttype__many2one_reference
+msgid "many2one_reference"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__ir_model_task__ttype__monetary
+msgid "monetary"
+msgstr "monétaire"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding.py:0
+#, python-format
+msgid "not renewed"
+msgstr "non renouvelé"
+
+#. module: ooto_onboarding
+#: model:ir.model,name:ooto_onboarding.model_onboarding_role
+msgid "onboarding.role"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__ir_model_task__ttype__one2many
+msgid "one2many"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_onboarding_task__order_seq
+msgid "order seq"
+msgstr ""
+
+#. module: ooto_onboarding
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__ir_model_task__ttype__reference
+msgid "reference"
+msgstr "référence"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding.py:0
+#, python-format
+msgid "renewed"
+msgstr "renouvelé"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/ir_model.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__ir_model_fields__custom_ttype__selection
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__ir_model_task__ttype__selection
+#, python-format
+msgid "selection"
+msgstr "sélection"
+
+#. module: ooto_onboarding
+#: model:ir.model.fields,field_description:ooto_onboarding.field_hr_employee__software_responsible_id
+msgid "software responsible"
+msgstr "Responsable équipement"
+
+#. module: ooto_onboarding
+#: model_terms:ir.ui.view,arch_db:ooto_onboarding.portal_my_details_onboarding_inherit
+msgid "tasks to perform. Don't wait any longer to take a look!"
+msgstr "tâches à effectuer. N’attendez plus pour y jeter un oeil !"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/ir_model.py:0
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__ir_model_fields__custom_ttype__text
+#: model:ir.model.fields.selection,name:ooto_onboarding.selection__ir_model_task__ttype__text
+#, python-format
+msgid "text"
+msgstr "texte"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#, python-format
+msgid "{author} created a new task {task_name}"
+msgstr "{author} a crée une nouvelle tâche {task_name}"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#, python-format
+msgid "{author} validated his task {task_name}"
+msgstr "{author} a validé {task_name}"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#, python-format
+msgid "{author} validated {task_name} the task of {employee_name}"
+msgstr "{author} a validé {task_name} la tâche de {employee_name}"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#, python-format
+msgid "{employee_name}  is late compared to {task_type} {task_name} task"
+msgstr ""
+"{employee_name}  est en retard par rapport à la tâche {task_type} "
+"{task_name}"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#, python-format
+msgid "{employee_name} finished reading {task_type} {task_name}"
+msgstr "{employee_name} a fini la tâche {task_type} {task_name}"
+
+#. module: ooto_onboarding
+#: code:addons/ooto_onboarding/models/hr_onboarding_task.py:0
+#, python-format
+msgid ""
+"{employee_name} is in the process of learning {task_type} {task_name} task"
+msgstr ""
+"{employee_name} est en cours par rapport à la tâche {task_type} {task_name}"

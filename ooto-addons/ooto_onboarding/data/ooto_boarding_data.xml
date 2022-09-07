@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!--Onboarding role data-->
+    <record id="onboarding_role_onboarder" model="onboarding.role">
+      <field name="name">Onboarder</field>
+    </record>
+
+    <record id="ir_cron_data_otoo_onboarding_update_period_state" model="ir.cron">
+      <field name="name">Ooto onboarding: update period state</field>
+      <field name="model_id" ref="model_hr_onboarding"/>
+      <field name="state">code</field>
+      <field name="code">model.automatic_update_period_employee()</field>
+      <field name="doall">True</field>
+      <field name="interval_number">1</field>
+      <field name="interval_type">days</field>
+      <field name="nextcall" eval="(datetime.now() + timedelta(1)).replace(hour=0, minute=0, second=0, microsecond=0)"/>
+      <field name="numbercall">-1</field>
+    </record>
+
+    <!-- task type data-->
+    <!--<record id="task_type_appointment" model="hr.onboarding.task.type">-->
+    <!--<field name="name">Appointment</field>-->
+    <!--</record>-->
+    <!--<record id="task_type_administrative" model="hr.onboarding.task.type">-->
+    <!--<field name="name">Administrative</field>-->
+    <!--</record>-->
+    <!--<record id="task_type_form" model="hr.onboarding.task.type">-->
+    <!--<field name="name">Form</field>-->
+    <!--</record>-->
+    <!--<record id="task_type_others" model="hr.onboarding.task.type">-->
+    <!--<field name="name">Others</field>-->
+    <!--</record>-->
+    <!--<record id="task_type_signature" model="hr.onboarding.task.type">-->
+    <!--<field name="name">Signature</field>-->
+    <!--</record>-->
+    <!--<record id="task_type_content" model="hr.onboarding.task.type">-->
+    <!--<field name="name">Content</field>-->
+    <!--</record>-->
+    <!--<record id="task_type_software" model="hr.onboarding.task.type">-->
+    <!--<field name="name">Software</field>-->
+    <!--</record>-->
+    <!--<record id="task_type_advice" model="hr.onboarding.task.type">-->
+    <!--<field name="name">Advice</field>-->
+    <!--</record>-->
+
+    <!-- task state data-->
+    <!--<record id="task_state_late" model="hr.task.state">-->
+    <!--<field name="name">Late</field>-->
+    <!--</record>-->
+    <!--<record id="task_state_terminated" model="hr.task.state">-->
+    <!--<field name="name">Terminated</field>-->
+    <!--</record>-->
+    <!--<record id="task_state_to_do" model="hr.task.state">-->
+    <!--<field name="name">To do</field>-->
+    <!--</record>-->
+    <!--<record id="task_state_draft" model="hr.task.state">-->
+    <!--<field name="name">Draft</field>-->
+    <!--</record>-->
+
+  </data>
+</odoo>

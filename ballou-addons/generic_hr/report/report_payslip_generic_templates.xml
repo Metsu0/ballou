@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <template id="generic_payslip_template" inherit_id="ballou_hr_payroll.ballou_payslip_template">
+      <xpath expr="//td[@class='ballou_leave_allocation']" position="after">
+        <t t-if="doc.struct_id.simple_leave_allocation == True">
+          <td>Solde de congé
+            :
+            <t t-esc="doc.leave_allocation"/>
+            <t t-esc="doc.struct_id.simple_leave_allocation"/>
+
+          </td>
+        </t>
+        <t t-else="">
+        </t>
+
+      </xpath>
+      <xpath expr="//tr[@class='ballou_leave_allocation_current']//td[@class='ballou_leave_allocation']"
+             position="replace">
+        <t t-if="doc.struct_id.simple_leave_allocation == True">
+        </t>
+        <t t-else="doc.struct_id.simple_leave_allocation == False">
+          <td width="150px" class="ballou_leave_allocation">Solde de congé
+            <t t-esc="doc.date_from.year"/>
+            :
+            <t t-esc="doc.get_leave_allocation_number_of_days(doc.date_from.year + 1)"/>
+          </td>
+        </t>
+      </xpath>
+      <xpath expr="//tr[@class='ballou_leave_allocation_previous']//td[@class='ballou_leave_allocation']"
+             position="replace">
+        <t t-if="doc.struct_id.simple_leave_allocation == True">
+
+        </t>
+        <t t-else="doc.struct_id.simple_leave_allocation == False">
+          <td class="ballou_leave_allocation">Solde de congé
+            <t t-esc="doc.date_from.year - 1"/>
+            :
+            <t t-esc="doc.get_leave_allocation_number_of_days(doc.date_from.year)"/>
+          </td>
+        </t>
+      </xpath>
+    </template>
+
+  </data>
+</odoo>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- Inherit Form View to Modify it -->
+    <record id="view_employee_form" model="ir.ui.view">
+      <field name="name">view.employee.form</field>
+      <field name="model">hr.employee</field>
+      <field name="inherit_id" ref="hr.view_employee_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='mobile_phone']" position="after">
+          <field name="option" invisible="1"/>
+          <field name="is_invitation_send" invisible="1"/>
+        </xpath>
+        <xpath expr="//field[@name='work_location']" position="after">
+          <field name="is_new_employee"/>
+        </xpath>
+        <xpath expr="//button[1]" position="after">
+          <button name="action_invitation_send" string="Compose mail"
+                  type="object" groups="hr.group_hr_manager"
+                  attrs="{'invisible': ['|',('option','!=','send_notification'),('is_invitation_send','=',True)]}"/>
+        </xpath>
+        <xpath expr="//notebook/page[@name='public']/div/div/group[2]" position="after">
+          <group name="administrative_work_information" string="Administrative Work Information">
+          </group>
+        </xpath>
+        <xpath expr="//notebook/page[@name='personal_information']/group/group[7]" position="after">
+          <group name="administrative_personal_information" string="Administrative Personal Information">
+          </group>
+        </xpath>
+        <xpath expr="//notebook/page[@name='public']/div/div/group[2]" position="after">
+          <group string="Schedule">
+            <field name="resource_calendar_id" required="1" invisible="1"/>
+            <field name="tz" required="1"/>
+          </group>
+        </xpath>
+
+      </field>
+    </record>
+
+		   <!-- Action to do action is new employee for multiple record -->
+    <record id="ir_actions_server_action_is_new_employee" model="ir.actions.server">
+      <field name="name">Is new employee ?</field>
+      <field name="model_id" ref="hr.model_hr_employee"/>
+      <field name="binding_model_id" ref="hr.model_hr_employee"/>
+      <field name="binding_view_types">list</field>
+      <field name="state">code</field>
+      <field name="code">records.change_is_new_employee()</field>
+    </record>
+
+     <record id="onboarding_view_employee_filter_inherit" model="ir.ui.view">
+      <field name="name">onboarding.hr.employee.search.inherit</field>
+      <field name="model">hr.employee</field>
+      <field name="inherit_id" ref="sirh_hr.sirh_view_employee_filter_inherit"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='is_gpec_responsible']" position="after">
+          <field name="is_resp_admin"/>
+          <field name="is_resp_soft"/>
+        </xpath>
+      </field>
+    </record>
+
+  </data>
+</odoo>

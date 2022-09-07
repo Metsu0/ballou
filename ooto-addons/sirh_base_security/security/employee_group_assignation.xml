@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <!-- FOR EMPLOYEE -->
+  <record id="group_employee_etech_deputy" model="res.groups">
+    <field name="name">Deputy</field>
+    <field name="users" eval="[(4, ref('sirh_base_security.default_deputy_profile'))]"/>
+    <field name="category_id" ref="base.module_category_human_resources"/>
+    <field name="implied_ids" eval="[(4, ref('hr.group_hr_user'))]"/>
+  </record>
+
+  <record id="group_employee_etech_manager" model="res.groups">
+    <field name="name">Manager</field>
+    <field name="users" eval="[(4, ref('sirh_base_security.default_manager_profile'))]"/>
+    <field name="category_id" ref="base.module_category_human_resources"/>
+    <field name="implied_ids" eval="[(4, ref('hr.group_hr_user'))]"/>
+  </record>
+
+  <record id="group_employee_etech_directeur" model="res.groups">
+    <field name="name">Directeur</field>
+    <field name="users" eval="[(4, ref('sirh_base_security.default_directeur_profile'))]"/>
+    <field name="category_id" ref="base.module_category_human_resources"/>
+    <field name="implied_ids" eval="[(4, ref('hr.group_hr_user'))]"/>
+  </record>
+
+  <record id="group_employee_rh" model="res.groups">
+    <field name="name">RH</field>
+    <field name="users" eval="[(4, ref('sirh_base_security.default_rh_profile')),(4, ref('sirh_base_security.default_administration_profile'))]"/>
+    <field name="category_id" ref="base.module_category_human_resources"/>
+    <field name="implied_ids" eval="[(4, ref('hr.group_hr_user'))]"/>
+  </record>
+</odoo>

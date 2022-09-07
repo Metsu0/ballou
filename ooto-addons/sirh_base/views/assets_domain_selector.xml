@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="assets_editor_domain_selector" name="sirh_domain_selector assets" inherit_id="web.assets_backend">
+    <xpath expr="//script[last()]" position="after">
+      <script type="text/javascript" src="/sirh_base/static/src/js/domain_selector.js"></script>
+      <script type="text/javascript" src="/sirh_base/static/src/js/action_manager.js"></script>
+      <script type="text/javascript" src="/sirh_base/static/src/js/list_renderer.js"></script>
+    </xpath>
+  </template>
+</odoo>

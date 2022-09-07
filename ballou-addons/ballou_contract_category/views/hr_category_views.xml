@@ -1,0 +1,99 @@
+<odoo>
+    <data>
+        <record id="view_hr_contract_category_tree" model="ir.ui.view">
+            <field name="name">view.hr.contract.category.tree</field>
+            <field name="model">hr.contract.category</field>
+            <field name="arch" type="xml">
+                <tree string="Catégorie de contrat">
+                    <field name="name"/>
+                    <field name="group_id"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="view_hr_contract_category_form" model="ir.ui.view">
+            <field name="name">view.hr.contract.category.form</field>
+            <field name="model">hr.contract.category</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <h1 class="d-flex">
+                                <field name="name" placeholder="Nom de la Catégorie"/>
+                            </h1>
+                            <group>
+                                <field name="description"/>
+                            </group>
+                            <group>
+                                <field name="group_id" options="{'no_create': True, 'no_open': True}"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="hr_contract_category_view_action" model="ir.actions.act_window">
+            <field name="name">Catégorie de Contrat</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.contract.category</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <record id="view_hr_contract_group_tree" model="ir.ui.view">
+            <field name="name">view.hr.contract.category.tree</field>
+            <field name="model">hr.contract.group</field>
+            <field name="arch" type="xml">
+                <tree string="Group de catégorie de contrat">
+                    <field name="name"/>
+                    <field name="month"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="view_hr_contract_group_form" model="ir.ui.view">
+            <field name="name">view.hr.contract.group.form</field>
+            <field name="model">hr.contract.group</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <h1 class="d-flex">
+                                <field name="name" placeholder="Nom du Group"/>
+                            </h1>
+                            <group>
+                                <label for="month"/>
+                                <div>
+                                    <field name="month" class="oe_inline"/>
+                                    Mois
+                                </div>
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="hr_contract_group_view_action" model="ir.actions.act_window">
+            <field name="name">Groupe de catégorie de Contrat</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.contract.group</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Contrat" id="contrat_root" parent="hr.menu_human_resources_configuration"/>
+        <menuitem id="menu_category_view" name="Catégorie professionnelle" parent="contrat_root"
+                  action="hr_contract_category_view_action"/>
+        <menuitem id="menu_group_view" name="Groupe de Catégorie" parent="contrat_root"
+                  action="hr_contract_group_view_action"/>
+
+    </data>
+</odoo>

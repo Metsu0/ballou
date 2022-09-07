@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <template id="report_payslip_inheritance" inherit_id="hr_payroll.report_payslip">
+    <!-- <xpath expr="//tbody/span[@t-foreach='o.line_ids.filtered(lambda line: line.appears_on_payslip)']" position="attributes">
+      <attribute name="t-foreach">o.line_ids.filtered(lambda line: line.appears_on_payslip and line.total != 0)
+      </attribute>
+    </xpath> -->
+  </template>
+
+</odoo>

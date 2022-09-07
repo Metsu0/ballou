@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <data>
+    <record id="sirh_view_company_form" model="ir.ui.view">
+      <field name="name">sirh.company.view.form</field>
+      <field name="model">res.company</field>
+      <field name="inherit_id" ref="base.view_company_form"/>
+      <field name="arch" type="xml">
+        <field name="partner_id" position="before">
+          <label for="owner_id"/>
+          <div class="address_format">
+            <label for="owner_title" class="oe_edit_only"/>
+            <field name="owner_title" class="oe_edit_only"/>
+            <label for="owner_id" string="Full name" class="oe_edit_only"/>
+            <field name="owner_id"/>
+          </div>
+          <field name="rh_responsible_id"/>
+        </field>
+        <field name="partner_id" position="after">
+          <field name="post_office_box"/>
+        </field>
+        <field name="phone" position="after">
+          <field name="fax"/>
+        </field>
+        <xpath expr="//notebook/page[1]" position="after">
+          <page string="Configuration">
+            <group>
+              <group>
+                <group string="Company configuration" name="default_configuration">
+                  <field name="resource_calendar_id"/>
+                  <field name="company_activity"/>
+                  <field name="meal_amount"/>
+                  <field name="child_deduction_amount"/>
+                  <field name="number_day_off_monthly"/>
+                  <field name="nif"/>
+                  <field name="stat"/>
+                  <field name="rcs"/>
+                  <field name="ostie_member_code"/>
+                  <field name="ostie_folio"/>
+                  <field name="cnaps_member_code"/>
+                </group>
+                <group string="Official declaration" name="official_declaration">
+                  <field name="minimum_hiring_salary"/>
+                  <field name="cnaps_ostie_threshold"/>
+                  <field name="declaration_date"/>
+                </group>
+              </group>
+              <group>
+                <group string="IRSA">
+                  <field name="irsa_rate"/>
+                  <field name="irsa_allowance"/>
+                  <field name="irsa_threshold"/>
+                </group>
+                <group string="CNAPS">
+                  <field name="cnaps_employer_contribution"/>
+                  <field name="cnaps_employee_contribution"/>
+                  <field name="cnaps_threshold_employer"/>
+                  <field name="cnaps_threshold_employee"/>
+                </group>
+                <group string="OSTIE" name="ostie_group">
+                  <field name="employer_health_contribution"/>
+                  <field name="employee_health_contribution"/>
+                  <field name="ostie_threshold_employer"/>
+                  <field name="ostie_threshold_employee"/>
+                </group>
+                <group string="FMFP">
+                  <field name="fmfp_employer_contribution"/>
+                  <field name="fmfp_threshold"/>
+                </group>
+                <group string="IRI">
+                  <field name="iri_rate"/>
+                </group>
+              </group>
+            </group>
+          </page>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

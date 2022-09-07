@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Add group to profile -->
+    <record id="ooto_base_security.superadmin_profile" model="res.users">
+        <field name="groups_id" eval="[
+        (4, ref('hr_holidays.group_hr_holidays_manager')),
+        ]"/>
+    </record>
+
+    <record id="ooto_base_security.admin_cse_profile" model="res.users">
+        <field name="groups_id" eval="[
+        (4, ref('hr_holidays.group_hr_holidays_manager')),
+      ]"/>
+    </record>
+
+    <!--<record id="ooto_base_security.open_right_profile" model="res.users">-->
+        <!--<field name="groups_id" eval="[(4, ref('hr_holidays.group_hr_holidays_manager')), ]"/>-->
+    <!--</record>-->
+
+</odoo>

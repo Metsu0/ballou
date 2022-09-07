@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <record model="hr.payslip.payment.mode" id="contract_payment_virement">
+      <field name="name">Virement</field>
+      <field name="note">Mode de paiement par virement bancaire</field>
+    </record>
+
+    <record model="hr.payslip.payment.mode" id="contract_payment_cacsh">
+      <field name="name">Espèce</field>
+      <field name="note">Mode de paiement en espèce</field>
+    </record>
+
+    <record model="hr.payslip.payment.mode" id="contract_payment_cheque">
+      <field name="name">Chèque</field>
+      <field name="note">Mode de paiement par chèque</field>
+    </record>
+  </data>
+</odoo>

@@ -1,0 +1,641 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+$font_family_oswald: 'Oswald',
+sans-serif;
+$font_family_nunito: 'Nunito',
+sans-serif;
+$font_family_roboto: 'Roboto',
+sans-serif;
+$rose: $as-theme;
+
+/*-------------------- modal popup tuto annuaire --------------------*/
+
+.slide_annuaire {
+    overflow-y: scroll;
+    height: 450px;
+    padding-bottom: 50px;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.modal.modal_annuaire_tuto .modal-dialog {
+    .modal-content {
+        transform: scale(0);
+        transition: 0.5s;
+    }
+}
+
+.modal.show.modal_annuaire_tuto .modal-dialog {
+    right: 0;
+    left: 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .modal-content {
+        transform: scale(1);
+        border-radius: 5px;
+        overflow: hidden;
+        width: 350px;
+        height: auto;
+    }
+}
+
+.modal.modal_annuaire_tuto .modal-header {
+    padding: 0;
+    border-bottom: none;
+    width: 100%;
+    flex-wrap: wrap;
+    height: 215px;
+    background: rgb(207, 207, 207);
+    img {
+        width: 100%;
+        object-fit: cover;
+        max-height: 215px;
+        height: 215px;
+    }
+}
+
+.Blockdot_annuaire_tuto {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.Blockdot_annuaire_tuto li {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: #e4e4e4;
+    border-radius: 15px;
+    margin-right: 3px;
+    border: none;
+    &.active {
+        background-color: #fc3471;
+    }
+}
+
+.modal .modal-dialog {
+    -webkit-transform: translate(0);
+    -moz-transform: translate(0);
+    transform: translate(0);
+}
+
+.modal.modal_annuaire_tuto .modal-body {
+    padding: 0 70px;
+    margin-top: 30px;
+    padding-bottom: 50px;
+}
+
+.modal.modal_annuaire_tuto .modal-footer {
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-top: none;
+}
+
+.tuto_titre {
+    p {
+        font-family: $font_family_oswald;
+        font-size: 20px;
+        text-align: center;
+        color: #4a4a4a;
+        line-height: 1.3;
+    }
+}
+
+.tuto_description {
+    p {
+        font-family: $font_family_nunito;
+        font-size: 12px;
+        text-align: center;
+        color: #4a4a4a;
+    }
+}
+
+.tuto_next_bouton,
+.got_it_bouton {
+    font-family: $font_family_nunito;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    color: #fc3471;
+    padding: 7px 25px;
+    background-color: rgba(252, 52, 113, 0.2);
+    border-radius: 18px;
+    &:hover {
+        color: #fc3471;
+    }
+}
+
+.got_it_bouton {
+    color: #08bf9f;
+    background-color: rgba(8, 191, 159, 0.2);
+    &:hover {
+        color: #08bf9f;
+    }
+}
+
+.got_it {
+    font-family: $font_family_nunito;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    color: #fc3471;
+    padding: 7px 25px;
+    background-color: rgba(252, 52, 113, 0.2);
+    border-radius: 18px;
+}
+
+.got_it {
+    color: #08bf9f;
+    background-color: rgba(8, 191, 159, 0.2);
+}
+
+
+/*-------------------- fin modal popup tuto annuaire --------------------*/
+
+.copied {
+    display: none;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 40vh;
+    position: fixed;
+    width: 293px;
+    height: auto;
+    padding: 20px 0;
+    z-index: 9;
+    text-align: center;
+    box-shadow: 0 8px 16px 0 #d7d9df;
+    background-color: #ffffff;
+    border-radius: 5px;
+    h5.copiedtext {
+        font-family: $font_family_nunito;
+        font-size: 16px;
+        font-weight: 700;
+        text-align: center;
+        color: #4a4a4a;
+        margin-bottom: 0;
+        &:before {
+            content: '';
+            width: 38px;
+            height: 38px;
+            display: inline-block;
+            background: url("../img/coche.svg") center center no-repeat transparent;
+            vertical-align: middle;
+            margin-right: 20px;
+        }
+    }
+}
+
+.carousel-indicators.Blockdot_annuaire_tuto {
+    position: fixed;
+    margin: 0;
+    z-index: 99;
+    bottom: 60px;
+    background: #fff;
+}
+
+
+/*-------------------- corps annuaire --------------------*/
+
+.container_annuaire {
+    margin-bottom: 0px;
+    padding: 20px 10% 50px 10%;
+    background: #eff1f6;
+    min-height: 90vh;
+}
+
+.titre_page_annuiare {
+    font-family: $font_family_oswald;
+    font-size: 20px;
+    font-weight: 700;
+    color: #4a4a4a;
+}
+
+.block_outil {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    form {
+        display: inline-block;
+    }
+}
+
+.dropdown_annuaire_filtre {
+    display: inline-block;
+    margin-left: 20px;
+    .a_annuiare_filtre {
+        background-color: $rose;
+        border: none;
+        border-radius: 5px !important;
+        span {
+            font-family: $font_family_nunito;
+            font-size: 13px;
+            text-transform: initial;
+        }
+        &:after {
+            content: "";
+            border: none;
+            background: url("../img/path_down.svg") center center no-repeat transparent;
+            width: 15px;
+            height: 15px;
+            vertical-align: middle;
+        }
+        &:hover {
+            background-color: #fc3471;
+        }
+    }
+}
+
+.show>.btn-secondary.dropdown-toggle.a_annuiare_filtre {
+    background-color: #fc3471;
+}
+
+.annuaire_recherche.form-control {
+    width: 330px !important;
+    display: inline-block;
+    flex: inherit !important;
+    height: 40px;
+    font-family: $font_family_roboto;
+    font-size: 14px;
+    font-style: italic;
+    color: #6d7278;
+    border: none!important;
+    border-radius: 22px 0 0 22px!important;
+    padding: 0.375rem 20px !important;
+    text-align: left;
+    margin: 0;
+}
+
+.annuaire_search_button {
+    background-color: #fff !important;
+    border-top-right-radius: 22px !important;
+    border-bottom-right-radius: 22px !important;
+    margin-top: 0px !important;
+    border: none;
+    i {
+        color: #000;
+        font-size: 20px;
+    }
+}
+
+.annuaire_section {
+    border-radius: 5px!important;
+    border: none!important;
+    background-color: #ffffff;
+    display: inline-block;
+    width: 100%;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    .card-header {
+        background: none!important;
+        border: none!important;
+        padding: 0!important;
+    }
+}
+
+.annuaire_employee_info {
+    display: inline-block;
+    vertical-align: top;
+    min-width: 28%;
+    img {
+        display: inline-block;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        object-fit: cover;
+        border-radius: 15px;
+    }
+    span {
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+.annuaire_employee_Name {
+    font-family: $font_family_oswald;
+    font-size: 13px;
+    font-weight: 700;
+    color: #333333;
+}
+
+.annuaire_employee_Mail {
+    font-family: $font_family_nunito;
+    font-size: 11px;
+    color: rgba(51, 51, 51, 0.5);
+}
+
+.annuaire_employee_NameMail {
+    display: inline-block;
+    width: 200px;
+    vertical-align: middle;
+    text-align: left;
+    padding-left: 25px;
+    line-height: 1.1;
+    span {
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+.annuaire_bloc1 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    vertical-align: middle;
+    position: relative;
+    cursor: pointer;
+    .annuaire_employee_infoOther {
+        display: flex;
+        flex-direction: column;
+        line-height: 14px;
+        div:first-child {
+            font-weight: 700;
+        }
+    }
+    .annuaire_employee_infoOther {
+        display: inline-flex;
+        width: 70%;
+        //overflow-x: scroll;
+        flex-wrap: wrap;
+        .annuaire_employee_infoOtherBloc {
+            display: inline-block;
+            min-width: 31%;
+            max-width: 31%;
+            line-height: 15px;
+            span {
+                display: inline-block;
+                width: 100%;
+                line-height: 13px;
+                font-family: $font_family_nunito;
+                font-size: 10px;
+                &:first-child {
+                    font-weight: 700;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    .annuaire-titre-poste {
+        width: 20px;
+        height: 20px;
+        background-color: #fc3471;
+        border-radius: 50%;
+        color: #fff;
+        font-size: 10px;
+        font-family: $font_family_nunito;
+        position: absolute;
+        right: 5%;
+        text-align: center;
+        padding-top: 2px;
+    }
+    .arrow-down {
+        position: absolute;
+        right: 0;
+        //fix arrow
+        height: auto !important;
+        width: auto !important;
+        border: none !important;
+        margin: 0 !important;
+        //fin fix arrow
+        img {
+            transform: rotate(180deg);
+            filter: grayscale(100%);
+            opacity: 0.5;
+            transition: transform 0.5s, filter 0.5s;
+        }
+    }
+    &:hover {
+        .arrow-down {
+            img {
+                transform: rotate(0deg);
+                filter: grayscale(0%);
+                opacity: 1;
+            }
+        }
+    }
+    &.true {
+        .arrow-down {
+            img {
+                transform: rotate(0deg);
+                filter: grayscale(0%);
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.annuaire_section {
+    &:hover {
+        .annuaire_bloc1 {
+            .arrow-down {
+                img {
+                    transform: rotate(0deg);
+                    filter: grayscale(0%);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.annuaire_bloc2 {
+    .annuaire_bloc2_fils {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 11px;
+        border-top: solid 1px #d8d8d8;
+        padding: 15px 0 0;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    .contact_bloc {
+        display: flex;
+        width: 25%;
+        align-items: center;
+        margin-bottom: 20px;
+        padding-right: 15px;
+        cursor: pointer;
+        .img-annuaire {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            order: 1;
+        }
+        &>span {
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+            line-height: 16px;
+            font-family: $font_family_nunito;
+            font-size: 11px;
+            order: 2;
+            & span:first-child {
+                font-weight: 700;
+                color: #333333;
+            }
+        }
+    }
+}
+
+.annuaire_bloc_contact {
+    display: inline-block;
+    width: 250px;
+}
+
+.annuiare_vide {
+    text-align: center;
+}
+
+.image_annuaire_vide {
+    width: 100%;
+    height: 300px;
+    background: url("../img/illu-absence.svg") center center no-repeat transparent;
+    display: inline-block;
+}
+
+.texte_annuaire_vide {
+    font-family: $font_family_nunito;
+    font-size: 20px;
+    color: #9babbb;
+}
+
+.search-multitag {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 0 0 0;
+    div {
+        background: #6d7278;
+        padding: 7px 5px 7px 10px;
+        border-radius: 25px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        color: #fff;
+        font-family: $font_family_nunito;
+        font-weight: 700;
+        button {
+            background: none;
+        }
+    }
+}
+
+.block_outil {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.multitag-search {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+/*-------------------- fin corps annuaire --------------------*/
+
+@media screen and (max-width: 500px) {
+    .multitag-search {
+        width: 100%;
+    }
+    .container_annuaire {
+        padding: 20px;
+        min-height: 90vh;
+    }
+    .annuaire_recherche {
+        width: 100% !important;
+    }
+    .dropdown_annuaire_filtre {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+    .annuaire_bloc1 .annuaire_employee_infoOther {
+        display: none;
+    }
+    .annuaire_employee_NameMail {
+        width: 170px;
+        padding-left: 15px;
+    }
+    .annuaire_bloc1 .annuaire-titre-poste {
+        right: 10%;
+    }
+    .annuaire_bloc2 .contact_bloc {
+        margin-bottom: 20px;
+        //display: inline-block;
+        width: 100%;
+    }
+    .annuaire_bloc2 .annuaire_bloc2_fils {
+        padding-left: 33px;
+    }
+    .block_outil form {
+        width: 100%;
+    }
+    .modal.show.modal_annuaire_tuto .modal-dialog .modal-content {
+        width: 250px;
+    }
+    .modal.modal_annuaire_tuto .modal-body {
+        padding: 0 15px;
+    }
+    .annuaire_recherche.form-control {
+        width: 100%!important;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 1024px) {
+    .annuaire_employee_NameMail {
+        width: 120px;
+        padding-left: 5px;
+    }
+    .annuaire_bloc2 .contact_bloc {
+        width: 50%;
+    }
+    .annuaire_bloc1 .annuaire_employee_infoOther {
+        width: 50%;
+    }
+    .annuaire_bloc1 .annuaire_employee_infoOther .annuaire_employee_infoOtherBloc {
+        min-width: 100%;
+        padding-left: 15px;
+    }
+}
+
+.Bienvenue-dans-lann {
+    font-family: Oswald;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    text-align: center;
+    color: #4a4a4a;
+}
+
+@media screen and (min-width: 500px) and (max-width: 768px) {
+    .annuaire_recherche.form-control {
+        width: 100%!important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .annuaire_bloc2 .contact_bloc {
+        width: 100%;
+    }
+    .icon_tuto_web {
+        display: none;
+    }
+    .container_annuaire {
+        min-height: 90vh;
+    }
+    .content-top_profil+.tab-style-1 {
+        .tab-content {
+            .form-info-container {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data noupdate="0">
+  
+		<!-- INCOME STATEMENT BY FUNCTION -->
+    <!-- COMPTE DE RESULTAT PAR FONCTION -->
+    
+    <!-- report -->
+		<record id = "report_income_statement_function" model = "account.financial.html.report">
+			<field name = "name">Compte de résultat par Fonction</field>
+        <field name='parent_id' ref='account_reports_mg_statements_menu'/>
+        <field name='type_financial_report_mg'>cr_f</field>
+        <field name="unfold_all_filter" eval="True"/>
+        <field name='note_mg' eval="False"/>
+		</record>
+		
+		<!-- lines -->
+    
+      <!-- I -->
+      <record id = "report_income_statement_function_mb" model = "account.financial.html.report.line">
+				<field name="name">I- MARGE BRUTE</field>
+				<field name="code">MRG_BRT_ISF</field>
+				<field name="financial_report_id" ref="report_income_statement_function"/>
+				<field name="formulas">PRO_ACT_ORD_ISF + CT_VTE_ISF</field>
+				<field name="sequence" eval="1"/>
+				<field name="level" eval="1"/>
+			</record>
+		
+				<record id ="report_income_statement_function_pao" model ="account.financial.html.report.line">
+					<field name="name">Produits des activités ordinaires</field>
+					<field name="code">PRO_ACT_ORD_ISF</field>
+					<field name="parent_id" ref='report_income_statement_function_mb'/>
+					<field name="formulas">-sum</field>
+					<field name="domain">[('account_id.code', '=like', '70%')]</field>
+					<field name="groupby">account_id</field>
+					<field name="sequence" eval="1"/>
+					<field name="level" eval="2"/>
+					<field name="green_on_positive" eval="True"/>
+				</record>
+    
+        <record id = "report_income_statement_function_cv" model = "account.financial.html.report.line">
+					<field name="name">Coûts des ventes</field>
+					<field name="code">CT_VTE_ISF</field>
+					<field name="parent_id" ref='report_income_statement_function_mb'/>
+					<field name="formulas">-sum</field>
+					<field name="domain">[ ('account_id.code', '=like', '60%')]</field>
+<!--					<field name="domain">['|', ('account_id.code', '=like', '713%'), ('account_id.code', '=like', '714%')]</field>-->
+					<field name="groupby">account_id</field>
+					<field name="sequence" eval="2"/>
+					<field name="level" eval="2"/>
+					<field name="green_on_positive" eval="False"/>
+				</record>
+		
+			<!-- II -->
+      <record id = "report_income_statement_function_ro" model = "account.financial.html.report.line">
+				<field name="name">II- RESULTAT OPERATIONNEL</field>
+				<field name="code">RES_OP_ISF</field>
+				<field name="financial_report_id" ref="report_income_statement_function"/>
+				<field name="formulas">MRG_BRT_ISF + AUT_PROD_OPR_ISF + CT_COMM_ISF + CHA_ADM_ISF + AUT_CHA_OPR_ISF</field>
+				<field name="sequence" eval="2"/>
+				<field name="level" eval="1"/>
+				<field name="green_on_positive" eval="True"/>
+			</record>
+		
+				<record id = "report_income_statement_function_apro" model = "account.financial.html.report.line">
+					<field name="name">Autres produits opérationnels</field>
+					<field name="code">AUT_PROD_OPR_ISF</field>
+					<field name="parent_id" ref='report_income_statement_function_ro'/>
+					<field name="formulas">-sum</field>
+					<field name="domain">['|','|','|',('account_id.code', '=like', '71%'),('account_id.code', '=like', '72%'),('account_id.code', '=like', '74%'),('account_id.code', '=like', '75%')]</field>
+					<field name="groupby">account_id</field>
+					<field name="sequence" eval="1"/>
+					<field name="level" eval="2"/>
+					<field name="green_on_positive" eval="False"/>
+				</record>
+    
+        <record id = "report_income_statement_function_cc" model = "account.financial.html.report.line">
+					<field name="name">Coûts commerciaux</field>
+					<field name="code">CT_COMM_ISF</field>
+					<field name="parent_id" ref='report_income_statement_function_ro'/>
+<!--					<field name="formulas">-sum</field>-->
+<!--					<field name="domain">['|', '|', ('account_id.code', '=like', '60%'),-->
+<!--						                              ('account_id.code', '=like', '61%'),-->
+<!--						                              ('account_id.code', '=like', '62%')]</field>-->
+					<field name="groupby">account_id</field>
+					<field name="sequence" eval="2"/>
+					<field name="level" eval="2"/>
+					<field name="green_on_positive" eval="False"/>
+				</record>
+				
+				<record id = "report_income_statement_function_ca" model = "account.financial.html.report.line">
+					<field name="name">Charges Administratives</field>
+					<field name="code">CHA_ADM_ISF</field>
+					<field name="parent_id" ref='report_income_statement_function_ro'/>
+					<field name="formulas">CPT_61 + CPT_62 + CPT_63 + CPT_64 + CPT_68 + CPT_78</field>
+<!--					<field name="domain">['|', '|', ('account_id.code', '=like', '63%'),-->
+<!--						                               ('account_id.code', '=like', '64%'),-->
+<!--						                               ('account_id.code', '=like', '68%')]</field>-->
+					<field name="groupby">account_id</field>
+					<field name="sequence" eval="3"/>
+					<field name="level" eval="2"/>
+					<field name="green_on_positive" eval="True"/>
+				</record>
+    
+        <record id = "report_income_statement_function_aco" model = "account.financial.html.report.line">
+					<field name="name">Autres charges opérationnelles</field>
+					<field name="code">AUT_CHA_OPR_ISF</field>
+					<field name="parent_id" ref='report_income_statement_function_ro'/>
+					<field name="formulas">-sum</field>
+					<field name="domain">[('account_id.code', '=like', '65%')]</field>
+					<field name="groupby">account_id</field>
+					<field name="sequence" eval="4"/>
+					<field name="level" eval="2"/>
+					<field name="green_on_positive" eval="True"/>
+				</record>
+		
+			<!-- III -->
+      <record id = "report_income_statement_function_rf" model = "account.financial.html.report.line">
+				<field name="name">III- RESULTAT FINANCIER</field>
+				<field name="code">RES_FIN_ISF</field>
+				<field name="financial_report_id" ref="report_income_statement_function"/>
+				<field name="formulas">PROD_FIN_ISF + CHRG_FIN_ISF</field>
+				<field name="sequence" eval="3"/>
+				<field name="level" eval="1"/>
+				<field name="green_on_positive" eval="True"/>
+			</record>
+		
+				<record id = "report_income_statement_function_apo" model = "account.financial.html.report.line">
+					<field name="name">Produits financiers</field>
+					<field name="code">PROD_FIN_ISF</field>
+					<field name="parent_id" ref='report_income_statement_function_rf'/>
+					<field name="formulas">-sum</field>
+					<field name="domain">[('account_id.code', '=like', '76%')]</field>
+					<field name="groupby">account_id</field>
+					<field name="sequence" eval="1"/>
+					<field name="level" eval="2"/>
+					<field name="green_on_positive" eval="True"/>
+				</record>
+    
+        <record id = "report_income_statement_function_cf" model = "account.financial.html.report.line">
+					<field name="name">Charges financières</field>
+					<field name="code">CHRG_FIN_ISF</field>
+					<field name="parent_id" ref='report_income_statement_function_rf'/>
+					<field name="formulas">-sum</field>
+					<field name="domain">[('account_id.code', '=like', '66%')]</field>
+					<field name="groupby">account_id</field>
+					<field name="sequence" eval="2"/>
+					<field name="level" eval="2"/>
+					<field name="green_on_positive" eval="True"/>
+				</record>
+		
+			<!-- IV -->
+      <record id = "report_income_statement_function_rai" model = "account.financial.html.report.line">
+				<field name="name">IV- RESULTAT AVANT IMPOT</field>
+				<field name="code">RES_AV_IMP_ISF</field>
+				<field name="financial_report_id" ref="report_income_statement_function"/>
+				<field name="formulas">RES_OP_ISF + RES_FIN_ISF</field>
+				<field name="sequence" eval="4"/>
+				<field name="level" eval="1"/>
+				<field name="green_on_positive" eval="True"/>
+			</record>
+		
+			<!-- 	Impôts exigibles sur les résultats -->
+      <record id = "report_income_statement_function_ier" model = "account.financial.html.report.line">
+				<field name="name">Impôts exigibles sur les résultats</field>
+				<field name="code">IMP_EX_RES_ISF</field>
+				<field name="financial_report_id" ref="report_income_statement_function"/>
+				<field name="formulas">-sum</field>
+				<field name="domain">[('account_id.code', '=like', '695%')]</field>
+<!--				<field name="domain">['|', ('account_id.code', '=like', '695%'),-->
+<!--					                         ('account_id.code', '=like', '698%')]</field>-->
+				<field name="groupby">account_id</field>
+				<field name="sequence" eval="5"/>
+				<field name="level" eval="1"/>
+				<field name="green_on_positive" eval="True"/>
+			</record>
+		
+			<!-- 	Impôts différés -->
+      <record id = "report_income_statement_function_id" model = "account.financial.html.report.line">
+				<field name="name">Impôts différés</field>
+				<field name="code">IMP_DIF_ISF</field>
+				<field name="financial_report_id" ref="report_income_statement_function"/>
+				<field name="formulas">-sum</field>
+				<field name="domain">[('account_id.code', '=like', '692%')]</field>
+<!--					<field name="domain">['|', ('account_id.code', '=like', '692%'),-->
+<!--					                          ('account_id.code', '=like', '693%')]</field>-->
+				<field name="groupby">account_id</field>
+				<field name="sequence" eval="6"/>
+				<field name="level" eval="1"/>
+				<field name="green_on_positive" eval="True"/>
+			</record>
+		
+			<!-- 	V -->
+      <record id = "report_income_statement_function_rnao" model = "account.financial.html.report.line">
+				<field name="name">V- RESULTAT NET DES ACTIVITES ORDINAIRES</field>
+				<field name="code">RES_NT_ORDN_ISF</field>
+				<field name="financial_report_id" ref="report_income_statement_function"/>
+				<field name="formulas">RES_AV_IMP_ISF + IMP_EX_RES_ISF + IMP_DIF_ISF</field>
+				<field name="domain"></field>
+				<field name="groupby"></field>
+				<field name="sequence" eval="7"/>
+				<field name="level" eval="1"/>
+				<field name="green_on_positive" eval="True"/>
+			</record>
+		
+			<!-- VI -->
+      <record id = "report_income_statement_function_re" model = "account.financial.html.report.line">
+				<field name="name">VI- RESULTAT EXTRAORDINAIRE</field>
+				<field name="code">RES_EXTRA_ISF</field>
+				<field name="financial_report_id" ref="report_income_statement_function"/>
+				<field name="formulas">PRO_EXTRA_ISF + CHA_EXTRA_ISF</field>
+				<field name="sequence" eval="8"/>
+				<field name="level" eval="1"/>
+				<field name="green_on_positive" eval="True"/>
+			</record>
+		
+				<record id = "report_income_statement_function_pe" model = "account.financial.html.report.line">
+					<field name="name">Produits extraordinaires</field>
+					<field name="code">PRO_EXTRA_ISF</field>
+					<field name="parent_id" ref='report_income_statement_function_re'/>
+					<field name="formulas">-sum</field>
+					<field name="domain">[('account_id.code', '=like', '770%')]</field>
+					<field name="groupby">account_id</field>
+					<field name="sequence" eval="1"/>
+					<field name="level" eval="2"/>
+					<field name="green_on_positive" eval="True"/>
+				</record>
+    
+        <record id = "report_income_statement_function_ce" model = "account.financial.html.report.line">
+					<field name="name">Charges extraordinaires</field>
+					<field name="code">CHA_EXTRA_ISF</field>
+					<field name="parent_id" ref='report_income_statement_function_re'/>
+					<field name="formulas">-sum</field>
+					<field name="domain">[('account_id.code', '=like', '670%')]</field>
+					<field name="groupby">account_id</field>
+					<field name="sequence" eval="2"/>
+					<field name="level" eval="2"/>
+					<field name="green_on_positive" eval="True"/>
+				</record>
+		
+			<!-- VII -->
+      <record id = "report_income_statement_function_rne" model = "account.financial.html.report.line">
+				<field name="name">VII- RESULTAT NET DE L'EXERCICE</field>
+				<field name="code">RES_NT_EXRC_ISF</field>
+				<field name="financial_report_id" ref="report_income_statement_function"/>
+				<field name="formulas">RES_NT_ORDN_ISF + RES_EXTRA_ISF</field>
+				<field name="sequence" eval="9"/>
+				<field name="level" eval="1"/>
+				<field name="green_on_positive" eval="True"/>
+			</record>
+<!--  other account calculation-->
+			<record id = "account_61" model = "account.financial.html.report.line">
+				<field name="name">compte 61</field>
+				<field name="code">CPT_61</field>
+				<field name="parent_id" ref='report_income_statement_function'/>
+				<field name="formulas">-sum</field>
+				<field name="domain">[('account_id.code', '=like', '61%')]</field>
+				<field name="groupby">account_id</field>
+				<field name="sequence" eval="9"/>
+				<field name="level" eval="1"/>
+				<field name="green_on_positive" eval="True"/>
+			</record>
+		<record id = "account_62" model = "account.financial.html.report.line">
+				<field name="name">compte 62</field>
+				<field name="code">CPT_62</field>
+				<field name="parent_id" ref='report_income_statement_function'/>
+				<field name="formulas">-sum</field>
+				<field name="domain">[('account_id.code', '=like', '62%')]</field>
+				<field name="groupby">account_id</field>
+				<field name="sequence" eval="9"/>
+				<field name="level" eval="1"/>
+				<field name="green_on_positive" eval="True"/>
+			</record>
+		<record id = "account_63" model = "account.financial.html.report.line">
+				<field name="name">compte 63</field>
+				<field name="code">CPT_63</field>
+				<field name="parent_id" ref='report_income_statement_function'/>
+				<field name="formulas">-sum</field>
+				<field name="domain">[('account_id.code', '=like', '63%')]</field>
+				<field name="groupby">account_id</field>
+				<field name="sequence" eval="9"/>
+				<field name="level" eval="1"/>
+				<field name="green_on_positive" eval="True"/>
+			</record>
+			<record id = "account_64" model = "account.financial.html.report.line">
+				<field name="name">compte 64</field>
+				<field name="code">CPT_64</field>
+				<field name="parent_id" ref='report_income_statement_function'/>
+				<field name="formulas">-sum</field>
+				<field name="domain">[('account_id.code', '=like', '64%')]</field>
+				<field name="groupby">account_id</field>
+				<field name="sequence" eval="9"/>
+				<field name="level" eval="1"/>
+				<field name="green_on_positive" eval="True"/>
+			</record>
+		<record id = "account_68" model = "account.financial.html.report.line">
+				<field name="name">compte 68</field>
+				<field name="code">CPT_68</field>
+				<field name="parent_id" ref='report_income_statement_function'/>
+				<field name="formulas">-sum</field>
+				<field name="domain">[('account_id.code', '=like', '68%')]</field>
+				<field name="groupby">account_id</field>
+				<field name="sequence" eval="9"/>
+				<field name="level" eval="1"/>
+				<field name="green_on_positive" eval="True"/>
+			</record>
+		<record id = "account_78" model = "account.financial.html.report.line">
+				<field name="name">compte 78</field>
+				<field name="code">CPT_78</field>
+				<field name="parent_id" ref='report_income_statement_function'/>
+				<field name="formulas">-sum</field>
+				<field name="domain">[('account_id.code', '=like', '78%')]</field>
+				<field name="groupby">account_id</field>
+				<field name="sequence" eval="9"/>
+				<field name="level" eval="1"/>
+				<field name="green_on_positive" eval="True"/>
+			</record>
+	</data>
+
+</odoo>

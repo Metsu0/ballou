@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_generic_hr_payslip_resume_column,generic_hr.payslip_resume_column,model_payslip_resume_column,base.group_user,1,1,1,1
+access_hr_payroll_variable,hr.payroll.variable,model_hr_payroll_variable,,1,1,1,1

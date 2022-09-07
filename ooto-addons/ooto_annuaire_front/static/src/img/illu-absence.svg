@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="428" height="259" viewBox="0 0 428 259">
+    <defs>
+        <filter id="a" width="114%" height="126.6%" x="-7%" y="-13%" filterUnits="objectBoundingBox">
+            <feOffset dy="4" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="4"/>
+            <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0.811764706 0 0 0 0 0.843137255 0 0 0 0 0.874509804 0 0 0 0.399420892 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <ellipse cx="195.09" cy="28.798" fill="#BBCBD1" rx="4.192" ry="4.177"/>
+            <ellipse cx="257.345" cy="254.823" fill="#BBCBD1" rx="4.192" ry="4.177"/>
+            <ellipse cx="139.24" cy="229.222" stroke="#BBCBD1" stroke-width="3" rx="5.24" ry="5.222"/>
+            <ellipse cx="421.267" cy="14.087" stroke="#BBCBD1" stroke-width="3" rx="5.24" ry="5.222"/>
+            <ellipse cx="4.192" cy="133.11" fill="#BBCBD1" rx="4.192" ry="4.177"/>
+            <g fill="#BBCBD1" transform="translate(245.649)">
+                <rect width="1.397" height="10.444" x="3.493" rx=".699"/>
+                <path d="M0 5.222c0-.385.312-.696.696-.696h6.991a.696.696 0 0 1 0 1.392H.697A.696.696 0 0 1 0 5.222z"/>
+            </g>
+            <g fill="#BBCBD1" transform="translate(20 8.422)">
+                <rect width="1.397" height="10.444" x="3.493" rx=".699"/>
+                <path d="M0 5.222c0-.385.312-.696.696-.696h6.991a.696.696 0 0 1 0 1.392H.697A.696.696 0 0 1 0 5.222z"/>
+            </g>
+            <g fill="#BBCBD1" transform="translate(411.617 178.49)">
+                <rect width="1.397" height="10.444" x="3.493" rx=".699"/>
+                <path d="M0 5.222c0-.385.312-.696.696-.696h6.991a.696.696 0 0 1 0 1.392H.697A.696.696 0 0 1 0 5.222z"/>
+            </g>
+        </g>
+        <g filter="url(#a)" transform="translate(50 49)">
+            <path fill="#FFF" d="M3 0h323.706a3 3 0 0 1 3 3v35.647a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3V3a3 3 0 0 1 3-3z"/>
+            <circle cx="255.768" cy="20.338" r="8.676" fill="#CFD7DF"/>
+            <rect width="43.136" height="6.664" x="50.553" y="13.327" fill="#CFD7DF" rx="3.332"/>
+            <rect width="47.344" height="4.625" x="50.553" y="24.381" fill="#F4F4F4" rx="2.313"/>
+            <rect width="47.344" height="4.625" x="131.432" y="17.492" fill="#F4F4F4" rx="2.313"/>
+            <circle cx="28.039" cy="21.295" r="13.015" fill="#CFD7DF"/>
+            <g transform="translate(0 90.125)">
+                <path fill="#FFF" d="M3 0h323.706a3 3 0 0 1 3 3v35.647a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3V3a3 3 0 0 1 3-3z"/>
+                <circle cx="255.768" cy="20.338" r="8.676" fill="#CFD7DF"/>
+                <rect width="43.136" height="6.664" x="50.553" y="13.327" fill="#CFD7DF" rx="3.332"/>
+                <rect width="47.344" height="4.625" x="50.553" y="24.381" fill="#F4F4F4" rx="2.313"/>
+                <rect width="47.344" height="4.625" x="131.432" y="17.492" fill="#F4F4F4" rx="2.313"/>
+                <circle cx="28.039" cy="21.295" r="13.015" fill="#CFD7DF"/>
+            </g>
+            <g transform="translate(0 135.187)">
+                <path fill="#FFF" d="M3 0h323.706a3 3 0 0 1 3 3v35.647a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3V3a3 3 0 0 1 3-3z"/>
+                <circle cx="255.768" cy="20.338" r="8.676" fill="#CFD7DF"/>
+                <rect width="43.136" height="6.664" x="50.553" y="13.327" fill="#CFD7DF" rx="3.332"/>
+                <rect width="47.344" height="4.625" x="50.553" y="24.381" fill="#F4F4F4" rx="2.313"/>
+                <rect width="47.344" height="4.625" x="131.432" y="17.492" fill="#F4F4F4" rx="2.313"/>
+                <circle cx="28.039" cy="21.295" r="13.015" fill="#CFD7DF"/>
+            </g>
+            <g transform="translate(0 45.062)">
+                <path fill="#FFF" d="M3 0h323.706a3 3 0 0 1 3 3v35.647a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3V3a3 3 0 0 1 3-3z"/>
+                <circle cx="255.768" cy="19.505" r="8.676" fill="#CFD7DF"/>
+                <rect width="43.136" height="6.664" x="50.553" y="13.327" fill="#CFD7DF" rx="3.332"/>
+                <rect width="47.344" height="4.625" x="50.553" y="24.381" fill="#F4F4F4" opacity=".5" rx="2.313"/>
+                <rect width="47.344" height="4.625" x="131.432" y="17.492" fill="#F4F4F4" rx="2.313"/>
+                <circle cx="28.039" cy="21.295" r="13.015" fill="#CFD7DF"/>
+            </g>
+        </g>
+    </g>
+</svg>

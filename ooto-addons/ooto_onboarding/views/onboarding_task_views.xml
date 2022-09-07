@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="ooto_hr_onboarding_task_search" model="ir.ui.view">
+      <field name="name">ooto.hr.onboarding.task.search</field>
+      <field name="model">hr.onboarding.task</field>
+      <field name="arch" type="xml">
+        <search>
+          <filter string="My Tasks" domain="[('onboarding_id.employee_id.user_id','=',uid)]" name="my_tasks"/>
+          <filter string="Form" domain="[('task_type','=','form')]" name="form"/>
+          <filter string="Content" domain="[('task_type','=','content')]" name="content"/>
+          <filter string="Software" domain="[('task_type','=','software')]" name="software"/>
+          <filter string="Signature" domain="[('task_type','=','signature')]" name="signature"/>
+          <filter string="Others" domain="[('task_type','=','others')]" name="others"/>
+          <filter string="Administrative" domain="[('task_type','=','administrative')]" name="administrative"/>
+          <filter string="Appointment" domain="[('task_type','=','appointment')]" name="appointment"/>
+          <filter string="Equipment" domain="[('task_type','=','equipment')]" name="equipment"/>
+          <filter string="Advice" domain="[('task_type','=','advice')]" name="advice"/>
+          <filter string="Period" name="group_by_period" domain="[]" context="{'group_by':'period_display'}"/>
+          <filter string="Task type" name="group_by_task_type" domain="[]" context="{'group_by':'task_type'}"/>
+        </search>
+      </field>
+    </record>
+
+    <record id="ooto_hr_onboarding_task_kanban_view" model="ir.ui.view">
+      <field name="name">ooto.hr.onboarding.task.kanban.view</field>
+      <field name="model">hr.onboarding.task</field>
+      <field name="arch" type="xml">
+        <kanban class="o_kanban_small_column" disable_drag_drop_record="true">
+          <field name="id"/>
+          <field name="name"/>
+          <field name="role_id"/>
+          <field name="role_image"/>
+          <field name="employee_image"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div
+                  t-attf-class="oe_kanban_card oe_kanban_global_click o_kanban_record_has_image_fill task_kanban_container #{record.task_type.raw_value}">
+                <div class="o_dropdown_kanban dropdown">
+                  <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" href="#"
+                     aria-label="Dropdown menu" title="Dropdown menu">
+                    <span class="fa fa-ellipsis-v"/>
+                  </a>
+                  <div class="dropdown-menu" role="menu">
+                    <t t-if="widget.editable">
+                      <a role="menuitem" type="edit" class="dropdown-item">Edit</a>
+                    </t>
+                    <t t-if="widget.deletable">
+                      <a role="menuitem" type="delete" class="dropdown-item">Delete</a>
+                    </t>
+                  </div>
+                </div>
+                <div class="oe_kanban_content">
+                  <div class="o_kanban_record_top">
+                    <div class="row" style="width: 100%;">
+                      <div class="col-7">
+                        <strong class="o_kanban_record_title">
+                          <field name="name"/>
+                          <field name="task_type" invisible="1"/>
+                          <field name="period" invisible="1"/>
+                        </strong>
+                      </div>
+                      <div t-attf-class="col-5 text-center task_label #{record.task_type.raw_value}">
+                        <field name="stain_label"/>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="o_kanban_record_body">
+                    <p>
+                      <field name="date_start"/>
+                    </p>
+                    <p>
+                      <field name="description"/>
+                    </p>
+                  </div>
+                  <div class="o_kanban_record_bottom">
+                    <div class="row" style="width: 100%;">
+                      <div class="col-8">
+                        <div class="row">
+                          <t t-if="record.period.raw_value == 'before_arrival'">
+                            <div t-attf-class="col-3 period-1" data-toggle="tooltip" title="Avant arrivée"/>
+                          </t>
+                          <t t-elif="record.period.raw_value == 'arrival_day' or  record.period.raw_value == 'first_week'">
+                            <div t-attf-class="col-3 period-1" data-toggle="tooltip" title="Avant arrivée"/>
+                            <div t-attf-class="col-3 period-2" data-toggle="tooltip" title="La première semaine"/>
+                          </t>
+                          <t t-elif="record.period.raw_value == 'first_month'">
+                            <div t-attf-class="col-3 period-1" data-toggle="tooltip" title="Avant arrivée"/>
+                            <div t-attf-class="col-3 period-2" data-toggle="tooltip" title="La première semaine"/>
+                            <div t-attf-class="col-3 period-3" data-toggle="tooltip" title="Le premier mois"/>
+                          </t>
+                          <t t-elif="record.period.raw_value == 'after_first_month'">
+                            <div t-attf-class="col-3 period-1" data-toggle="tooltip" title="Avant arrivée"/>
+                            <div t-attf-class="col-3 period-2" data-toggle="tooltip" title="La première semaine"/>
+                            <div t-attf-class="col-3 period-3" data-toggle="tooltip" title="Le premier mois"/>
+                            <div t-attf-class="col-3 period-4" data-toggle="tooltip" title="Après le premier mois"/>
+                          </t>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <t t-if="record.employee_image.value">
+                          <img t-att-src="kanban_image('hr.onboarding.task','employee_image',record.id.raw_value)"
+                               t-att-title="record.role_id.name" t-att-alt="record.role_id.name" width="40" height="40"
+                               class="oe_kanban_avatar float-right"/>
+                        </t>
+                        <t t-else="">
+                          <img t-att-src="kanban_image('hr.onboarding.task','role_image',record.id.raw_value)"
+                               t-att-title="record.role_id.name" t-att-alt="record.role_id.name" width="40" height="40"
+                               class="oe_kanban_avatar float-right"/>
+                        </t>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="oe_clear"/>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+    <record id="onboarding_task_form_views" model="ir.ui.view">
+      <field name="name">onboarding.task.form.views</field>
+      <field name="model">hr.onboarding.task</field>
+      <field name="arch" type="xml">
+        <form string="Onboarding task form views">
+          <header>
+            <button string="Publish"
+                    name="action_publish_task"
+                    type="object"
+                    class="oe_highlight"
+                    attrs="{'invisible': ['|','|',('task_state','not in',['draft', 'unpublished']),('onboarding_ids','!=',[]),('is_onboarder','!=',False)]}"/>
+            <button string="Unpublish"
+                    name="action_unpublish_task"
+                    type="object"
+                    attrs="{'invisible': ['|', ('task_state','not in',['published']), ('is_onboarder','!=',False)]}"/>
+            <button string="Valid"
+                    name="action_valid_task"
+                    type="object"
+                    class="oe_highlight"
+                    attrs="{'invisible': ['|','|','|',('task_state','not in', ['to_do', 'published', 'late']),('is_terminated_validator','=',True),('create_date','=',False),('task_type','in',['appointment', 'advice'])]}"/>
+            <field name="task_state" widget="statusbar" statusbar_visible="draft"/>
+            <field name="publication_state" invisible="1" force_save="1"/>
+          </header>
+          <sheet>
+            <div class="oe_button_box" name="button_box"
+                 attrs="{'invisible': [('task_state','not in',['draft', 'published', 'unpublished'])]}">
+              <button name="open_onboarding" type="object" class="oe_stat_button" icon="fa-circle-o"
+                      attrs="{'invisible': ['|',('onboarding_ids','=',[]),('parent_id','!=',False)]}"
+                      groups="ooto_onboarding.group_ooto_onboarding_user"
+                      help="On boarding list">
+                <field string="On boarding" name="onboarding_count" widget="statinfo"/>
+              </button>
+            </div>
+            <div class="oe_title">
+              <h1>Task</h1>
+            </div>
+            <group>
+              <group>
+                <field name="name" attrs="{'readonly': [('task_type','=','appointment')]}"/>
+                <label for="to_do_for"/>
+                <div class="o_row">
+                  <field name="arrival_x"
+                         options="{'type': 'number', 'step': 1}"
+                         widget="integer"
+                         attrs="{'invisible': [('to_do_for','not in', ['x_day_before','x_day_after','before_x_month','after_x_month'])]}"/>
+                  <field name="to_do_for"
+                         attrs="{'readonly':[('task_type','=','appointment')]}"/>
+                </div>
+                <field name="period"
+                       readonly="1" force_save="1"/>
+                <field name="is_onboarder"
+                       attrs="{'invisible': [('is_from_onboarding','!=',False)]}"/>
+                <field name="subordinate_id"
+                       readonly="1" invisible="1"/>
+                <field name="is_retroactive"
+                       attrs="{'invisible': ['|', '|', ('is_from_onboarding','!=',False), ('task_type', '==', 'appointment'), ('is_onboarder', '==', True)]}"/>
+                <field name="date_start"
+                       attrs="{'invisible': [('task_type', '!=', 'appointment')], 'readonly': [('task_type','=','appointment')]}"/>
+                <field name="delay"
+                       attrs="{'invisible': [('to_do_for', '!=', 'after_x_month')], 'required': [('to_do_for','=', 'after_x_month')]}"/>
+                <field name="date_end" readonly="True" invisible="True"/>
+                <field name="parent_id" groups="base.group_no_one"/>
+                <field name="onboarding_id" groups="base.group_no_one"/>
+                <field name="is_terminated_validator" invisible="1"/>
+                <field name="onboarding_ids" invisible="1"/>
+                <field name="create_date" invisible="1"/>
+                <field name="is_from_onboarding" invisible="1"/>
+                <field name="child_ids" invisible="1"/>
+              </group>
+              <group>
+                <label for="task_type"/>
+                <div class="o_row">
+                  <field name="task_type" attrs="{'readonly': [('task_type','=','appointment')]}"/>
+                </div>
+                <field name="subject"
+                       attrs="{'invisible': [('task_type','!=', 'email')], 'required': [('task_type','==', 'email')]}"/>
+                <field name="email_to_ids" widget="many2many_tags"
+                       attrs="{'invisible': [('task_type','!=', 'email')], 'required': [('task_type','==', 'email')]}"/>
+                <field name="new_user_ids" widget="many2many_tags"
+                       attrs="{'invisible': [('task_type','!=', 'email')], 'required': [('task_type','==', 'email')]}"/>
+                <field name="location"
+                       attrs="{'readonly': [('task_type','=','appointment')], 'invisible': [('task_type','!=', 'appointment')]}"/>
+                <field name="content_type"
+                       attrs="{'invisible': [('task_type','!=', 'content')]}"/>
+                <field name="administrative_type"
+                       attrs="{'invisible': [('task_type','!=', 'administrative')]}"/>
+                <field name="survey_id"
+                       attrs="{'invisible': [('task_type','!=', 'form')]}"
+                       domain="[('task_belong', '=', False), ('with_onboarding', '=', True)]"/>
+                <field name="image_task" widget="image" class="oe_avatar"
+                       attrs="{'invisible': ['|',('task_type','=','equipment'),'|',('task_type','not in', ['equipment','content','administrative','signature','advice']),('parent_id','!=',False)]}"/>
+                <field name="image_task_child" widget="image"
+                       attrs="{'invisible': ['|',('task_type','=','equipment'),'|',('task_type','not in', ['equipment','content','administrative','signature','advice']),('parent_id','=',False)]}"/>
+                <div style="display:inline-block; width: 50px;">
+                  <field name="icon_task" widget="image"
+                         attrs="{'invisible': ['|',('task_type','not in',['software','equipment','email']),('parent_id','!=',False)]}"/>
+                  <field name="icon_task_child" widget="image"
+                         attrs="{'invisible': ['|',('task_type','not in',['software','equipment','email']),('parent_id','=',False)]}"/>
+                </div>
+                <field name="sign_template_id"
+                       attrs="{'invisible': [('task_type', 'not in', ['signature'])], 'required': [('task_type', 'in', ['signature'])]}"
+                       options="{'no_create': True}"/>
+                <field name="url"
+                       widget="url"
+                       attrs="{'invisible': ['&amp;',('task_type','not in', ['software','equipment']),('content_type','!=','url')]}"/>
+                <field name="page_id"
+                       attrs="{'invisible': [('content_type','!=','internal_url')]}"/>
+                <field name="support" filename="support_name"
+                       attrs="{'invisible': ['|',('task_type','not in', ['software','equipment']),('parent_id','!=',False),('content_type','not in',['video','document'])]}"/>
+                <field name="support_name" invisible="1"/>
+                <field name="support_child"
+                       attrs="{'invisible': ['|',('task_type','not in', ['software','equipment']),('parent_id','=',False)]}"/>
+                <label for="timer"
+                       attrs="{'invisible': [('task_type','!=','content')]}"/>
+                <div class="o_row">
+                  <label for="timer_check"
+                         attrs="{'invisible': [('task_type','!=','content')]}"/>
+                  <field name="timer_check"
+                         attrs="{'invisible': [('task_type','!=','content')]}"/>
+                  <field name="timer"
+                         widget="float_time"
+                         attrs="{'invisible': ['|',('task_type','!=','content'),('timer_check','=',False)]}"/>
+                </div>
+                <field name="scroll_check"
+                       attrs="{'invisible': ['|',('task_type','!=','content'),('content_type','in',['video','url'])]}"/>
+              </group>
+            </group>
+            <group groups="base.group_no_one">
+              <field name="type_domain" attrs="{'readonly': [('task_type','=','appointment')]}"/>
+            </group>
+            <group attrs="{'invisible': [('task_type','!=', 'administrative')]}">
+              <field name="employee_fields_documents_ids"
+                     attrs="{'invisible': [('administrative_type','!=', 'document_fill')]}">
+                <tree editable="bottom">
+                  <field name="fields_id" widget="selection" required="1"
+                         context="{'default_model': 'hr.employee', 'hr_task_view': True}"/>
+                </tree>
+              </field>
+              <field name="employee_fields_uploads_ids"
+                     attrs="{'invisible': [('administrative_type','!=', 'upload_file')]}">
+                <tree editable="bottom">
+                  <field name="fields_id" widget="selection" required="1"
+                         context="{'default_model': 'hr.employee', 'hr_task_view': True}"/>
+                </tree>
+              </field>
+            </group>
+            <group attrs="{'invisible': ['|',('parent_id','!=',False),('is_from_onboarding','!=',False)]}">
+              <div>
+                <field name="employee_domain"
+                       widget="domain"
+                       options="{'model': 'hr.employee'}"
+                       attrs="{'invisible': [('type_domain','!=', 'employee')]}"/>
+              </div>
+            </group>
+            <!-- HRN Change -->
+            <!-- <group>
+              <group groups="base.group_no_one">
+                <field name="employee_ids" attrs="{'readonly': [('task_type','=','appointment')]}"/>
+              </group>
+            </group> -->
+            <div groups="base.group_no_one">
+            	<label for="employee_ids" string="Employé"/>
+            	<field name="employee_ids" attrs="{'readonly': [('task_type','=','appointment')]}"/>
+            </div>
+            <notebook>
+              <page name="description" string="Description">
+                <label for="description" class="oe_edit_only"/>
+                <field name="description" attrs="{'readonly': [('task_type','=','appointment')]}"/>
+              </page>
+              <page name="recall" string="Recall">
+                <group>
+                  <group>
+                    <field name="task_recall_ids" widget="many2many_tags"/>
+                  </group>
+                </group>
+              </page>
+            </notebook>
+          </sheet>
+          <!--<div class="oe_chatter">-->
+          <!--<field name="message_follower_ids" widget="mail_followers"/>-->
+          <!--<field name="message_ids" widget="mail_thread"/>-->
+          <!--<field name="activity_ids" widget="mail_activity"/>-->
+          <!--</div>-->
+        </form>
+      </field>
+    </record>
+
+    <record id="onboarding_task_tree_views" model="ir.ui.view">
+      <field name="name">onboarding.task.tree.views</field>
+      <field name="model">hr.onboarding.task</field>
+      <field name="arch" type="xml">
+        <tree string="Tree views" decoration-danger="(task_state == 'late')">
+          <field name="name"/>
+          <field name="task_type"/>
+          <field name="date_end"/>
+          <field name="task_state"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Inherit Form View Calendar alarm -->
+    <record id="calendar_alarm_view_form_inherit" model="ir.ui.view">
+      <field name="name">calendar.alarm.form</field>
+      <field name="model">calendar.alarm</field>
+      <field name="inherit_id" ref="calendar.calendar_alarm_view_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='alarm_type']" position="attributes">
+          <attribute name="groups">ooto_onboarding.group_ooto_onboarding_user</attribute>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

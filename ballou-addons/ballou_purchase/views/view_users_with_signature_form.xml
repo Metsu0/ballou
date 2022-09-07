@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="view_users_with_signature_form" model="ir.ui.view">
+      <field name="name">res.users.with.signature.form</field>
+      <field name="model">res.users</field>
+      <field name="inherit_id" ref="base.view_users_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//group[@name='messaging']" position="after">
+          <group string="Signatures numériques">
+            <field name="signature_purchase" widget="signature" options="{'full_name': 'display_name', 'size': [575,200]}"/>
+          </group>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

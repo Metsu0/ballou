@@ -1,0 +1,913 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <template id="document_tasks">
+      <t t-call="website.layout">
+        <html>
+          <head>
+            <meta charset="utf-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+          </head>
+          <body>
+            <div class="formulaire_banner info">
+              <div class="formulaire_page_block">
+                <h1 class="titre_formulaire_banner">Information to be completed</h1>
+                <p class="texte_formulaire_banner">Fill in your personal information so that we can get to know you
+                  better!
+                </p>
+              </div>
+            </div>
+            <div class="formulaire_page_block">
+              <a href="/my/account" class="bouton_retour" id="btn_retour">Return</a>
+              <div class="dropdown_list_dashboard_ensemble">
+                <t t-foreach="document_tasks" t-as="document_task">
+                  <div class="dropdown_list_dashboard_ensemble_liste documentafournir">
+                    <p class="dropdown_list_dashboard_ensemble_liste_text">
+                      <t t-esc="document_task.name"/>
+                    </p>
+                    <div class="dropdown_list_dashboard_ensemble_liste_link">
+                      <a t-attf-href="/my/task_administrative/{{slug(document_task)}}/#{'document_tasks'}/#{'document_tasks'}" id="task_bouton" t-att-class="list_button_task">Fill in</a>
+                    </div>
+                  </div>
+                </t>
+              </div>
+            </div>
+          </body>
+        </html>
+      </t>
+    </template>
+
+    <template id="personal_form_task">
+      <t t-call="website.layout">
+        <html>
+          <head>
+            <meta charset="utf-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+          </head>
+          <body>
+            <div class="formulaire_banner">
+              <div class="formulaire_page_block">
+                <h1 class="titre_formulaire_banner">Forms</h1>
+                <p class="texte_formulaire_banner">Your employer has submitted
+                  <t t-esc="len(personal_form_task)"/>
+                  forms to you. Don't wait any longer to answer it !
+                </p>
+              </div>
+            </div>
+            <div class="formulaire_page_block">
+              <a href="/my/account" class="bouton_retour" id="btn_retour">Return</a>
+              <div class="dropdown_list_dashboard_ensemble">
+                <t t-foreach="personal_form_task" t-as="form_task">
+                  <div class="dropdown_list_dashboard_ensemble_liste">
+                    <p class="dropdown_list_dashboard_ensemble_liste_text">
+                      <t t-esc="form_task.name"/>
+                    </p>
+                    <div class="dropdown_list_dashboard_ensemble_liste_link">
+                      <a t-attf-href="/survey/start/{{form_task.survey_id.access_token}}">
+                        Répondre
+                      </a>
+                    </div>
+                  </div>
+                </t>
+              </div>
+            </div>
+          </body>
+        </html>
+      </t>
+    </template>
+
+    <template id="personal_binary_fields_to_fill">
+      <t t-call="website.layout">
+        <html>
+          <head>
+            <meta charset="utf-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+          </head>
+          <body>
+            <div class="formulaire_banner documentafournir">
+              <div class="formulaire_page_block">
+                <h1 class="titre_formulaire_banner">Documents to provide</h1>
+                <p class="texte_formulaire_banner">To finalize your account please send us these
+                  documents.
+                </p>
+              </div>
+            </div>
+            <div class="formulaire_page_block">
+              <a href="/my/account" class="bouton_retour" id="btn_retour">Return</a>
+              <div class="dropdown_list_dashboard_ensemble">
+                <t t-foreach="binary_fields_to_fill" t-as="binary_fields">
+                  <div class="dropdown_list_dashboard_ensemble_liste documentafournir">
+                    <p class="dropdown_list_dashboard_ensemble_liste_text">
+                      <t t-esc="binary_fields.field_description"/>
+                    </p>
+                    <div class="dropdown_list_dashboard_ensemble_liste_link documentafournir">
+                      <span class="show_name_pagedocensemble documentafournir"></span>
+                      <input type="file" t-att-name="binary_fields.name"
+                             t-att-class="binary_fields.name"
+                             style="display:none;"/>
+                      <button class="upload button_pagedocensemble docafournir bouton_docfournir upload_button"
+                              onclick="$(this).prev().click();">Uploader
+                      </button>
+                      <input type="text" name="name_file" class="name-file" style="display:none;"/>
+                      <input type="text" name="base64textarea" class="base64textarea" placeholder="Base64 will appear here"
+                           cols="50" rows="15" style="display:none;"/>
+                      <button type="button" class="remove-downloaded-content">x</button>
+
+
+                    </div>
+                  </div>
+                </t>
+                <!--<div class="block_bouton_task mt-30">
+                  <a id="perform_button"
+                     class="task_about_bouton_document bouton_docfournir">Perform this task
+                  </a>
+                  <div id="lottie_button_doc_store_video" class="lottie_button_doc_store_video"></div>
+                </div>-->
+              </div>
+            </div>
+          </body>
+        </html>
+      </t>
+    </template>
+
+    <template id="portal_my_details_onboarding_inherit" inherit_id="portal.portal_my_details" name="Portal Layout">
+      <xpath expr="//div[@class='emplacement_tachetimeline_dashboard animationblockeffect']" position="replace">
+        <t t-if="unachieved_tasks and len(unachieved_tasks)">
+          <div class="bloc_dashboard timeline_dashboard something">
+            <h1 class="block_dashboard_multicolor_title">To do</h1>
+            <p class="block_dashboard_multicolor_text">
+              You still have
+              <t t-esc="len(unachieved_tasks)"/>
+              tasks to perform. Don't wait any longer to take a look!
+            </p>
+            <div class="block_dashboard_multicolor_link">
+              <a t-attf-href="/my/timeline">See all task</a>
+            </div>
+          </div>
+          <div class="dropdown_list_dashboard_ensemble">
+            <t t-foreach="last_unachieved_tasks" t-as="task">
+              <div class="dropdown_list_dashboard_ensemble_liste">
+                <div class="task_type_software">
+                  <span t-attf-class="banniere_timeline_dashboard task_label #{task.task_type}">
+                    <t t-esc="task.stain_label"/>
+                  </span>
+                  <span class="titre_timeline_dashboard">
+                    <t t-esc="task.name"/>
+                  </span>
+                  <p class="dropdown_list_dashboard_ensemble_liste_text p_timeline_dashboard">
+                    <t t-esc="task.description"/>
+                  </p>
+                </div>
+                <div class="dropdown_list_dashboard_ensemble_liste_link">
+                  <t t-if="task.task_type == 'advice' ">
+                    <a t-attf-href="/my/timeline?div_id=task_type_advice_#{task.id}">Open task</a>
+                  </t>
+
+                  <t t-elif="task.task_type == 'content' ">
+
+                    <t t-if="task.content_type in ('url','internal_url')">
+                      <a t-attf-href="/my/timeline?div_id=task_type_contentUrl_#{task.id}">Open task</a>
+                    </t>
+                    <t t-elif="task.content_type == 'document'">
+                      <a t-attf-href="/my/timeline?div_id=task_type_contentDocument_#{task.id}">Open task</a>
+                    </t>
+                    <t t-elif="task.content_type == 'video'">
+                      <a t-attf-href="/my/timeline?div_id=task_type_contentVideo_#{task.id}">Open task</a>
+                    </t>
+                  </t>
+
+                  <t t-elif="task.task_type == 'software' ">
+                    <a t-attf-href="/my/timeline?div_id=task_type_software_#{task.id}">Open task</a>
+                  </t>
+
+                  <t t-elif="task.task_type == 'equipment' ">
+                    <a t-attf-href="/my/timeline?div_id=task_type_equipment_#{task.id}">Open task</a>
+                  </t>
+
+                  <t t-elif="task.task_type == 'appointment' ">
+                    <a t-attf-href="/my/timeline?div_id=task_type_appointment_#{task.id}">Open task</a>
+                  </t>
+
+                  <t t-elif="task.task_type == 'form' ">
+                    <a t-attf-href="/my/timeline?div_id=task_type_form_#{task.id}">Open task</a>
+                  </t>
+
+                  <t t-elif="task.task_type == 'signature' ">
+                    <a t-attf-href="/my/timeline?div_id=task_type_signature_#{task.id}">Open task</a>
+                  </t>
+
+                  <t t-elif="task.task_type == 'administrative' ">
+                    <a t-attf-href="/my/timeline?div_id=task_type_administrative_#{task.id}">Open task</a>
+                  </t>
+
+                </div>
+              </div>
+            </t>
+          </div>
+        </t>
+        <t t-else="">
+          <div class="bloc_dashboard timeline_dashboard nothing">
+            <h1 class="block_dashboard_multicolor_title">Welcome !</h1>
+            <p class="block_dashboard_multicolor_text">You are up to date</p>
+          </div>
+        </t>
+
+        <t t-if="is_fields_filled">
+          <div class="bloc_dashboard information nothing">
+            <h1 class="block_dashboard_multicolor_title">Votre profil est à jour !</h1>
+            <!--<p class="block_dashboard_multicolor_text">You are up to date</p>-->
+          </div>
+        </t>
+        <t t-else="">
+          <div class="bloc_dashboard information something">
+            <h1 class="block_dashboard_multicolor_title">Information to be completed</h1>
+            <p class="block_dashboard_multicolor_text">Fill in your personal information so that we can get to know
+              you better!
+            </p>
+            <div class="block_dashboard_multicolor_link">
+              <a href="/my/account/document_tasks">See all</a>
+            </div>
+          </div>
+          <div class="dropdown_list_dashboard_ensemble">
+            <t t-foreach="last_document_tasks" t-as="document_task">
+              <div class="dropdown_list_dashboard_ensemble_liste">
+                <p class="dropdown_list_dashboard_ensemble_liste_text">
+                  <t t-esc="document_task.name"/>
+                </p>
+                <div class="dropdown_list_dashboard_ensemble_liste_link">
+                  <a t-attf-href="/my/task_administrative/{{slug(document_task)}}/#{'dashboard'}/#{'portal_my_details_onboarding_inherit'}" id="task_bouton">Fill in</a>
+                </div>
+              </div>
+            </t>
+          </div>
+        </t>
+
+      </xpath>
+      <xpath expr="//div[@class='emplacement_information_docfournir_dashboard animationblockeffect']"
+             position="inside">
+        <t t-if="is_binary_fields_filled">
+          <div class="bloc_dashboard docafournir nothing">
+            <h1 class="block_dashboard_multicolor_title">Thank you !</h1>
+            <p class="block_dashboard_multicolor_text">We have all the informations about you.</p>
+          </div>
+        </t>
+        <t t-else="">
+          <div class="bloc_dashboard docafournir something">
+            <h1 class="block_dashboard_multicolor_title">Documents to provide</h1>
+            <p class="block_dashboard_multicolor_text">To finalize your account please send us these
+              documents.
+            </p>
+            <div class="block_dashboard_multicolor_link">
+              <a t-attf-href="/my/account/files_to_upload">See all</a>
+            </div>
+          </div>
+          <div class="dropdown_list_dashboard_ensemble">
+            <t t-foreach="last_binary_fields_not_filled" t-as="binary_field">
+              <div class="dropdown_list_dashboard_ensemble_liste">
+                <p class="dropdown_list_dashboard_ensemble_liste_text">
+                  <t t-esc="binary_field.field_description"/>
+                </p>
+                <div class="dropdown_list_dashboard_ensemble_liste_link">
+                  <input type="file" t-att-name="binary_field.name" t-att-class="binary_field.name"
+                         style="display:none;"/>
+                  <button class="upload upload_button" onclick="$(this).prev().click();">Uploader</button>
+                </div>
+              </div>
+            </t>
+          </div>
+        </t>
+      </xpath>
+
+      <xpath expr="//div[@class='emplacement_formulaire_dashboard animationblockeffect']" position="inside">
+        <t t-if="form_task_ids">
+          <div class="bloc_dashboard formulaire something">
+            <h1 class="block_dashboard_multicolor_title">Forms</h1>
+            <p class="block_dashboard_multicolor_text">Your employer has submitted
+              <t t-esc="len(form_task_ids)"/>
+              forms to you. Don't wait any longer to answer it !
+            </p>
+            <div class="block_dashboard_multicolor_link">
+              <a t-attf-href="/my/account/form_tasks">See all</a>
+            </div>
+          </div>
+          <div class="dropdown_list_dashboard_ensemble">
+            <t t-foreach="form_task_ids" t-as="form_task">
+              <div class="dropdown_list_dashboard_ensemble_liste">
+                <p class="dropdown_list_dashboard_ensemble_liste_text">
+                  <t t-esc="form_task.name"/>
+                </p>
+                <div class="dropdown_list_dashboard_ensemble_liste_link">
+                  <a t-attf-href="/survey/start/{{form_task.survey_id.access_token}}">Reply</a>
+                </div>
+              </div>
+            </t>
+          </div>
+        </t>
+        <t t-else="">
+          <div class="bloc_dashboard formulaire nothing">
+            <h1 class="block_dashboard_multicolor_title">Forms</h1>
+            <p class="block_dashboard_multicolor_text">Well done, no form in sight !</p>
+          </div>
+        </t>
+      </xpath>
+
+    </template>
+
+    <delete model="ir.ui.view" search="[('id','=',ref('ooto_onboarding.ooto_onboarding_hr_employee_form'))]"/>
+    <record id="ooto_onboarding_hr_employee_form" model="ir.ui.view">
+      <field name="name">ooto.onboarding.hr.employee.form</field>
+      <field name="model">hr.employee</field>
+      <field name="inherit_id" ref="hr.view_employee_form"/>
+      <field name="arch" type="xml">
+        <button name="%(hr.plan_wizard_action)d" position="attributes">
+          <attribute name="invisible">1</attribute>
+        </button>
+        <xpath expr="//button[@id='hr_presence_button']" position="before">
+          <button name="open_onboarding_action" type="object" class="" icon="fa-cog"
+                  attrs="{'invisible': [('onboarding_ids','=',[])]}"
+                  groups="ooto_onboarding.group_ooto_onboarding_user"
+                  help="Open Onboarding form" string="See onboarding sheet">
+          </button>
+        </xpath>
+        <xpath expr="//field[@name='work_phone']" position="after">
+          <!-- <field name="arrival_date" required="True"/> -->
+          <!-- <field name="leaving_date"/> -->
+          <field name="onboarding_ids" invisible="1"/>
+        </xpath>
+        <xpath expr="//field[@name='coach_id']" position="after">
+          <field name="admin_responsible_id"/>
+          <field name="software_responsible_id"/>
+        </xpath>
+        <field name="work_email" position="attributes">
+          <attribute name="required">1</attribute>
+        </field>
+        <!--<field name="lastname" position="attributes">-->
+        <!--<attribute name="readonly">0</attribute>-->
+        <!--<attribute name="required">1</attribute>-->
+        <!--</field>-->
+        <!--<field name="firstname" position="attributes">-->
+        <!--<attribute name="readonly">0</attribute>-->
+        <!--<attribute name="required">1</attribute>-->
+        <!--</field>-->
+        <field name="name" position="attributes">
+          <attribute name="invisible">1</attribute>
+        </field>
+      </field>
+    </record>
+
+    <record id="ooto_hr_onboarding_kanban_view" model="ir.ui.view">
+      <field name="name">ooto.hr.onboarding.kanban.view</field>
+      <field name="model">hr.onboarding</field>
+      <field name="arch" type="xml">
+        <kanban default_group_by="period_display" class="o_kanban_small_column">
+          <field name="id"/>
+          <field name="employee_id"/>
+          <field name="employee_image"/>
+          <field name="employee_position_id"/>
+          <field name="onboarding_progression"/>
+          <field name="onboarding_state"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_card oe_kanban_global_click o_kanban_record_has_image_fill">
+                <field name="active" invisible="1"/>
+                <div class="o_dropdown_kanban dropdown">
+                  <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown"
+                     href=""
+                     aria-label="Dropdown menu" title="Dropdown menu">
+                    <span class="fa fa-ellipsis-v"/>
+                  </a>
+                  <div class="dropdown-menu" role="menu">
+                    <t t-if="widget.deletable">
+                      <a role="menuitem" type="delete" class="dropdown-item">Delete</a>
+                    </t>
+                    <a style="padding: 3px 6px;" role="menuitem"
+                       class="dropdown-item oe_kanban_action oe_kanban_action_a"
+                       data-type="archive">
+                      Archive / Unarchive
+                    </a>
+                  </div>
+                </div>
+                <div class="oe_kanban_content">
+                  <div class="o_kanban_record_top">
+                    <div class="o_kanban_image_fill_left"
+                         t-attf-style="margin: 4px 16px 4px 4px!important;background-image: url(#{kanban_image('hr.onboarding', 'employee_image', record.id.raw_value)})"
+                         role="img"/>
+                    <div>
+                      <strong class="o_kanban_record_title oe_inline">
+                        <field name="employee_id"/>
+                      </strong>
+                      <span class="o_kanban_record_subtitle">
+                        <field name="employee_department_id"/>
+                      </span>
+                      <div>
+                        <span>
+                          <i class="fa fa-calendar" aria-label="calendar" title="calendar"/>
+                        </span>
+                        <span>
+                          Dans
+                        </span>
+                        <span>
+                          <field name="remaining_day"/>
+                        </span>
+                        <span>days (<field name="trial_date_end_name"/>)
+                          <field name="renewal_contract_name"/>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="o_kanban_record_body">
+                  </div>
+                  <div class="o_kanban_record_bottom onboarding_progressbar">
+                    <div class="oe_kanban_bottom_left">
+                      <field name="state"/>
+                    </div>
+                    <div class="oe_kanban_bottom_right">
+                      <field name="onboarding_progression" widget="progressbar"/>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+    <record id="ooto_hr_onboarding_form_view" model="ir.ui.view">
+      <field name="name">ooto.hr.onboarding.form.view</field>
+      <field name="model">hr.onboarding</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <!--<header>-->
+          <!--<button name="send_my_invitation" string="Send email invitation"-->
+          <!--type="object" groups="hr.group_hr_manager"-->
+          <!--attrs="{'invisible': [('option','!=','send_email_onboarding')]}"/>-->
+          <!--</header>-->
+          <sheet>
+            <field name="option" invisible="1"/>
+            <div class="employee-mere">
+              <div class="employee-left">
+                <div class="employee-tache">
+                  <span style="font-weight:bold;" attrs="{'invisible': [('employee_id','=',False)]}">
+                    Tasks of
+                  </span>
+                  <span style="font-weight:bold;" attrs="{'invisible': [('employee_id','!=',False)]}">
+                    Select employee
+                  </span>
+                  <field name="employee_id" string="Tasks of "
+                         domain="[('onboarding_ids', '=', False),('hiring_date','!=',False)]"
+                         options="{'no_open': True}"
+                         context="{'from_onboarding':True}"
+                  />
+                  <field name="employee_department_id" invisible="1"/>
+                </div>
+                <div class="onboarding_progressbar onboarding_progressbar_form"
+                     attrs="{'invisible': [('employee_id','=',False)]}">
+                  <span>Percentage of overall progress</span>
+                  <field name="onboarding_progression" widget="progressbar"/>
+                </div>
+              </div>
+              <div class="oe_button_box employee-button" name="button_box">
+                <button name="open_administrative" type="object" class="oe_stat_button"
+                        attrs="{'invisible': [('employee_id','=',False)]}"
+                        groups="ooto_onboarding.group_ooto_onboarding_user"
+                        help="Administrative list">
+                  <field string="Administrative" name="admin_ratio" widget="percentpie"/>
+                </button>
+                <!--<button name="action_invitation_send" type="object" class="oe_stat_button"-->
+                <!--groups="ooto_onboarding.group_ooto_onboarding_user"-->
+                <!--help="action_invitation_send">-->
+                <!--</button>-->
+                <button name="open_appointment" type="object" class="oe_stat_button" icon="fa-calendar"
+                        attrs="{'invisible': [('employee_id','=',False)]}"
+                        groups="ooto_onboarding.group_ooto_onboarding_user"
+                        help="Appointment list">
+                  <field string="Appointment" name="appointment_count" widget="statinfo"/>
+                </button>
+                <button name="open_contents" type="object" class="oe_stat_button"
+                        attrs="{'invisible': [('employee_id','=',False)]}"
+                        groups="ooto_onboarding.group_ooto_onboarding_user"
+                        help="Contents list">
+                  <field string="Contents" name="content_ratio" widget="percentpie"/>
+                </button>
+                <button name="open_others" type="object" class="oe_stat_button"
+                        attrs="{'invisible': [('employee_id','=',False)]}"
+                        groups="ooto_onboarding.group_ooto_onboarding_user"
+                        help="Others list">
+                  <field string="Others" name="others_ratio" widget="percentpie"/>
+                </button>
+                <button name="open_form" type="object" class="oe_stat_button"
+                        attrs="{'invisible': [('employee_id','=',False)]}"
+                        groups="ooto_onboarding.group_ooto_onboarding_user"
+                        help="Form list">
+                  <field string="Form" name="form_ratio" widget="percentpie"/>
+                </button>
+                <button name="open_signature" type="object" class="oe_stat_button"
+                        attrs="{'invisible': [('employee_id','=',False)]}"
+                        groups="ooto_onboarding.group_ooto_onboarding_user"
+                        help="Signature list">
+                  <field string="Signature" name="signature_ratio" widget="percentpie"/>
+                </button>
+                <button name="open_email" type="object" class="oe_stat_button"
+                        attrs="{'invisible': [('employee_id','=',False)]}"
+                        groups="ooto_onboarding.group_ooto_onboarding_user"
+                        help="Signature list">
+                  <field string="Email" name="email_ratio" widget="percentpie"/>
+                </button>
+                <button name="open_activity" type="object" class="oe_stat_button"
+                        icon="fa-clock-o"
+                        attrs="{'invisible': [('employee_id','=',False)]}"
+                        help="Activity list" string="Activity">
+                </button>
+                <button name="open_on_boarded" type="object" class="oe_stat_button" icon="fa-thumb-tack"
+                        attrs="{'invisible': [('employee_id','=',False)]}"
+                        groups="ooto_onboarding.group_ooto_onboarding_user"
+                        help="On boarded list" string="On boarded">
+                </button>
+                <button name="get_onboarding_task_action" type="object" class="" icon="fa-cog"
+                        attrs="{'invisible': [('employee_id','=',False)]}"
+                        groups="ooto_onboarding.group_ooto_onboarding_user"
+                        help="Manage onboardee task" string="Manage task">
+                </button>
+                <button name="open_employee_action" type="object" class="" icon="fa-cog"
+                        attrs="{'invisible': [('employee_id','=',False)]}"
+                        groups="ooto_onboarding.group_ooto_onboarding_user"
+                        help="Open Employee form" string="See employee sheet">
+                </button>
+              </div>
+            </div>
+            <div class="onboarding_progressbar onboarding_progressbar_period mb32">
+              <table>
+                <tr>
+                  <td>
+                    <span>Before arrival</span>
+                  </td>
+                  <td>
+                    <field name="before_arrival" widget="progressbar"/>
+                  </td>
+                  <td>
+                    <field name="before_arrival_n_x"/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span>Arrival day</span>
+                  </td>
+                  <td>
+                    <field name="arrival_day" widget="progressbar"/>
+                  </td>
+                  <td>
+                    <field name="arrival_day_n_x"/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span>First week</span>
+                  </td>
+                  <td>
+                    <field name="first_week" widget="progressbar"/>
+                  </td>
+                  <td>
+                    <field name="first_week_n_x"/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span>First month</span>
+                  </td>
+                  <td>
+                    <field name="first_month" widget="progressbar"/>
+                  </td>
+                  <td>
+                    <field name="first_month_n_x"/>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span>After first month</span>
+                  </td>
+                  <td>
+                    <field name="after_first_month" widget="progressbar"/>
+                  </td>
+                  <td>
+                    <field name="after_first_month_n_x"/>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <field name="task_ids"
+                   context="{'default_is_from_onboarding':True}"
+                   attrs="{'invisible': [('employee_id','=',False)]}">
+              <!--domain="[('onboarding_id.task_ids','not in',task_ids),'|',('parent_id','=',False),('is_from_onboarding','=',True)]"-->
+
+              <tree decoration-danger="(task_state == 'late')">
+                <field name="name"/>
+                <field name="task_type"/>
+                <field name="period"/>
+                <!--<field name="date_end"/>-->
+                <field name="date_end_char"/>
+                <field name="task_state"/>
+                <field name="parent_task_state" string="Parent task state"/>
+              </tree>
+            </field>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="ooto_hr_onboarding_tree_view" model="ir.ui.view">
+      <field name="name">ooto.hr.onboarding.tree.view</field>
+      <field name="model">hr.onboarding</field>
+      <field name="arch" type="xml">
+        <tree string="Onboarding tree views" default_order="period">
+          <!-- <field name="name"/> -->
+          <field name="employee_id"/>
+          <field name="employee_image" invisible="1"/>
+          <field name="employee_department_id"/>
+          <field name="employee_position_id"/>
+          <field name="arrival_date"/>
+          <field name="period"/>
+          <field class="onboarding_progressbar" name="onboarding_progression" widget="progressbar"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="ooto_hr_onboarding_search_view">
+      <field name="name">ooto.hr.onboarding.search</field>
+      <field name="model">hr.onboarding</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="employee_id"/>
+          <field name="arrival_date"/>
+          <!--<filter name="groupby_period" string="Period"-->
+          <!--context="{'group_by': 'period'}"/>-->
+        </search>
+      </field>
+    </record>
+
+    <record id="ooto_onboarding_action" model="ir.actions.act_window">
+      <field name="name">Onboarding</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">hr.onboarding</field>
+      <field name="view_mode">kanban,tree,form</field>
+      <!--<field name="context" eval="{'search_default_groupby_period':1}"/>-->
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          Onboarding
+        </p>
+        <p>
+          Create new Onboarding
+        </p>
+      </field>
+    </record>
+
+    <record id="ooto_task_action" model="ir.actions.act_window">
+      <field name="name">Task</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">hr.onboarding.task</field>
+      <field name="domain">[('parent_id','=',False),('is_from_onboarding','=',False)]</field>
+      <field name="view_id" ref="ooto_hr_onboarding_task_kanban_view"/>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="context">{"search_default_group_by_task_type":1}</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          Task
+        </p>
+        <p>
+          Create new Task
+        </p>
+      </field>
+    </record>
+
+    <record id="ooto_activity_task_action" model="ir.actions.act_window">
+      <field name="name">Tasks</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">hr.onboarding.task</field>
+      <field name="domain">['|',('parent_id','!=',False),('is_from_onboarding','=',True)]</field>
+      <field name="view_id" ref="ooto_hr_onboarding_task_kanban_view"/>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="context">{"search_default_group_by_task_type":1}</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          Task
+        </p>
+        <p>
+          Create new Task
+        </p>
+      </field>
+    </record>
+
+    <record id="ooto_activity_open_task_action" model="ir.actions.act_window">
+      <field name="name">Tasks</field>
+      <field name="res_model">hr.onboarding.task</field>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="view_id" ref="onboarding_task_form_views"/>
+    </record>
+
+    <record id="ooto_task_advice_action" model="ir.actions.act_window">
+      <field name="name">Task</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">hr.onboarding.task</field>
+      <field name="domain">
+        [('task_type','=','advice'),'|',('parent_id','=',False),('is_from_onboarding','=',True)]
+      </field>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          Task
+        </p>
+        <p>
+          Create new Task
+        </p>
+      </field>
+    </record>
+
+    <record id="ooto_task_form_action" model="ir.actions.act_window">
+      <field name="name">Task</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">hr.onboarding.task</field>
+      <field name="domain">
+        [('task_type','=','form'),'|',('parent_id','=',False),('is_from_onboarding','=',True)]
+      </field>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          Task
+        </p>
+        <p>
+          Create new Task
+        </p>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="ooto_mail_message_search_view">
+      <field name="name">ooto.mail.message.search</field>
+      <field name="model">mail.message</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="onboarding_id"/>
+          <filter name="state_task_to_do" string="En cours"
+                  domain="[('state_task', '=', 'to_do')]"/>
+          <filter name="state_task_late" string="En retard"
+                  domain="[('state_task', '=', 'late')]"/>
+          <filter name="state_task_terminated" string="Terminée"
+                  domain="[('state_task', '=', 'terminated')]"/>
+        </search>
+      </field>
+    </record>
+
+    <record id="ooto_task_admin_action" model="ir.actions.act_window">
+      <field name="name">Task</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">hr.onboarding.task</field>
+      <field name="domain">
+        [('task_type','=','administrative'),'|',('parent_id','=',False),('is_from_onboarding','=',True)]
+      </field>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          Task
+        </p>
+        <p>
+          Create new Task
+        </p>
+      </field>
+    </record>
+
+    <record id="activity_tree_view" model="ir.ui.view">
+      <field name="name">ooto.hr.onboarding.tree.view</field>
+      <field name="model">mail.message</field>
+      <field name="arch" type="xml">
+        <tree create="false" edit="false" limit="1000">
+          <field name="body" string="Activities"/>
+          <field name="active" groups="base.group_no_one"/>
+          <field name="date_format"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="ooto_onboarding_activity_action" model="ir.actions.act_window">
+      <field name="name">Activity</field>
+      <field name="res_model">mail.message</field>
+      <field name="view_mode">tree</field>
+      <field name="domain">
+        [('model','=', ['hr.onboarding.task'])]
+      </field>
+      <field name="view_id" ref="ooto_onboarding.activity_tree_view"/>
+    </record>
+
+    <record model="ir.ui.view" id="ooto_mail_message_search_view">
+      <field name="name">ooto.mail.message.search</field>
+      <field name="model">mail.message</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="onboarding_id"/>
+          <filter name="state_task_to_do" string="En cours"
+                  domain="[('state_task', '=', 'to_do')]"/>
+          <filter name="state_task_late" string="En retard"
+                  domain="[('state_task', '=', 'late')]"/>
+          <filter name="state_task_terminated" string="Terminée"
+                  domain="[('state_task', '=', 'terminated')]"/>
+        </search>
+      </field>
+    </record>
+
+    <!-- dashboard -->
+    <record model="ir.ui.view" id="hr_dashboard_view">
+      <field name="name">Hr Onboarding Dashboard</field>
+      <field name="model">hr.dashboard</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <!--<field name="name"/>-->
+        </kanban>
+      </field>
+    </record>
+    <record id="action_hr_onboarding_dashboard" model="ir.actions.client">
+      <field name="name">Dashboard</field>
+      <field name="tag">ooto_onboarding.dashboard</field>
+    </record>
+
+    <menuitem
+        name="Onboarding"
+        id="menu_root_ooto_onboarding"
+        groups="ooto_onboarding.group_ooto_onboarding_user"
+        web_icon="ooto_onboarding,static/description/icon.png"/>
+
+    <menuitem id="menu_ooto_onboarding_dashboard"
+              name="Dashboard"
+              parent="menu_root_ooto_onboarding"
+              action="action_hr_onboarding_dashboard"
+              sequence="1"/>
+
+    <menuitem id="menu_ooto_onboarding"
+              name="Onboarding"
+              parent="menu_root_ooto_onboarding"
+              action="ooto_onboarding_action"
+              sequence="2"/>
+
+    <!--Appointment menus-->
+    <menuitem id="menu_ooto_onboarding_appointment"
+              name="Appointment"
+              parent="menu_root_ooto_onboarding"
+              action="ooto_onboarding_action"
+              sequence="3"/>
+
+    <menuitem id="menu_ooto_onboarding_appointment_list"
+              name="Appointments"
+              parent="menu_ooto_onboarding_appointment"
+              action="ooto_onboarding.action_onboarding_appointment"
+              sequence="1"/>
+
+    <menuitem id="menu_ooto_onboarding_appointment_postpone"
+              name="Requests to postpone appointment"
+              parent="menu_ooto_onboarding_appointment"
+              action="ooto_onboarding.action_onboarding_appointment_postpone"
+              sequence="2"/>
+
+    <!--Appointment menus-->
+    <menuitem id="menu_ooto_onboarding_activities"
+              name="Activities"
+              parent="menu_root_ooto_onboarding"
+              action="ooto_onboarding_activity_action"
+              sequence="4"/>
+
+    <menuitem id="menu_ooto_onboarding_configuration"
+              name="Configuration"
+              parent="menu_root_ooto_onboarding"
+              action="ooto_onboarding_action"
+              sequence="5"/>
+
+    <menuitem id="menu_ooto_onboarding_configuration_task"
+              name="Task"
+              parent="menu_ooto_onboarding_configuration"
+              action="ooto_onboarding.ooto_task_action"
+              sequence="1"/>
+
+    <menuitem id="menu_ooto_onboarding_configuration_advice"
+              name="Advice"
+              parent="menu_ooto_onboarding_configuration"
+              action="ooto_onboarding.ooto_task_advice_action"
+              sequence="2"/>
+
+    <menuitem id="menu_ooto_onboarding_configuration_administrative"
+              name="Administrative"
+              parent="menu_ooto_onboarding_configuration"
+              action="ooto_onboarding.ooto_task_admin_action"
+              sequence="3"/>
+
+    <menuitem id="menu_ooto_onboarding_configuration_form"
+              name="Form"
+              parent="menu_ooto_onboarding_configuration"
+              action="survey.action_survey_form"
+              sequence="4"/>
+
+    <!--<menuitem id="menu_ooto_onboarding_configuration_recall"-->
+    <!--name="Recall"-->
+    <!--parent="menu_ooto_onboarding_configuration"-->
+    <!--action="ooto_onboarding_action"-->
+    <!--sequence="5"/>-->
+	
+    <menuitem id="sign_menu" name="Signature Model" parent="menu_ooto_onboarding_configuration"
+              action="sign.sign_template_action"
+              sequence="10"/>
+  </data>
+</odoo>

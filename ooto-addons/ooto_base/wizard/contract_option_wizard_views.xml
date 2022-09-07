@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <data>
+    <record id="madajob_hr_contract_wizard_form_view" model="ir.ui.view">
+      <field name="name">ooto.hr.contract.wizard.form.view</field>
+      <field name="model">hr.ooto.contract.wizard</field>
+      <field name="arch" type="xml">
+        <form string="Contracts">
+          <div class="oe_title" name="title">
+            <label for="name" class="oe_edit_only"/>
+            <h1>
+              <field name="name" placeholder="Contract Reference"/>
+            </h1>
+          </div>
+          <notebook>
+            <page string="Contract Details" name="other">
+              <group>
+                <group name="duration_group" string="Contract Terms">
+                  <group colspan="2">
+                    <field name="is_cdi" invisible="1"/>
+                    <field name="is_duration" invisible="1"/>
+                    <field name="date_end"
+                           attrs="{'invisible': ['|', ('is_cdi', '=', True), ('is_duration', '=', True)]}"/>
+                    <label for="duration"
+                           attrs="{'invisible': ['&amp;', '|', ('is_duration', '=', False), ('is_cdi', '=', True), '|', ('is_duration', '=', False), '&amp;', ('is_duration', '=', True), ('is_cdi', '=', True)]}"/>
+                    <div class="address_format"
+                         attrs="{'invisible': ['&amp;', '|', ('is_duration', '=', False), ('is_cdi', '=', True), '|', ('is_duration', '=', False), '&amp;', ('is_duration', '=', True), ('is_cdi', '=', True)]}">
+                      <field name="duration" class="oe_read_only"/>
+                      <label for="duration_years" class="oe_edit_only" style="width: 33%"/>
+                      <field name="duration_years" class="oe_edit_only" style="width: 33%"/>
+                      <label for="duration_months" class="oe_edit_only" style="width: 33%"/>
+                      <field name="duration_months" class="oe_edit_only" style="width: 33%"/>
+                      <label for="duration_days" class="oe_edit_only" style="width: 33%"/>
+                      <field name="duration_days" class="oe_edit_only" style="width: 33%"/>
+                    </div>
+                    <field name="trial_date_end"/>
+                  </group>
+                </group>
+              </group>
+            </page>
+          </notebook>
+          <footer>
+            <button name="save" type="object"
+                    string="Save" class="oe_highlight"/>
+            or
+            <button special="cancel" string="Cancel"/>
+          </footer>
+        </form>
+      </field>
+    </record>
+  </data>
+</odoo>

@@ -1,0 +1,211 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ooto_hr_account
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0-20191125\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-28 07:48+0000\n"
+"PO-Revision-Date: 2020-08-28 07:48+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ooto_hr_account
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.portal_my_details_inherit
+msgid "Address"
+msgstr "Adresse"
+
+#. module: ooto_hr_account
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.portal_my_details_inherit
+msgid "Base64 will appear here"
+msgstr ""
+
+#. module: ooto_hr_account
+#: code:addons/ooto_hr_account/controllers/controllers.py:0
+#: code:addons/ooto_hr_account/controllers/controllers.py:0
+#, python-format
+msgid ""
+"Changing VAT number is not allowed once document(s) have been issued for "
+"your account. Please contact us directly for this operation."
+msgstr ""
+
+#. module: ooto_hr_account
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.portal_my_details_inherit
+msgid ""
+"Changing company name is not allowed once document(s) have been issued for "
+"your account. Please contact us directly for this operation."
+msgstr ""
+"Modifier le nom de la société n'est pas permis une fois que le(s) "
+"documents(s) ont été créés pour votre compte. Merci de nous contacter "
+"directement pour cette opération."
+
+#. module: ooto_hr_account
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.portal_my_details_inherit
+msgid "City"
+msgstr "Ville"
+
+#. module: ooto_hr_account
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.portal_my_details_inherit
+msgid "Civility"
+msgstr "Civilité"
+
+#. module: ooto_hr_account
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.portal_my_details_inherit
+msgid "Company Name"
+msgstr "Nom de la société"
+
+#. module: ooto_hr_account
+#: model:ir.model,name:ooto_hr_account.model_res_config_settings
+msgid "Config Settings"
+msgstr "Paramètres de config"
+
+#. module: ooto_hr_account
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.portal_my_details_inherit
+msgid ""
+"Confirm\n"
+"                    <span class=\"fa fa-long-arrow-right\"/>"
+msgstr ""
+
+#. module: ooto_hr_account
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.portal_my_details_inherit
+msgid "Country"
+msgstr "Pays"
+
+#. module: ooto_hr_account
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.portal_my_details_inherit
+msgid "Country..."
+msgstr "Pays..."
+
+#. module: ooto_hr_account
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.portal_my_details_inherit
+msgid "Dashboard"
+msgstr "Tableau de bord"
+
+#. module: ooto_hr_account
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.portal_my_details_inherit
+msgid "Email"
+msgstr "Courriel"
+
+#. module: ooto_hr_account
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.portal_my_details_inherit
+msgid "Facturation address"
+msgstr "Mon adresse de facturation"
+
+#. module: ooto_hr_account
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.portal_my_details_inherit
+msgid "Firstname"
+msgstr "Prénom"
+
+#. module: ooto_hr_account
+#: model:ir.model.fields,field_description:ooto_hr_account.field_res_config_settings__hide_home
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.hr_account_res_config_settings_view_form
+msgid "Hide home"
+msgstr "Cacher le menu home"
+
+#. module: ooto_hr_account
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.hr_account_res_config_settings_view_form
+msgid "Hide home menu page account"
+msgstr "Cache le menu home dans mon compte"
+
+#. module: ooto_hr_account
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.portal_my_details_inherit
+msgid "Information"
+msgstr ""
+
+#. module: ooto_hr_account
+#: code:addons/ooto_hr_account/controllers/controllers.py:0
+#: code:addons/ooto_hr_account/controllers/controllers.py:0
+#, python-format
+msgid "Invalid Email! Please enter a valid email address."
+msgstr ""
+
+#. module: ooto_hr_account
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.portal_my_details_inherit
+msgid "Lastname"
+msgstr "Nom"
+
+#. module: ooto_hr_account
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.portal_my_details_inherit
+msgid "Matricule :"
+msgstr ""
+
+#. module: ooto_hr_account
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.portal_my_details_inherit
+msgid "Name"
+msgstr "Nom"
+
+#. module: ooto_hr_account
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.portal_my_details_inherit
+msgid "Phone"
+msgstr "Téléphone"
+
+#. module: ooto_hr_account
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.portal_my_details_inherit
+msgid "Postal Code"
+msgstr "C.P"
+
+#. module: ooto_hr_account
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.portal_my_details_inherit
+msgid "Save changes"
+msgstr "Sauvegarder les modifications"
+
+#. module: ooto_hr_account
+#: code:addons/ooto_hr_account/controllers/controllers.py:0
+#, python-format
+msgid "Some required fields are empty."
+msgstr ""
+
+#. module: ooto_hr_account
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.portal_my_details_inherit
+msgid "State"
+msgstr "État"
+
+#. module: ooto_hr_account
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.portal_my_details_inherit
+msgid "State / Province"
+msgstr "État / Province"
+
+#. module: ooto_hr_account
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.portal_my_details_inherit
+msgid "Street"
+msgstr "Rue"
+
+#. module: ooto_hr_account
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.portal_my_details_inherit
+msgid "Upload File"
+msgstr "Charger fichier"
+
+#. module: ooto_hr_account
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.portal_my_details_inherit
+msgid "VAT Number"
+msgstr "Numéro de TVA intracommunautaire"
+
+#. module: ooto_hr_account
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.portal_my_details_inherit
+msgid "Voir mon contrat"
+msgstr ""
+
+#. module: ooto_hr_account
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.portal_my_details_inherit
+msgid "Work Email"
+msgstr "Email"
+
+#. module: ooto_hr_account
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.portal_my_details_inherit
+msgid "Work Phone"
+msgstr "Téléphone"
+
+#. module: ooto_hr_account
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.portal_my_details_inherit
+msgid "Zip / Postal Code"
+msgstr "Code postal"
+
+#. module: ooto_hr_account
+#: model_terms:ir.ui.view,arch_db:ooto_hr_account.portal_my_details_inherit
+msgid "select..."
+msgstr "sélectionner..."

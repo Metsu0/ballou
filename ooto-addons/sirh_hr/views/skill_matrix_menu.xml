@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+  <data>
+    <menuitem
+            id="skill_matrix_menu"
+            name="Skill matrix"
+            parent="hr.menu_hr_root"
+            sequence="90"
+            groups="hr.group_hr_manager,hr.group_hr_user"/>
+
+    <!-- THIS PAR FOR DEPARTMENT -->
+    <record id="hr.menu_hr_department_tree" model="ir.ui.menu">
+      <field name="parent_id" eval="ref('sirh_hr.skill_matrix_menu')"/>
+      <field name="sequence" eval="90"/>
+    </record>
+
+
+    <!-- THIS PAR FOR JOBS-->
+    <record id="custom_jobs_menu_action" model="ir.actions.act_window">
+      <field name="name">Jobs</field>
+      <field name="res_model">hr.job</field>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="search_view_id" ref="hr.view_job_filter"/>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+          Create a new job
+        </p>
+      </field>
+    </record>
+    <menuitem
+            action="custom_jobs_menu_action"
+            id="custom_jobs_menu"
+            name="Jobs"
+            parent="sirh_hr.skill_matrix_menu"
+            sequence="60"
+            groups="hr.group_hr_manager,hr.group_hr_user"/>
+
+    <!-- THIS PAR FOR LEVELS -->
+    <record id="custom_levels_menu_action" model="ir.actions.act_window">
+      <field name="name">Levels</field>
+      <field name="res_model">hr.level</field>
+      <field name="view_mode">kanban,tree,form</field>
+      <field name="search_view_id" ref="sirh_hr.view_level_filter"/>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+          Create a new level
+        </p>
+      </field>
+    </record>
+    <menuitem
+            action="custom_levels_menu_action"
+            id="custom_levels_menu"
+            name="Levels"
+            parent="sirh_hr.skill_matrix_menu"
+            sequence="70"
+            groups="hr.group_hr_manager,hr.group_hr_user"/>
+
+
+    <!--  TODO :: to add into this menu : filière, direction, CC/department(done), Jobs(done), Niveau(done) [erase this line if all is done] -->
+  </data>
+</odoo>

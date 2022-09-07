@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+  <t t-extend="KanbanView.buttons" import="0">
+    <t t-jquery="button" t-operation="after">
+      <t t-if='widget and widget.modelName=="hr.onboarding.task" and widget.initialState.context.option_emp =="send_email_onboarding"'>
+        <button type="button" id="o_kanban_custom_button" class="btn btn-secondary oe_highlight o_kanban_custom_button">Send invitation email</button>
+      </t>
+    </t>
+  </t>
+</templates>

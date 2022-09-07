@@ -1,0 +1,551 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ooto_hr_holidays_front
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0-20200409\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-02 22:01+0000\n"
+"PO-Revision-Date: 2020-11-02 22:01+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+msgid ""
+"++ Upload a\n"
+"                      proof"
+msgstr ""
+"+ Uploader un\n"
+"                      justificatif"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "++ Upload a proof"
+msgstr "+ Uploader un justificatif"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.bloc_leave_dashboard
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.bloc_leave_dashboard_for_dashboard
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "0 Day"
+msgstr "0 Jour"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid ""
+"<i class=\"fa fa-times-circle\"/>\n"
+"                    Empty type of absence"
+msgstr ""
+"<i class=\"fa fa-times-circle\"/>\n"
+"                  Type d'absence vide"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.portal_leaves_list
+msgid "<span class=\"badge badge-pill badge-danger\">Refused</span>"
+msgstr "<span class=\"badge badge-pill badge-danger\">Refusé</span>"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.portal_leaves_list
+msgid "<span class=\"badge badge-pill badge-info\">Second Approval</span>"
+msgstr "<span class=\"badge badge-pill badge-info\">Deuxième approbation</span>"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.portal_leaves_list
+msgid "<span class=\"badge badge-pill badge-info\">To Approve</span>"
+msgstr "<span class=\"badge badge-pill badge-info\">À Approuver</span>"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.portal_leaves_list
+msgid "<span class=\"badge badge-pill badge-info\">To Submit</span>"
+msgstr "<span class=\"badge badge-pill badge-info\">À Soumettre</span>"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.portal_leaves_list
+msgid "<span class=\"badge badge-pill badge-success\">Valided</span>"
+msgstr "<span class=\"badge badge-pill badge-success\">Approuvé</span>"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.portal_leaves_list
+msgid "<span class=\"badge badge-pill badge-warning\">Cancelled</span>"
+msgstr "<span class=\"badge badge-pill badge-warning\">Annulé</span>"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.portal_leaves_list
+msgid "<span class=\"bold\">Type :</span>"
+msgstr ""
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.portal_leaves_list
+msgid "<span class=\"bold\">state</span>"
+msgstr "<span class=\"bold\">statut</span>"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.portal_leave_inherit
+msgid "<span>Filter by</span>"
+msgstr "<span>Filtré par</span>"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.bloc_leave_dashboard
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.bloc_leave_dashboard_for_dashboard
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "ABSENCE"
+msgstr ""
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "Absence date"
+msgstr "Date de l’absence"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "Absence name"
+msgstr "Nom de l'absence"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.bloc_leave_dashboard
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.bloc_leave_dashboard_for_dashboard
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.portal_leave_inherit
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "Absence request"
+msgstr "Solde d'absence"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "Absence request sent !"
+msgstr "Demande d’absence envoyée !"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.portal_leave_inherit
+msgid "Absence submitted"
+msgstr "Absences soumises"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.bloc_leave_dashboard
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.bloc_leave_dashboard_for_dashboard
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "Acquired"
+msgstr "Acquis"
+
+#. module: ooto_hr_holidays_front
+#: code:addons/ooto_hr_holidays_front/controllers/controllers.py:0
+#: code:addons/ooto_hr_holidays_front/controllers/controllers.py:0
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.portal_leaves_list
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+#, python-format
+msgid "Afternoon"
+msgstr "Après midi"
+
+#. module: ooto_hr_holidays_front
+#: model:ir.model.fields,field_description:ooto_hr_holidays_front.field_hr_leave__approve_date
+msgid "Approve date"
+msgstr "Date d'approbation"
+
+#. module: ooto_hr_holidays_front
+#: model:ir.model.fields,field_description:ooto_hr_holidays_front.field_hr_leave__approve_date_first
+msgid "Approve date first"
+msgstr ""
+
+#. module: ooto_hr_holidays_front
+#: code:addons/ooto_hr_holidays_front/controllers/controllers.py:0
+#, python-format
+msgid "Approved Leaves"
+msgstr "Congé approuvés"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.absence_request_templates
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "Back"
+msgstr "Retour"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "Base64 will appear here"
+msgstr ""
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.bloc_leave_dashboard
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.bloc_leave_dashboard_for_dashboard
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "CP N"
+msgstr ""
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.bloc_leave_dashboard
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.bloc_leave_dashboard_for_dashboard
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "CP N-1"
+msgstr ""
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.portal_leaves_list
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: ooto_hr_holidays_front
+#: model:ir.model.fields,field_description:ooto_hr_holidays_front.field_hr_leave__cancel_approver_id
+msgid "Cancel approver"
+msgstr ""
+
+#. module: ooto_hr_holidays_front
+#: model:ir.model.fields,field_description:ooto_hr_holidays_front.field_hr_leave__cancel_date
+msgid "Cancel date"
+msgstr ""
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+msgid "Cancel leave"
+msgstr "Annuler le congé"
+
+#. module: ooto_hr_holidays_front
+#: code:addons/ooto_hr_holidays_front/controllers/controllers.py:0
+#, python-format
+msgid "Cancelled"
+msgstr "Annulé"
+
+#. module: ooto_hr_holidays_front
+#: model:ir.model,name:ooto_hr_holidays_front.model_res_config_settings
+msgid "Config Settings"
+msgstr "Paramètres de config"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.portal_leave_inherit
+msgid "Create leave"
+msgstr "Créer congé"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "Date empty"
+msgstr "Date de début vide"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.bloc_leave_dashboard
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.bloc_leave_dashboard_for_dashboard
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "Day"
+msgstr "Jour"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.bloc_leave_dashboard
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.bloc_leave_dashboard_for_dashboard
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "Day(s)"
+msgstr "Jours"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.portal_leaves_list
+msgid "Edit"
+msgstr "Modifier"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "End date"
+msgstr "Date de fin"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid ""
+"File is to big, maximal size is\n"
+"                    <span id=\"size_limit\"/>\n"
+"                    mo"
+msgstr ""
+"Le fichier est trop volumineux, la taille maximum est de\n"
+"                  <span id=\"size_limit\"/>\n"
+"                  mo"
+
+#. module: ooto_hr_holidays_front
+#: model:ir.model.fields,field_description:ooto_hr_holidays_front.field_hr_leave__justificatory_filename
+msgid "Filename"
+msgstr "Nom du fichier"
+
+#. module: ooto_hr_holidays_front
+#: code:addons/ooto_hr_holidays_front/controllers/controllers.py:0
+#, python-format
+msgid "Filter by"
+msgstr "Filtré par"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.portal_leave_inherit
+msgid "Filtered by :"
+msgstr "Filtré par :"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "Half day"
+msgstr "Demi-journée"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "Justificatif"
+msgstr ""
+
+#. module: ooto_hr_holidays_front
+#: model:ir.model.fields,field_description:ooto_hr_holidays_front.field_hr_leave__justificatory
+msgid "Justificatory"
+msgstr "Justificatif"
+
+#. module: ooto_hr_holidays_front
+#: model:ir.model.fields,field_description:ooto_hr_holidays_front.field_res_config_settings__justificatory_size
+msgid "Justificatory Size"
+msgstr "Taille justificatif"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.ooto_res_config_settings_view_form
+msgid "Leave configuration"
+msgstr "Configuration congé"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.ooto_res_config_settings_view_form
+#: model:website.menu,name:ooto_hr_holidays_front.menu_portal_leaves_0
+msgid "Leaves"
+msgstr "Congés"
+
+#. module: ooto_hr_holidays_front
+#: code:addons/ooto_hr_holidays_front/controllers/controllers.py:0
+#: code:addons/ooto_hr_holidays_front/controllers/controllers.py:0
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.portal_leaves_list
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+#, python-format
+msgid "Morning"
+msgstr "Matin"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.bloc_leave_dashboard
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.bloc_leave_dashboard_for_dashboard
+msgid "New absence request"
+msgstr "Demande d'absence"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.portal_leave_inherit
+msgid "No <span class=\"bold\">absence request</span> found"
+msgstr "Aucune <span class=\"bold\">demande d'absence</span> trouvée"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "Period"
+msgstr "Période"
+
+#. module: ooto_hr_holidays_front
+#: model:ir.model.fields,field_description:ooto_hr_holidays_front.field_hr_leave__refuse_date
+msgid "Refuse date"
+msgstr ""
+
+#. module: ooto_hr_holidays_front
+#: code:addons/ooto_hr_holidays_front/controllers/controllers.py:0
+#, python-format
+msgid "Refused"
+msgstr "Refusé"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.bloc_leave_dashboard
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.bloc_leave_dashboard_for_dashboard
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "Request at"
+msgstr "Solde au"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+msgid "Save"
+msgstr "Sauvegarder"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.portal_leave_inherit
+msgid "Search"
+msgstr "Rechercher"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.portal_leave_inherit
+msgid "Search..."
+msgstr "Recherche…"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.bloc_leave_dashboard
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.bloc_leave_dashboard_for_dashboard
+msgid "See all"
+msgstr "Voir tout"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "Send"
+msgstr "Envoyer"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "Start date"
+msgstr "Date de début"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "Submit absence"
+msgstr "Soumettre une absence"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.bloc_leave_dashboard
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.bloc_leave_dashboard_for_dashboard
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "Taken"
+msgstr "Pris"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "The number of exceptional leave remaining is not sufficient"
+msgstr "Le nombre de congés exceptionnels restants n'est pas suffisant"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid ""
+"The number of remaining leaves is\n"
+"                          not sufficient\n"
+"                          for this leave\n"
+"                          type. 'Please also check the leaves waiting for validation."
+msgstr "Le nombre de congés restantes n'est pas suffisant pour ce type de congé.\n"
+"                 S'il vous plaît vérifier également les congés en attente de validation."
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+msgid ""
+"The number of remaining leaves is not sufficient for this leave\n"
+"                  type.\n"
+"                  'Please also check the leaves waiting for validation."
+msgstr "Le nombre de congés restantes n'est pas suffisant pour ce type de congé.\n"
+"                 S'il vous plaît vérifier également les congés en attente de validation."
+
+#. module: ooto_hr_holidays_front
+#: model:ir.model,name:ooto_hr_holidays_front.model_hr_leave
+msgid "Time Off"
+msgstr "Congé"
+
+#. module: ooto_hr_holidays_front
+#: code:addons/ooto_hr_holidays_front/controllers/controllers.py:0
+#, python-format
+msgid "To Approve"
+msgstr "À approuver"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.bloc_leave_dashboard
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.bloc_leave_dashboard_for_dashboard
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "Total"
+msgstr ""
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "Type\n"
+"                    d'absence"
+msgstr ""
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "Type a percent!"
+msgstr "Tapez un pour cent!"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+msgid ""
+"Type of\n"
+"                    absence"
+msgstr ""
+"Type\n"
+"                    d'absence"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "Type of absence"
+msgstr "Type d'absence"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "Vacances, mariage, etc."
+msgstr ""
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "Valid"
+msgstr "Valider"
+
+#. module: ooto_hr_holidays_front
+#: model:ir.model.fields,field_description:ooto_hr_holidays_front.field_hr_leave__via_fo
+msgid "Via fo"
+msgstr ""
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "You are not allowed to take leave on this period."
+msgstr "Vous n'êtes pas autorisé à prendre un congé dans cette periode."
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "You can not have 2 leaves that overlaps on the same day."
+msgstr "Vous ne pouvez pas prendre 2 congés pour un même jour."
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.bloc_leave_dashboard
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.bloc_leave_dashboard_for_dashboard
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.portal_leaves_list
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "day"
+msgstr "jour"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.bloc_leave_dashboard
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.bloc_leave_dashboard_for_dashboard
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.edit_leave
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.portal_leaves_list
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.registration_leave
+msgid "day(s)"
+msgstr "jours"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.portal_leaves_list
+msgid "from"
+msgstr "du"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.portal_leave_inherit
+msgid "leaves"
+msgstr "Congés"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.portal_leaves_list
+msgid "the"
+msgstr "le"
+
+#. module: ooto_hr_holidays_front
+#: model_terms:ir.ui.view,arch_db:ooto_hr_holidays_front.portal_leaves_list
+msgid "to"
+msgstr "au"

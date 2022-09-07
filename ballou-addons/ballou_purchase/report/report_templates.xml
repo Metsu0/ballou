@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <template id="ballou_external_layout_standard_purchase" inherit_id="ballou_sales.ballou_external_layout_standard">
+      <xpath expr="//th/div[@name='signature_text']" position="before">
+          <t t-if="request.env.user.signature_purchase">
+            <t t-if="show_user_signature">
+              <img t-attf-src="data:image/png;base64, #{request.env.user.signature_purchase}"
+               style="width: 75px; height:75px"/>
+              <br/>
+            </t>
+          </t>
+      </xpath>
+    </template>
+  </data>
+</odoo>

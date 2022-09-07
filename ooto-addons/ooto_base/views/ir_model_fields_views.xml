@@ -1,0 +1,34 @@
+<odoo>
+  <data>
+    <record id="view_model_fields_search_inherit" model="ir.ui.view">
+      <field name="name">ir.model.fields.inherit</field>
+      <field name="model">ir.model.fields</field>
+      <field name="inherit_id" ref="base.view_model_fields_search"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='name']" position="before">
+          <filter string="Dynamic Fields" name="dynamic_fields"
+                  domain="[('state', '=', 'manual')]"/>
+        </xpath>
+      </field>
+    </record>
+
+    <record id="action_dynamic_fields" model="ir.actions.act_window">
+      <field name="name">Dynamic Fields</field>
+      <field name="res_model">ir.model.fields</field>
+      <field name="view_mode">tree,form</field>
+      <field name="context">{
+        'default_model': 'hr.employee',
+        'hr_view': True,
+        'search_default_dynamic_fields': 1,
+        }
+      </field>
+      <field name="domain">[('model', '=', 'hr.employee')]</field>
+    </record>
+
+    <menuitem id="menu_dynamic_fields"
+              name="Dynamic fields"
+              parent="hr.menu_human_resources_configuration"
+              action="ooto_base.action_dynamic_fields"
+              sequence="14"/>
+  </data>
+</odoo>

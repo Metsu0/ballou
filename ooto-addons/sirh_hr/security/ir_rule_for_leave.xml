@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+  <data noupdate="0">
+    <record id="deputy_leave_profil_rule" model="ir.rule">
+      <field name="name">PROFIL DEPUTY CONGÉ</field>
+      <field model="ir.model" name="model_id" search="[('model', '=', 'hr.leave')]"/>
+      <field name="domain_force">['|' ,('employee_id', '=',
+        user.partner_id.employee_id.id),('employee_id.department_id.deputy_ids', 'child_of',
+        [user.partner_id.employee_id.id])]
+      </field>
+      <field eval="[(4, ref('sirh_base_security.group_employee_etech_deputy'))]" name="groups"/>
+      <field eval="True" name="perm_read"/>
+      <field eval="True" name="perm_write"/>
+      <field eval="True" name="perm_create"/>
+      <field eval="True" name="perm_unlink"/>
+    </record>
+
+    <record id="manager_leave_profil_rule" model="ir.rule">
+      <field name="name">PROFIL MANAGER CONGÉ</field>
+      <field model="ir.model" name="model_id" search="[('model', '=', 'hr.leave')]"/>
+      <field name="domain_force">['|' ,('employee_id', '=',
+        user.partner_id.employee_id.id),('employee_id.department_id.manager_id', 'in',
+        [user.partner_id.employee_id.id])]
+      </field>
+      <field eval="[(4, ref('sirh_base_security.group_employee_etech_manager'))]" name="groups"/>
+      <field eval="True" name="perm_read"/>
+      <field eval="True" name="perm_write"/>
+      <field eval="True" name="perm_create"/>
+      <field eval="True" name="perm_unlink"/>
+    </record>
+
+    <record id="directeur_leave_profil_rule" model="ir.rule">
+      <field name="name">PROFIL DIRECTEUR CONGÉ</field>
+      <field model="ir.model" name="model_id" search="[('model', '=', 'hr.leave')]"/>
+      <field name="domain_force">['|' ,('employee_id', '=',
+        user.partner_id.employee_id.id),('employee_id.department_id.direction_id.executive_id', 'in',
+        [user.partner_id.employee_id.id])]
+      </field>
+      <field eval="[(4, ref('sirh_base_security.group_employee_etech_directeur'))]" name="groups"/>
+      <field eval="True" name="perm_read"/>
+      <field eval="True" name="perm_write"/>
+      <field eval="True" name="perm_create"/>
+      <field eval="True" name="perm_unlink"/>
+    </record>
+  </data>
+</odoo>

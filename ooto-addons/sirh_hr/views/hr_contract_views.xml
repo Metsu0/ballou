@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <data>
+    <record id="hr_hr_employee_view_form_sirh_2" model="ir.ui.view">
+      <field name="name">hr.employee.form.inherit.sirh</field>
+      <field name="model">hr.employee</field>
+      <field name="inherit_id" ref="hr_contract.hr_hr_employee_view_form2"/>
+      <field name="arch" type="xml">
+        <button name="%(hr_contract.act_hr_employee_2_hr_contract)d" position="replace">
+          <button name="%(hr_contract.act_hr_employee_2_hr_contract)d"
+                  class="oe_stat_button"
+                  icon="fa-book"
+                  type="action"
+                  groups="sirh_base_security.group_employee_etech_rh, base.group_system">
+            <field name="contracts_count" widget="statinfo" string="Contracts"/>
+          </button>
+        </button>
+      </field>
+    </record>
+
+    <record id="sirh_hr_contract_view_form" model="ir.ui.view">
+      <field name="name">sirh.hr.contract.view.form</field>
+      <field name="model">hr.contract</field>
+      <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+      <field name="arch" type="xml">
+        <field name="department_id" position="after">
+          <field name="coach_id"/>
+        </field>
+        <field name="employee_id" position="after">
+          <field name="contract_type"/>
+        </field>
+         <xpath expr="//sheet/group/group[@name='duration_group']" position="attributes">
+          <attribute name="invisible">1</attribute>
+        </xpath>
+        <xpath expr="//sheet/group/group[@name='duration_group']" position="before">
+          <group name="duration_group" string="Contract Terms">
+            <field name="date_start"/>
+            <field name="date_end"/>
+            <field name="trial_date_end"/>
+            <field name="trial_period_state" attrs="{'invisible' :[('trial_date_end','=',False)]}"/>
+            <field name="date_trial_period_refused" attrs="{'invisible' :[('trial_date_end','=',False)]}"/>
+            <field name="calendar_mismatch" invisible="1"/>
+            <label for="resource_calendar_id"/>
+            <div>
+              <field name="resource_calendar_id" required="1" nolabel="1"/>
+              <span attrs="{'invisible': ['|', ('calendar_mismatch', '=', False), ('state', '!=', 'open')]}"
+                    class="fa fa-exclamation-triangle text-danger o_calendar_warning pl-3">
+              </span>
+              <span class="o_calendar_warning_tooltip text-danger">
+                Calendar Mismatch : The employee's calendar does not match this contract's calendar. This could lead to
+                unexpected behaviors.
+              </span>
+            </div>
+            <field name="hr_responsible_id"/>
+          </group>
+        </xpath>
+        <field name="date_end" position="attributes">
+          <attribute name="attrs">{"invisible": [("contract_type", "=", "cdi")]}</attribute>
+          <attribute name="readonly">1</attribute>
+          <attribute name="force_save">1</attribute>
+        </field>
+        <field name="date_start" position="after">
+          <label for="duration"/>
+          <div class="address_format">
+            <field name="duration" class="oe_read_only"/>
+            <label for="duration_years" class="oe_edit_only" style="width: 33%"/>
+            <field name="duration_years" class="oe_edit_only" style="width: 33%"/>
+            <label for="duration_months" class="oe_edit_only" style="width: 33%"/>
+            <field name="duration_months" class="oe_edit_only" style="width: 33%"/>
+            <label for="duration_days" class="oe_edit_only" style="width: 33%"/>
+            <field name="duration_days" class="oe_edit_only" style="width: 33%"/>
+          </div>
+        </field>
+        <label for="duration" position="attributes">
+          <attribute name="attrs">{"invisible": [("contract_type", "=", "cdi")]}</attribute>
+        </label>
+        <field name="duration" position="attributes">
+          <attribute name="attrs">{"invisible": [("contract_type", "=", "cdi")]}</attribute>
+        </field>
+        <label for="duration_years" position="attributes">
+          <attribute name="attrs">{"invisible": [("contract_type", "=", "cdi")]}</attribute>
+        </label>
+        <field name="duration_years" position="attributes">
+          <attribute name="attrs">{"invisible": [("contract_type", "=", "cdi")]}</attribute>
+          <attribute name="required">1</attribute>
+        </field>
+        <label for="duration_months" position="attributes">
+          <attribute name="attrs">{"invisible": [("contract_type", "=", "cdi")]}</attribute>
+        </label>
+        <field name="duration_months" position="attributes">
+          <attribute name="attrs">{"invisible": [("contract_type", "=", "cdi")]}</attribute>
+          <attribute name="required">1</attribute>
+        </field>
+        <label for="duration_days" position="attributes">
+          <attribute name="attrs">{"invisible": [("contract_type", "=", "cdi")]}</attribute>
+        </label>
+        <field name="duration_days" position="attributes">
+          <attribute name="attrs">{"invisible": [("contract_type", "=", "cdi")]}</attribute>
+          <attribute name="required">1</attribute>
+        </field>
+      </field>
+    </record>
+    
+    <record id="ir_actions_server_validate_contracts" model="ir.actions.server">
+      <field name="name">Validate contracts</field>
+      <field name="model_id" ref="hr_contract.model_hr_contract"/>
+      <field name="binding_model_id" ref="hr_contract.model_hr_contract"/>
+      <field name="binding_view_types">list</field>
+      <field name="state">code</field>
+      <field name="code">records.write({'state': 'open'})</field>
+    </record>
+
+  </data>
+</odoo>

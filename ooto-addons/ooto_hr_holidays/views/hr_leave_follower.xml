@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+    <record id="view_leave_follower_tree" model="ir.ui.view">
+      <field name="name">leave.follower.tree</field>
+      <field name="model">hr.leave.follower</field>
+      <field name="arch" type="xml">
+        <tree string="Follower">
+          <field name="admin_follower"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="open_view_holiday_follower" model="ir.actions.act_window">
+        <field name="name">Holidays follower</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.leave.follower</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="hr_holidays_follower"
+        action="open_view_holiday_follower"
+        name="Holidays follower"
+        parent="hr_holidays.menu_hr_holidays_configuration"
+        sequence="3"/>
+
+</odoo>

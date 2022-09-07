@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <data>
+    <record id="payslip_payment_mode_tree_view" model="ir.ui.view">
+      <field name="name">hr.payslip.payment.mode.tree</field>
+      <field name="model">hr.payslip.payment.mode</field>
+      <field name="arch" type="xml">
+        <tree string="Payslip payment mode">
+          <field name="name"/>
+          <field name="note"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="payslip_payment_mode_form_view" model="ir.ui.view">
+      <field name="name">hr.payslip.payment.mode.form</field>
+      <field name="model">hr.payslip.payment.mode</field>
+      <field name="arch" type="xml">
+        <form string="Payslip payment mode">
+          <sheet>
+            <group>
+              <group>
+                <field name="name"/>
+                <field name="note"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="open_payslip_payment_mode_action" model="ir.actions.act_window">
+      <field name="name">Payslip Payment Mode</field>
+      <field name="res_model">hr.payslip.payment.mode</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+          Create a new payslip payment mode
+        </p>
+      </field>
+    </record>
+
+    <menuitem id="menu_hr_payslip_payment_mode"
+              action="open_payslip_payment_mode_action"
+              parent="hr.menu_human_resources_configuration"
+              sequence="110"
+              groups="hr.group_hr_manager"/>
+  </data>
+</odoo>

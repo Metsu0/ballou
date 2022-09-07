@@ -1,0 +1,59 @@
+<odoo>
+	<data>
+		<record id="annuaire_tutorial_page_view_form" model="ir.ui.view">
+      <field name="name">annuaire_tutorial_page_view_form</field>
+      <field name="model">annuaire.tuto.page</field>
+      <field name="arch" type="xml">
+        <form string="annuaire_tutorial_page_form">
+          <sheet>
+            <group>
+              <field name="support" widget="image"/>
+              <field name="name"/>
+              <field name="description"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+		<!--  Form view for annuaire tutorial  -->
+    <record id="annuaire_tutorial_view_form" model="ir.ui.view">
+      <field name="name">annuaire_tutorial_view_form</field>
+      <field name="model">annuaire.tuto</field>
+      <field name="arch" type="xml">
+        <form string="annuaire_tutorial_form" create="false" delete="false">
+          <sheet>
+            <group>
+              <h1>
+                <field name="name" readonly="1"/>
+              </h1>
+            </group>
+            <group>
+              <field name="page_ids">
+                <tree>
+                  <field name="page_number" widget="handle"/>
+                  <field name="name"/>
+                </tree>
+              </field>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+		<record id="ooto_annuaire_tutorial_action" model="ir.actions.act_window">
+			<field name="name">Tutorial pages configuration</field>
+			<field name="res_model">annuaire.tuto</field>
+			<field name="view_mode">form</field>
+			<field name="binding_view_types">form</field>
+			<field name="res_id" eval="ref('ooto_annuaire.default_annuaire_tuto_config')"/>
+		</record>
+
+		<!--  Menu for annuaire tutorial configuration   -->
+		<menuitem id="menu_ooto_annuaire_configuration_parameter_tutorial"
+							name="Tutorial"
+							parent="ooto_annuaire.menu_ooto_annuaire_configuration"
+							action="ooto_annuaire_tutorial_action"
+							sequence="13"/>
+	</data>
+</odoo>

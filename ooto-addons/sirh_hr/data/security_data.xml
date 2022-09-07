@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="sirh_base_security.default_administration_profile" model="res.users">
+      <field name="groups_id" eval="[
+        (4, ref('hr_contract.group_hr_contract_manager'))]"/>
+    </record>
+    <record id="sirh_base_security.default_rh_profile" model="res.users">
+      <field name="groups_id" eval="[
+        (4, ref('hr_contract.group_hr_contract_manager'))]"/>
+    </record>
+  </data>
+</odoo>

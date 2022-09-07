@@ -1,0 +1,41 @@
+.tab-information {
+    background: none !important;
+}
+
+$dashboard: #eff1f6;
+
+.clearfix.submit_info {
+    background: $dashboard;
+}
+
+/*code account tab 2*/
+
+    .tab-style-2.tab-style-2_ooto .nav-tabs .nav-item .nav-link
+    {
+        font-family: "Nunito", sans-serif;
+        font-size: 14px;
+        border: none;
+        border-radius: 0;
+        background: none;
+        color: #999;
+        font-weight: 600;
+        text-transform: capitalize;
+        padding: 10px 25px;
+        position: relative;
+        &.active
+        {
+            background: transparent;
+            box-shadow: none;
+            color: $as-theme;
+        }
+    }
+
+    .tab-style-2.tab-style-2_ooto .nav-tabs .nav-item
+    {
+        width: auto;
+    }
+
+    .tab-style-2.tab-style-2_ooto .tab-content
+    {
+        margin: 0 -15px !important;
+    }

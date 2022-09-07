@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="ooto_onboarding.dashboard">
+        <!--View-->
+        <div class="col-xs-12 col-md-12 col-lg-12 col-sm-8">
+          <!--dashboard boxes-->
+            <div class="col-md-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="dash-box dash-box-color-1">
+                                <!--<div class="dash-box-icon">-->
+                              <!--<i class="fa fa-sign-in"/>-->
+                              <!--</div>-->
+                                <div class="dash-box-body">
+                                    <span class="dash-box-count">
+                                      <t t-esc="widget.employee_data['arrival_curr_month']"/>
+                                    </span>
+                                    <span class="dash-box-title">Salari&#233;s <br/> <b>Nouveau ce mois</b></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="dash-box dash-box-color-2">
+                                <!--<div class="dash-box-icon">-->
+                              <!--<i class="fa fa-clock-o"></i>-->
+                              <!--</div>-->
+                                <div class="dash-box-body">
+                                     <span class="dash-box-count">
+                                        <t t-esc="widget.employee_data.task_late"/>
+                                    </span>
+                                    <span class="dash-box-title">T&#226;ches en retard <br/> <b>Cette semaine</b></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="panel">
+                            <h3 class="panel-title pie-label-center">R&#233;alisation des t&#226;ches (%)</h3>
+                            <div class="panel-body">
+                              <canvas id="achievementtaskchart" width="300px" height="200px"/>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="panel">
+                            <h3 class="panel-title pie-label-center">T&#226;ches par p&#233;riode (%)</h3>
+                            <div class="panel-body">
+                              <canvas id="periodtaskchart" width="300px" height="200px"/>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="dash-box dash-box-color-3">
+                                <!--<div class="dash-box-icon">-->
+                              <!--<i class="fa fa-sign-out"/>-->
+                              <!--</div>-->
+                                <div class="dash-box-body">
+                                    <span class="dash-box-count">
+                                        <t t-esc="widget.employee_data.leaving_curr_month"/>
+                                    </span>
+                                    <span class="dash-box-title">D&#233;parts <br/> <b>Ce mois</b></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="dash-box dash-box-color-4">
+                                <!--<div class="dash-box-icon">-->
+                              <!--<i class="fa fa-tasks"/>-->
+                              <!--</div>-->
+                                <div class="dash-box-body">
+                                    <span class="dash-box-count">
+                                      <t t-esc="widget.employee_data.finished_in_time"/>
+                                    </span>
+                                    <span class="dash-box-title">T&#226;ches finis &#224; temps <br/><b>Cette semaine</b></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="dash-box dash-box-color-5">
+                                <!--<div class="dash-box-icon">-->
+                              <!--<i class="fa fa-user-circle"/>-->
+                              <!--</div>-->
+                                <div class="dash-box-body">
+                                    <span class="dash-box-count"><t t-esc="widget.employee_data.conn_bef"/> %</span>
+                                    <span class="dash-box-title">de connection avant l'arriv&#233;e</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  <div class="row">
+                    <div class="col-md-3"/>
+                     <div class="col-md-3">
+                            <div class="dash-box dash-box-color-6">
+                                <!--<div class="dash-box-icon">-->
+                              <!--<i class="fa fa-calendar"/>-->
+                              <!--</div>-->
+                                <div class="dash-box-body">
+                                    <span class="dash-box-count">
+                                        <t t-esc="widget.employee_data.published_advice"/>
+                                    </span>
+                                    <span class="dash-box-title">Conseils diffus&#233;s</span>
+                                </div>
+                            </div>
+                        </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

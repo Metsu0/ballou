@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record id="generic_hr_payslip_state_export_form" model="ir.ui.view">
+      <field name="name">generic.hr.paie.state.export.form.inherit</field>
+      <field name="model">payslip.state.export</field>
+      <field name="inherit_id" ref="ballou_payslip_state_export.payslip_state_export_form"/>
+      <field name="arch" type="xml">
+        <field name="year" position="attributes">
+          <attribute name="attrs">{
+            'required': [('name','in',('annexe_hs'))],
+            }
+          </attribute>
+        </field>
+        <field name="period" position="attributes">
+          <attribute name="attrs">{
+            'required': [('name','in',('irsa','annexe_hs'))],
+            }
+          </attribute>
+        </field>
+      </field>
+    </record>
+    <!--    pdf template-->
+    <template id="payslip_state_pdf_export_template">
+      <!--      <t t-call="web.basic_layout">-->
+      <t t-call="web.html_container">
+        <style>
+          div{
+          font-style: italic;
+          }
+          table {
+          border-collapse: collapse;
+          }
+          th{
+          border-top:solid 3px #170970 !important;
+          border-bottom:solid 2px grey !important;
+          border-left:solid 1px #170970 !important;
+          border-right:solid 1px #170970 !important;
+          }
+          td{
+          border-left:solid 1px #170970 !important;
+          border-right:solid 1px #170970 !important;
+          }
+          tr:nth-child(2)>td{
+          border-bottom:solid 3px #170970 !important;
+          padding:3px;
+          }
+          .annexe_hs_line td{
+          border-bottom:solid 1px #170970 !important;
+          font-weight:bold;
+          padding:3px;
+          }
+
+        </style>
+
+        <t t-foreach="docs" t-as="doc">
+          <!--          <t t-call="web.external_layout">-->
+          <div class="page">
+            <div style="display:flex;">
+              <center style="color:#170970;">
+                <h1>Annexe Heures Suppléméntaires</h1>
+              </center>
+
+              <table width="100%" style="text-align:center !important;">
+                <tr width="100%" style=" color:#170970;">
+                  <th rowspan="2" style=" border-bottom:solid 3px #170970 !important;">N°</th>
+                  <th rowspan="2" style=" border-bottom:solid 3px #170970 !important;">Nom</th>
+                  <th rowspan="2" style=" border-bottom:solid 3px #170970 !important;">Total HS</th>
+                  <th rowspan="2" style=" border-bottom:solid 3px #170970 !important;">Salaire Horaire</th>
+                  <th colspan="3">30% Non Imposables</th>
+                  <th colspan="3">40% Non Imposables</th>
+                  <th colspan="3">50% Non Imposables</th>
+                  <th colspan="3">100% Non Imposables</th>
+                  <th colspan="3">30% Imposables</th>
+                  <th colspan="3">40% Imposables</th>
+                  <th colspan="3">50% Imposables</th>
+                  <th colspan="3">100% Imposables</th>
+                  <th colspan="3">TOTAL</th>
+                  <th rowspan="2" style=" border-bottom:solid 3px #170970 !important;">Montant Total HS Impos. et Non
+                    Impos.
+                  </th>
+                </tr>
+                <tr style="color:#170970;">
+                  <!--                <td></td>-->
+                  <!--                <td></td>-->
+                  <!--                <td></td>-->
+                  <!--                <td></td>-->
+                  <!--30% non-->
+                  <td>HS</td>
+                  <td>Taux</td>
+                  <td>Valeur</td>
+                  <!--40%  non-->
+                  <td>HS</td>
+                  <td>Taux</td>
+                  <td>Valeur</td>
+                  <!-- 50%  non-->
+                  <td>HS</td>
+                  <td>Taux</td>
+                  <td>Valeur</td>
+                  <!-- 100% non -->
+                  <td>HS</td>
+                  <td>Taux</td>
+                  <td>Valeur</td>
+                  <!--30%-->
+                  <td>HS</td>
+                  <td>Taux</td>
+                  <td>Valeur</td>
+                  <!--40% -->
+                  <td>HS</td>
+                  <td>Taux</td>
+                  <td>Valeur</td>
+                  <!-- 50% -->
+                  <td>HS</td>
+                  <td>Taux</td>
+                  <td>Valeur</td>
+                  <!-- 100% -->
+                  <td>HS</td>
+                  <td>Taux</td>
+                  <td>Valeur</td>
+                  <!--                total-->
+                  <td>HS impos.</td>
+                  <td>Taux impos.</td>
+                  <td>Valeur impos.</td>
+                  <!--                <td></td>-->
+                </tr>
+                <t t-foreach="annexe_hs_lines" t-as="annexe_hs_line">
+                  <tr class="annexe_hs_line">
+                    <td>
+                      <t t-esc="annexe_hs_line.get('matricule')"/>
+                    </td>
+                    <td>
+                      <t t-esc="annexe_hs_line.get('name')"/>
+                    </td>
+                    <td>
+                      <t t-esc="annexe_hs_line.get('total_hs')"/>
+                    </td>
+                    <td>
+                      <t t-esc="annexe_hs_line.get('hourly_wage')"/>
+                    </td>
+                    <!--                  30% Non imposable-->
+                    <td>
+                      <t t-esc="annexe_hs_line.get('hs_30_ni')"/>
+                    </td>
+                    <td>
+                      <t t-esc="annexe_hs_line.get('rate_30_ni')"/>
+                    </td>
+                    <td>
+                      <t t-esc="annexe_hs_line.get('value_30_ni')"/>
+                    </td>
+                    <!--                  40% Non imposable-->
+                    <td>
+                      <t t-esc="annexe_hs_line.get('hs_40_ni')"/>
+                    </td>
+                    <td>
+                      <t t-esc="annexe_hs_line.get('rate_40_ni')"/>
+                    </td>
+                    <td>
+                      <t t-esc="annexe_hs_line.get('value_40_ni')"/>
+                    </td>
+                    <!--                  50% Non imposable-->
+                    <td>
+                      <t t-esc="annexe_hs_line.get('hs_50_ni')"/>
+                    </td>
+                    <td>
+                      <t t-esc="annexe_hs_line.get('rate_50_ni')"/>
+                    </td>
+                    <td>
+                      <t t-esc="annexe_hs_line.get('value_50_ni')"/>
+                    </td>
+                    <!--                  100% Non imposable-->
+                    <td>
+                      <t t-esc="annexe_hs_line.get('hs_100_ni')"/>
+                    </td>
+                    <td>
+                      <t t-esc="annexe_hs_line.get('rate_100_ni')"/>
+                    </td>
+                    <td>
+                      <t t-esc="annexe_hs_line.get('value_100_ni')"/>
+                    </td>
+                    <!--                  30% imposable-->
+                    <td>
+                      <t t-esc="annexe_hs_line.get('hs_30_i')"/>
+                    </td>
+                    <td>
+                      <t t-esc="annexe_hs_line.get('rate_30_i')"/>
+                    </td>
+                    <td>
+                      <t t-esc="annexe_hs_line.get('value_30_i')"/>
+                    </td>
+                    <!--                  40% imposable-->
+                    <td>
+                      <t t-esc="annexe_hs_line.get('hs_40_i')"/>
+                    </td>
+                    <td>
+                      <t t-esc="annexe_hs_line.get('rate_40_i')"/>
+                    </td>
+                    <td>
+                      <t t-esc="annexe_hs_line.get('value_40_i')"/>
+                    </td>
+                    <!--                  50% imposable-->
+                    <td>
+                      <t t-esc="annexe_hs_line.get('hs_50_i')"/>
+                    </td>
+                    <td>
+                      <t t-esc="annexe_hs_line.get('rate_50_i')"/>
+                    </td>
+                    <td>
+                      <t t-esc="annexe_hs_line.get('value_50_i')"/>
+                    </td>
+                    <!--                  100% imposable-->
+                    <td>
+                      <t t-esc="annexe_hs_line.get('hs_100_i')"/>
+                    </td>
+                    <td>
+                      <t t-esc="annexe_hs_line.get('rate_100_i')"/>
+                    </td>
+                    <td>
+                      <t t-esc="annexe_hs_line.get('value_100_i')"/>
+                    </td>
+                    <!--                  Total hs,rate,value imposable-->
+                    <td>
+                      <t t-esc="annexe_hs_line.get('total_hs_i')"/>
+                    </td>
+                    <td>
+                      <t t-esc="annexe_hs_line.get('total_rate_i')"/>
+                    </td>
+                    <td>
+                      <t t-esc="annexe_hs_line.get('total_value_i')"/>
+                    </td>
+                    <!--                  Total hs imposable et non imposable-->
+                    <td>
+                      <t t-esc="annexe_hs_line.get('total_hs_i_ni')"/>
+                    </td>
+                  </tr>
+                </t>
+
+              </table>
+
+            </div>
+          </div>
+          <div class="footer">
+            <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%A %d %B %Y')"/>
+          </div>
+          <!--          </t>-->
+        </t>
+
+
+      </t>
+    </template>
+
+
+    <!--    <template id="external_layout_footer_inherit"-->
+    <!--              inherit_id="report.external_layout_footer">-->
+    <!--      <xpath expr="//div[@class='footer']" position="replace">-->
+    <!--        <div class="footer">-->
+    <!--          <span>Test</span>-->
+    <!--        </div>-->
+    <!--      </xpath>-->
+    <!--    </template>-->
+  </data>
+</odoo>

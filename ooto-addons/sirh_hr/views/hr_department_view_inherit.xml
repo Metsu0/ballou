@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+  <data>
+    <record id="custom_hr_department_view_addfield_inherit" model="ir.ui.view">
+      <field name="name">hr.department.view.form.inherit</field>
+      <field name="model">hr.department</field>
+      <field name="inherit_id" ref="hr.view_department_form"/>
+      <field name="priority">16</field>
+      <field name="arch" type="xml">
+        <field name="parent_id" position="after">
+          <field name="deputy_ids" widget="many2many_tags"
+                 options="{'color_field': 'color', 'no_create_edit': False, 'no_quick_create': True}"
+                 context="{'from_department':True}"/>
+          <field name="code"/>
+          <field name="direction_id" string="Direction"/>
+        </field>
+        <field name="company_id" position="after">
+          <field name="default_company_ids" widget="many2many_tags" invisible="1"/>
+          <field name="company_ids" invisible="1"/>
+        </field>
+        <field name="manager_id" position="attributes">
+          <attribute name="domain">['|', ('company_id', 'in', default_company_ids), ('company_id', 'in', company_ids)]
+          </attribute>
+          <attribute name="required">1</attribute>
+        </field>
+      </field>
+    </record>
+    
+    <record id="sirh_view_department_tree_inherit" model="ir.ui.view">
+      <field name="name">sirh.view.department.tree.inherit</field>
+      <field name="model">hr.department</field>
+      <field name="inherit_id" ref="hr.view_department_tree"/>
+      <field name="arch" type="xml">
+        <field name="display_name" position="before">
+          <field name="code"/>
+        </field>
+      </field>
+    </record>
+  </data>
+</odoo>

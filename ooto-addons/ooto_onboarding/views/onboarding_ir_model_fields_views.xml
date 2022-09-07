@@ -1,0 +1,36 @@
+<odoo>
+  <data>
+    <record id="annuaire_ir_model_form_view" model="ir.ui.view">
+      <field name="name">annuaire.ir.model.fields.form.view</field>
+      <field name="model">ir.model.fields</field>
+      <field name="inherit_id" ref="base.view_model_fields_form"/>
+      <field name="mode">primary</field>
+      <field name="arch" type="xml">
+        <!--<xpath expr="//field[@name='model_id']" position="attributes">-->
+        <!--<attribute name="readonly">1</attribute>-->
+        <!--</xpath>-->
+        <!--<xpath expr="//field[@name='ttype']" position="attributes">-->
+        <!--<attribute name="invisible">1</attribute>-->
+        <!--</xpath>-->
+        <!--<xpath expr="//field[@name='ttype']" position="after">-->
+        <!--<field name="ttype_annuaire" required="1"/>-->
+        <!--<field name="model" invisible="1"/>-->
+        <!--</xpath>-->
+        <xpath expr="//group/group[2]" position="after">
+          <group>
+            <field name="is_work_information"/>
+            <field name="is_personal_information" string="Is a personal information"/>
+            <field name="can_not_be_modified_by_employee"/>
+          </group>
+        </xpath>
+				<xpath expr="//group/group[2]/field[@name='ttype']" position="after">
+					<field name="custom_ttype" string="Field Type"/>
+				</xpath>
+				<xpath expr="//group/group[2]/field[@name='ttype']" position="attributes">
+					<attribute name="invisible">1</attribute>
+				</xpath>
+
+      </field>
+    </record>
+  </data>
+</odoo>

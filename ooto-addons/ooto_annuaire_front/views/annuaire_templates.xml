@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <template id="bloc_annuaire">
+      <html>
+        <head>
+        </head>
+        <body>
+          <div class="annuaire-dashboard">
+            <div class="annuaire-dasboard-content">
+              <div>
+                <strong>
+                  <h1 class="title">Annuaire</h1>
+                </strong>
+              </div>
+              <div>
+                <span class="description">
+                  Find all the
+                  <br/>
+                  details of the members
+                  <br/>
+                  of your company
+                </span>
+              </div>
+              <div class="annuaire-link">
+                <a t-attf-href="/my/annuaire">Access</a>
+              </div>
+            </div>
+          </div>
+        </body>
+      </html>
+    </template>
+
+
+
+
+    <template id="annuaire_template">
+      <t t-call="website.layout">
+        <html>
+          <head>
+            <meta charset="utf-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+          </head>
+          <body>
+            <t t-set="url" t-value="request.httprequest.full_path"/>
+
+            <div class='copied'>
+              <h5 class="copiedtext">Copied to clipboard</h5>
+            </div>
+            <div class="container_annuaire">
+              <div id="target">
+                <div>
+                  <div class="container">
+                    <div class="annuaire_header_web" id="annuaire_header">
+                      <h5 class="titre_page_annuiare">Annuaire</h5>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="block_outil">
+                  <div class="multitag-search">
+                    <form role="search" method="get">
+                      <div class="input-group input_group_">
+                        <input type="text" name="search"
+                              class="search-query form-control oe_search_box annuaire_recherche"
+                              placeholder="Nom" t-att-value="search"/>
+
+                        <div class="input-group-append">
+                          <button type="submit" class="btn btn-secondary oe_search_button annuaire_search_button"
+                                  aria-label="Search" title="Search">
+                            <i class="fa fa-search"/>
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                    <div class="search-multitag">
+                      <t t-foreach="liste_cumulated_search" t-as="c_search">
+                        <div t-attf-class="to_delete-#{c_search}">
+                          <t t-esc="c_search"/>
+                          <button aria-label="X" title="X" class="button_delete_search" t-att-id="'to_delete-%s' % c_search">
+                            <img src="/ooto_annuaire_front/static/src/img/close.svg"/>
+                          </button>
+                        </div>
+                      </t>
+                    </div>
+                  </div>
+
+                  <div class="dropdown dropdown_sorty_by dropdown_annuaire_filtre">
+                    <a role="button" href="#" class="dropdown-toggle btn btn-secondary a_annuiare_filtre" data-toggle="dropdown">
+                      <t t-if="current_filter">
+                        <span>
+                          Filtered by :
+                          <t t-raw="current_filter"/>
+                        </span>
+                      </t>
+                      <t t-else="1">
+                        <span>Filter by</span>
+                      </t>
+                    </a>
+                    <div class="dropdown-menu" role="menu">
+                      <t t-foreach="filters" t-as="filterby">
+                        <a role="menuitem" t-att-href="keep('/my/annuaire', filter=filterby[0] if filterby[0] != 'none' else None)" class="dropdown-item">
+                          <span t-raw="filterby[1]"/>
+                        </a>
+                      </t>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="body_annuaire">
+                  <div class="accordion" id="accordionAnnuaire">
+                    <t t-if="employees">
+                      <t t-foreach="employees" t-as="employee">
+                        <section class="annuaire_section card" t-att-id="'%s' % current_search">
+                          <div class="card-header">
+                            <div class="annuaire_bloc1 collapsed" data-toggle="collapse" aria-expanded="true" aria-controls="collapseOne">
+                              <t t-if="manager">
+                                <t t-if="manager.id == employee['employee'].id">
+                                  <span class="annuaire-titre-poste" data-toggle="tooltip" title="Manager">MA</span>
+                                </t>
+                              </t>
+                              <t t-if="coach">
+                                <t t-if="coach.id == employee['employee'].id">
+                                  <span class="annuaire-titre-poste" data-toggle="tooltip" title="Mentor">ME</span>
+                                </t>
+                              </t>
+                              <t t-if="ra">
+                                <t t-if="ra.id == employee['employee'].id">
+                                  <span class="annuaire-titre-poste" data-toggle="tooltip" title="Administrative manager">
+                                    RA
+                                  </span>
+                                </t>
+                              </t>
+                              <t t-if="rs">
+                                <t t-if="rs.id == employee['employee'].id">
+                                  <span class="annuaire-titre-poste" data-toggle="tooltip" title="Software manager">
+                                    RS
+                                  </span>
+                                </t>
+                              </t>
+                              <span class="arrow-down">
+                                <img src="/ooto_annuaire_front/static/src/img/active.svg"/>
+                              </span>
+                              <div class="annuaire_employee_info">
+                                <img t-if="employee['employee'].image_1920" t-att-src="image_data_uri(employee['employee'].image_1920)" t-att-alt="employee['employee'].name" t-att-title="employee['employee'].name"/>
+                                <div class="annuaire_employee_NameMail">
+                                  <span class="annuaire_employee_Name" t-esc="employee['employee'].name"/>
+                                  <span class="annuaire_employee_Mail" t-esc="employee['employee'].work_email"/>
+                                </div>
+                              </div>
+                              <div class="annuaire_employee_infoOther">
+                                <t t-set="n" t-value="0"/>
+                                <t t-set="x" t-value=""/>
+                                <t t-set="paire" t-value="len(employee['info']) % 2"/>
+                                <t t-foreach="employee['info']" t-as="key">
+                                  <t t-if="x">
+                                    <t t-set="x" t-value="str(employee['info'][key]) + '|' + x "/>
+                                  </t>
+                                  <t t-else="">
+                                    <t t-set="x" t-value="str(employee['info'][key]) + '|'"/>
+                                  </t>
+                                  <t t-if="n % 2 == 1">
+                                    <t t-set="pi" t-value="x.split('|')"/>
+                                    <div class="annuaire_employee_infoOtherBloc">
+                                      <span t-esc="pi[0]"/>
+                                      <span t-esc="pi[1]"/>
+                                    </div>
+                                    <t t-set="x" t-value=""/>
+                                  </t>
+                                  <t t-set="n" t-value="n+1"/>
+                                </t>
+                                <t t-if="paire == 1 and employee['info']">
+                                  <t t-set="last_value" t-value="list(employee['info'].values())[-1]"/>
+                                  <div class="annuaire_employee_infoOtherBloc">
+                                    <span t-esc="last_value"/>
+                                  </div>
+                                </t>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="annuaire_bloc2 collapse" data-parent="#accordionAnnuaire">
+                            <div class="annuaire_bloc2_fils">
+                              <t t-if="employee['list_contact_key']">
+                                <t t-foreach="employee['list_contact_key']" t-as="contact_key">
+                                  <div class="contact_bloc">
+                                    <t t-foreach="contact_key" t-as="contact">
+                                      <t t-if="'logo' in contact">
+                                        <img class="img-annuaire" t-att-src="image_data_uri(contact_key[contact])"/>
+                                      </t>
+                                      <t t-else="">
+                                        <span>
+                                          <span class="contact_field_title" t-esc="contact"/>
+                                          <span class="contact_field_value" t-esc="contact_key[contact]"/>
+                                        </span>
+                                      </t>
+                                    </t>
+                                  </div>
+                                </t>
+                              </t>
+                            </div>
+                          </div>
+                        </section>
+                      </t>
+                    </t>
+                    <t t-else="">
+                      <div class="annuiare_vide">
+                        <div class="image_annuaire_vide"></div>
+                        <p class="texte_annuaire_vide">No <strong>contact</strong> found
+                        </p>
+                      </div>
+                    </t>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </body>
+        </html>
+      </t>
+    </template>
+  </data>
+</odoo>

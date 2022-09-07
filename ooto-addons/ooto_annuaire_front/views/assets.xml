@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <template id="assets_frontend_annuaire" name="Annuaire assets" inherit_id="web.assets_frontend">
+      <xpath expr="." position="inside">
+        <link rel="stylesheet" type="text/scss" href="/ooto_annuaire_front/static/src/scss/ooto_annuaire.scss"/>
+        <script type="text/javascript" src="/ooto_annuaire_front/static/src/js/annuaire_copy_text.js"></script>
+        <script type="text/javascript" src="/ooto_annuaire_front/static/src/js/clipboard.min.js"></script>
+        <script type="text/javascript" src="/ooto_annuaire_front/static/src/js/annuaire_tuto.js"></script>
+        <script type="text/javascript" src="/ooto_annuaire_front/static/src/js/annuaire_collapse.js"></script>
+        <script type="text/javascript" src="/ooto_annuaire_front/static/src/js/annuaire_search.js"></script>
+      </xpath>
+    </template>
+  </data>
+</odoo>

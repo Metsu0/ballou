@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo noupdate="1">
+  <record id="export_channel" model="mail.channel">
+    <field name="name">data exports</field>
+    <field name="public">private</field>
+    <field name="channel_partner_ids" eval="[(4, ref('base.partner_root'))]"/>
+    <field name="description">Notifications of data export activity</field>
+  </record>
+</odoo>

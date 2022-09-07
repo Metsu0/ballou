@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- <field name='parent_id' ref='choco_financial_report.menu_financial_report'/> -->
+        <!--<record id = "report_income_statement_nature" model = "account.financial.html.report">-->
+			<!--<field name = "name">Compte de résultat par Nature</field>-->
+			<!--<field name='parent_id' ref='account_reports_mg_statements_menu'/>-->
+			<!--<field name='type_financial_report_mg'>income_statement</field>-->
+			<!--<field name="unfold_all_filter" eval="True"/>-->
+			<!--<field name='note_mg' eval="True"/>-->
+		<!--</record>-->
+        <record id="report_passif" model="account.financial.html.report" >
+            <field name="name">Passif</field>
+			<field name='parent_id' ref='account_reports_mg_statements_menu'/>
+			<field name='type_financial_report_mg'>passif</field>
+			<field name="unfold_all_filter" eval="True"/>
+			<field name='note_mg' eval="True"/>
+            <!-- <field name='parent_id' ref='choco_financial_report.menu_financial_report'/> -->
+        </record>
+
+
+       		<record id="report_capitaux_propres" model="account.financial.html.report.line">
+               <field name="name">CAPITAUX PROPRES</field>
+               <field name="code">CP</field>
+               <field name="financial_report_id" ref="report_passif"/>
+               <field name="formulas">CE + PRC + ECEV + ECEQ + RNPG + ACPRN</field>
+               <field name="sequence" eval="1"/>
+               <field name="level" eval="1" />
+           </record>
+           		 <record id="report_capital_emis" model="account.financial.html.report.line">
+           		 		<field name="name">Capital émis</field>
+                        <field name="code">CE</field>
+                        <field name="parent_id" ref='report_capitaux_propres'/>
+                        <field name="formulas">CE1 - CE2</field>
+                        <field name="sequence" eval="1"/>
+                        <field name="level" eval="2" />
+                 </record>
+                <record id="report_capital_emis_additif" model="account.financial.html.report.line">
+           		 		<field name="name">Capital émis additifs</field>
+                        <field name="code">CE1</field>
+                        <field name="parent_id" ref='report_capital_emis'/>
+                        <field name="formulas">CE11 + CE12</field>
+                        <field name="sequence" eval="1"/>
+                        <field name="level" eval="3" />
+                 </record>
+                <record id="report_capital_emis_additif_balance" model="account.financial.html.report.line">
+           		 		<field name="name">Balance</field>
+                        <field name="code">CE11</field>
+                        <field name="parent_id" ref='report_capital_emis_additif'/>
+                        <field name="domain" eval="[('account_id.code', '=like', '101%')]" />
+                        <field name="formulas">sum</field>
+                        <field name="groupby">account_id</field>
+                        <field name="sequence" eval="1"/>
+                        <field name="level" eval="4" />
+                 </record>
+                <record id="report_capital_emis_additif_credit" model="account.financial.html.report.line">
+           		 		<field name="name">Crédit</field>
+                        <field name="code">CE12</field>
+                        <field name="parent_id" ref='report_capital_emis_additif'/>
+                        <field name="domain" eval="[('account_id.code', '=like', '108%')]" />
+                        <field name="formulas">sum_if_neg_groupby</field>
+                        <field name="groupby">account_id</field>
+                        <field name="sequence" eval="2"/>
+                        <field name="level" eval="4" />
+                 </record>
+                <record id="report_capital_emis_soustractif" model="account.financial.html.report.line">
+           		 		<field name="name">Capital émis soustractif</field>
+                        <field name="code">CE2</field>
+                        <field name="parent_id" ref='report_capital_emis'/>
+                        <field name="formulas">CE21 + CE22</field>
+                        <field name="sequence" eval="2"/>
+                        <field name="level" eval="3" />
+                 </record>
+                <record id="report_capital_emis_soustractif_debit" model="account.financial.html.report.line">
+           		 		<field name="name">Débit</field>
+                        <field name="code">CE21</field>
+                        <field name="parent_id" ref='report_capital_emis_soustractif'/>
+                        <field name="domain" eval="[('account_id.code', '=like', '108%')]" />
+                        <field name="groupby">account_id</field>
+                        <field name="formulas">sum_if_pos_groupby</field>
+                        <field name="sequence" eval="1"/>
+                        <field name="level" eval="4" />
+                 </record>
+                <record id="report_capital_emis_soustractif_balance" model="account.financial.html.report.line">
+           		 		<field name="name">Balance</field>
+                        <field name="code">CE22</field>
+                        <field name="parent_id" ref='report_capital_emis_soustractif'/>
+                        <field name="domain" eval="[('account_id.code', '=like', '109%')]" />
+                        <field name="groupby">account_id</field>
+                        <field name="formulas">sum</field>
+                        <field name="sequence" eval="2"/>
+                        <field name="level" eval="4" />
+                 </record>
+                 <record id="report_reserve_consolidees" model="account.financial.html.report.line">
+                        <field name="name">Prime et réserves consolidées</field>
+                        <field name="code">PRC</field>
+                        <field name="parent_id" ref='report_capitaux_propres'/>
+                        <field name="domain" eval="['|',('account_id.code', '=like', '104%'),('account_id.code', '=like', '106%')]" />
+                        <field name="formulas">sum</field>
+                        <field name="groupby">account_id</field>
+                        <field name="sequence" eval="2"/>
+                        <field name="level" eval="2" />
+                 </record>
+                 <record id="report_ecart_d_evaluation" model="account.financial.html.report.line">
+                        <field name="name">Ecart d'évaluation</field>
+                        <field name="code">ECEV</field>
+                        <field name="parent_id" ref='report_capitaux_propres'/>
+                        <field name="domain" eval="[('account_id.code', '=like', '105%')]" />
+                        <field name="formulas">sum</field>
+                        <field name="groupby">account_id</field>
+                        <field name="sequence" eval="3"/>
+                        <field name="level" eval="2" />
+                 </record>
+                 	<record id="report_ecart_d_equivalence" model="account.financial.html.report.line">
+                        <field name="name">Ecart d'équivalence</field>
+                        <field name="code">ECEQ</field>
+                        <field name="parent_id" ref='report_capitaux_propres'/>
+                        <field name="domain" eval="[('account_id.code', '=like', '107%')]" />
+                        <field name="formulas">sum</field>
+                        <field name="groupby">account_id</field>
+                        <field name="sequence" eval="4"/>
+                        <field name="level" eval="2" />
+                 	</record>
+                 <record id="report_net_result" model="account.financial.html.report.line">
+                        <field name="name">Résultat net - part du groupe</field>
+                        <field name="code">RNPG</field>
+                        <field name="parent_id" ref='report_capitaux_propres'/>
+                        <field name="formulas">N_RNEN_ISN</field>
+                        <field name="sequence" eval="5"/>
+                        <field name="level" eval="2"/>
+                 </record>
+                <!--<record id="report_net_result_credit" model="account.financial.html.report.line">-->
+                        <!--<field name="name">Résultat net - part du groupe additifs</field>-->
+                        <!--<field name="code">RNPG1</field>-->
+                        <!--<field name="parent_id" ref='report_net_result'/>-->
+                        <!--<field name="domain" eval="[('account_id.code', '=like', '120%')]" />-->
+                        <!--<field name="formulas">sum_if_neg_groupby</field>-->
+                        <!--<field name="groupby">account_id</field>-->
+                        <!--<field name="sequence" eval="1"/>-->
+                        <!--<field name="level" eval="3"/>-->
+                 <!--</record>-->
+                <!--<record id="report_net_result_debit" model="account.financial.html.report.line">-->
+                        <!--<field name="name">Résultat net - part du groupe soustractifs</field>-->
+                        <!--<field name="code">RNPG2</field>-->
+                        <!--<field name="parent_id" ref='report_net_result'/>-->
+                        <!--<field name="domain" eval="[('account_id.code', '=like', '129%')]" />-->
+                        <!--<field name="formulas">sum_if_pos_groupby</field>-->
+                        <!--<field name="groupby">account_id</field>-->
+                        <!--<field name="sequence" eval="2"/>-->
+                        <!--<field name="level" eval="3"/>-->
+                 <!--</record>-->
+                <record id="report_report_a_nouveau" model="account.financial.html.report.line">
+                        <field name="name">Autres capitaux propres - report à nouveau</field>
+                        <field name="code">ACPRN</field>
+                        <field name="parent_id" ref='report_capitaux_propres'/>
+                        <field name="formulas">ACPRN1 - ACPRN2</field>
+                        <field name="sequence" eval="5"/>
+                        <field name="level" eval="2"/>
+                 </record>
+                <record id="report_net_result_credit" model="account.financial.html.report.line">
+                        <field name="name">Autres capitaux propres - report à nouveau additifs</field>
+                        <field name="code">ACPRN1</field>
+                        <field name="parent_id" ref='report_report_a_nouveau'/>
+                        <field name="domain" eval="[('account_id.code', '=like', '110%')]" />
+                        <field name="formulas">sum_if_neg_groupby</field>
+                        <field name="groupby">account_id</field>
+                        <field name="sequence" eval="1"/>
+                        <field name="level" eval="3"/>
+                 </record>
+                <record id="report_net_result_debit" model="account.financial.html.report.line">
+                        <field name="name">Autres capitaux propres - report à nouveau soustractifs</field>
+                        <field name="code">ACPRN2</field>
+                        <field name="parent_id" ref='report_report_a_nouveau'/>
+                        <field name="domain" eval="[('account_id.code', '=like', '119%')]" />
+                        <field name="formulas">sum_if_pos_groupby</field>
+                        <field name="groupby">account_id</field>
+                        <field name="sequence" eval="2"/>
+                        <field name="level" eval="3"/>
+                 </record>
+           <record id="report_passif_non_courant" model="account.financial.html.report.line">
+               <field name="name">PASSIFS NON COURANTS</field>
+               <field name="code">PNC</field>
+               <field name="financial_report_id" ref="report_passif"/>
+               <field name="formulas">PDIFF + PIDIFF + EDF + PPCA</field>
+               <field name="sequence" eval="2"/>
+               <field name="level" eval="1" />
+           </record>
+           		<record id="report_produits_differes" model="account.financial.html.report.line">
+                    <field name="name">Produits différés : subventions d'investissement</field>
+                    <field name="code">PDIFF</field>
+                    <field name="parent_id" ref='report_passif_non_courant'/>
+                    <field name="domain" eval="['|',('account_id.code', '=like', '131%'),('account_id.code', '=like', '132%')]"/>
+                    <field name="formulas">sum</field>
+                    <field name="groupby">account_id</field>
+                    <field name="sequence" eval="1"/>
+                    <field name="level" eval="2" />
+                 </record>
+                 <record id="report_impots_differes" model="account.financial.html.report.line">
+                    <field name="name">Impôts différés</field>
+                    <field name="code">PIDIFF</field>
+                    <field name="parent_id" ref='report_passif_non_courant'/>
+                     <field name="formulas">PIDIFF1 + PIDIFF2</field>
+                    <field name="sequence" eval="2"/>
+                    <field name="level" eval="2" />
+                 </record>
+                <record id="report_impots_differes_balance" model="account.financial.html.report.line">
+                    <field name="name">Balance</field>
+                    <field name="code">PIDIFF1</field>
+                    <field name="parent_id" ref='report_impots_differes'/>
+                    <field name="domain" eval="[('account_id.code', '=like', '134%')]"/>
+                    <field name="formulas">sum</field>
+                    <field name="groupby">account_id</field>
+                    <field name="sequence" eval="1"/>
+                    <field name="level" eval="3" />
+                 </record>
+                <record id="report_impots_differes_credit" model="account.financial.html.report.line">
+                    <field name="name">Crédit</field>
+                    <field name="code">PIDIFF2</field>
+                    <field name="parent_id" ref='report_impots_differes'/>
+                    <field name="domain" eval="[('account_id.code', '=like', '138%')]"/>
+                    <field name="formulas">sum_if_neg_groupby</field>
+                    <field name="groupby">account_id</field>
+                    <field name="sequence" eval="2"/>
+                    <field name="level" eval="3" />
+                 </record>
+                 <record id="report_emprunts_dettes_financieres" model="account.financial.html.report.line">
+                    <field name="name">Emprunts et dettes financières</field>
+                    <field name="code">EDF</field>
+                    <field name="parent_id" ref='report_passif_non_courant'/>
+                    <field name="domain" eval="['|',('account_id.code', '=like', '16%'),('account_id.code', '=like', '17%')]"/>
+                    <field name="formulas">sum</field>
+                    <field name="groupby">account_id</field>
+                    <field name="sequence" eval="3"/>
+                    <field name="level" eval="2" />
+                 </record>
+                 <record id="report_provisions_produits_constates" model="account.financial.html.report.line">
+                    <field name="name">Provisions et produits constatés d'avances</field>
+                    <field name="code">PPCA</field>
+                    <field name="parent_id" ref='report_passif_non_courant'/>
+                     <field name="domain" eval="[('account_id.code', '=like', '15%')]"/>
+                    <field name="formulas">sum</field>
+                    <field name="groupby">account_id</field>
+                    <field name="sequence" eval="4"/>
+                    <field name="level" eval="2" />
+                 </record>
+
+           <record id="report_passif_courant" model="account.financial.html.report.line">
+               <field name="name">PASSIFS COURANTS</field>
+               <field name="code">PC</field>
+               <field name="financial_report_id" ref="report_passif"/>
+               <field name="formulas">DCT + FCR + PPCAPC + ADETTE + CTRES</field>
+               <field name="sequence" eval="3"/>
+               <field name="level" eval="1" />
+           </record>
+           		<record id="report_dettes_court_terme" model="account.financial.html.report.line">
+                    <field name="name">Dettes court terme - partie court terme de dettes long terme</field>
+                    <field name="code">DCT</field>
+                    <field name="parent_id" ref='report_passif_courant'/>
+                    <field name="domain" eval="['|',('account_id.code', '=like', '516%'),('account_id.code', '=like', '16%')]"/>
+                    <field name="formulas">-sum</field>
+                    <field name="sequence" eval="1"/>
+                    <field name="level" eval="2" />
+                 </record>
+                 <record id="report_fournisseur_compte_rattache" model="account.financial.html.report.line">
+                    <field name="name">Fournisseurs et comptes rattachés</field>
+                    <field name="code">FCR</field>
+                    <field name="parent_id" ref='report_passif_courant'/>
+                     <field name="formulas">- FCRB - FCRC</field>
+                    <field name="sequence" eval="2"/>
+                    <field name="level" eval="2" />
+                 </record>
+                <record id="report_fournisseur_balance" model="account.financial.html.report.line">
+                    <field name="name">Fournisseurs balance</field>
+                    <field name="code">FCRB</field>
+                    <field name="parent_id" ref='report_fournisseur_compte_rattache'/>
+                    <field name="domain" eval="['|','|','|','|','|','|','|','|','|','|','|','|','|','|','|','|','|','|',
+                    ('account_id.code', '=like', '401%'),('account_id.code', '=like', '403%'),('account_id.code', '=like', '408%')
+                    ,('account_id.code', '=like', '419%'),('account_id.code', '=like', '421%'),('account_id.code', '=like', '426%'),('account_id.code', '=like', '427%')
+                    ,('account_id.code', '=like', '4286%'),('account_id.code', '=like', '431%'),('account_id.code', '=like', '432%'),('account_id.code', '=like', '438%')
+                    ,('account_id.code', '=like', '444%'),('account_id.code', '=like', '446%'),('account_id.code', '=like', '447%'),('account_id.code', '=like', '4486%'),
+                    ('account_id.code', '=like', '455%'),('account_id.code', '=like', '457%'),('account_id.code', '=like', '464%'),('account_id.code', '=like', '4686%')]" />
+                    <field name="formulas">sum</field>
+                    <field name="groupby">account_id</field>
+                    <field name="sequence" eval="1"/>
+                    <field name="level" eval="3" />
+                 </record>
+                <record id="report_fournisseur_credit" model="account.financial.html.report.line">
+                    <field name="name">Fournisseurs crédit</field>
+                    <field name="code">FCRC</field>
+                    <field name="parent_id" ref='report_fournisseur_compte_rattache'/>
+                    <field name="domain" eval="['|','|','|','|','|',
+                    ('account_id.code', '=like', '422%'),('account_id.code', '=like', '445%'),('account_id.code', '=like', '451%')
+                    ,('account_id.code', '=like', '456%'),('account_id.code', '=like', '458%'),('account_id.code', '=like', '467%')]" />
+                    <field name="formulas">sum_if_neg_groupby</field>
+                    <field name="groupby">account_id</field>
+                    <field name="sequence" eval="2"/>
+                    <field name="level" eval="3" />
+                 </record>
+           		<record id="report_provisions_passif_courant" model="account.financial.html.report.line">
+                     <field name="name">Provisions et produits constatés d'avances - passifs courants</field>
+                     <field name="code">PPCAPC</field>
+                     <field name="parent_id" ref='report_passif_courant'/>
+                     <field name="formulas">-sum</field>
+                     <field name="domain" eval="['|',('account_id.code', '=like', '481%'), ('account_id.code', '=like', '487%')]"/>
+                     <field name="groupby">account_id</field>
+                     <field name="sequence" eval="3"/>
+                     <field name="level" eval="2" />
+                 </record>
+                 <record id="report_passif_autres_dettes" model="account.financial.html.report.line">
+                     <field name="name">Autres dettes</field>
+                     <field name="code">ADETTE</field>
+                     <field name="parent_id" ref='report_passif_courant'/>
+                     <field name="domain" eval="['|',('account_id.code', '=like', '404%'), ('account_id.code', '=like', '405%')]"/>
+                      <field name="formulas">-sum</field>
+                     <field name="groupby">account_id</field>
+                     <field name="sequence" eval="4"/>
+                     <field name="level" eval="2" />
+                 </record>
+                 <record id="report_compte_tresorerie" model="account.financial.html.report.line">
+                     <field name="name">Comptes de trésorerie </field>
+                     <field name="code">CTRES</field>
+                     <field name="parent_id" ref='report_passif_courant'/>
+                     <field name="domain" eval="[('account_id.code', '=like', '519%')]"/>
+                     <field name="formulas">-sum</field>
+                     <field name="groupby">account_id</field>
+                     <field name="sequence" eval="5"/>
+                     <field name="level" eval="2" />
+                 </record>
+
+           <record id="report_total_passif" model="account.financial.html.report.line">
+               <field name="name">TOTAL PASSIFS</field>
+               <field name="code">TP</field>
+               <field name="financial_report_id" ref="report_passif"/>
+               <field name="formulas">CP + PNC + PC</field>
+               <field name="sequence" eval="4"/>
+               <field name="level" eval="1" />
+           </record>
+	</data>
+</odoo>

@@ -1,0 +1,107 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dynamic_bypass_rule
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0-20191125\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-17 07:50+0000\n"
+"PO-Revision-Date: 2019-12-17 07:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dynamic_bypass_rule
+#: model:ir.actions.act_window,name:dynamic_bypass_rule.action_dynamic_bypass_rule
+#: model:ir.ui.menu,name:dynamic_bypass_rule.menu_dynamic_bypass_rule
+msgid "Bypass Record Rule"
+msgstr "Contournement de la règle d'enregistrement"
+
+#. module: dynamic_bypass_rule
+#: model:ir.model.fields,field_description:dynamic_bypass_rule.field_dynamic_bypass_rule__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: dynamic_bypass_rule
+#: model:ir.model.fields,field_description:dynamic_bypass_rule.field_dynamic_bypass_rule__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: dynamic_bypass_rule
+#: code:addons/dynamic_bypass_rule/models/base_models.py:0
+#, python-format
+msgid ""
+"Database fetch misses ids ({}) and has extra ids ({}), may be caused by a "
+"type incoherence in a previous request"
+msgstr ""
+
+#. module: dynamic_bypass_rule
+#: model:ir.model.fields,field_description:dynamic_bypass_rule.field_basemodel_extend__display_name
+#: model:ir.model.fields,field_description:dynamic_bypass_rule.field_dynamic_bypass_rule__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: dynamic_bypass_rule
+#: model_terms:ir.ui.view,arch_db:dynamic_bypass_rule.dynamic_bypass_rule_form_view
+msgid "Dynamic Bypass Record Rule"
+msgstr "Contournement de la règle d'enregistrement dynamique"
+
+#. module: dynamic_bypass_rule
+#: model:ir.model,name:dynamic_bypass_rule.model_dynamic_bypass_rule
+msgid "Dynamic bypass rule"
+msgstr ""
+
+#. module: dynamic_bypass_rule
+#: model:ir.model.fields,field_description:dynamic_bypass_rule.field_basemodel_extend__id
+#: model:ir.model.fields,field_description:dynamic_bypass_rule.field_dynamic_bypass_rule__id
+msgid "ID"
+msgstr ""
+
+#. module: dynamic_bypass_rule
+#: model:ir.model.fields,field_description:dynamic_bypass_rule.field_basemodel_extend____last_update
+#: model:ir.model.fields,field_description:dynamic_bypass_rule.field_dynamic_bypass_rule____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: dynamic_bypass_rule
+#: model:ir.model.fields,field_description:dynamic_bypass_rule.field_dynamic_bypass_rule__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: dynamic_bypass_rule
+#: model:ir.model.fields,field_description:dynamic_bypass_rule.field_dynamic_bypass_rule__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: dynamic_bypass_rule
+#: model:ir.model.fields,help:dynamic_bypass_rule.field_dynamic_bypass_rule__model_id
+msgid "Model on which you want to bypass the record rule."
+msgstr ""
+"Modèle sur lequel vous souhaitez contourner la règle d'enregistrement."
+
+#. module: dynamic_bypass_rule
+#: model:ir.model.fields,field_description:dynamic_bypass_rule.field_dynamic_bypass_rule__model_ids
+#: model_terms:ir.ui.view,arch_db:dynamic_bypass_rule.dynamic_bypass_rule_form_view
+msgid "Relational Models"
+msgstr "Modèles relationnels"
+
+#. module: dynamic_bypass_rule
+#: model:ir.model.fields,help:dynamic_bypass_rule.field_dynamic_bypass_rule__model_ids
+msgid "Relational models for which you want to bypass the record rule."
+msgstr ""
+"Modèles relationnels pour lesquels vous souhaitez contourner la règle "
+"d'enregistrement."
+
+#. module: dynamic_bypass_rule
+#: model:ir.model.fields,field_description:dynamic_bypass_rule.field_dynamic_bypass_rule__model_id
+msgid "Select Main Model"
+msgstr "Sélectionnez le modèle principal"
+
+#. module: dynamic_bypass_rule
+#: model:ir.model,name:dynamic_bypass_rule.model_basemodel_extend
+msgid "basemodel.extend"
+msgstr ""

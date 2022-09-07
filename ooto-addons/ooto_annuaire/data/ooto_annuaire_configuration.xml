@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="True">
+    <record id="image_employee_section_data" model="annuaire.employee.section">
+      <field name="fields_id" eval="ref('hr.field_hr_employee__image_1920')"/>
+      <field name="is_visible_front_employee" eval="True"/>
+      <field name="is_readonly" eval="True"/>
+    </record>
+
+    <record id="name_employee_section_data" model="annuaire.employee.section">
+      <field name="fields_id" eval="ref('hr.field_hr_employee__name')"/>
+      <field name="is_visible_front_employee" eval="True"/>
+      <field name="is_readonly" eval="True"/>
+    </record>
+
+    <record id="work_email_employee_section_data" model="annuaire.employee.section">
+      <field name="fields_id" eval="ref('hr.field_hr_employee__work_email')"/>
+      <field name="is_visible_front_employee" eval="True"/>
+      <field name="is_readonly" eval="True"/>
+    </record>
+
+    <function model="ooto.annuaire.rules" name="_default_annuaire"/>
+  </data>
+
+  <data>
+    <record id="employee_sect_config_data" model="annuaire.configuration">
+      <field name="name">Annuaire</field>
+      <field name="employees_fields_ids" eval="[
+			    (4,ref('ooto_annuaire.image_employee_section_data'),0),
+				(4,ref('ooto_annuaire.name_employee_section_data'),0),
+				(4,ref('ooto_annuaire.work_email_employee_section_data'),0)
+				]"/>
+    </record>
+  </data>
+</odoo>

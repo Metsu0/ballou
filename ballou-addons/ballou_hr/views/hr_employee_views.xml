@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <data>
+    <record id="view_employee_form_inherit" model="ir.ui.view">
+      <field name="name">hr.employee.form.inherit</field>
+      <field name="model">hr.employee</field>
+      <field name="inherit_id" ref="hr.view_employee_form"/>
+      <field name="arch" type="xml">
+        <field name="user_id" position="before">
+          <field name="seniority"/>
+          <field name="years" invisible="1"/>
+          <field name="months" invisible="1"/>
+          <field name="days" invisible="1"/>
+        </field>
+        <field name="identification_id" position="after">
+          <field name="cin_validity_date"/>
+        </field>
+        <field name="passport_id" position="after">
+          <field name="passport_validity_date"/>
+        </field>
+        <field name="visa_no" position="before">
+          <field name="cnaps_number"/>
+        </field>
+        <field name="coach_id" position="after">
+          <field name="internal_classification"/>
+        </field>
+      </field>
+    </record>
+
+    <record id="view_employee_filter_inherit" model="ir.ui.view">
+      <field name="name">view.employee.filter.inherit</field>
+      <field name="model">hr.employee</field>
+      <field name="inherit_id" ref="hr.view_employee_filter"/>
+      <field name="arch" type="xml">
+        <field name="job_id" position="after">
+          <field name="internal_classification"/>
+        </field>
+        <xpath expr="//group/filter[@name='group_job']" position="after">
+          <filter string="Internal classification" name="internal_classification"
+                  context="{'group_by': 'internal_classification'}"/>
+        </xpath>
+      </field>
+    </record>
+
+  </data>
+</odoo>

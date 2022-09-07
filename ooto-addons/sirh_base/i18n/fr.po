@@ -1,0 +1,302 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sirh_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0-20200409\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-19 15:55+0000\n"
+"PO-Revision-Date: 2020-10-19 15:55+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__company_activity
+msgid "Activity of company"
+msgstr "Activité de l'entreprise"
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_account_setup_bank_manual_config__agency_code
+#: model:ir.model.fields,field_description:sirh_base.field_res_partner_bank__agency_code
+msgid "Agency Code"
+msgstr ""
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__post_office_box
+msgid "BP"
+msgstr ""
+
+#. module: sirh_base
+#: model:ir.model,name:sirh_base.model_res_bank
+msgid "Bank"
+msgstr "Banque"
+
+#. module: sirh_base
+#: model:ir.model,name:sirh_base.model_res_partner_bank
+msgid "Bank Accounts"
+msgstr "Comptes bancaires"
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_account_setup_bank_manual_config__bank_code
+#: model:ir.model.fields,field_description:sirh_base.field_res_bank__bank_code
+#: model:ir.model.fields,field_description:sirh_base.field_res_partner_bank__bank_code
+msgid "Bank Code"
+msgstr "Code Banque"
+
+#. module: sirh_base
+#: model_terms:ir.ui.view,arch_db:sirh_base.sirh_view_company_form
+msgid "CNAPS"
+msgstr ""
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__cnaps_employee_contribution
+msgid "CNAPS Employee contribution (%)"
+msgstr "Cotisation Employé CNAPS (%)"
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__cnaps_employer_contribution
+msgid "CNAPS Employer Contribution (%)"
+msgstr "Cotisation Patronale CNAPS (%)"
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__cnaps_ostie_threshold
+msgid "CNAPS and OSTIE threshold"
+msgstr "Plafond des Salaires Mensuels soumis à cotisation"
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__cnaps_member_code
+msgid "CNAPS member code"
+msgstr "Code d'adherent CNaPS"
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__cnaps_threshold_employee
+msgid "CNAPS threshold employee"
+msgstr "Seuil CNAPS employé"
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__cnaps_threshold_employer
+msgid "CNAPS threshold employer"
+msgstr "Seuil CNAPS patronale"
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__child_deduction_amount
+msgid "Child deduction amount"
+msgstr ""
+
+#. module: sirh_base
+#: model:ir.model,name:sirh_base.model_res_company
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: sirh_base
+#: model_terms:ir.ui.view,arch_db:sirh_base.sirh_view_company_form
+msgid "Company configuration"
+msgstr "Configuration au niveau de l'entreprise"
+
+#. module: sirh_base
+#: model_terms:ir.ui.view,arch_db:sirh_base.sirh_view_company_form
+msgid "Configuration"
+msgstr ""
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__declaration_date
+msgid "Declaration date"
+msgstr "Date d'effet"
+
+#. module: sirh_base
+#: model:ir.model,name:sirh_base.model_hr_employee
+#: model_terms:ir.ui.view,arch_db:sirh_base.res_partner_form_inherit
+msgid "Employee"
+msgstr "Employé"
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__employee_health_contribution
+msgid "Employee Health Contribution (%)"
+msgstr "Cotisation Employé Santé (%)"
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__employer_health_contribution
+msgid "Employer Health Contribution (%)"
+msgstr "Cotisation Patronale Santé (%)"
+
+#. module: sirh_base
+#: model_terms:ir.ui.view,arch_db:sirh_base.mail_notification_light
+#: model_terms:ir.ui.view,arch_db:sirh_base.message_notification_email
+msgid "Etech Basic"
+msgstr ""
+
+#. module: sirh_base
+#: model_terms:ir.ui.view,arch_db:sirh_base.sirh_view_company_form
+msgid "FMFP"
+msgstr ""
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__fmfp_employer_contribution
+msgid "FMFP employer contribution (%)"
+msgstr "Cotisation patronale FMFP (%)"
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__fmfp_threshold
+msgid "FMFP threshold"
+msgstr "Seuil FMFP"
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__fax
+msgid "Fax"
+msgstr ""
+
+#. module: sirh_base
+#: model_terms:ir.ui.view,arch_db:sirh_base.sirh_view_company_form
+msgid "Full name"
+msgstr "Nom complet"
+
+#. module: sirh_base
+#: model_terms:ir.ui.view,arch_db:sirh_base.sirh_view_company_form
+msgid "IRI"
+msgstr ""
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__iri_rate
+msgid "IRI rate (%)"
+msgstr ""
+
+#. module: sirh_base
+#: model_terms:ir.ui.view,arch_db:sirh_base.sirh_view_company_form
+msgid "IRSA"
+msgstr ""
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__irsa_allowance
+msgid "IRSA allowance"
+msgstr "Abattement IRSA"
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__irsa_rate
+msgid "IRSA rate (%)"
+msgstr "Taux IRSA (%)"
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__irsa_threshold
+msgid "IRSA threshold"
+msgstr "Seuil IRSA"
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__meal_amount
+msgid "Meal amount"
+msgstr ""
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__minimum_hiring_salary
+msgid "Minimum hiring salary"
+msgstr "Salaire Minimum d'Embauche (S.M.E.)"
+
+#. module: sirh_base
+#: code:addons/sirh_base/models/res_company.py:0
+#: model:ir.model.fields.selection,name:sirh_base.selection__res_company__owner_title__miss
+#, python-format
+msgid "Miss"
+msgstr "Mlle"
+
+#. module: sirh_base
+#: code:addons/sirh_base/models/res_company.py:0
+#: model:ir.model.fields.selection,name:sirh_base.selection__res_company__owner_title__mr
+#, python-format
+msgid "Mr."
+msgstr "Mr"
+
+#. module: sirh_base
+#: code:addons/sirh_base/models/res_company.py:0
+#: model:ir.model.fields.selection,name:sirh_base.selection__res_company__owner_title__mrs
+#, python-format
+msgid "Mrs."
+msgstr "Mme"
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__nif
+msgid "NIF"
+msgstr ""
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__number_day_off_monthly
+msgid "Number of day off monthly"
+msgstr ""
+
+#. module: sirh_base
+#: model_terms:ir.ui.view,arch_db:sirh_base.sirh_view_company_form
+msgid "OSTIE"
+msgstr ""
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__ostie_folio
+msgid "OSTIE Folio"
+msgstr "Folio"
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__ostie_member_code
+msgid "OSTIE member code"
+msgstr "Code d'adherent OSTIE"
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__ostie_threshold_employee
+msgid "OSTIE threshold employee"
+msgstr "Seuil OSTIE employe"
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__ostie_threshold_employer
+msgid "OSTIE threshold employer"
+msgstr "Seuil OSTIE patronale"
+
+#. module: sirh_base
+#: model_terms:ir.ui.view,arch_db:sirh_base.sirh_view_company_form
+msgid "Official declaration"
+msgstr "Déclaration officielle"
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__owner_id
+msgid "Owner"
+msgstr "Propriétaire"
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__rcs
+msgid "RCS"
+msgstr ""
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__rh_responsible_id
+msgid "RH responsible"
+msgstr "Responsable RH"
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_account_setup_bank_manual_config__rib_key
+#: model:ir.model.fields,field_description:sirh_base.field_res_bank__rib_key
+#: model:ir.model.fields,field_description:sirh_base.field_res_partner_bank__rib_key
+msgid "RIB Key"
+msgstr "Clé RIB"
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__stat
+msgid "STAT"
+msgstr ""
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_res_company__owner_title
+msgid "Title"
+msgstr "Titre"
+
+#. module: sirh_base
+#. openerp-web
+#: code:addons/sirh_base/static/src/js/list_renderer.js:0
+#: code:addons/sirh_base/static/src/js/list_renderer.js:0
+#, python-format
+msgid "Undefined"
+msgstr "Indéfini"
+
+#. module: sirh_base
+#: model:ir.model.fields,field_description:sirh_base.field_hr_employee__resource_calendar_id
+msgid "Working Hours"
+msgstr "Heures de travail"

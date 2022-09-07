@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <data>
+    <record id="contract_category_tree_view" model="ir.ui.view">
+      <field name="name">hr.contract.category.tree</field>
+      <field name="model">hr.contract.category</field>
+      <field name="arch" type="xml">
+        <tree string="Contract category">
+          <field name="name"/>
+          <field name="group"/>
+          <field name="note"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="contract_category_form_view" model="ir.ui.view">
+      <field name="name">hr.contract.category.form</field>
+      <field name="model">hr.contract.category</field>
+      <field name="arch" type="xml">
+        <form string="Contract category">
+          <sheet>
+            <group>
+              <div class="oe_title">
+                <h1>
+                  <field name="name"/>
+                </h1>
+              </div>
+              <group>
+                <field name="group"/>
+              </group>
+              <group>
+                <field name="note"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="open_contract_category_action" model="ir.actions.act_window">
+      <field name="name">Contract category</field>
+      <field name="res_model">hr.contract.category</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+          Create a new contract category
+        </p>
+      </field>
+    </record>
+
+    <menuitem id="menu_hr_contract_category"
+              action="open_contract_category_action"
+              parent="hr.menu_human_resources_configuration"
+              sequence="100"
+              groups="hr.group_hr_manager"/>
+  </data>
+</odoo>

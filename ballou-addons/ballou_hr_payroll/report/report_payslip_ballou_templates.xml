@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <template id="ballou_payslip_template" name="Ballou Payslip Template">
+    <t t-call="web.basic_layout">
+      <t t-foreach="docs" t-as="doc">
+        <div style="display:flex">
+          <table width="100%">
+            <tr width="100%">
+              <t t-foreach="[1,2]" t-as="colonne">
+                <th style="border:0 ;width: 49%; padding-right: 25px; padding-left: 25px; max-width: 49%;">
+                  <div style="margin-bottom: 10px;margin-top: 0;font-size:8pt">
+                    <img t-if="doc.env.company.logo" t-att-src="image_data_uri(doc.env.company.logo)"
+                         style="max-height: 70px; opacity:1;" alt="Logo"/>
+                    <br/>
+                    <p style="margin:0">
+                      <span class="font-weight-bold">
+                        <t t-esc="doc.env.company.name"/>
+                      </span>
+                    </p>
+                    <table>
+                      <tr>
+                        <t t-esc="doc.env.company.street"/>
+                      </tr>
+                      <tr>
+                        <td width="20px">NIF</td>
+                        <td width="5px">:</td>
+                        <td>
+                          <t t-esc="doc.env.company.nif"/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="20px">STAT</td>
+                        <td width="5px">:</td>
+                        <td>
+                          <t t-esc="doc.env.company.stat"/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="20px">RCS</td>
+                        <td width="5px">:</td>
+                        <td>
+                          <t t-esc="doc.env.company.company_registry"/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="20px">Tel</td>
+                        <td width="5px">:</td>
+                        <td>
+                          <t t-esc="doc.env.company.phone"/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="20px">Email</td>
+                        <td width="5px">:</td>
+                        <td>
+                          <t t-esc="doc.env.company.email"/>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <div style="font-size:8pt;font-style:italic;">
+                    <h1 class="text-center border" style="font:12pt bold;">
+                      <strong>PAYSLIP</strong>
+                    </h1>
+                    <div>
+                      <table>
+                        <tr>
+                          Nom ou raison sociale de la société:
+                          <t t-esc="doc.env.company.name"/>
+                        </tr>
+                        <tr class="ballou_leave_allocation_current">
+                          <td width="300px">
+                            <t t-esc="doc.employee_id.name"/>
+                          </td>
+                          <td width="150px" class="ballou_leave_allocation">Leave allocation
+                            <t t-esc="doc.date_from.year"/>
+                            :
+                            <t t-esc="doc.get_leave_allocation_number_of_days(doc.date_from.year + 1)"/>
+                          </td>
+                        </tr>
+                        <tr class="ballou_leave_allocation_previous">
+                          <td>
+                            <t t-if="doc.employee_id.contract_id and doc.employee_id.contract_id.category_id"
+                               t-esc="'Classification: ' + doc.employee_id.contract_id.category_id.name"/>
+                          </td>
+                          <td class="ballou_leave_allocation">Leave allocation
+                            <t t-esc="doc.date_from.year - 1"/>
+                            :
+                            <t t-esc="doc.get_leave_allocation_number_of_days(doc.date_from.year)"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Fonction:
+                            <t t-if="doc.employee_id.job_id and doc.employee_id.job_id.name"
+                               t-esc="doc.employee_id.job_id.name"/>
+                          </td>
+                          <td>Registration number:
+                            <t t-esc="doc.employee_id.registration_number"/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            Payment of month:
+                            <t t-esc="doc.get_month_name(doc.date_from.month)"/>
+                            <t t-esc="doc.date_from.year"/>
+                            for period
+                            <t t-esc="doc.date_from.day"/>
+                            to
+                            <t t-esc="doc.date_to.day"/>
+                          </td>
+                          <td>
+                            <t t-set='is_daily'
+                               t-value="doc.line_ids.filtered(lambda line: line.code == 'SAL_JOURNALIER')"/>
+                            <t t-set='is_trial'
+                               t-value="doc.line_ids.filtered(lambda line: line.code == 'SB_TRIAL_PERIOD')"/>
+                            <t t-set='is_intern'
+                               t-value="doc.line_ids.filtered(lambda line: line.code == 'INDMT_STAGE')"/>
+                            <t t-if="not is_trial and not is_daily">
+                              <t t-set="worked_days"
+                                 t-value="doc.worked_days_line_ids.filtered(lambda nbr_of_days: nbr_of_days.work_entry_type_id.code == 'NBR_JOURS_TRAVAILLES')"/>
+                              Number of hours:
+                              <t t-esc="worked_days.number_of_hours"/>
+                            </t>
+                            <t t-else="">
+                              <t t-set="worked_days"
+                                 t-value="doc.input_line_ids.filtered(lambda nbr_of_days: nbr_of_days.code == 'NBR_JOURS_TRAVAILLES')"/>
+                              Number of days:
+                              <t t-esc="worked_days.amount"/>
+                            </t>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+                  <t t-set="margin"
+                     t-value="'margin-top:0px;' if not is_trial and not is_daily and not is_intern else 'margin-top:15%;'"/>
+                  <div t-att-style="margin+'font-size:8pt;'">
+                    <table width="100%">
+                      <tr style="margin: 5px; font-size:9pt;">
+                        <td colspan="3" style="text-align: center">BASE SALARY</td>
+                      </tr>
+                      <tr>
+                        <t t-set="basic_salary"
+                           t-value="doc.line_ids.filtered(lambda line: line.code in ('BASIC','BASIC_SANS_OSTIE','BASIC_SANS_OSTIE_SANS_CNAPS'))"/>
+                        <td class="text-right">Base salary</td>
+                        <td></td>
+                        <td width="70px">Hourly rate</td>
+                        <td class="text-right"
+                            style="border-top: 1pt solid black; border-right: 1pt solid black; border-left: 1pt solid black; padding-right: 5px;">
+                          <t t-if="basic_salary" t-esc="doc.format_currency(basic_salary.amount)"/>
+                        </td>
+                        <td t-if="not is_daily and not is_intern" class="text-right"
+                            style="border-top: 1pt solid black; border-right: 1pt solid black; border-left: 1pt solid black; padding-right: 5px;">
+                          <t t-if="basic_salary" t-esc="doc.format_currency(basic_salary.amount)"/>
+                        </td>
+                      </tr>
+
+                      <!-- DISPLAY ADDITIONAL HOURS -->
+                      <t t-set="hs_130_rule"
+                         t-value="doc.line_ids.filtered(lambda line: line.code in ('HS_130','HS_130_SANS_OSTIE','HS_130_SANS_OSTIE_SANS_CNAPS'))"/>
+                      <tr t-if="hs_130_rule and hs_130_rule.amount &gt; 0">
+                        <t t-set="hs_130_hourly_rate" t-value="(basic_salary.amount/173.33) * 1.3"/>
+                        <t t-set="decimal_point" t-value="round(hs_130_rule.amount / hs_130_hourly_rate, 2)"/>
+                        <t t-set="clean_value"
+                           t-value="round(decimal_point) if decimal_point - doc.get_decimal(decimal_point) >= 0.95 else decimal_point"/>
+                        <td class="text-right" width="80px">
+                          <t t-esc="clean_value"/>
+                        </td>
+                        <td class="text-left" width="200px" style="padding-left:10px">
+                          <t t-esc="hs_130_rule.name"/>
+                        </td>
+                        <td class="text-right" width="70px" style="padding-right: 5px;">
+                          <t t-esc="doc.format_currency(hs_130_hourly_rate)"/>
+                        </td>
+                        <td class="text-right"
+                            style="border-right: 1pt solid black; border-left: 1pt solid black; padding-right: 2px;">
+                          <t t-esc="doc.format_currency(hs_130_rule.amount)"/>
+                        </td>
+                        <td t-if="not is_daily and not is_intern" class="text-right"
+                            style="border-right: 1pt solid black; border-left: 1pt solid black; padding-right: 5px;"/>
+                      </tr>
+
+                      <t t-set="hs_150_rule"
+                         t-value="doc.line_ids.filtered(lambda line: line.code in ('HS_150','HS_150_SANS_OSTIE','HS_150_SANS_OSTIE_SANS_CNAPS'))"/>
+                      <tr t-if="hs_150_rule and hs_150_rule.amount &gt; 0">
+                        <t t-set="hs_150_hourly_rate" t-value="(basic_salary.amount/173.33) * 1.5"/>
+                        <t t-set="decimal_point" t-value="round(hs_150_rule.amount / hs_150_hourly_rate, 2)"/>
+                        <t t-set="clean_value"
+                           t-value="round(decimal_point) if decimal_point - doc.get_decimal(decimal_point) >= 0.95 else decimal_point"/>
+                        <td class="text-right" width="80px">
+                          <t t-esc="clean_value"/>
+                        </td>
+                        <td width="200px" style="padding-left:10px">
+                          <t t-esc="hs_150_rule.name"/>
+                        </td>
+                        <td class="text-right" width="70px" style="padding-right: 5px;">
+                          <t t-esc="doc.format_currency(hs_150_hourly_rate)"/>
+                        </td>
+                        <td class="text-right"
+                            style="border-right: 1pt solid black; border-left: 1pt solid black; padding-right: 5px;">
+                          <t t-esc="doc.format_currency(hs_150_rule.amount)"/>
+                        </td>
+                        <td t-if="not is_daily and not is_intern" class="text-right"
+                            style="border-right: 1pt solid black; border-left: 1pt solid black; padding-right: 5px;"/>
+                      </tr>
+                      <!-- FIN -->
+                      <t t-foreach="doc.line_ids.filtered(lambda line: line.amount &gt; 0 and line.code not in ('BASIC','BASIC_SANS_OSTIE','BASIC_SANS_OSTIE_SANS_CNAPS', 'HS_130', 'HS_130_SANS_OSTIE', 'HS_130_SANS_OSTIE_SANS_CNAPS', 'HS_150', 'HS_150_SANS_OSTIE','HS_150_SANS_OSTIE_SANS_CNAPS', 'NET', 'SNET', 'SNET_SANS_OSTIE', 'NET_SANS_OSTIE', 'SAL_NET_TRIAL_PERIOD') and not line.salary_rule_id.regulatory_deduction and line.salary_rule_id.appears_on_payslip)"
+                         t-as="line">
+                        <tr>
+                          <td width="80px"></td>
+                          <td width="200px" style="padding-left:10px">
+                            <t t-esc="line.name"/>
+                          </td>
+                          <td width="70px" class="text-right" style="padding-right: 5px;">
+                            <t t-if="not line.salary_rule_id.show_on_amount_column">
+                              <t t-esc="doc.format_currency(line.amount)"/>
+                            </t>
+                            <t t-if="line.salary_rule_id.parent_id and line.salary_rule_id.show_on_amount_column">
+                              <t t-set="basic_salary_rule"
+                                 t-value="doc.line_ids.filtered(lambda line_tmp: line_tmp.code == line.salary_rule_id.parent_id.code)"/>
+                              <t t-if="basic_salary_rule" t-esc="doc.format_currency(basic_salary_rule.amount)"/>
+                            </t>
+                          </td>
+                          <td class="text-right"
+                              t-att-style="'border-right: 1pt solid black; border-left: 1pt solid black; padding-right: 5px;'+('border-bottom: 1px solid black' if is_daily or is_intern else '')">
+                            <t t-if="line.salary_rule_id.show_on_amount_column and line.salary_rule_id.amount_column_position == 'left'"
+                               t-esc="doc.format_currency(line.amount)"/>
+                          </td>
+                          <td t-if="not is_daily and not is_intern" class="text-right"
+                              t-att-style="'border-right: 1pt solid black; border-left: 1pt solid black; padding-right: 5px;'+('border-bottom: 1px solid black' if is_daily or is_intern else '')">
+                            <t t-if="line.salary_rule_id.show_on_amount_column and line.salary_rule_id.amount_column_position == 'right'"
+                               t-esc="doc.format_currency(line.amount)"/>
+                          </td>
+                        </tr>
+                      </t>
+                      <t t-if="not is_trial and not is_daily and not is_intern">
+                        <tr>
+                          <td class="text-left" colspan="3">REGULATORY DEDUCTION</td>
+                          <td style="border-right: 1pt solid black; border-left: 1pt solid black; padding-right: 5px;"/>
+                          <td style="border-right: 1pt solid black; border-left: 1pt solid black;"/>
+                        </tr>
+                        <t t-foreach="doc.line_ids.filtered(lambda line: line.amount &gt; 0 and line.code not in ('NET', 'SNET', 'NET_SANS_OSTIE', 'SNET_SANS_OSTIE', 'NET_SANS_OSTIE_SANS_CNAPS', 'SNET_SANS_OSTIE_SANS_CNAPS') and line.salary_rule_id.regulatory_deduction and line.salary_rule_id.appears_on_payslip)"
+                           t-as="line">
+                          <tr>
+                            <td colspan="2">
+                              <t t-esc="line.name"/>
+                            </td>
+                            <td class="text-right" style="padding-right: 5px;">
+                              <t t-if="not line.salary_rule_id.show_on_amount_column">
+                                <t t-esc="doc.format_currency(line.amount)"/>
+                              </t>
+                              <t t-if="line.salary_rule_id.parent_id and line.salary_rule_id.show_on_amount_column">
+                                <t t-set="basic_salary_rule"
+                                   t-value="doc.line_ids.filtered(lambda line_tmp: line_tmp.code == line.salary_rule_id.parent_id.code)"/>
+                                <t t-if="basic_salary_rule" t-esc="doc.format_currency(basic_salary_rule.amount)"/>
+                              </t>
+                            </td>
+                            <td class="text-right"
+                                style="border-right: 1pt solid black; border-left: 1pt solid black; padding-right: 5px;">
+                              <t t-if="line.salary_rule_id.show_on_amount_column and line.salary_rule_id.amount_column_position == 'left'"
+                                 t-esc="doc.format_currency(line.amount)"/>
+                            </td>
+                            <td class="text-right"
+                                style="border-right: 1pt solid black; border-left: 1pt solid black; padding-right: 5px;">
+                              <t t-if="line.salary_rule_id.show_on_amount_column and line.salary_rule_id.amount_column_position == 'right'"
+                                 t-esc="doc.format_currency(line.amount)"/>
+                            </td>
+                          </tr>
+                        </t>
+                      </t>
+                      <t t-set="net_salary"
+                         t-value="doc.line_ids.filtered(lambda line: line.code in ('NET', 'SNET', 'SNET_SANS_OSTIE', 'NET_SANS_OSTIE','NET_SANS_OSTIE_SANS_CNAPS', 'SNET_SANS_OSTIE_SANS_CNAPS', 'SAL_NET_TRIAL_PERIOD'))"/>
+                      <tr t-if="net_salary">
+                        <td colspan="1" style="border-top: 1px solid black"></td>
+                        <td colspan="2" style="text-align: right; border-top: 1px solid black">
+                          <strong>
+                            <t t-esc="net_salary[0].name if len(net_salary) &gt; 0 else net_salary.name"/>
+                          </strong>
+                        </td>
+                        <td style="border-top: 1pt solid black;"></td>
+                        <td class="text-right"
+                            style="border-bottom: 1pt solid black; border-right: 1pt solid black; border-left: 1pt solid black; padding-right: 5px;">
+                          <t t-esc="doc.format_currency(net_salary[0].amount if len(net_salary) &gt; 0 else doc.format_currency(net_salary.amount))"/>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                  <t t-set="margin"
+                     t-value="'margin-top:5px;' if not is_trial and not is_daily and not is_intern else 'margin-top:50%;'"/>
+                  <table t-att-style="margin+'font-size:10pt;'">
+                    <tr>
+                      <th>The employer,</th>
+                      <th style="padding-left:250px">The employee,</th>
+                    </tr>
+                  </table>
+                </th>
+              </t>
+            </tr>
+          </table>
+        </div>
+        <div style="page-break-after:always;"/>
+      </t>
+    </t>
+  </template>
+</odoo>

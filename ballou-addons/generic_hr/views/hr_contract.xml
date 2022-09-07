@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="generic_hr_view_inherit_hr_contract_form" model="ir.ui.view">
+      <field name="name">view.inherit.hr.contract.form</field>
+      <field name="model">hr.contract</field>
+      <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+      <field name="arch" type="xml">
+        <field name="structure_type_id" position="after">
+          <field name="input_ids" invisible="1"/>
+        </field>
+        <xpath expr="//notebook" position="inside">
+          <page name="Payroll" string="Variable de Paie">
+            <field name="payroll_variable_ids">
+              <tree editable="bottom">
+                <field name="input_ids" widget="many2many_tags"
+                       domain="[('id','in',parent.input_ids)]" string="Entrée"/>
+                <field name="start_date" string="Date de départ"/>
+                <field name="end_date" string="Date de fin"/>
+                <field name="amount" string="Montant"/>
+                <field name="print" string="A imprimer sur fiche employé(e)?"/>
+              </tree>
+            </field>
+          </page>
+        </xpath>
+      </field>
+    </record>
+
+  </data>
+</odoo>

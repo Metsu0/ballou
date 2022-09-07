@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record id="payslip_state_export_form" model="ir.ui.view">
+      <field name="name">hr.paie.state.export.form</field>
+      <field name="model">payslip.state.export</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <group>
+              <field name="name" required="1"/>
+              <field name="year"/>
+              <field name="period"
+                     attrs="{'invisible': [('name', 'in', ('cnaps','ostie'))], 'required': [('name','in',('irsa', 'annex_irsa'))]}"/>
+              <field name="quarter"
+                     attrs="{'invisible': [('name', 'not in', ('cnaps','ostie'))], 'required': [('name','in',('cnaps','ostie'))]}"/>
+              <field name="company_id" required="1"/>
+            </group>
+          </group>
+          <footer>
+            <button string="Cancel" special="cancel" class="oe_link"/>
+            or
+            <button type="object" name="get_xls_file" string="Export" class="oe_highlight" icon="fa-file-excel-o"/>
+          </footer>
+        </form>
+      </field>
+    </record>
+
+    <record id="action_payslip_state_export" model="ir.actions.act_window">
+      <field name="name">Payslip state export</field>
+      <field name="res_model">payslip.state.export</field>
+      <field name="view_mode">form</field>
+      <field name="target">new</field>
+      <field name="view_id" ref="payslip_state_export_form"/>
+    </record>
+
+    <menuitem
+        action="action_payslip_state_export"
+        id="menu_hr_payslip_state_report"
+        name="Payslip state export"
+        parent="hr_work_entry_contract.menu_hr_payroll_root"
+        sequence="99"
+    />
+
+  </data>
+</odoo>

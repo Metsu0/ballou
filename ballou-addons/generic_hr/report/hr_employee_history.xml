@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="hr_employee_print_history" model="ir.actions.report">
+      <field name="name">Imprimer l'historique de l'employé</field>
+      <field name="model">hr.employee</field>
+      <field name="report_type">qweb-pdf</field>
+      <field name="report_name">generic_hr.print_employee_history</field>
+      <field name="report_file">generic_hr.print_employee_history</field>
+      <field name="print_report_name">'Historique - %s' % (object.name).replace('/', '')</field>
+      <field name="binding_model_id" ref="hr.model_hr_employee"/>
+      <field name="binding_type">report</field>
+    </record>
+
+    <template id="print_employee_history">
+      <t t-call="web.basic_layout">
+        <style>
+          .page{
+          font-family:arial;
+          }
+          .header-info{
+          font-size:20px;
+          font-weight:bold;
+          }
+          .body-info tr td:nth-child(1){
+          width:25%;
+          }
+          .more-info{
+          border-collapse:collapse;
+          }
+          .more-info tr th{
+          border-top:solid 1px ;
+          border-bottom:solid 1px ;
+          padding-top:8px;
+          padding-bottom:8px;
+          text-align:center;
+          }
+          .more-info tr td{
+          text-align:center;
+          padding-top:5px;
+          }
+          .employee-picture{
+          width:150px;
+          height:200px;
+          float:right;
+          }
+        </style>
+        <div class="page">
+          <t t-foreach="docs" t-as="employee">
+            <div style="display:flex; padding:20px;">
+              <center>
+                <h2>FICHE EMPLOYE</h2>
+              </center>
+              <hr style="width:100%;  border: 2px solid black;"/>
+              <table style="width:100%;" class="header-info">
+                <tr style="width:100%;">
+                  <td>
+                    <t t-esc="employee.company_id.name"/>
+                  </td>
+                  <td>
+                    <t t-esc="employee.firstname"/>
+                  </td>
+                  <td>
+                    <t t-esc="employee.lastname"/>
+                  </td>
+                </tr>
+              </table>
+              <hr style="width:100%;  border: 2px solid black;"/>
+              <table style="width:100%;" class="body-info">
+                <tr style="width:100%;">
+                  <td>Nom
+                    <span style="float:right;">
+                      <t t-if="employee.gender == 'male'">
+                        Mr
+                      </t>
+                      <t t-if="employee.gender == 'female' and employee.marital == 'single'">
+                        Mlle
+                      </t>
+                      <t t-if="employee.gender == 'female' and employee.marital != 'single'">
+                        Mme
+                      </t>
+                    </span>
+                  </td>
+                  <td>
+                    <t t-esc="employee.firstname"/>
+                  </td>
+                  <td rowspan="7" style="margin:0px !important; padding:0px !important; ">
+                    <img t-att-src="'data:image/png;base64,%s' % to_text(employee.image_1920)"
+                         class="employee-picture"/>
+
+                  </td>
+                </tr>
+                <tr style="width:100%;">
+                  <td>Prénom</td>
+                  <td>
+                    <t t-esc="employee.lastname"/>
+                  </td>
+                </tr>
+                <tr style="width:100%;">
+                  <td style="padding-top:20px;">Né(e) le</td>
+                  <td style="padding-top:20px;">
+                    <t t-if="employee.birthday">
+                      <t t-esc="employee.birthday.strftime('%d/%m/%Y')"/>
+                    </t>
+
+                  </td>
+                </tr>
+                <tr style="width:100%;">
+                  <td>N° de carte d"identité</td>
+                  <td>
+                    <t t-esc="employee.identification_id"/>
+                  </td>
+                </tr>
+                <tr style="width:100%;">
+                  <td>N° CNAPS</td>
+                  <td>
+                    <t t-esc="employee.cnaps_number"/>
+                  </td>
+                </tr>
+                <tr style="width:100%;">
+                  <td>Situation familiale</td>
+                  <td>
+
+                    <t t-esc="dict(employee.fields_get(allfields=['marital'])['marital']['selection'])[employee.marital] if employee.marital else ''"/>
+                    <!--                    <t t-esc="employee.marital"/>-->
+                  </td>
+                </tr>
+                <tr style="width:100%;">
+                  <td>Nombre d'enfant</td>
+                  <td>
+                    <t t-esc="employee.children"/>
+                  </td>
+                </tr>
+                <tr style="width:100%;">
+                  <td style="padding-top:20px;">Adresse</td>
+                  <td style="padding-top:20px;">
+                    <t t-esc="employee.address_home_id.street"/>
+                    <t t-esc="employee.address_home_id.street2"/>
+                  </td>
+                  <td>
+                    <h3 style="font-weight:bold;margin-left:350px;">
+                      <t t-esc="employee.registration_number"/>
+                    </h3>
+                  </td>
+                </tr>
+                <tr style="width:100%;">
+                  <td style="padding-top:20px;">Télephone domicile</td>
+                  <td style="padding-top:20px;">
+                    <t t-esc="employee.address_home_id.phone"/>
+                  </td>
+                </tr>
+                <tr style="width:100%;">
+                  <td>Télephone portable</td>
+                  <td>
+                    <t t-esc="employee.mobile_phone"/>
+                  </td>
+                </tr>
+                <tr style="width:100%;">
+                  <td style="padding-top:20px;">Société</td>
+                  <td style="padding-top:20px;">
+                    <t t-esc="employee.company_id.name"/>
+                  </td>
+                </tr>
+                <tr style="width:100%;">
+                  <td>Atelier</td>
+                  <td>
+                    <t t-esc="employee.department_id.name"/>
+                  </td>
+                </tr>
+                <tr style="width:100%;">
+                  <td>Fonction</td>
+                  <td>
+                    <t t-esc="employee.job_id.name"/>
+                  </td>
+                </tr>
+                <tr style="width:100%;">
+                  <td>Classification professionelle</td>
+                  <td>
+                    <t t-if="employee.contract_id">
+                      <t t-esc="employee.contract_id.category_id.name"/>
+                    </t>
+
+                  </td>
+                </tr>
+                <tr style="width:100%;">
+                  <td>Salaire mensuel</td>
+                  <td>
+                    <t t-if="employee.contract_id">
+                      <t t-if="employee.contract_id.wage_type== 'monthly'">
+                        <t t-esc="employee.contract_id.wage"/>
+                        <span t-field="employee.company_id.currency_id.symbol"/>
+                      </t>
+                      <t t-else="">
+                        <t t-esc="employee.contract_id.wage*173.33"/>
+                        <span t-field="employee.company_id.currency_id.symbol"/>
+                      </t>
+                    </t>
+                  </td>
+                </tr>
+                <tr style="width:100%;">
+                  <td>Prime mensuelle</td>
+                  <td>
+                    <t t-esc="premium_monthly"/>
+                    <span t-field="employee.company_id.currency_id.symbol"/>
+                  </td>
+                </tr>
+                <tr style="width:100%;">
+                  <td>Date d'embauche</td>
+                  <td>
+                    <t t-if="employee.first_contract_date">
+                      <t t-esc="employee.first_contract_date.strftime('%d/%m/%Y')"/>
+                    </t>
+                  </td>
+                </tr>
+                <tr style="width:100%;">
+                  <td>Date de départ</td>
+                  <td>
+                    <t t-if="len(employee.contract_ids) > 1">
+                      <t t-set="end_date_list"
+                         t-value="employee.contract_ids.filtered(lambda x : x.date_end != False).sorted(key=lambda r: r.first_contract_date)"/>
+                      <t t-if="end_date_list">
+                        <t t-esc="end_date_list[len(end_date_list)-1].date_end.strftime('%d/%m/%Y')"/>
+                      </t>
+                    </t>
+                    <t t-else="">
+                      <t t-if="employee.contract_id.date_end">
+                        <t t-esc="employee.contract_id.date_end.strftime('%d/%m/%Y')"/>
+                      </t>
+                    </t>
+                  </td>
+                </tr>
+                <tr style="width:100%;">
+                  <td>Salaire d'embauche</td>
+                  <td>
+                    <t t-if="len(employee.contract_ids) > 1">
+                      <t t-set="contract_list"
+                         t-value="employee.contract_ids.sorted(key=lambda r: r.first_contract_date)"/>
+                      <t t-if="contract_list">
+                        <t t-set="contract_id" t-value="contract_list[0]"/>
+                        <t t-if="contract_id.wage_type== 'monthly'">
+                          <t t-esc="contract_id.wage"/>
+                          <span t-field="employee.company_id.currency_id.symbol"/>
+                        </t>
+                        <t t-else="">
+                          <t t-esc="contract_id.wage*173.33"/>
+                          <span t-field="employee.company_id.currency_id.symbol"/>
+                        </t>
+                      </t>
+                    </t>
+                    <t t-else="">
+                      <t t-if="employee.contract_id">
+                        <t t-if="employee.contract_id.wage_type== 'monthly'">
+                          <t t-esc="employee.contract_id.wage"/>
+                          <span t-field="employee.company_id.currency_id.symbol"/>
+                        </t>
+                        <t t-else="">
+                          <t t-esc="employee.contract_id.wage*173.33"/>
+                          <span t-field="employee.company_id.currency_id.symbol"/>
+                        </t>
+                      </t>
+                    </t>
+                  </td>
+                </tr>
+              </table>
+              <table class="more-info" width="100%" style="margin-top: 20px;">
+                <tr>
+                  <th>Ref</th>
+                  <th>Nouvelle(s) classification</th>
+                  <th>Distinction</th>
+                  <th>Salaire</th>
+                  <th>Prime</th>
+                  <th>Avertissement</th>
+                  <th>Mise(s) à pied</th>
+                </tr>
+                <t t-foreach="more_infos" t-as="more_info_line">
+                  <tr>
+                    <td>
+                      <t t-esc="more_info_line.get('ref','')"/>
+                    </td>
+                    <td>
+                      <t t-esc="more_info_line.get('classification','')"/>
+                    </td>
+                    <td>
+                      <t t-esc="more_info_line.get('distinction','')"/>
+                    </td>
+                    <td>
+                      <t t-esc="more_info_line.get('wage','0.0 Ar')"/>
+                    </td>
+                    <td>
+                      <t t-esc="more_info_line.get('premium','0.0 Ar')"/>
+                    </td>
+                    <td>
+                      <t t-esc="more_info_line.get('caution','')"/>
+                    </td>
+                    <td>
+                      <t t-esc="more_info_line.get('layoff','')"/>
+                    </td>
+                  </tr>
+                </t>
+              </table>
+            </div>
+          </t>
+        </div>
+      </t>
+    </template>
+  </data>
+</odoo>

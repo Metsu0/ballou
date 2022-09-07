@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <!-- Theme "Password initialization" default template -->
+  <template id="password_initialization_mail_content" name="Mail Content">
+    <div class="o_mail_block_title_text">
+      <div class="o_mail_snippet_general">
+        <table align="center" cellspacing="0" cellpadding="0" border="0" class="o_mail_table_styles">
+          <tbody>
+            <tr>
+              <td width="100%" class="o_mail_h_padding o_mail_v_padding o_mail_no_colorpicker">
+                <p>Hello,</p>
+                <p>Dear<t t-esc="user_id.name"/>,
+                </p>
+                <p>Welcome to<t t-esc="company_id.name"/>,
+                </p>
+                <p>In order for you to access the platform<t t-esc="company_id.name"/>, please initialize your password
+                  by clicking on the following button:
+                  <br/>
+                </p>
+                <div class="o_mail_v_padding text-center">
+                  <a role="button" t-att-href="signup_url" class="btn btn-primary">Access to the platform</a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </template>
+
+  <!-- Add theme in editor -->
+  <template id="email_designer_snippets" inherit_id="mass_mailing.email_designer_snippets">
+    <xpath expr="//div[@id='email_designer_themes']" position="inside">
+      <div data-name="password_initialization"
+           data-img="/ooto_onboarding/static/src/img/theme_imgs/default_thumb"
+           data-images-info='{"logo": {"format": "png"}, "all": {"module": "ooto_onboarding"}}'>
+        <t t-call="ooto_onboarding.password_initialization_mail_content"/>
+      </div>
+    </xpath>
+  </template>
+</odoo>

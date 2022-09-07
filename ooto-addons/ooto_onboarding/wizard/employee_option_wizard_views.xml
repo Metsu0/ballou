@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="employee_option_wizard_form">
+      <field name="name">Employee Creation Option</field>
+      <field name="model">employee.option</field>
+      <field name="type">form</field>
+      <field name="priority">0</field>
+      <field name="arch" type="xml">
+        <p>
+          User access
+        </p>
+        <group>
+          <field name="option" widget="radio" options="{'horizontal': 0}"/>
+          <field name="date_sending_invitation"
+                 attrs="{'required': [('option', '=', 'send_notification')],'invisible': [('option', '!=', 'send_notification')]}"/>
+          <field password="True" name="password" attrs="{'invisible': [('option', '!=', 'set_password')]}"/>
+          <field password="True" name="confirm_password" attrs="{'invisible': [('option', '!=', 'set_password')]}"/>
+        </group>
+        <footer>
+          <button type="object" name="valid_option" string="Validate"
+                  class="oe_highlight _o_valid_option"/>
+          <!--<button type="object" name="edit_mail" string="Edit mail"-->
+                  <!--class="oe_highlight _o_valid_option"/>-->
+          <button string="Cancel" class="btn-default" special="cancel"/>
+        </footer>
+      </field>
+    </record>
+  </data>
+</odoo>

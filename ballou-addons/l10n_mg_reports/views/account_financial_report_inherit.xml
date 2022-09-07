@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+
+    <record id="view_account_financial_report_form_inherit" model="ir.ui.view">
+      <field name="name">account.financial.html.report.form.inherit</field>
+      <field name="model">account.financial.html.report</field>
+      <field name="inherit_id" ref="account_reports.view_account_financial_report_form"/>
+      <field name="arch" type="xml">
+        <!-- <xpath expr="//field[@name='debit_credit']" position="attributes">
+          <attribute name="attrs">{'invisible': [('type_financial_report_mg', '=', 'balance_sheet')]}</attribute>
+        </xpath> -->
+        <xpath expr="/form/sheet/group[2]" position="after">
+          <group string="PCG Malagasy">
+            <group colspan="2">
+              <field name="type_financial_report_mg" widget="radio"/>
+            </group>
+            <group>
+              <field name="note_mg"/>
+              <field name="monetary_unit_mg"/>
+              <field name="last_year_mg" attrs="{'invisible':[('type_financial_report_mg', '=', False)]}"/>
+            </group>
+            <group attrs="{'invisible':[('type_financial_report_mg', '!=', 'balance_sheet')]}">
+              <field name="n_gross_mg"/>
+              <field name="n_amort_prov_mg"/>
+            </group>
+          </group>
+        </xpath>
+      </field>
+    </record>
+  <template id="report_active_balance_sheet" name="Active Balance Sheet custom font"
+              inherit_id="account_reports.line_template">
+     <xpath expr="//tr[1]" position="attributes">
+        <attribute name="t-if">line.get('is_hidden',False) == False</attribute>
+      </xpath>
+  </template>
+  </data>
+</odoo>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <template id="purchase_report_purchaseorder_document_with_signature" inherit_id="purchase.report_purchaseorder_document">
+      <xpath expr="//div[@class='page']" position="inside">
+          <t t-set="show_user_signature" t-value="true"/>
+          <t t-set="hide_sales_conditions" t-value="true"/>
+      </xpath>
+      <xpath expr="//t[@t-set='address'] " position="replace">
+        <div class="o_subtotal">
+          <t t-set="address" class="address">
+            <div t-field="o.partner_id"
+            t-options='{"widget": "contact", "fields": ["address", "name", "phone"], "no_marker": True, "phone_icons": True}'/>
+            <p t-if="o.partner_id.vat"><t t-esc="o.company_id.country_id.vat_label or 'Tax ID'"/>: <span t-field="o.partner_id.vat"/></p>
+            <span t-if="o.partner_id.nif" class="address">NIF: <span t-field="o.partner_id.nif"/></span>
+            <br/>
+            <span t-if="o.partner_id.stat" class="address">STAT: <span t-field="o.partner_id.stat"/></span>
+            <br/>
+            <span t-if="o.partner_id.rcs" class="address">RCS: <span t-field="o.partner_id.rcs"/></span>
+          </t>
+          <t t-if="o.dest_address_id">
+              <t t-set="information_block" class="address">
+                  <strong>Shipping address:</strong>
+                  <div t-if="o.dest_address_id">
+                      <div t-field="o.dest_address_id"
+                          t-options='{"widget": "contact", "fields": ["address", "name", "phone"], "no_marker": True, "phone_icons": True}' name="purchase_shipping_address" class="address"/>
+                  </div>
+
+              </t>
+          </t>
+        </div>
+      </xpath>
+      <xpath expr="//div[@class='page']" position="before">
+        <t t-if="o.state != 'purchase'">
+          <div style="position:absolute;opacity:0.25;z-index:1000;transform:rotate(300deg);-webkit-transform:rotate(300deg);width:150%;">
+            <p style="font-size:200px;font-family: Lato, Helvetica, sans-serif;margin-bottom:250px"><b>Non Validé</b></p>
+          </div>
+        </t>
+      </xpath>
+      <xpath expr="//div[@class='oe_structure']" position="attributes">
+        <attribute name="style">margin-bottom:50px</attribute>
+      </xpath>
+      <xpath expr="//div[@id='informations']" position="attributes">
+        <attribute name="style">margin-top:50px</attribute>
+      </xpath>
+      <xpath expr="//div[@id='total']/div/table/tr [2]" position="attributes">
+        <attribute name="style">font-family: "PrimaSans bold", serif !important;</attribute>
+      </xpath>
+    </template>
+  </data>
+</odoo>

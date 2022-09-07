@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ballou_sales_res_partner_personalized_category,ballou_sales.res_partner_personalized_category,ballou_sales.model_res_partner_personalized_category,base.group_user,1,1,1,1

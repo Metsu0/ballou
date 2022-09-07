@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="0">
+    <!-- Create user profil -->
+    <record id="superadmin_profile" model="res.users">
+      <field name="lastname">Profil</field>
+      <field name="firstname">Superadmin</field>
+      <field name="login">superadmin@ooto.com</field>
+      <field name="active" eval="True"/>
+      <field name="is_user_profile" eval="True"/>
+    </record>
+
+    <record id="admin_cse_profile" model="res.users">
+      <field name="lastname">Profil</field>
+      <field name="firstname">RH</field>
+      <field name="login">admin@ooto.com</field>
+      <field name="active" eval="True"/>
+      <field name="is_user_profile" eval="True"/>
+    </record>
+
+    <record id="open_right_profile" model="res.users">
+      <field name="lastname">Profil</field>
+      <field name="firstname">Salari&#233;</field>
+      <field name="login">openright@ooto.com</field>
+      <field name="active" eval="True"/>
+      <field name="is_user_profile" eval="True"/>
+    </record>
+
+    <!-- Add group to profile -->
+    <record id="ooto_base_security.superadmin_profile" model="res.users">
+      <field name="groups_id" eval="[
+        (4, ref('base.group_no_one')),
+        (4, ref('base.group_erp_manager')),
+        (4, ref('base.group_partner_manager')),
+        (4, ref('base.group_system')),
+        (4, ref('ooto_base_security.group_super_admin_access'))]"/>
+    </record>
+
+    <record id="admin_cse_profile" model="res.users">
+      <field name="groups_id" eval="[
+        (4, ref('base.group_user')),
+        (4,ref('base.group_system')),
+        (4, ref('base.group_partner_manager'))]"/>
+    </record>
+
+    <record id="open_right_profile" model="res.users">
+      <field name="groups_id" eval="[(4, ref('base.group_portal')), (3, ref('base.group_user'))]"/>
+    </record>
+
+    <!-- Link users to profile -->
+    <record id="base.user_admin" model="res.users">
+      <field name="user_profile_id" ref="ooto_base_security.superadmin_profile"/>
+    </record>
+
+    <record id="base.template_portal_user_id" model="res.users">
+      <field name="user_profile_id" ref="ooto_base_security.open_right_profile"/>
+    </record>
+
+
+    <!-- Create "hidden group" to hide specific element (menuitem, button, ...) -->
+    <record id="make_invisible" model="res.groups">
+      <field name="name">Make invisible: add this group if you want to hide specific element (menuitem, button, ...)</field>
+    </record>
+  </data>
+
+</odoo>

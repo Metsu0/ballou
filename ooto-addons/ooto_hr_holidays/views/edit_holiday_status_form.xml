@@ -1,0 +1,17 @@
+<odoo>
+  <data>
+    <record id="ooto_edit_holiday_status_form_inherit" model="ir.ui.view">
+      <field name="name">ooto.edit.holiday.status.form.inherit</field>
+      <field name="model">hr.leave.type</field>
+      <field name="inherit_id" ref="hr_holidays.edit_holiday_status_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='code']" position="before">
+          <field name="is_exceptional_permission"/>
+        </xpath>
+        <xpath expr="//field[@name='allocation_type']" position="attributes">
+          <attribute name="attrs">{'readonly': [('is_exceptional_permission', '=', True)]}</attribute>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

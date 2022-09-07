@@ -1,0 +1,134 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* web_export_log
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0-20191125\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-31 11:40+0000\n"
+"PO-Revision-Date: 2019-12-31 11:40+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: web_export_log
+#: code:addons/web_export_log/models/export.py:0
+#, python-format
+msgid ""
+"%(records)d <b>%(model)s</b> records exported by "
+"<b>%(user)s</b>.<br><b>Fields exported:</b> %(fields)s"
+msgstr ""
+"%(records)d <b>%(model)s</b> enregistrements exportés par "
+"<b>%(user)s</b>.<br><b>Champs exportés:</b> %(fields)s"
+
+#. module: web_export_log
+#: model:ir.model,name:web_export_log.model_base
+msgid "Base"
+msgstr ""
+
+#. module: web_export_log
+#: model:ir.model.fields,field_description:web_export_log.field_export_event__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: web_export_log
+#: model:ir.model.fields,field_description:web_export_log.field_export_event__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: web_export_log
+#: model:ir.model,name:web_export_log.model_export_event
+msgid "Data Export Record"
+msgstr "Export de données"
+
+#. module: web_export_log
+#: model:ir.ui.menu,name:web_export_log.export_category
+msgid "Data Exports"
+msgstr "Export de données"
+
+#. module: web_export_log
+#: model:ir.model.fields,field_description:web_export_log.field_export_event__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: web_export_log
+#: model_terms:ir.ui.view,arch_db:web_export_log.export_view_form
+#: model_terms:ir.ui.view,arch_db:web_export_log.export_view_search
+#: model_terms:ir.ui.view,arch_db:web_export_log.export_view_tree
+msgid "Export Date"
+msgstr "Date d'export"
+
+#. module: web_export_log
+#: model_terms:ir.ui.view,arch_db:web_export_log.export_view_form
+msgid "Export Log"
+msgstr "Log de l'export"
+
+#. module: web_export_log
+#: model:ir.actions.act_window,name:web_export_log.export_action_log
+#: model:ir.ui.menu,name:web_export_log.export_menu
+#: model_terms:ir.ui.view,arch_db:web_export_log.export_view_search
+#: model_terms:ir.ui.view,arch_db:web_export_log.export_view_tree
+msgid "Export Logs"
+msgstr "Logs de l'export"
+
+#. module: web_export_log
+#: model:ir.model.fields,field_description:web_export_log.field_export_event__field_ids
+#: model_terms:ir.ui.view,arch_db:web_export_log.export_view_form
+msgid "Exported Fields"
+msgstr "Champs Exportés"
+
+#. module: web_export_log
+#: model:ir.model.fields,field_description:web_export_log.field_export_event__model_id
+msgid "Exported Model"
+msgstr "Modèle Exporté"
+
+#. module: web_export_log
+#: model:ir.model.fields,field_description:web_export_log.field_export_event__record_ids
+#: model_terms:ir.ui.view,arch_db:web_export_log.export_view_form
+msgid "Exported Records"
+msgstr "Enregistrement Exporté"
+
+#. module: web_export_log
+#: model:ir.model.fields,field_description:web_export_log.field_export_event__user_id
+msgid "Exported by"
+msgstr "Exporté par"
+
+#. module: web_export_log
+#: model:ir.model.fields,field_description:web_export_log.field_export_event__id
+msgid "ID"
+msgstr ""
+
+#. module: web_export_log
+#: model:ir.model.fields,field_description:web_export_log.field_export_event____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: web_export_log
+#: model:ir.model.fields,field_description:web_export_log.field_export_event__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: web_export_log
+#: model:ir.model.fields,field_description:web_export_log.field_export_event__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: web_export_log
+#: model:ir.model.fields,field_description:web_export_log.field_export_event__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: web_export_log
+#: code:addons/web_export_log/models/base.py:0
+#, python-format
+msgid "You do not have permission to export data"
+msgstr "Vous n'avez pas le droit d'exporter des données"
+
+#. module: web_export_log
+#: model:mail.channel,name:web_export_log.export_channel
+msgid "data exports"
+msgstr "exports de données"

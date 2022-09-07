@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="report_pcec_balance_sheet" model="account.financial.html.report">
+      <field name="name">Bilan</field>
+      <field name="analytic" eval="True"/>
+      <field name="unfold_all_filter" eval="True"/>
+      <field name="show_journal_filter" eval="True"/>
+      <field name='parent_id' ref='pcec_mg_reports.account_reports_mg_menu'/>
+    </record>
+
+<!--    <record id="account_financial_report_pcec_bs" model="account.financial.html.report.line">-->
+<!--      <field name="name">ACTIFS</field>-->
+<!--      <field name="code">ACTV_BS_MG</field>-->
+<!--      <field name="financial_report_id" ref="pcec_mg_reports.report_pcec_balance_sheet"/>-->
+<!--      <field name="formulas"/>-->
+<!--      <field name="sequence" eval="0"/>-->
+<!--      <field name="level" eval="0"/>-->
+<!--    </record>-->
+  </data>
+</odoo>

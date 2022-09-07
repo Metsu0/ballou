@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="base_view_partner_form_inherit" model="ir.ui.view">
+      <field name="name">base.partner.form.inherit</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="account.view_partner_property_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//page[@name='internal_notes']" position="before">
+          <page name="fiscal_information" string="Informations fiscales">
+            <group>
+              <field name="nif"/>
+              <field name="stat"/>
+              <field name="rcs"/>
+            </group>
+          </page>
+        </xpath>
+        <xpath expr="//field[@name='vat']" position="after">
+          <field name="category_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_create_edit':True}"/>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

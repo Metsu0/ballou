@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data noupdate = "0">
+        <record id="evcp_view_wizard" model="ir.ui.view">
+            <field name="name">Etat de variation des capitaux propres</field>
+            <field name="model">evcp.view</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="period" string = "Période" attrs = "{'invisible':[('is_custom','=',True)]}"/>
+                        <field name="is_custom" string = "Personnalisé"/>
+                        <field name="date_start" string = "Date" attrs = "{'invisible':[('is_custom','=',False)]}"/>
+<!--                        <field name="start_date" string = "Date début" attrs = "{'invisible':[('is_custom','=',False)]}"/>-->
+<!--                        <field name="end_date" string = "Date fin" attrs = "{'invisible':[('is_custom','=',False)]}"/>-->
+<!--                        <field name="start_date" string = "Date début" />-->
+<!--                        <field name="end_date" string = "Date fin" />-->
+                    </group>
+                    <footer>
+                    	<button type="object" name="confirm_evcp_view" string="Voir" class="oe_highlight"/>
+                        <button type="object" name="confirm_evcp" string="Exporter" class="oe_highlight"/>
+                        <button special="cancel" string="Annuler"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id='action_evcp' model='ir.actions.act_window'>
+            <field name="name">Variation des capitaux propres</field>
+            <field name="res_model">evcp.view</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        <menuitem id='menu_evcp' name='Etat de variation des capitaux propres' parent='l10n_mg_reports_without_pcg.account_reports_mg_statements_menu' action='action_evcp' sequence='14'/>
+	</data>
+</odoo>

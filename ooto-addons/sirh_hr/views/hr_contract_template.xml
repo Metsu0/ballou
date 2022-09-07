@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <data>
+    <template id="portal_my_details_contract_inherit" inherit_id="portal.portal_my_details" name="Portal Layout">
+      <xpath expr="//div[@class='contrat']" position="replace">
+        <div class="contrat">
+          <button id="my_contract" onclick="window.location.href = '/my/contract';">Voir mon contrat</button>
+        </div>
+      </xpath>
+    </template>
+
+    <template id="contract_template" name="Contract">
+      <t t-call="website.layout">
+        <html>
+          <head>
+            <meta charset="utf-8"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1"/>
+          </head>
+          <body>
+            <div class="container_payslip">
+              <div id="target">
+                <!-- HEADING -->
+                <div>
+                  <div class="container">
+                    <div class="payslip_header_web" id="payslip_header">
+                      <h5 class="titre_page_payslip">My Contracts</h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="block_outil">
+                  <div t-if="pager" class="o_portal_pager text-center">
+                    <t t-call="portal.pager"/>
+                  </div>
+                </div>
+                <!-- BODY -->
+                <div class="body_payslip">
+                  <div class="accordion" id="accordionpayslip">
+                    <t t-if="contract_ids">
+                      <t t-foreach="contract_ids" t-as="contract_id">
+                        <section class="payslip_section card" t-att-id="'section_%s' % contract_id.id">
+                          <div class="card-header">
+                            <div class="payslip_bloc1 collapsed" data-toggle="collapse" aria-expanded="true"
+                                 aria-controls="collapseOne">
+                              <span class="arrow-down">
+                                <a class="btn btn-info" t-attf-href="/print_contract?id=#{contract_id.id}">Download
+                                  <span class="fa fa-download"/>
+                                </a>
+                              </span>
+                              <div class="payslip_employee_info">
+                                <div class="payslip_employee_NameMail">
+                                  <span class="payslip_employee_Name"
+                                        t-field="contract_id.state"/>
+                                </div>
+                              </div>
+                              <div class="payslip_employee_infoOther">
+                                <div class="payslip_employee_infoOtherBloc">
+                                  <span t-field="contract_id.name"/>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
+                      </t>
+                    </t>
+                    <t t-else="">
+                      <div class="payslip_empty">
+                        <div class="image_payslip_empty"/>
+                        <p class="texte_payslip_empty">No <strong>Contract</strong> found
+                        </p>
+                      </div>
+                    </t>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </body>
+        </html>
+      </t>
+    </template>
+  </data>
+</odoo>

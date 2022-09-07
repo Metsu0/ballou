@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data noupdate = "0">
+
+        <record id="paperformat_mg_landscape" model="report.paperformat">
+            <field name="name">European A4 Landscape</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">10</field>
+            <field name="margin_bottom">30</field>
+            <field name="margin_left">7</field>
+            <field name="margin_right">7</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">1000</field>
+            <field name="dpi">90</field>
+        </record>
+
+
+        <template id="evcp_report_template">
+            <t t-call="web.basic_layout">
+                <table class="table table-bordered">
+                    <thead>
+                    	<tr>
+                    		<td colspan="6" class="text-center">
+                              <b> ETAT DE VARIATION DES CAPITAUX PROPRES</b>
+<!--                                EVCP du <span t-esc="start_date_ef"/> au <span t-esc="end_date_ef"/>-->
+                            </td>
+                    	</tr>
+                        <tr>
+                            <th></th>
+                            <th class="text-center">Capital social</th>
+                            <th class="text-center">Primes et Réserves</th>
+                            <th class="text-center">Ecart d'évaluation</th>
+                            <th class="text-center">Résultat et Report à nouveau</th>
+                            <th class="text-center">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-set="year_1" t-value="results.get(str(years[0]))"/>
+                        <tr>
+                            <td><b>Solde au 31 décembre <span t-esc="int(years[0]) - 1"/></b></td>
+                            <td class="text-right"><b><span t-esc="'{:10,.2f}'.format(float(year_1.get('result_prec_cap'))).replace(',', ' ').replace('.', ',')"/></b></td>
+                            <td class="text-right"><b><span t-esc="'{:10,.2f}'.format(float(year_1.get('result_prec_prime'))).replace(',', ' ').replace('.', ',')"/></b></td>
+                            <td class="text-right"><b><span t-esc="'{:10,.2f}'.format(float(year_1.get('result_prec_ecart'))).replace(',', ' ').replace('.', ',')"/></b></td>
+                            <td class="text-right"><b><span t-esc="'{:10,.2f}'.format(float(year_1.get('result_prec_result'))).replace(',', ' ').replace('.', ',')"/></b></td>
+                            <td class="text-right"><b><span t-esc="'{:10,.2f}'.format(float(year_1.get('result_prec_t'))).replace(',', ' ').replace('.', ',')"/></b></td>
+                        </tr>
+                        <tr>
+                            <td>Changement de méthode comptable</td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_1.get('change_meth_cap'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_1.get('change_meth_prime'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_1.get('change_meth_ecart'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_1.get('change_meth_result'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_1.get('change_meth_t'))).replace(',', ' ').replace('.', ',')"/></td>
+                        </tr>
+                        <tr>
+                            <td>Correction d'erreurs</td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_1.get('correct_cap'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_1.get('correct_prime'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_1.get('correct_ecart'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_1.get('correct_result'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_1.get('correct_t'))).replace(',', ' ').replace('.', ',')"/></td>
+                        </tr>
+                        <tr>
+                            <td>Autres produits et charges</td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_1.get('prod_charge_cap'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_1.get('prod_charge_prime'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_1.get('prod_charge_ecart'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_1.get('prod_charge_result'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_1.get('prod_charge_t'))).replace(',', ' ').replace('.', ',')"/></td>
+                        </tr>
+                        <tr>
+                            <td>Affectation du résultat précédent</td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_1.get('affect_cap'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_1.get('affect_prime'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_1.get('affect_ecart'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_1.get('affect_result'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_1.get('affect_t'))).replace(',', ' ').replace('.', ',')"/></td>
+                        </tr>
+                        <tr>
+                            <td>Opération en capital</td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_1.get('operation_cap'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_1.get('operation_prime'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_1.get('operation_ecart'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_1.get('operation_result'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_1.get('operation_t'))).replace(',', ' ').replace('.', ',')"/></td>
+                        </tr>
+                        <tr>
+                            <td>Résultat net au 31 déc <span t-esc="years[0]"/> </td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_1.get('resultat_cap'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_1.get('resultat_prime'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_1.get('resultat_ecart'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_1.get('resultat_result'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_1.get('resultat_t'))).replace(',', ' ').replace('.', ',')"/></td>
+                        </tr>
+                        <tr>
+                            <td><b>Solde au 31 décembre <span t-esc="years[0]"/></b></td>
+                            <td class="text-right"><b><span t-esc="'{:10,.2f}'.format(float(year_1.get('result_cap'))).replace(',', ' ').replace('.', ',')"/></b></td>
+                            <td class="text-right"><b><span t-esc="'{:10,.2f}'.format(float(year_1.get('result_prime'))).replace(',', ' ').replace('.', ',')"/></b></td>
+                            <td class="text-right"><b><span t-esc="'{:10,.2f}'.format(float(year_1.get('result_ecart'))).replace(',', ' ').replace('.', ',')"/></b></td>
+                            <td class="text-right"><b><span t-esc="'{:10,.2f}'.format(float(year_1.get('result_result'))).replace(',', ' ').replace('.', ',')"/></b></td>
+                            <td class="text-right"><b><span t-esc="'{:10,.2f}'.format(float(year_1.get('result_t'))).replace(',', ' ').replace('.', ',')"/></b></td>
+                        </tr>
+                        <t t-set="year_2" t-value="results.get(str(years[1]))"/>
+<!--                        <tr>-->
+<!--                            <td><b>Solde au 31 décembre <span t-esc="years[0]"/></b></td>-->
+<!--                            <td class="text-right"><b><span t-esc="'{:10,.2f}'.format(float(year_2.get('result_prec_cap'))).replace(',', ' ').replace('.', ',')"/></b></td>-->
+<!--                            <td class="text-right"><b><span t-esc="'{:10,.2f}'.format(float(year_2.get('result_prec_prime'))).replace(',', ' ').replace('.', ',')"/></b></td>-->
+<!--                            <td class="text-right"><b><span t-esc="'{:10,.2f}'.format(float(year_2.get('result_prec_ecart'))).replace(',', ' ').replace('.', ',')"/></b></td>-->
+<!--                            <td class="text-right"><b><span t-esc="'{:10,.2f}'.format(float(year_2.get('result_prec_result'))).replace(',', ' ').replace('.', ',')"/></b></td>-->
+<!--                            <td class="text-right"><b><span t-esc="'{:10,.2f}'.format(float(year_2.get('result_prec_t'))).replace(',', ' ').replace('.', ',')"/></b></td>-->
+<!--                        </tr>-->
+                        <tr>
+                            <td>Changement de méthode comptable</td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_2.get('change_meth_cap'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_2.get('change_meth_prime'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_2.get('change_meth_ecart'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_2.get('change_meth_result'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_2.get('change_meth_t'))).replace(',', ' ').replace('.', ',')"/></td>
+                        </tr>
+                        <tr>
+                            <td>Correction d'erreurs</td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_2.get('correct_cap'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_2.get('correct_prime'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_2.get('correct_ecart'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_2.get('correct_result'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_2.get('correct_t'))).replace(',', ' ').replace('.', ',')"/></td>
+                        </tr>
+                        <tr>
+                            <td>Autres produits et charges</td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_2.get('prod_charge_cap'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_2.get('prod_charge_prime'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_2.get('prod_charge_ecart'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_2.get('prod_charge_result'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_2.get('prod_charge_t'))).replace(',', ' ').replace('.', ',')"/></td>
+                        </tr>
+                        <tr>
+                            <td>Affectation du résultat précédent</td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_2.get('affect_cap'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_2.get('affect_prime'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_2.get('affect_ecart'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_2.get('affect_result'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_2.get('affect_t'))).replace(',', ' ').replace('.', ',')"/></td>
+                        </tr>
+                        <tr>
+                            <td>Opération en capital</td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_2.get('operation_cap'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_2.get('operation_prime'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_2.get('operation_ecart'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_2.get('operation_result'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_2.get('operation_t'))).replace(',', ' ').replace('.', ',')"/></td>
+                        </tr>
+                        <tr>
+                            <td>Résultat net au 31 déc <span t-esc="years[1]"/> </td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_2.get('resultat_cap'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_2.get('resultat_prime'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_2.get('resultat_ecart'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_2.get('resultat_result'))).replace(',', ' ').replace('.', ',')"/></td>
+                            <td class="text-right"><span t-esc="'{:10,.2f}'.format(float(year_2.get('resultat_t'))).replace(',', ' ').replace('.', ',')"/></td>
+                        </tr>
+                        <tr>
+                            <td><b>Solde au 31 décembre <span t-esc="years[1]"/></b></td>
+                            <td class="text-right"><b><span t-esc="'{:10,.2f}'.format(float(year_2.get('result_cap'))).replace(',', ' ').replace('.', ',')"/></b></td>
+                            <td class="text-right"><b><span t-esc="'{:10,.2f}'.format(float(year_2.get('result_prime'))).replace(',', ' ').replace('.', ',')"/></b></td>
+                            <td class="text-right"><b><span t-esc="'{:10,.2f}'.format(float(year_2.get('result_ecart'))).replace(',', ' ').replace('.', ',')"/></b></td>
+                            <td class="text-right"><b><span t-esc="'{:10,.2f}'.format(float(year_2.get('result_result'))).replace(',', ' ').replace('.', ',')"/></b></td>
+                            <td class="text-right"><b><span t-esc="'{:10,.2f}'.format(float(year_2.get('result_t'))).replace(',', ' ').replace('.', ',')"/></b></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </t>
+        </template>
+        <report
+            id="evcp_report"
+            model="account.move.line"
+            string="Etat de variation des capitaux propres"
+            report_type="qweb-html"
+            name="l10n_mg_reports_without_pcg.evcp_report_template"
+            file="l10n_mg_reports_without_pcg.evcp_report_template"
+            paperformat="paperformat_mg_landscape" />
+	</data>
+</odoo>

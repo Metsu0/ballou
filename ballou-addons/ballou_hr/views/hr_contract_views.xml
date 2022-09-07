@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <data>
+    <record id="view_contract_form_inherit" model="ir.ui.view">
+      <field name="name">hr.contract.form.inherit</field>
+      <field name="model">hr.contract</field>
+      <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+      <field name="arch" type="xml">
+        <field name="hr_responsible_id" position="after">
+          <field name="internal_classification"/>
+        </field>
+      </field>
+    </record>
+
+    <record id="hr_contract_view_search_inherit" model="ir.ui.view">
+      <field name="name">hr.contract.search.inherit</field>
+      <field name="model">hr.contract</field>
+      <field name="inherit_id" ref="hr_contract.hr_contract_view_search"/>
+      <field name="arch" type="xml">
+        <field name="resource_calendar_id" position="after">
+          <field name="internal_classification"/>
+        </field>
+        <xpath expr="//group/filter[@name='group_by_state']" position="after">
+          <filter string="Internal classification" name="internal_classification"
+                  context="{'group_by': 'internal_classification'}"/>
+        </xpath>
+      </field>
+    </record>
+
+
+  </data>
+</odoo>

@@ -1,0 +1,597 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* generic_hr
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e-20210913\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-05 12:40+0000\n"
+"PO-Revision-Date: 2022-07-05 12:40+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: generic_hr
+#: model:ir.actions.report,print_report_name:generic_hr.hr_employee_print_history
+msgid "'Historique - %s' % (object.name).replace('/', '')"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.payslip_state_pdf_export_template
+msgid "100% Imposables"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.payslip_state_pdf_export_template
+msgid "100% Non Imposables"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.payslip_state_pdf_export_template
+msgid "30% Imposables"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.payslip_state_pdf_export_template
+msgid "30% Non Imposables"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.payslip_state_pdf_export_template
+msgid "40% Imposables"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.payslip_state_pdf_export_template
+msgid "40% Non Imposables"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.payslip_state_pdf_export_template
+msgid "50% Imposables"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.payslip_state_pdf_export_template
+msgid "50% Non Imposables"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.generic_hr_view_inherit_hr_contract_form
+msgid "A imprimer sur fiche employé(e)?"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model.fields.selection,name:generic_hr.selection__payslip_state_export__name__annexe_hs
+msgid "Additional hour"
+msgstr "Annexe Heures Suppléméntaires"
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.print_employee_history
+msgid "Adresse"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.generic_hr_edit_holiday_status_form
+msgid "Afficher solde dans la fiche de paie?"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model.fields,field_description:generic_hr.field_hr_payroll_variable__amount
+msgid "Amount"
+msgstr "Montant"
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.payslip_state_pdf_export_template
+msgid "Annexe Heures Suppléméntaires"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.actions.report,name:generic_hr.action_export_annexe
+msgid "Annexe Heures supplémentaires"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model.fields,field_description:generic_hr.field_hr_salary_rule__appears_in_payslip_resume
+#: model:ir.model.fields,field_description:generic_hr.field_payslip_resume_column__appears_in_payslip_resume
+msgid "Appears In Payslip Resume"
+msgstr "Affiché dans l'état de paie"
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.print_employee_history
+msgid "Atelier"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model.fields.selection,name:generic_hr.selection__hr_sanction_type__type__caution
+#: model_terms:ir.ui.view,arch_db:generic_hr.print_employee_history
+msgid "Avertissement"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.print_employee_history
+msgid "Classification professionelle"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model.fields,field_description:generic_hr.field_payslip_resume_column__code
+msgid "Code"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.actions.act_window,name:generic_hr.payslip_resume_column_action
+#: model:ir.ui.menu,name:generic_hr.payslip_resume_column_menu
+msgid "Colonne état de paie"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model.fields,field_description:generic_hr.field_hr_payroll_variable__contract_id
+msgid "Contract"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model.fields,field_description:generic_hr.field_hr_payroll_variable__create_uid
+#: model:ir.model.fields,field_description:generic_hr.field_payslip_resume_column__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model.fields,field_description:generic_hr.field_hr_payroll_variable__create_date
+#: model:ir.model.fields,field_description:generic_hr.field_payslip_resume_column__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.print_employee_history
+msgid "Date d'embauche"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.generic_hr_view_inherit_hr_contract_form
+#: model_terms:ir.ui.view,arch_db:generic_hr.print_employee_history
+msgid "Date de départ"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.generic_hr_view_inherit_hr_contract_form
+msgid "Date de fin"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model.fields,field_description:generic_hr.field_hr_leave_type__display_in_payslip
+msgid "Display In Payslip"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model.fields,field_description:generic_hr.field_hr_contract__display_name
+#: model:ir.model.fields,field_description:generic_hr.field_hr_leave_type__display_name
+#: model:ir.model.fields,field_description:generic_hr.field_hr_payroll_structure__display_name
+#: model:ir.model.fields,field_description:generic_hr.field_hr_payroll_variable__display_name
+#: model:ir.model.fields,field_description:generic_hr.field_hr_payslip__display_name
+#: model:ir.model.fields,field_description:generic_hr.field_hr_payslip_config__display_name
+#: model:ir.model.fields,field_description:generic_hr.field_hr_payslip_input_type__display_name
+#: model:ir.model.fields,field_description:generic_hr.field_hr_salary_rule__display_name
+#: model:ir.model.fields,field_description:generic_hr.field_hr_sanction_type__display_name
+#: model:ir.model.fields,field_description:generic_hr.field_payslip_resume__display_name
+#: model:ir.model.fields,field_description:generic_hr.field_payslip_resume_column__display_name
+#: model:ir.model.fields,field_description:generic_hr.field_payslip_state_export__display_name
+#: model:ir.model.fields,field_description:generic_hr.field_report_generic_hr_payslip_state_pdf_export_template__display_name
+#: model:ir.model.fields,field_description:generic_hr.field_report_generic_hr_print_employee_history__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.print_employee_history
+msgid "Distinction"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model.fields,field_description:generic_hr.field_hr_leave_type__double_leave_allocation
+#: model:ir.model.fields,field_description:generic_hr.field_hr_payroll_structure__double_leave_allocation
+msgid "Double Leave Allocation"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model,name:generic_hr.model_hr_contract
+msgid "Employee Contract"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model.fields,field_description:generic_hr.field_hr_payroll_variable__end_date
+msgid "End Date"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.generic_hr_view_inherit_hr_contract_form
+msgid "Entrée"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.print_employee_history
+msgid "FICHE EMPLOYE"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.print_employee_history
+msgid "Fonction"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.generic_hr_edit_holiday_status_form
+msgid "Getsion de congé"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.generic_hr_edit_holiday_status_form
+msgid "Gérer deux soldes de congé"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.generic_hr_edit_holiday_status_form
+msgid "Gérer un seul solde de congé"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.payslip_state_pdf_export_template
+msgid "HS"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.payslip_state_pdf_export_template
+msgid "HS impos."
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model,name:generic_hr.model_hr_payroll_variable
+msgid "Hr Payroll Variable"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model,name:generic_hr.model_payslip_resume
+msgid "Hr Payslip Report"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model,name:generic_hr.model_payslip_resume_column
+msgid "Hr Payslip Report dynamic column"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model.fields,field_description:generic_hr.field_payslip_resume_column__hr_salary_rule_ids
+msgid "Hr Salary Rule"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model.fields,field_description:generic_hr.field_hr_contract__id
+#: model:ir.model.fields,field_description:generic_hr.field_hr_leave_type__id
+#: model:ir.model.fields,field_description:generic_hr.field_hr_payroll_structure__id
+#: model:ir.model.fields,field_description:generic_hr.field_hr_payroll_variable__id
+#: model:ir.model.fields,field_description:generic_hr.field_hr_payslip__id
+#: model:ir.model.fields,field_description:generic_hr.field_hr_payslip_config__id
+#: model:ir.model.fields,field_description:generic_hr.field_hr_payslip_input_type__id
+#: model:ir.model.fields,field_description:generic_hr.field_hr_salary_rule__id
+#: model:ir.model.fields,field_description:generic_hr.field_hr_sanction_type__id
+#: model:ir.model.fields,field_description:generic_hr.field_payslip_resume__id
+#: model:ir.model.fields,field_description:generic_hr.field_payslip_resume_column__id
+#: model:ir.model.fields,field_description:generic_hr.field_payslip_state_export__id
+#: model:ir.model.fields,field_description:generic_hr.field_report_generic_hr_payslip_state_pdf_export_template__id
+#: model:ir.model.fields,field_description:generic_hr.field_report_generic_hr_print_employee_history__id
+msgid "ID"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.actions.report,name:generic_hr.hr_employee_print_history
+msgid "Imprimer l'historique de l'employé"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model.fields,field_description:generic_hr.field_hr_contract__input_ids
+#: model:ir.model.fields,field_description:generic_hr.field_hr_payroll_variable__input_ids
+msgid "Input"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model.fields,field_description:generic_hr.field_hr_payslip_input_type__is_input
+msgid "Is input"
+msgstr "Est une entrée"
+
+#. module: generic_hr
+#: model:ir.model.fields,field_description:generic_hr.field_hr_contract____last_update
+#: model:ir.model.fields,field_description:generic_hr.field_hr_leave_type____last_update
+#: model:ir.model.fields,field_description:generic_hr.field_hr_payroll_structure____last_update
+#: model:ir.model.fields,field_description:generic_hr.field_hr_payroll_variable____last_update
+#: model:ir.model.fields,field_description:generic_hr.field_hr_payslip____last_update
+#: model:ir.model.fields,field_description:generic_hr.field_hr_payslip_config____last_update
+#: model:ir.model.fields,field_description:generic_hr.field_hr_payslip_input_type____last_update
+#: model:ir.model.fields,field_description:generic_hr.field_hr_salary_rule____last_update
+#: model:ir.model.fields,field_description:generic_hr.field_hr_sanction_type____last_update
+#: model:ir.model.fields,field_description:generic_hr.field_payslip_resume____last_update
+#: model:ir.model.fields,field_description:generic_hr.field_payslip_resume_column____last_update
+#: model:ir.model.fields,field_description:generic_hr.field_payslip_state_export____last_update
+#: model:ir.model.fields,field_description:generic_hr.field_report_generic_hr_payslip_state_pdf_export_template____last_update
+#: model:ir.model.fields,field_description:generic_hr.field_report_generic_hr_print_employee_history____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: generic_hr
+#: model:ir.model.fields,field_description:generic_hr.field_hr_payroll_variable__write_uid
+#: model:ir.model.fields,field_description:generic_hr.field_payslip_resume_column__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model.fields,field_description:generic_hr.field_hr_payroll_variable__write_date
+#: model:ir.model.fields,field_description:generic_hr.field_payslip_resume_column__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model.fields,field_description:generic_hr.field_hr_payslip__leave_allocation
+msgid "Leave allocation"
+msgstr "Solde de congé"
+
+#. module: generic_hr
+#: model:ir.model.fields.selection,name:generic_hr.selection__hr_sanction_type__type__layoff
+msgid "Mise à pied"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.print_employee_history
+msgid "Mise(s) à pied"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.print_employee_history
+msgid "Mlle"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.print_employee_history
+msgid "Mme"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.generic_hr_view_inherit_hr_contract_form
+msgid "Montant"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.payslip_state_pdf_export_template
+msgid ""
+"Montant Total HS Impos. et Non\n"
+"                    Impos."
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.print_employee_history
+msgid "Mr"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model.fields,field_description:generic_hr.field_payslip_resume_column__name
+#: model:ir.model.fields,field_description:generic_hr.field_payslip_state_export__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.payslip_state_pdf_export_template
+#: model_terms:ir.ui.view,arch_db:generic_hr.print_employee_history
+msgid "Nom"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.print_employee_history
+msgid "Nombre d'enfant"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.print_employee_history
+msgid "Nouvelle(s) classification"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.print_employee_history
+msgid "N° CNAPS"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.print_employee_history
+msgid "N° de carte d\"identité"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.print_employee_history
+msgid "Né(e) le"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model,name:generic_hr.model_report_generic_hr_payslip_state_pdf_export_template
+msgid "PDF export"
+msgstr "Exporter PDF"
+
+#. module: generic_hr
+#: model:ir.model,name:generic_hr.model_hr_payslip
+msgid "Pay Slip"
+msgstr "Feuille de paie"
+
+#. module: generic_hr
+#: model:ir.model.fields,field_description:generic_hr.field_hr_contract__payroll_variable_ids
+msgid "Payroll variable"
+msgstr "Varible de paie"
+
+#. module: generic_hr
+#: model:ir.model,name:generic_hr.model_hr_payslip_input_type
+msgid "Payslip Input Type"
+msgstr "Type d'entrée de la fiche de paie"
+
+#. module: generic_hr
+#: model:ir.model,name:generic_hr.model_payslip_state_export
+msgid "Payslip State Export"
+msgstr "Export des déclarations sociaux et fiscaux"
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.print_employee_history
+msgid "Prime"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.print_employee_history
+msgid "Prime mensuelle"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model.fields,field_description:generic_hr.field_hr_payroll_variable__print
+msgid "Print"
+msgstr "Imprimer"
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.print_employee_history
+msgid "Prénom"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.print_employee_history
+msgid "Ref"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.print_employee_history
+msgid "Salaire"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.payslip_state_pdf_export_template
+msgid "Salaire Horaire"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.print_employee_history
+msgid "Salaire d'embauche"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.print_employee_history
+msgid "Salaire mensuel"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model,name:generic_hr.model_hr_salary_rule
+msgid "Salary Rule"
+msgstr "Règles salariales"
+
+#. module: generic_hr
+#: model:ir.model,name:generic_hr.model_hr_payroll_structure
+msgid "Salary Structure"
+msgstr "Structure salariale"
+
+#. module: generic_hr
+#: model:ir.model.fields,field_description:generic_hr.field_hr_leave_type__simple_leave_allocation
+#: model:ir.model.fields,field_description:generic_hr.field_hr_payroll_structure__simple_leave_allocation
+msgid "Simple Leave Allocation"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.print_employee_history
+msgid "Situation familiale"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.print_employee_history
+msgid "Société"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.generic_payslip_template
+msgid "Solde de congé"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.generic_payslip_template
+msgid ""
+"Solde de congé\n"
+"            :"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model.fields,field_description:generic_hr.field_hr_payroll_variable__start_date
+msgid "Start Date"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.payslip_state_pdf_export_template
+msgid "TOTAL"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.payslip_state_pdf_export_template
+msgid "Taux"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.payslip_state_pdf_export_template
+msgid "Taux impos."
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model,name:generic_hr.model_hr_leave_type
+msgid "Time Off Type"
+msgstr "Type de congés"
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.payslip_state_pdf_export_template
+msgid "Total HS"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model.fields,field_description:generic_hr.field_hr_sanction_type__type
+msgid "Type"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.print_employee_history
+msgid "Télephone domicile"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.print_employee_history
+msgid "Télephone portable"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.payslip_state_pdf_export_template
+msgid "Valeur"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.payslip_state_pdf_export_template
+msgid "Valeur impos."
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.generic_hr_view_inherit_hr_contract_form
+msgid "Variable de Paie"
+msgstr ""
+
+#. module: generic_hr
+#: model_terms:ir.ui.view,arch_db:generic_hr.generic_hr_payslip_resume_column_view_tree
+msgid "generic_hr_payslip_resume_column_tree"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model,name:generic_hr.model_hr_payslip_config
+msgid "hr.payslip.config"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model,name:generic_hr.model_hr_sanction_type
+msgid "hr.sanction.type"
+msgstr ""
+
+#. module: generic_hr
+#: model:ir.model,name:generic_hr.model_report_generic_hr_print_employee_history
+msgid "report.generic_hr.print_employee_history"
+msgstr ""

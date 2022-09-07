@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_category_manager,hr.category.manager,model_hr_contract_category,hr_contract.group_hr_contract_manager,1,1,1,1
+access_hr_group_manager,hr.group.manager,model_hr_contract_group,hr_contract.group_hr_contract_manager,1,1,1,1
+access_hr_trial_manager,hr.trial.manager,model_hr_trial_period,hr_contract.group_hr_contract_manager,1,1,1,1

@@ -1,0 +1,1304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <template id="bloc_calendar_dashboard">
+
+        <div class="calendar_dashboard"></div>
+
+    </template>
+
+    <template id="bloc_leave_dashboard">
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="bloc-dashboard">
+          <div class="row align_items_baseline">
+          </div>
+          <div class="row">
+            <a href="/create/new/leave" class="button button-alt lien_add_bloc_dashboard DansSoldeAbsenceBoutonMobile">New absence request
+              </a>
+            <div class="col-md-12 col-lg-4 mt-10">
+              <p class="titre_bloc_dashboard">Absence request</p>
+              <t>
+                <div id="cont" data-pct="0">
+                  <svg id="svg" width="120" height="120" viewPort="0 0 100 100" version="1.1"
+                       xmlns="http://www.w3.org/2000/svg">
+                    <circle r="50" cx="60" cy="60" fill="transparent" stroke-dasharray="313.48"
+                            stroke-dashoffset="0"></circle>
+                    <circle id="bar" r="50" cx="60" cy="60" fill="transparent" stroke-dasharray="313.48"
+                            stroke-dashoffset="0"></circle>
+                  </svg>
+                </div>
+                <div class="text-center" style="display:none;">
+                  <h2>
+                    <t t-if="current_leave_allocation and current_leave_request">
+                      <t t-if="current_leave_allocation - current_leave_request > 1">
+                        <t t-esc="'%.2f'%(current_leave_allocation - current_leave_request)"/>
+                      </t>
+                      <t>
+                        0
+                      </t>
+                      <t t-if="current_leave_allocation - current_leave_request > 1">
+                        Day(s)
+                      </t>
+                      <t t-else="">
+                        Day
+                      </t>
+                    </t>
+                    <t t-elif="not current_leave_request and current_leave_allocation">
+                      <t t-esc="current_leave_allocation"/>
+                      <t t-if="current_leave_allocation">
+                        <t t-if="current_leave_allocation > 1">
+                          day(s)
+                        </t>
+                        <t t-else="">
+                          day
+                        </t>
+                      </t>
+                    </t>
+                    <t t-else="">0 Day</t>
+                  </h2>
+                </div>
+              </t>
+            </div>
+            <div class="col-md-12 col-lg-8 text-right">
+              <a href="/create/new/leave" class="button button-alt lien_add_bloc_dashboard DansSoldeAbsenceBouton">New absence request
+              </a>
+              <div class="conges_about">
+                <div class="conges_about_bloc_first">
+                  <div class="conges_about_bloc_element uppercase">
+                    <p class="conges_about_bloc_element_left">
+                      Request at
+                      <t t-esc="datetime.datetime.now().strftime('%d-%m-%Y')"/>
+                    </p>
+                    <p class="conges_about_bloc_element_right">Total</p>
+                  </div>
+                  <div class="conges_about_bloc_element">
+                    <p class="conges_about_bloc_element_left bold">ABSENCE</p>
+                    <p class="conges_about_bloc_element_right bold">
+                      <t t-if="total_rest_leave and total_rest_leave > 0">
+                        <t t-esc="total_rest_leave"/>
+                      </t>
+                      <t t-else="">0</t>
+                    </p>
+                  </div>
+                </div>
+                <div class="conges_about_bloc">
+                  <div class="conges_about_bloc_element">
+                    <p class="conges_about_bloc_element_left bold">CP N-1</p>
+                    <p class="conges_about_bloc_element_right bold">
+                      <t t-if="last_leave_allocation and last_leave_request">
+                        <t t-if="last_leave_allocation - last_leave_request > 0">
+                          <t t-esc="'%.2f'%(last_leave_allocation - last_leave_request)"/>
+                        </t>
+                        <t>
+                          0
+                        </t>
+                      </t>
+                      <t t-if="not last_leave_request">
+                        <t t-esc="last_leave_allocation"/>
+                      </t>
+                    </p>
+                  </div>
+                  <div class="conges_about_bloc_element">
+                    <p class="conges_about_bloc_element_left color_7a8488">Acquired</p>
+                    <p class="conges_about_bloc_element_right color_7a8488">
+                      <t t-esc="last_leave_allocation"/>
+                      <t t-if="last_leave_allocation">
+                        <t t-if="last_leave_allocation > 1">
+                          day(s)
+                        </t>
+                        <t t-else="">
+                          day
+                        </t>
+                      </t>
+                    </p>
+                  </div>
+                  <div class="conges_about_bloc_element">
+                    <p class="conges_about_bloc_element_left color_7a8488">Taken</p>
+                    <p class="conges_about_bloc_element_right color_7a8488">
+                      <t t-esc="last_leave_request"/>
+                      <t t-if="last_leave_request">
+                        <t t-if="last_leave_request > 1">
+                          day(s)
+                        </t>
+                        <t t-else="">
+                          day
+                        </t>
+                      </t>
+                    </p>
+                  </div>
+                </div>
+                <div class="conges_about_bloc">
+                  <div class="conges_about_bloc_element">
+                    <p class="conges_about_bloc_element_left bold">CP N</p>
+                    <p id="reste_conge" class="conges_about_bloc_element_right bold">
+                      <t t-if="current_leave_allocation and current_leave_request">
+                        <t t-if="current_leave_allocation - current_leave_request > 0">
+                          <t t-esc="'%.2f'%(current_leave_allocation - current_leave_request)"/>
+                        </t>
+                        <t t-else="">0</t>
+                      </t>
+                      <t t-if="not current_leave_request">
+                        <t t-esc="current_leave_allocation"/>
+                      </t>
+                    </p>
+                  </div>
+                  <div class="conges_about_bloc_element">
+                    <p class="conges_about_bloc_element_left color_7a8488">Acquired</p>
+                    <p class="conges_about_bloc_element_right">
+                      <t t-esc="current_leave_allocation"/>
+                      <t t-if="current_leave_allocation">
+                        <t t-if="current_leave_allocation > 1">
+                          day(s)
+                        </t>
+                        <t t-else="">
+                          day
+                        </t>
+                      </t>
+                      <input type="text" t-att-value="current_leave_allocation" hidden="hidden" class="acquiredcpnvalue"/>
+                    </p>
+                  </div>
+                  <div class="conges_about_bloc_element">
+                    <p class="conges_about_bloc_element_left color_7a8488">Taken</p>
+                    <p class="conges_about_bloc_element_right color_7a8488">
+                      <t t-esc="current_leave_request"/>
+                      <t t-if="current_leave_request">
+                        <t t-if="current_leave_request > 1">
+                          day(s)
+                        </t>
+                        <t t-else="">
+                          day
+                        </t>
+                      </t>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="see_all">
+              <a href="/my/leaves" class="button button-alt see_all_button">See all</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+
+
+    <template id="bloc_leave_dashboard_for_dashboard">
+
+        <div class="bloc-dashboard">
+          <div class="row align_items_baseline">
+          </div>
+          <div class="row">
+            <div class="col-md-12 col-lg-4 mt-10">
+              <p class="titre_bloc_dashboard mobile">Absence request</p>
+              <a href="/create/new/leave" class="button button-alt lien_add_bloc_dashboard mobile">New absence request
+              </a>
+              <t>
+                <div id="cont" data-pct="0">
+                  <svg id="svg" width="120" height="120" viewPort="0 0 100 100" version="1.1"
+                       xmlns="http://www.w3.org/2000/svg">
+                    <circle r="50" cx="60" cy="60" fill="transparent" stroke-dasharray="313.48"
+                            stroke-dashoffset="0"></circle>
+                    <circle id="bar" r="50" cx="60" cy="60" fill="transparent" stroke-dasharray="313.48"
+                            stroke-dashoffset="0"></circle>
+                  </svg>
+                </div>
+                <div class="text-center" style="display:none;">
+                  <h2>
+                    <t t-if="current_leave_allocation and current_leave_request">
+                      <t t-if="current_leave_allocation - current_leave_request > 1">
+                        <t t-esc="'%.2f'%(current_leave_allocation - current_leave_request)"/>
+                      </t>
+                      <t>
+                        0
+                      </t>
+                      <t t-if="current_leave_allocation - current_leave_request > 1">
+                        Day(s)
+                      </t>
+                      <t t-else="">
+                        Day
+                      </t>
+                    </t>
+                    <t t-elif="not current_leave_request and current_leave_allocation">
+                      <t t-esc="current_leave_allocation"/>
+                      <t t-if="current_leave_allocation">
+                        <t t-if="current_leave_allocation > 1">
+                          day(s)
+                        </t>
+                        <t t-else="">
+                          day
+                        </t>
+                      </t>
+                    </t>
+                    <t t-else="">0 Day</t>
+                  </h2>
+                </div>
+              </t>
+            </div>
+            <div class="col-md-12 col-lg-8 text-right">
+              <a href="/create/new/leave" class="button button-alt lien_add_bloc_dashboard">New absence request
+              </a>
+              <div class="conges_about">
+                <div class="conges_about_bloc_first">
+                  <div class="conges_about_bloc_element uppercase">
+                    <p class="conges_about_bloc_element_left">
+                      Request at
+                      <t t-esc="datetime.datetime.now().strftime('%d-%m-%Y')"/>
+                    </p>
+                    <p class="conges_about_bloc_element_right">Total</p>
+                  </div>
+                  <div class="conges_about_bloc_element">
+                    <p class="conges_about_bloc_element_left bold">ABSENCE</p>
+                    <p class="conges_about_bloc_element_right bold">
+                      <t t-if="total_rest_leave and total_rest_leave > 0">
+                        <t t-esc="total_rest_leave"/>
+                      </t>
+                      <t t-else="">0</t>
+                    </p>
+                  </div>
+                </div>
+                <div class="conges_about_bloc">
+                  <div class="conges_about_bloc_element">
+                    <p class="conges_about_bloc_element_left bold">CP N-1</p>
+                    <p class="conges_about_bloc_element_right bold">
+                      <t t-if="last_leave_allocation and last_leave_request">
+                        <t t-if="last_leave_allocation - last_leave_request > 0">
+                          <t t-esc="'%.2f'%(last_leave_allocation - last_leave_request)"/>
+                        </t>
+                        <t>
+                          0
+                        </t>
+                      </t>
+                      <t t-if="not last_leave_request">
+                        <t t-esc="last_leave_allocation"/>
+                      </t>
+                    </p>
+                  </div>
+                  <div class="conges_about_bloc_element">
+                    <p class="conges_about_bloc_element_left color_7a8488">Acquired</p>
+                    <p class="conges_about_bloc_element_right color_7a8488">
+                      <t t-esc="last_leave_allocation"/>
+                      <t t-if="last_leave_allocation">
+                        <t t-if="last_leave_allocation > 1">
+                          day(s)
+                        </t>
+                        <t t-else="">
+                          day
+                        </t>
+                      </t>
+                    </p>
+                  </div>
+                  <div class="conges_about_bloc_element">
+                    <p class="conges_about_bloc_element_left color_7a8488">Taken</p>
+                    <p class="conges_about_bloc_element_right color_7a8488">
+                      <t t-esc="last_leave_request"/>
+                      <t t-if="last_leave_request">
+                        <t t-if="last_leave_request > 1">
+                          day(s)
+                        </t>
+                        <t t-else="">
+                          day
+                        </t>
+                      </t>
+                    </p>
+                  </div>
+                </div>
+                <div class="conges_about_bloc">
+                  <div class="conges_about_bloc_element">
+                    <p class="conges_about_bloc_element_left bold">CP N</p>
+                    <p id="reste_conge" class="conges_about_bloc_element_right bold">
+                      <t t-if="current_leave_allocation and current_leave_request">
+                        <t t-if="current_leave_allocation - current_leave_request > 0">
+                          <t t-esc="'%.2f'%(current_leave_allocation - current_leave_request)"/>
+                        </t>
+                        <t t-else="">0</t>
+                      </t>
+                      <t t-if="not current_leave_request">
+                        <t t-esc="current_leave_allocation"/>
+                      </t>
+                    </p>
+                  </div>
+                  <div class="conges_about_bloc_element">
+                    <p class="conges_about_bloc_element_left color_7a8488">Acquired</p>
+                    <p class="conges_about_bloc_element_right">
+                      <t t-esc="current_leave_allocation"/>
+                      <t t-if="current_leave_allocation">
+                        <t t-if="current_leave_allocation > 1">
+                          day(s)
+                        </t>
+                        <t t-else="">
+                          day
+                        </t>
+                      </t>
+                      <input type="text" t-att-value="current_leave_allocation" hidden="hidden" class="acquiredcpnvalue"/>
+                    </p>
+                  </div>
+                  <div class="conges_about_bloc_element">
+                    <p class="conges_about_bloc_element_left color_7a8488">Taken</p>
+                    <p class="conges_about_bloc_element_right color_7a8488">
+                      <t t-esc="current_leave_request"/>
+                      <t t-if="current_leave_request">
+                        <t t-if="current_leave_request > 1">
+                          day(s)
+                        </t>
+                        <t t-else="">
+                          day
+                        </t>
+                      </t>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="see_all">
+              <a href="/my/leaves" class="button button-alt see_all_button">See all</a>
+            </div>
+          </div>
+        </div>
+
+    </template>
+
+    <template id="my_portal_leaves" name="My leaves" inherit_id="ooto_hr_account.portal_my_details_inherit">
+      <xpath expr="//div[@class='emplacement_calendrier_dashboard animationblockeffect']" position="inside">
+        <t t-call="ooto_hr_holidays_front.bloc_calendar_dashboard"/>
+      </xpath>
+      <xpath expr="//div[@class='emplacement_soldeconge_dashboard animationblockeffect']" position="inside">
+        <t t-call="ooto_hr_holidays_front.bloc_leave_dashboard_for_dashboard"/>
+      </xpath>
+    </template>
+
+    <template id="portal_leave_inherit" name="My leaves inherit" inherit_id="portal_leave.portal_my_leaves">
+      <xpath expr="//t/t[2]" position="replace">
+        <t t-set="title">leaves</t>
+        <div class="creer_solde_bloc mt-100">
+          <a href="/create/new/leave" class="lien_add_bloc_dashboard" style="width:auto;">Create leave</a>
+          <a href="/absence/request" class="bouton_solde_absence">Absence request</a>
+        </div>
+        <h1 class="leave_title bold font-20">Absence submitted</h1>
+        <div class="block_outil">
+          <div>
+            <form role="search" t-attf-action="/my/leaves" method="get">
+              <div class="input-group input_group_">
+                <input type="text" name="search" class="search-query form-control oe_search_box text-left"
+                       placeholder="Search..."
+                       t-att-value="search"/>
+                <div class="input-group-append">
+                  <button type="submit" class="btn btn-secondary oe_search_button pt-0" aria-label="Search"
+                          title="Search">
+                    <i class="fa fa-search"/>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="dropdown dropdown_sorty_by">
+            <a role="button" href="#" class="dropdown-toggle btn btn-secondary pt-0" data-toggle="dropdown">
+              <t t-if="current_filter">
+                <span>
+                  Filtered by :
+                  <t t-raw="current_filter"/>
+                </span>
+              </t>
+              <t t-else="1">
+                <span>Filter by</span>
+              </t>
+            </a>
+            <div class="dropdown-menu" role="menu">
+              <t t-foreach="filters" t-as="filterby">
+                <a role="menuitem"
+                   t-att-href="keep('/my/leaves', filter=filterby[0] if filterby[0] != 'none' else None)"
+                   class="dropdown-item">
+                  <span t-raw="filterby[1]"/>
+                </a>
+              </t>
+            </div>
+          </div>
+        </div>
+      </xpath>
+      <xpath expr="//t/t[3]" position="replace">
+        <t t-if="not leaves">
+          <div class="no_list">
+            <img src="/ooto_hr_holidays_front/static/src/img/no_leaves.svg"/>
+            <p class="no_leave font-20">No <span class="bold">absence request</span> found
+            </p>
+          </div>
+        </t>
+      </xpath>
+    </template>
+    <template id="absence_request_templates">
+      <t t-call="portal.portal_layout">
+        <div class="row">
+          <div class="bloc_button">
+            <button class="bouton_retour" onclick="history.back()" data-oe-model="ir.ui.view" data-oe-id="1558"
+                    data-oe-field="arch" data-oe-xpath="/t[1]/t[1]/div[2]/div[2]/button[1]">Back
+            </button>
+          </div>
+          <t t-call="ooto_hr_holidays_front.bloc_leave_dashboard"/>
+        </div>
+      </t>
+    </template>
+    <template id="portal_leaves_list" inherit_id="portal_leave.portal_my_leaves">
+      <xpath expr="//t/t[4]" position="replace">
+        <t t-if="leaves">
+          <div t-if="pager">
+            <t t-call="website.pager"/>
+          </div><br/>
+
+          <div class="row content-list-conge">
+            <div t-foreach="leaves" t-as="leave">
+              <ul class="list-group list-conge">
+                <li class="list-group-item">
+                  <h2 class="font-14 bold">
+                    <t t-esc="leave.name"></t>
+                  </h2>
+                </li>
+                <li class="list-group-item font-12 fonction_img">
+                  <img t-att-src="leave.employee_id.image_1920 and 'data:image/png;base64,%s'%(leave.employee_id.image_1920.decode('utf-8'))"
+                       width="24" height="24" alt=""/>
+                  <span class="test">
+                    <t t-esc="leave.employee_id.name"/>
+                    the
+                    <t t-esc="leave.create_date.strftime('%d-%m-%Y')"/>
+                  </span>
+                </li>
+                <li class="list-group-item days_date">
+                  <span class="days_date_content">
+                    <span>
+                      <span class="bold">Type :</span>
+                      <t t-esc="leave.holiday_status_id.name"/>
+                    </span>
+                    <span class="days bold">
+                      <t t-if="leave.number_of_days_display > 1">
+                        <t t-esc="leave.return_leave_count(leave.number_of_days_display)"/>
+                        day(s)
+                      </t>
+                      <t t-else="">
+                        <t t-esc="leave.return_leave_count(leave.number_of_days_display)"/>
+                        day
+                      </t>
+                    </span>
+                    <span class="date">
+                      <t t-if="not leave.request_unit_half">
+                        from
+                        <t t-if="leave.request_date_from">
+                          <t t-esc="leave.request_date_from.strftime('%d-%m-%Y')"/>
+                        </t>
+                        to
+                        <t t-if="leave.request_date_to">
+                          <t t-esc="leave.request_date_to.strftime('%d-%m-%Y')"/>
+                        </t>
+                      </t>
+                      <t t-else="">
+                        <t t-if="leave.request_date_from">
+                          <t t-esc="leave.request_date_from.strftime('%d-%m-%Y')"/>
+                        </t>
+                        <t t-if="leave.request_date_from_period == 'am'">Morning</t>
+                        <t t-else="">Afternoon</t>
+                      </t>
+                    </span>
+                  </span>
+                </li>
+                <li class="list-group-item state">
+                  <span class="bold">state</span>
+                  <div>
+                    <t t-if="leave.state == 'draft'">
+                      <span class="badge badge-pill badge-info">To Submit</span>
+                    </t>
+                    <t t-if="leave.state == 'cancel'">
+                      <span class="badge badge-pill badge-warning">Cancelled</span>
+                    </t>
+                    <t t-if="leave.state == 'confirm'">
+                      <span class="badge badge-pill badge-info">To Approve</span>
+                    </t>
+                    <t t-if="leave.state == 'refuse'">
+                      <span class="badge badge-pill badge-danger">Refused</span>
+                    </t>
+                    <t t-if="leave.state == 'validate1'">
+                      <span class="badge badge-pill badge-info">Second Approval</span>
+                    </t>
+                    <t t-if="leave.state == 'validate'">
+                      <span class="badge badge-pill badge-success">Valided</span>
+                    </t>
+                  </div>
+                </li>
+                <t t-if="leave.state in ('validate','validate1')">
+                  <li class="list-group-item fonction_img">
+                    <t t-if="leave.approve_date">
+                      <t t-if="leave.validation_type == 'both'">
+                        <img t-att-src="leave.second_approver_id.image_1920 and 'data:image/png;base64,%s'%(leave.second_approver_id.image_1920.decode('utf-8'))"
+                             width="24" height="24" alt=""/>
+                        <t t-esc="leave.second_approver_id.name"/>
+                      </t>
+                      <t t-if="leave.validation_type != 'both'">
+                        <img t-att-src="leave.first_approver_id.image_1920 and 'data:image/png;base64,%s'%(leave.first_approver_id.image_1920.decode('utf-8'))"
+                             width="24" height="24" alt=""/>
+                        <t t-esc="leave.first_approver_id.name"/>
+                      </t>
+                    </t>
+                    <t t-if="not leave.approve_date">
+                      <t t-if="leave.approve_date_first">
+                        <img t-att-src="leave.first_approver_id.image_1920 and 'data:image/png;base64,%s'%(leave.first_approver_id.image_1920.decode('utf-8'))"
+                             width="24" height="24" alt=""/>
+                        <t t-esc="leave.first_approver_id.name"/>
+                      </t>
+                    </t>
+
+                    the
+                    <t t-if="leave.approve_date">
+                      <t t-esc="leave.approve_date.strftime('%d-%m-%Y')"/>
+                    </t>
+                    <t t-if="not leave.approve_date">
+                      <t t-if="leave.approve_date_first">
+                        <t t-esc="leave.approve_date_first.strftime('%d-%m-%Y')"/>
+                      </t>
+                    </t>
+                  </li>
+                </t>
+                <t t-elif="leave.state == 'refuse'">
+                  <li class="list-group-item fonction_img">
+                    <img t-att-src="leave.second_approver_id.image_1920 and 'data:image/png;base64,%s'%(leave.second_approver_id.image_1920.decode('utf-8'))"
+                         width="24" height="24" alt=""/>
+                    <t t-esc="leave.second_approver_id.name"/>
+                    the
+                    <t t-if="leave.refuse_date">
+                      <t t-esc="leave.refuse_date.strftime('%d-%m-%Y')"/>
+                    </t>
+                  </li>
+                </t>
+                <t t-elif="leave.state == 'cancel'">
+                  <li class="list-group-item fonction_img">
+                    <img t-att-src="leave.cancel_approver_id.image_1920 and 'data:image/png;base64,%s'%(leave.cancel_approver_id.image_1920.decode('utf-8'))"
+                         width="24" height="24" alt=""/>
+                    <t t-esc="leave.cancel_approver_id.name"/>
+                    the
+                    <t t-if="leave.cancel_date">
+                      <t t-esc="leave.cancel_date.strftime('%d-%m-%Y')"/>
+                    </t>
+                  </li>
+                </t>
+                <t t-if="leave.state == 'confirm'">
+                  <li class="list-group-item confirm">
+                    <!-- <t t-if="leave.state == 'draft'"> -->
+                    <!--
+                   <a t-attf-href="/leave/submit/#{leave.id}?{{ keep_query() }}">Submit</a>
+                   -->
+                    <!-- </t> -->
+                    <t t-if="leave.state == 'confirm'">
+                      <a class="reset" t-attf-href="/leave/cancel/#{leave.id}?{{ keep_query() }}">Cancel</a>
+                      <a class="submit" t-attf-href="/leave/editable/#{leave.id}?{{ keep_query() }}">Edit</a>
+                    </t>
+                    <!-- <t t-if="leave.state != 'confirm'"> -->
+                    <!--
+                   <a t-attf-href="/leave/readonly/#{leave.id}?{{ keep_query() }}">
+                   -->
+                    <!-- See -->
+                    <!-- </a> -->
+                    <!-- </t> -->
+                  </li>
+                </t>
+              </ul>
+            </div>
+          </div>
+          <div t-if="pager">
+            <t t-call="website.pager"/>
+          </div>
+        </t>
+      </xpath>
+    </template>
+
+    <template id="registration_leave">
+      <t t-call="portal.portal_layout">
+        <div class="mt-100"></div>
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-4">
+            <div class="solde_link">
+              <button class="bouton_retour text-left" onclick="history.back()">Back</button>
+              <a href="/absence/request" class="bouton_solde_absence">Absence request</a>
+            </div>
+            <div class="col-md-12 bloc-dashboard soumettre_absence">
+              <div class="row align_items_baseline">
+                <div class="col-md-12">
+                  <p class="titre_bloc_dashboard text-left">Absence request</p>
+                </div>
+              </div>
+              <div id="cont" data-pct="0">
+                <svg id="svg" width="120" height="120" viewPort="0 0 100 100" version="1.1"
+                     xmlns="http://www.w3.org/2000/svg">
+                  <circle r="50" cx="60" cy="60" fill="transparent" stroke-dasharray="313.48"
+                          stroke-dashoffset="0"></circle>
+                  <circle id="bar" r="50" cx="60" cy="60" fill="transparent" stroke-dasharray="313.48"
+                          stroke-dashoffset="0"></circle>
+                </svg>
+              </div>
+              <div class="input_percent" style="display:none;">
+                <label for="percent">Type a percent!</label>
+                <input id="percent" name="percent"/>
+              </div>
+              <div class="row">
+                <div class="col-md-12" style="display:none;">
+                  <t>
+                    <div class="donutty_conge_bolc">
+                      <h2 class="text-center">
+                        <t t-if="current_leave_allocation and current_leave_request">
+                          <t t-if="current_leave_allocation - current_leave_request > 0">
+                            <t t-esc="current_leave_allocation - current_leave_request"/>
+                          </t>
+                          <t>
+                            0
+                          </t>
+                          <t t-if="current_leave_allocation - current_leave_request > 1">
+                            Day(s)
+                          </t>
+                          <t t-else="">
+                            Day
+                          </t>
+                        </t>
+                        <t t-elif="not current_leave_request and current_leave_allocation">
+                          <t t-esc="current_leave_allocation"/>
+                          <t t-if="current_leave_allocation">
+                            <t t-if="current_leave_allocation > 1">
+                              day(s)
+                            </t>
+                            <t t-else="">
+                              day
+                            </t>
+                          </t>
+                        </t>
+                        <t t-else="">
+                          0 Day
+                        </t>
+                      </h2>
+
+                    </div>
+                  </t>
+                </div>
+                <div class="col-md-12">
+                  <div class="conges_about soumettre_absence">
+                    <div class="conges_about_bloc_first">
+                      <div class="conges_about_bloc_element uppercase">
+                        <p class="conges_about_bloc_element_left">Request at
+                          <t t-esc="datetime.datetime.now().strftime('%d-%m-%Y')"/>
+                        </p>
+                        <p class="conges_about_bloc_element_right">Total</p>
+                      </div>
+                      <div class="conges_about_bloc_element">
+                        <p class="conges_about_bloc_element_left bold">ABSENCE</p>
+                        <p class="conges_about_bloc_element_right bold">
+                          <t t-if="total_rest_leave and total_rest_leave > 0">
+                            <t t-esc="total_rest_leave"/>
+                          </t>
+                          <t t-else="">
+                            0
+                          </t>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="conges_about_bloc">
+                      <div class="conges_about_bloc_element">
+                        <p class="conges_about_bloc_element_left bold">CP N-1</p>
+                        <p class="conges_about_bloc_element_right bold">
+                          <t t-if="last_leave_allocation and last_leave_request">
+                            <t t-if="last_leave_allocation - last_leave_request > 0">
+                              <t t-esc="'%.2f'%(last_leave_allocation - last_leave_request)"/>
+                            </t>
+                            <t t-else="">
+                              0
+                            </t>
+                          </t>
+                          <t t-if="not last_leave_request">
+                            <t t-esc="last_leave_allocation"/>
+                          </t>
+                        </p>
+                      </div>
+                      <div class="conges_about_bloc_element">
+                        <p class="conges_about_bloc_element_left color_7a8488">Acquired</p>
+                        <p class="conges_about_bloc_element_right color_7a8488">
+                          <t t-esc="last_leave_allocation"/>
+                          <t t-if="last_leave_allocation">
+                            <t t-if="last_leave_allocation > 1">
+                              day(s)
+                            </t>
+                            <t t-else="">
+                              day
+                            </t>
+                          </t>
+                        </p>
+                      </div>
+                      <div class="conges_about_bloc_element">
+                        <p class="conges_about_bloc_element_left color_7a8488">Taken</p>
+                        <p class="conges_about_bloc_element_right color_7a8488">
+                          <t t-esc="last_leave_request"/>
+                          <t t-if="last_leave_request">
+                            <t t-if="last_leave_request > 1">
+                              day(s)
+                            </t>
+                            <t t-else="">
+                              day
+                            </t>
+                          </t>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="conges_about_bloc">
+                      <div class="conges_about_bloc_element">
+                        <p class="conges_about_bloc_element_left bold">CP N</p>
+                        <p id="reste_conge" class="conges_about_bloc_element_right bold">
+                          <t t-if="current_leave_allocation and current_leave_request">
+                            <t t-if="current_leave_allocation - current_leave_request > 0">
+                              <t t-esc="'%.2f'%(current_leave_allocation - current_leave_request)"/>
+                              <input type="text" t-att-value="current_leave_allocation - current_leave_request"
+                                     hidden="hidden" class="cpnvalue"/>
+                            </t>
+                            <t t-else="">
+                              0
+                              <input type="text" t-att-value="0" hidden="hidden" class="cpnvalue"/>
+                            </t>
+                          </t>
+                          <t t-if="not current_leave_request">
+                            <t t-esc="current_leave_allocation"/>
+                            <input type="text" t-att-value="current_leave_allocation" hidden="hidden" class="cpnvalue"/>
+                          </t>
+                        </p>
+
+                      </div>
+                      <div class="conges_about_bloc_element">
+                        <p class="conges_about_bloc_element_left color_7a8488">Acquired</p>
+                        <p class="conges_about_bloc_element_right">
+                          <t id="current_leave_location" t-esc="current_leave_allocation"/>
+                          <t t-if="current_leave_allocation">
+                            <t t-if="current_leave_allocation > 1">
+                              day(s)
+                            </t>
+                            <t t-else="">
+                              day
+                            </t>
+                          </t>
+                          <input type="text" t-att-value="current_leave_allocation" hidden="hidden"
+                                 class="acquiredcpnvalue"/>
+                        </p>
+                      </div>
+                      <div class="conges_about_bloc_element">
+                        <p class="conges_about_bloc_element_left color_7a8488">Taken</p>
+                        <p class="conges_about_bloc_element_right color_7a8488">
+                          <t t-esc="current_leave_request"/>
+                          <t t-if="current_leave_request">
+                            <t t-if="current_leave_request > 1">
+                              day(s)
+                            </t>
+                            <t t-else="">
+                              day
+                            </t>
+                          </t>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h4 class="titre_bloc_soumettre_absence">Submit absence</h4>
+            <form id="leave_registration_form" t-attf-action="/leave/register" method="post"
+                  class="panel panel-default">
+              <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+              <div class="bloc_absence">
+                <div class="bloc_absence_entete bloc_absence_type_absence">
+                  <p class="col-form-label titre_bloc_absence_entete bloc_absence_type_absence" for="date_start">Type
+                    d'absence
+                  </p>
+                </div>
+                <div id="part-1-bloc" class="bloc_absence_corps bloc_absence_type_absence part_1_bloc">
+                  <div>
+                    <p class="col-form-label titre_bloc_absence_corps">Absence name</p>
+                    <input class="col-form-label titre_bloc_absence_corps name-absence"
+                           placeholder="Vacances, mariage, etc." type="text" name="name" id="name_absence"/>
+                  </div>
+                  <label class="col-form-label titre_bloc_absence_corps" for="date_start">Type of absence
+                  </label>
+
+
+                  <select id="type-leave" name="state_id" class="form-control state_id state_control" required="1">
+                    <option>Type of absence</option>
+                    <t t-foreach="leave_types or []" t-as="leave_type">
+                      <option t-att-value="leave_type.id">
+                        <t t-esc="leave_type.name"/>
+                      </option>
+                    </t>
+                  </select>
+                  <p id="error-leave-type" class="absence_vide_erreur" style="display:none;">
+                    <i class="fa fa-times-circle"></i>
+                    Empty type of absence
+                  </p>
+                  <div class="bloc_absence_corps_button">
+                    <p id="file-name-justificatory" class="file-name-justificatory button_file_absence"/>
+                    <button type="button" id="upload-file"
+                            name="upload_file"
+                            class="button_file_absence">++ Upload a proof
+                    </button>
+
+                    <input type="file" class="oe_import_file" id="file-justificatory" name="file_justificatory"
+                           string="Justificatif" style="display:none;"/>
+                    <input type="text" name="name_file" id="name-file" style="display:none;"/>
+                    <input type="text" name="base64textarea" id="base64textarea1" placeholder="Base64 will appear here"
+                           cols="50" rows="15" style="display:none;"/>
+                    <button type="button" id="remove-justificatory-create" class="button_file_absence">x
+                    </button>
+                    <!--<button type="button" id="download-justificatory-create"-->
+                    <!--class="button_file_absence">^-->
+                    <!--</button>-->
+                  </div>
+                  <p id="error-leave-size" class="size_exceed" style="display:none;">File is to big, maximal size is
+                    <span id="size_limit"/>
+                    mo
+                  </p>
+                  <button type="button" id="valid-part-1" name="test" class="valide_type_absence">
+                    Valid
+                  </button>
+                </div>
+
+
+              </div>
+              <div class="bloc_absence">
+                <div class="bloc_absence_entete bloc_absence_date">
+                  <p class="col-form-label titre_bloc_absence_entete">Absence date</p>
+                </div>
+                <div id="part-2-bloc" class="bloc_absence_corps bloc_absence_corps_bas bloc_absence_date part_2_bloc">
+                  <div class="row">
+                    <div class="col-md-12 col-lg-7 col-xl-7">
+                      <div class="calendar"></div>
+                    </div>
+                    <div class="col-md-12 col-lg-5 col-xl-5">
+                      <div class="bloc_date_absence_doite">
+                        <input type="checkbox" class="form-control o_website_form_input input_form_absence_checkbox"
+                               id="halfday_checkbox" name="halfday" hidden="hidden"/>
+                        <label class="col-form-label form_absence_checkbox" for="halfday_checkbox">Half day
+                        </label>
+                      </div>
+                      <div class="bloc_date_absence_doite">
+                        <label class="col-form-label absence_date_titre" for="request_date_from">Start date
+                        </label>
+                        <input type="date"
+                               class="form-control o_website_form_input absence_date_input o_datepicker_input date_begin"
+                               name="request_date_from" required="1"/>
+                        <span class="o_datepicker_button"/>
+                      </div>
+                      <div class="bloc_date_absence_doite" id="hide_field_if_halfday">
+                        <label class="col-form-label absence_date_titre" for="request_date_to">
+                          End date
+                        </label>
+                        <input type="date"
+                               class="form-control o_website_form_input absence_date_input o_datepicker_input date_end"
+                               name="request_date_to"/>
+                        <span class="o_datepicker_button"/>
+                        <input type="date"
+                               class="form-control o_website_form_input absence_date_input o_datepicker_input date_end_2"
+                               name="request_date_to_save" style="display:none;"/>
+                        <span class="o_datepicker_button" style="display:none;"/>
+                      </div>
+                      <div class="bloc_date_absence_doite" id="date_request_from_period">
+                        <label class="col-form-label absence_date_titre" for="period">Period
+                        </label>
+                        <select name="period" class="form-control absence_date_select">
+                          <option>Morning</option>
+                          <option>Afternoon</option>
+                        </select>
+                      </div>
+                      <div>
+                        <p style="display:none;" id="error-date-empty" class="warning">
+                          Date empty
+                        </p>
+                        <p id="overlaps-error"
+                           style="color:red; display:none;">
+                          You can not have 2 leaves that overlaps on the same day.
+                        </p>
+                        <p id="sufficient-error" style="color:red; display:none;">
+                          The number of remaining leaves is
+                          not sufficient
+                          for this leave
+                          type. 'Please also check the leaves waiting for validation.
+                        </p>
+                        <p id="not-allowed-error" style="color:red; display:none;">
+                          You are not allowed to take leave on this period.
+                        </p>
+                        <p id="exceptional-error" style="color:red; display:none;">
+                          The number of exceptional leave remaining is not sufficient
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="loading_confirm_leave">Loading&#8230;</div>
+                  <footer class="modal-footer absence_soumettre_footer">
+                    <div class="float-left">
+                      <button id="valid-leave-1" type="button"
+                              class="valide_type_absence absence_soumettre_footer_boutonvalider">Send
+                      </button>
+                      <button style="display:none;" id="valid-leave-modal" type="button" data-toggle="modal"
+                              data-target=".bd-example-modal-sm"/>
+                      <button style="display:none;" id="valid-leave-modal-2" type="button" data-toggle="modal"
+                              data-target=".justificatory-modal"/>
+                      <button type="reset" id="cancel-create"
+                              class="valide_type_absence absence_soumettre_footer_boutonannuler">Cancel
+                      </button>
+                    </div>
+                  </footer>
+                </div>
+              </div>
+            </form>
+            <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+                 aria-hidden="true">
+              <div class="notif modal-dialog modal-sm">
+                <div class="modal-content">
+                  Absence request sent !
+                </div>
+              </div>
+            </div>
+            <!-- ce code a été utilisé quand le message d'erreur de max size file sur upload doc du "Uploader un justificatif" a été mis en modal <div class="modal fade bd-example-modal-sm justificatory-modal" tabindex="-1" role="dialog"
+                 aria-labelledby="mySmallModalLeaveJ" aria-hidden="true">
+              <div class="notif modal-dialog modal-sm">
+                <div class="modal-content file" style="display:inline-block">
+                  File is to big, maximal size is
+                  <span id="size_limit"/>
+                  mo
+                </div>
+              </div>
+            </div>-->
+          </div>
+
+          <div class="col-md-1"></div>
+        </div>
+
+      </t>
+    </template>
+
+    <template id="edit_leave">
+      <t t-call="portal.portal_layout">
+        <div class="mt-100"></div>
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-4">
+            <button class="bouton_retour" onclick="history.back()">Back</button>
+            <div class="col-md-12 bloc-dashboard soumettre_absence">
+              <div class="row align_items_baseline">
+                <div class="col-md-12">
+                  <p class="titre_bloc_dashboard">Absence request</p>
+                </div>
+              </div>
+              <div class="row">
+                <div id="cont" data-pct="0">
+                  <svg id="svg" width="120" height="120" viewPort="0 0 100 100" version="1.1"
+                       xmlns="http://www.w3.org/2000/svg">
+                    <circle r="50" cx="60" cy="60" fill="transparent" stroke-dasharray="313.48"
+                            stroke-dashoffset="0"></circle>
+                    <circle id="bar" r="50" cx="60" cy="60" fill="transparent" stroke-dasharray="313.48"
+                            stroke-dashoffset="0"></circle>
+                  </svg>
+                </div>
+                <div class="col-md-12" style="display:none;">
+                  <t>
+                    <div class="donutty_conge_bolc">
+                      <h2 class="text-center">
+                        <t t-if="current_leave_allocation and current_leave_request">
+                          <t t-if="current_leave_allocation - current_leave_request > 0">
+                            <t t-esc="current_leave_allocation - current_leave_request"/>
+                          </t>
+                          <t>
+                            0
+                          </t>
+                          <t t-if="current_leave_allocation - current_leave_request > 1">
+                            Day(s)
+                          </t>
+                          <t t-else="">
+                            Day
+                          </t>
+                        </t>
+                        <t t-elif="not current_leave_request and current_leave_allocation">
+                          <t t-esc="current_leave_allocation"/>
+                          <t t-if="current_leave_allocation">
+                            <t t-if="current_leave_allocation > 1">
+                              day(s)
+                            </t>
+                            <t t-else="">
+                              day
+                            </t>
+                          </t>
+                        </t>
+                        <t t-else="">
+                          0 Day
+                        </t>
+                      </h2>
+
+                    </div>
+                  </t>
+                </div>
+                <div class="col-md-12">
+                  <div class="conges_about soumettre_absence">
+                    <div class="conges_about_bloc_first">
+                      <div class="conges_about_bloc_element uppercase">
+                        <p class="conges_about_bloc_element_left">Request at
+                          <t t-esc="datetime.datetime.now().strftime('%d-%m-%Y')"/>
+                        </p>
+                        <p class="conges_about_bloc_element_right">Total</p>
+                      </div>
+                      <div class="conges_about_bloc_element">
+                        <p class="conges_about_bloc_element_left bold">ABSENCE</p>
+                        <p class="conges_about_bloc_element_right bold">
+                          <t t-if="total_rest_leave and total_rest_leave > 0">
+                            <t t-esc="total_rest_leave"/>
+                          </t>
+                          <t t-else="">
+                            0
+                          </t>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="conges_about_bloc">
+                      <div class="conges_about_bloc_element">
+                        <p class="conges_about_bloc_element_left bold">CP N-1</p>
+                        <p class="conges_about_bloc_element_right bold">
+                          <t t-if="last_leave_allocation and last_leave_request">
+                            <t t-if="last_leave_allocation - last_leave_request > 0">
+                              <t t-esc="'%.2f'%(last_leave_allocation - last_leave_request)"/>
+                            </t>
+                            <t t-else="">
+                              0
+                            </t>
+                          </t>
+                          <t t-if="not last_leave_request">
+                            <t t-esc="last_leave_allocation"/>
+                          </t>
+                        </p>
+                      </div>
+                      <div class="conges_about_bloc_element">
+                        <p class="conges_about_bloc_element_left color_7a8488">Acquired</p>
+                        <p class="conges_about_bloc_element_right color_7a8488">
+                          <t t-esc="last_leave_allocation"/>
+                          <t t-if="last_leave_allocation">
+                            <t t-if="last_leave_allocation > 1">
+                              day(s)
+                            </t>
+                            <t t-else="">
+                              day
+                            </t>
+                          </t>
+                        </p>
+                      </div>
+                      <div class="conges_about_bloc_element">
+                        <p class="conges_about_bloc_element_left color_7a8488">Taken</p>
+                        <p class="conges_about_bloc_element_right color_7a8488">
+                          <t t-esc="last_leave_request"/>
+                          <t t-if="last_leave_request">
+                            <t t-if="last_leave_request > 1">
+                              day(s)
+                            </t>
+                            <t t-else="">
+                              day
+                            </t>
+                          </t>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="conges_about_bloc">
+                      <div class="conges_about_bloc_element">
+                        <p class="conges_about_bloc_element_left bold">CP N</p>
+                        <p id="reste_conge" class="conges_about_bloc_element_right bold">
+                          <t t-if="current_leave_allocation and current_leave_request">
+                            <t t-if="current_leave_allocation - current_leave_request > 0">
+                              <t t-esc="'%.2f'%(current_leave_allocation - current_leave_request)"/>
+                              <input type="text" t-att-value="current_leave_allocation - current_leave_request"
+                                     hidden="hidden" class="cpnvalue"/>
+                            </t>
+                            <t t-else="">
+                              0
+                              <input type="text" t-att-value="0" hidden="hidden" class="cpnvalue"/>
+                            </t>
+                          </t>
+                          <t t-if="not current_leave_request">
+                            <t t-esc="current_leave_allocation"/>
+                            <input type="text" t-att-value="current_leave_allocation" hidden="hidden" class="cpnvalue"/>
+                          </t>
+                        </p>
+
+                      </div>
+                      <div class="conges_about_bloc_element">
+                        <p class="conges_about_bloc_element_left color_7a8488">Acquired</p>
+                        <p class="conges_about_bloc_element_right">
+                          <t t-esc="current_leave_allocation"/>
+                          <t t-if="current_leave_allocation">
+                            <t t-if="current_leave_allocation > 1">
+                              day(s)
+                            </t>
+                            <t t-else="">
+                              day
+                            </t>
+                          </t>
+                          <input type="text" t-att-value="current_leave_allocation" hidden="hidden"
+                                 class="acquiredcpnvalue"/>
+                        </p>
+                      </div>
+                      <div class="conges_about_bloc_element">
+                        <p class="conges_about_bloc_element_left color_7a8488">Taken</p>
+                        <p class="conges_about_bloc_element_right color_7a8488">
+                          <t t-esc="current_leave_request"/>
+                          <t t-if="current_leave_request">
+                            <t t-if="current_leave_request > 1">
+                              day(s)
+                            </t>
+                            <t t-else="">
+                              day
+                            </t>
+                          </t>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h4 class="titre_bloc_soumettre_absence">Submit absence</h4>
+            <form id="leave_registration_form" t-attf-action="/leave/edit" method="post" class="panel panel-default">
+              <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+              <input type="hidden" id="leave_id" name="leave_id" t-att-value="leave.id"/>
+              <input type="checkbox" name="leave_read_only" t-att-checked="read_only" class="leave_read_only"/>
+              <t t-if="overlaps">
+                <p style="color:red;">You can not have 2 leaves that overlaps on the same day.</p>
+              </t>
+              <t t-if="sufficient">
+                <p style="color:red;">
+                  <t t-esc="e"/>
+                  The number of remaining leaves is not sufficient for this leave
+                  type.
+                  'Please also check the leaves waiting for validation.
+                </p>
+              </t>
+
+              <div class="bloc_absence">
+                <div class="bloc_absence_entete bloc_absence_type_absence">
+                  <p class="col-form-label titre_bloc_absence_entete bloc_absence_type_absence" for="date_start">Type of
+                    absence
+                  </p>
+                </div>
+                <div id="part-1-bloc" class="bloc_absence_corps bloc_absence_type_absence part_1_bloc">
+                  <div>
+                    <label>Absence name</label>
+                    <input type="text" name="name" id="name_absence" class="form-control name-absence ml-0"
+                           t-att-value="leave.name"/>
+                  </div>
+                  <label class="col-form-label titre_bloc_absence_corps" for="date_start">Type of absence
+                  </label>
+                  <select id="type-leave" name="state_id" class="form-control state_id state_control" required="1">
+                    <option>Type of absence</option>
+                    <t t-foreach="leave_types or []" t-as="leave_type">
+                      <option t-att-value="leave_type.id"
+                              t-att-selected="leave_type.id == int(state_id) if state_id else leave_type.id == leave.holiday_status_id.id">
+                        <t t-esc="leave_type.name"/>
+                      </option>
+                    </t>
+                  </select>
+                  <p id="error-leave-type" class="absence_vide_erreur" style="display:none;">
+                    <i class="fa fa-times-circle"></i>
+                    Empty type of absence
+                  </p>
+                  <div class="bloc_absence_corps_button">
+                    <p id="file-name-justificatory" class="file-name-justificatory button_file_absence"/>
+                    <button type="button" id="upload-file" name="upload_file" class="button_file_absence">++ Upload a
+                      proof
+                    </button>
+                    <input type="file" class="oe_import_file" id="file-justificatory" name="file_justificatory"
+                           string="Justificatif" style="display:none;"/>
+                    <input type="text" name="name_file" id="name-file" style="display:none;"
+                           t-att-value="leave.justificatory_filename"/>
+                    <input type="text" name="base64textarea" id="base64textarea1" placeholder="Base64 will appear here"
+                           t-att-value="leave.justificatory" cols="50" rows="15" style="display:none;"/>
+                    <button type="button" id="remove-justificatory-create" class="button_file_absence">x
+                    </button>
+                    <!--<button type="button" id="download-justificatory-create"-->
+                    <!--class="button_file_absence">^-->
+                    <!--</button>-->
+                  </div>
+                  <button type="button" id="valid-part-1" name="test" class="valide_type_absence">
+                    Valid
+                  </button>
+                </div>
+
+
+              </div>
+              <div class="bloc_absence">
+                <div class="bloc_absence_entete bloc_absence_date">
+                  <p class="col-form-label titre_bloc_absence_entete">Absence date</p>
+                </div>
+                <div id="part-2-bloc" class="bloc_absence_corps bloc_absence_corps_bas bloc_absence_date part_2_bloc">
+                  <div class="row">
+                    <div class="col-md-7">
+                      <div class="calendar"></div>
+                    </div>
+                    <div class="col-md-5">
+                      <div class="bloc_date_absence_doite">
+                        <input type="checkbox" class="form-control o_website_form_input input_form_absence_checkbox"
+                               id="halfday_checkbox" t-att-checked="leave.request_unit_half" name="halfday"
+                               hidden="hidden"/>
+                        <label class="col-form-label form_absence_checkbox" for="halfday_checkbox">Half day
+                        </label>
+                      </div>
+                      <div class="bloc_date_absence_doite">
+                        <label class="col-form-label absence_date_titre" for="request_date_from">Start date
+                        </label>
+                        <input type="date"
+                               class="form-control o_website_form_input absence_date_input o_datepicker_input date_begin"
+                               name="request_date_from" t-att-value="leave.request_date_from" required="1"/>
+                        <span class="o_datepicker_button"/>
+                      </div>
+                      <div class="bloc_date_absence_doite" id="hide_field_if_halfday">
+                        <label class="col-form-label absence_date_titre" for="request_date_to">
+                          End date
+                        </label>
+                        <input type="date"
+                               class="form-control o_website_form_input absence_date_input o_datepicker_input date_end"
+                               name="request_date_to" t-att-value="leave.request_date_to"/>
+                        <span class="o_datepicker_button"/>
+                      </div>
+                      <div class="bloc_date_absence_doite" id="date_request_from_period">
+                        <label class="col-form-label absence_date_titre" for="period">Period
+                        </label>
+                        <select name="period" class="form-control absence_date_select">
+                          <option t-att-selected="leave.request_date_from_period == 'am'">Morning</option>
+                          <option t-att-selected="leave.request_date_from_period == 'pm'">Afternoon</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <footer class="modal-footer absence_soumettre_footer">
+                    <div class="float-left">
+                      <button id="save-edit" type="submit"
+                              class="valide_type_absence absence_soumettre_footer_boutonvalider">Save
+                      </button>
+                      <button style="display:none;" id="valid-leave-modal" type="button" data-toggle="modal"
+                              data-target=".bd-example-modal-sm"/>
+                      <a t-attf-href="/leave/cancel/#{leave.id}?{{ keep_query() }}" id="cancel-edit"
+                         class="valide_type_absence absence_soumettre_footer_boutonannuler">Cancel leave
+                      </a>
+                    </div>
+                  </footer>
+                </div>
+              </div>
+            </form>
+            <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+                 aria-hidden="true">
+              <div class="notif modal-dialog modal-sm">
+                <div class="modal-content">
+                  Absence request sent !
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-1"></div>
+        </div>
+      </t>
+    </template>
+  </data>
+</odoo>

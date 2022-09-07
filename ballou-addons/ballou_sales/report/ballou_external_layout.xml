@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="ballou_external_layout_standard" inherit_id="web.external_layout_standard">
+      <xpath expr="//div[@t-att-style='report_header_style']" position="replace">
+      <span/>
+      </xpath>
+      <xpath expr="//div[@class='pt-5']" position="replace">
+        <div class="pt-5">
+          <div style="text-align: center;margin-bottom: 50px;margin-top: 0" >
+            <t t-set="web_base_url"
+               t-value="request.env['ir.config_parameter'].sudo().search([('key', '=', 'web.base.url')])[0].value"/>
+            <t t-set="receipt_logo_url"
+               t-value="web_base_url + '/ballou_purchase/static/src/img/color_logo.jpg'"/>
+            <!--<img t-attf-src="{{receipt_logo_url}}" height="120px"/>-->
+            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 120px;" alt="Logo"/>
+            <br/>
+          </div>
+          <t t-call="web.address_layout"/>
+        </div>
+      </xpath>
+        <xpath expr="//div[@class='text-center']" position="replace">
+          <div class="text-center">
+            <div name="financial_infos">
+              <t t-if="not hide_sales_conditions">
+                <p t-field="company.report_footer" style="text-align: left; font-size: 11px;"/>
+              </t>
+          <table class="table">
+            <thead>
+              <tr>
+                <th style="border: 1px solid black; font-size: 11px; width: 130px;">
+                  Signature client
+                </th>
+                <td style="border-top: 1px solid black; font-size: 11px;">
+                  <t t-if="company.phone">
+                    Téléphone: <t t-esc="company.phone"/> .
+                  </t>
+                  <t t-if="company.email">
+                    Courriel: <t t-esc="company.email"/> .
+                  </t>
+                  <br/>
+                  <t t-if="company.partner_id.nif">
+                    NIF: <t t-esc="company.partner_id.nif"/> .
+                  </t>
+                  <t t-if="company.partner_id.stat">
+                    STAT: <t t-esc="company.partner_id.stat"/> .
+                  </t>
+                  <t t-if="company.partner_id.rcs">
+                    RCS: <t t-esc="company.partner_id.rcs"/> .
+                  </t>
+                  <br/>
+                  <t t-if="company.partner_id.bank_ids">
+                    RIB:
+                    <t t-foreach="company.partner_id.bank_ids" t-as="bank">
+                      <t t-esc="bank.bank_id.name"/>
+                      <t t-esc="bank.acc_number"/>
+                      <t t-if="bank_index + 1 != bank_size">
+                        |
+                      </t>
+                    </t>
+                  </t>
+                  <br/>
+                  <t t-if="company.name">
+                    <t t-esc="company.name"/>.
+                  </t>
+                  <t t-if="company.street">
+                    <t t-esc="company.street"/>
+                  </t>
+                  <t t-if="company.street2">
+                    ,<t t-esc="company.street2"/>
+                  </t>
+                  <t t-if="company.city">
+                    ,<t t-esc="company.city"/>
+                  </t>
+                  <t t-if="company.state_id">
+                    ,<t t-esc="company.state_id.name"/>
+                  </t>
+                  <t t-if="company.zip">
+                    ,<t t-esc="company.zip"/>
+                  </t>
+                  <t t-if="company.country_id">
+                    ,<t t-esc="company.country_id.name"/>
+                  </t>
+                  <br/>
+                  <t t-if="company.website">
+                    <t t-esc="company.website"/>
+                  </t>
+                  <br/>
+                  <t t-if="report_type == 'pdf'" class="text-muted">
+                      Page: <span class="page"/> / <span class="topage"/>
+                  </t>
+                </td>
+                <th style="border: 1px solid black; font-size: 11px; width: 130px;">
+                  <div name="signature_text">Validation direction</div>
+                </th>
+              </tr>
+            </thead>
+          </table>
+            </div>
+
+          </div>
+        </xpath>
+    </template>
+</odoo>

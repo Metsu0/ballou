@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<odoo>
+  <data>
+    <record id="etech_hr_employee_view_form_inherit" model="ir.ui.view">
+      <field name="name">hr.employee.etech.view.form.inherit</field>
+      <field name="model">hr.employee</field>
+      <field name="inherit_id" ref="hr.view_employee_form"/>
+      <field name="priority">17</field>
+      <field name="arch" type="xml">
+        <field name="parent_id" position="after">
+          <field name="quality_responsible_id"/>
+          <field name="gpec_responsible_id"/>
+          <field name="departure_notice_group"/>
+        </field>
+        <xpath expr="//div[@id='o_work_employee_main']" position="inside">
+          <group>
+            <field name="hiring_date"/>
+            <field name="departure_date"/>
+            <field name="resignation_notice_days"/>
+            <field name="expatriate"/>
+          </group>
+        </xpath>
+        <field name="department_id" position="after">
+          <field name="deputy_ids" string="Deputy" widget="many2many_tags"
+                 context="{'from_department':True}"/>
+          <field name="direction_id" string="Direction" readonly="0"/>
+          <field name="executive_id" string="Executive" readonly="1"/>
+        </field>
+
+        <field name="mobile_phone" position="before">
+          <field name="registration_number"/>
+        </field>
+        <div name="button_box" position="inside">
+          <button class="oe_stat_button"
+                  icon="fa-book"
+                  name="action_get_attachment_tree_view"
+                  type="object">
+            <field name="documents_count" widget="statinfo" string="Documents"/>
+          </button>
+        </div>
+        <xpath expr="//button[@id='hr_presence_button']" position="before">
+          <button type="object" class="oe_stat_button" icon="fa-star" name="action_open_job"
+                  attrs="{'invisible':[('job_id', '=', False)]}" string="Job description">
+          </button>
+        </xpath>
+
+        <xpath expr="//page[@name='personal_information']/group" position="after">
+          <group string="Others">
+            <field name="cnaps_number"/>
+          </group>
+        </xpath>
+
+        <field name="department_id" position="after">
+          <field name="level_id"/>
+        </field>
+        <field name="department_id" position="before">
+          <field name="default_company_ids" invisible="1"/>
+          <field name="company_ids" invisible="1"/>
+        </field>
+        <field name="department_id" position="attributes">
+          <attribute name="domain">['|', ('company_id', 'in', default_company_ids), ('company_id', 'in', company_ids)]
+          </attribute>
+          <attribute name="required">1</attribute>
+        </field>
+        <field name="parent_id" position="attributes">
+          <attribute name="domain">['|', ('company_id', 'in', default_company_ids), ('company_id', 'in', company_ids)]
+          </attribute>
+          <attribute name="required">1</attribute>
+        </field>
+<!-- 
+        <field name="country_of_birth" position="after">
+          <field name="cin" attrs="{'required': [('expatriate', '=', False)]}"/>
+          <field name="date_cin" attrs="{'required': [('expatriate', '=', False)]}"/>
+          <field name="place_cin" attrs="{'required': [('expatriate', '=', False)]}"/>
+          <field name="duplicate_date"/>
+        </field> -->
+
+        <xpath expr="//page[@name='personal_information']" position="after">
+          <page name="children_information" string="Children Information" groups="hr.group_hr_user">
+            <field name="children_ids">
+              <tree editable="bottom">
+                <field name="firstname"/>
+                <field name="lastname"/>
+                <field name="gender"/>
+                <field name="birthdate"/>
+                <field name="age_txt"/>
+              </tree>
+            </field>
+          </page>
+
+        </xpath>
+
+      </field>
+    </record>
+
+    <record id="sirh_view_employee_filter_inherit" model="ir.ui.view">
+      <field name="name">sirh.hr.employee.search.inherit</field>
+      <field name="model">hr.employee</field>
+      <field name="inherit_id" ref="hr.view_employee_filter"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='job_id']" position="after">
+          <field name="is_manager"/>
+          <field name="is_rrh"/>
+          <field name="is_quality_responsible"/>
+          <field name="is_gpec_responsible"/>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

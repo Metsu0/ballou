@@ -1,0 +1,1147 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ballou_hr_payroll
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-05 06:58+0000\n"
+"PO-Revision-Date: 2022-07-05 06:58+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.hr_payslip_config_view_form
+msgid "<span class=\"o_stat_text\">Etat de Paies</span>"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.ballou_payslip_template
+msgid "<strong>PAYSLIP</strong>"
+msgstr "<strong>BULLETIN DE PAIE</strong>"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__abs_conge
+msgid "Absence congé"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__abs_non_rem
+msgid "Absence non rémunérée"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__absence_pour_conge_maternite
+msgid "Absence pour congé de maternité"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__abs_rem_aut
+msgid "Absence rémunérée autorisée"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.constraint,message:ballou_hr_payroll.constraint_res_partner_bank_unique_number
+msgid "Account Number must be unique"
+msgstr "Le numéro de compte doit être unique"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_account_setup_bank_manual_config__agency_code
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_res_partner_bank__agency_code
+msgid "Agency Code"
+msgstr "Code Agence"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__alloc_conge
+msgid "Allocation de congé"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__alloc_fam
+msgid "Allocation familiale"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_salary_rule__amount_column_position
+msgid "Amount Column Position"
+msgstr "Position dans la colonne des montants"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_work_entry_type__applied_in_payslip
+msgid "Applied In Payslip"
+msgstr "Est-appliqué dans le bulletin de paie?"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__avc_quinzaine
+msgid "Avance quinzaine"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__avance_scolaire
+msgid "Avance scolaire"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__avc_spec
+msgid "Avance spéciale"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__avtg_nat
+msgid "Avantage en nature"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.ballou_payslip_template
+msgid "BASE SALARY"
+msgstr "SALAIRE DE BASE"
+
+#. module: ballou_hr_payroll
+#: model:ir.actions.report,name:ballou_hr_payroll.ballou_payslip_report
+msgid "Ballou Payslip"
+msgstr "Bulletin de paie Ballou"
+
+#. module: ballou_hr_payroll
+#: model:ir.model,name:ballou_hr_payroll.model_res_bank
+msgid "Bank"
+msgstr "Banque"
+
+#. module: ballou_hr_payroll
+#: model:ir.model,name:ballou_hr_payroll.model_res_partner_bank
+msgid "Bank Accounts"
+msgstr "Comptes bancaires"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__banque
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.payslip_resume_view_search2
+msgid "Banque"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.ballou_payslip_template
+msgid "Base salary"
+msgstr "Salaire de base"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_salary_rule__parent_id
+msgid "Basic Salary Rule"
+msgstr "Règle de base"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__cnaps
+msgid "CNAPS"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__cnaps_pat
+msgid "CNAPS Patronale"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields.selection,name:ballou_hr_payroll.selection__payslip_resume__etat_bulletin__canceled
+msgid "Canceled"
+msgstr "Annulé"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__code_banque
+msgid "Code Banque"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__guichet
+msgid "Code agence"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__coms
+msgid "Commission"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__commission_sur_vente
+msgid "Commission sur vente"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payslip_config__company_id
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__company_id
+msgid "Company"
+msgstr "Société"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__compl_repas
+msgid "Complément repas"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.actions.act_window,name:ballou_hr_payroll.action_hr_payslip_config
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.hr_payslip_config_view_form
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.payslip_config_view_tree
+msgid "Configuration Etat de Paie"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__payslip_config_id
+msgid "Configuration etat de paie"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payslip_payment_mode__contract_ids
+msgid "Contracts"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payslip_config__create_uid
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payslip_config__create_date
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.payslip_resume_view_search2
+msgid "Date"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.payslip_resume_view_search2
+msgid "Date de fin"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__debut_fiche_bulletin
+msgid "Date début"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__fin_fiche_bulletin
+msgid "Date fin"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__demi_salaire_maternite
+msgid "Demi salaire maternité"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: code:addons/ballou_hr_payroll/models/hr_payslip_config.py:0
+#: model:ir.model.fields.selection,name:ballou_hr_payroll.selection__hr_payslip_config__view_mode__detailed
+#, python-format
+msgid "Detailed"
+msgstr "Détaillé"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_contract__display_name
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payroll_report__display_name
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payslip__display_name
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payslip_config__display_name
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payslip_payment_mode__display_name
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payslip_worked_days__display_name
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_salary_rule__display_name
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_work_entry_type__display_name
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__display_name
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_res_bank__display_name
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_res_partner_bank__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields.selection,name:ballou_hr_payroll.selection__payslip_resume__etat_bulletin__done
+msgid "Done"
+msgstr "Fait"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields.selection,name:ballou_hr_payroll.selection__payslip_resume__etat_bulletin__draft
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__ded_enfant_a_charge
+msgid "Déduction enfant à charge"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__department_parent_id
+msgid "Département parent"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__department_id
+msgid "Départment"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.ballou_payslip_template
+msgid "Email"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model,name:ballou_hr_payroll.model_hr_contract
+msgid "Employee Contract"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.payslip_resume_view_search2
+msgid "Employé"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__etat_bulletin
+msgid "Etat"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.simple_payslip_resume_view_tree2
+msgid "Etat de Paie"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.payslip_resume_view_graph2
+msgid "Etat de Paie Graph"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.simple_payslip_resume_view_tree2
+msgid "Etat de bulletin"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.actions.act_window,name:ballou_hr_payroll.action_payslip_resume_view_detailed2
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payslip_config__payslip_resume_ids
+#: model:ir.ui.menu,name:ballou_hr_payroll.menu_hr_payslip_resume_report
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.detailed_payslip_resume_view_tree2
+msgid "Etat de paie"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.actions.act_window,name:ballou_hr_payroll.action_payslip_resume_view_simple2
+msgid "Etat de paie (vue simplifiée)"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: code:addons/ballou_hr_payroll/models/hr_payslip_config.py:0
+#, python-format
+msgid "Etat de paie du %s au %s"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.payslip_resume_view_search2
+msgid "Etat du bulletin de paie"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__fmfp
+msgid "FMFP"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields.selection,name:ballou_hr_payroll.selection__payslip_resume__sexe__female
+msgid "Female"
+msgstr "Féminin"
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.ballou_payslip_template
+msgid "Fonction:"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payslip_config__date_from
+msgid "From date"
+msgstr "Date début"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__sexe
+msgid "Genre"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.payslip_resume_view_search2
+msgid "Group By..."
+msgstr "Regrouper par..."
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.hr_payslip_config_view_form
+msgid "Générer Etat de Paie"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__hn_30
+msgid "HN (heure de nuit) 30%"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__hn_50
+msgid "HN (heure de nuit) 50%"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model,name:ballou_hr_payroll.model_hr_work_entry_type
+msgid "HR Work Entry Type"
+msgstr "Type de prestations RH"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__hs_130
+msgid "HS 130% (heure supplémentaire)"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__hs_150
+msgid "HS 150% (heure supplémentaire)"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.ballou_payslip_template
+msgid "Hourly rate"
+msgstr "Taux horaire"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payroll_report__hourly_rate_non_productif
+msgid "Hourly rate no productif"
+msgstr "Taux horaire non productif"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payslip__hourly_rate_non_productif
+msgid "Hourly rate non productif"
+msgstr "Taux horaire non productif"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payroll_report__hourly_rate_productif
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payslip__hourly_rate_productif
+msgid "Hourly rate productif"
+msgstr "Taux horaire productif"
+
+#. module: ballou_hr_payroll
+#: model:ir.model,name:ballou_hr_payroll.model_payslip_resume
+msgid "Hr Payslip Report"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_contract__id
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payroll_report__id
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payslip__id
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payslip_config__id
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payslip_payment_mode__id
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payslip_worked_days__id
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_salary_rule__id
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_work_entry_type__id
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__id
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_res_bank__id
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_res_partner_bank__id
+msgid "ID"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__irsa
+msgid "IRSA"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__irsa_brut
+msgid "IRSA BRUT"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__lot_bulletin_id
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__payslip_run_id
+msgid "Id du lot de bulletin"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__employee_id
+msgid "Id employé"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__icc
+msgid "Indemnité compensatrice de congé"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__idmt_alg_frs
+msgid "Indemnité d'allègement frais"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__idmt_depl
+msgid "Indemnité de déplacement"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__indemnite_de_licenciement
+msgid "Indemnité de licenciement"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__idmt_logement
+msgid "Indemnité de logement"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__indemnite_de_logement_non_imposable
+msgid "Indemnité de logement non imposable"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__indemnite_preavis
+msgid "Indemnité de préavis"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__indmt_stage
+msgid "Indemnité de stage"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__idmt_diverses
+msgid "Indemnité diverses"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__idmt_var_depl
+msgid "Indemnité variable de déplacement"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payslip_worked_days__is_paid
+msgid "Is Paid"
+msgstr "Est payé"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_contract____last_update
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payroll_report____last_update
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payslip____last_update
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payslip_config____last_update
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payslip_payment_mode____last_update
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payslip_worked_days____last_update
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_salary_rule____last_update
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_work_entry_type____last_update
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume____last_update
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_res_bank____last_update
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_res_partner_bank____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payslip_config__write_uid
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payslip_config__write_date
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.ballou_payslip_template
+msgid "Leave allocation"
+msgstr "Solde de congé "
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payslip__leave_allocation_current_year
+msgid "Leave allocation for the current year"
+msgstr "Solde de congé de cette année"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payslip__leave_allocation_previous_year
+msgid "Leave allocation for the previous year"
+msgstr "Solde de congé de l'année dernière"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields.selection,name:ballou_hr_payroll.selection__hr_salary_rule__amount_column_position__left
+msgid "Left"
+msgstr "A gauche"
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.ballou_payslip_template
+msgid "Logo"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.payslip_resume_view_search2
+msgid "Lot"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__md_40
+msgid "Majoration Dimanche (40%)"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__mf_100
+msgid "Majoration férié (100%)"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields.selection,name:ballou_hr_payroll.selection__payslip_resume__sexe__male
+msgid "Male"
+msgstr "Masculin"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__matricule
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.payslip_resume_view_search2
+msgid "Matricule"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__mise_a_pied
+msgid "Mise à pied"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__mode_paiement
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.payslip_resume_view_search2
+msgid "Mode de paiement"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__mi
+msgid "Montant Imposable (MI)"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.ballou_payslip_template
+msgid "NIF"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__nom_lot_bulletin
+msgid "Nom du lot de bulletin"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__nom_employe
+msgid "Nom employé"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.ballou_payslip_template
+msgid "Nom ou raison sociale de la société:"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:hr.work.entry.type,name:ballou_hr_payroll.hr_work_entry_type_worked_days
+msgid "Nombre de jours travaillés"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.ballou_payslip_template
+msgid "Number of days:"
+msgstr "Nombre de jours: "
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.ballou_payslip_template
+msgid "Number of hours:"
+msgstr "Nombre d'heures :"
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.payslip_resume_view_search2
+msgid "Numéro de compte"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__numero_cin
+msgid "N° CIN"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__numero_cnaps
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.payslip_resume_view_search2
+msgid "N° CNAPS"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__numero_compte
+msgid "N° de compte"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__ostie
+msgid "OSTIE"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__ostie_pat
+msgid "OSTIE Patronale"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model,name:ballou_hr_payroll.model_hr_payslip
+msgid "Pay Slip"
+msgstr "Feuille de paie"
+
+#. module: ballou_hr_payroll
+#: model:ir.model,name:ballou_hr_payroll.model_hr_payslip_payment_mode
+msgid "Payment Mode (ex: Virement, Cheque, ...)"
+msgstr "Mode de paiement (ex: Virement, Chèque, ...)"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_contract__payslip_payment_mode_id
+msgid "Payment mode"
+msgstr "Mode de paiement"
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.ballou_payslip_template
+msgid "Payment of month:"
+msgstr "Paie mois:"
+
+#. module: ballou_hr_payroll
+#: model:ir.model,name:ballou_hr_payroll.model_hr_payroll_report
+msgid "Payroll Analysis Report"
+msgstr "Rapport d'analyse de paie"
+
+#. module: ballou_hr_payroll
+#: model:ir.model,name:ballou_hr_payroll.model_hr_payslip_worked_days
+msgid "Payslip Worked Days"
+msgstr "Bulletin de paie jours travaillés"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payslip_config__payslip_resume_count
+msgid "Payslip resume count"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__poste
+msgid "Poste"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.payslip_resume_view_search2
+msgid "Poste occupé"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__prime_ca_m1
+msgid "Prime CA M-1"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__prime_obj_m1
+msgid "Prime Objectif M-1"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__prime_clo_exr
+msgid "Prime clôture exercice"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__prime_anciennete
+msgid "Prime d' ancienneté"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__prime_asdt
+msgid "Prime d'assiduité"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__prime_astr
+msgid "Prime d'astreinte"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__prime_d_interessement
+msgid "Prime d'intéressement"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__prime_chnt
+msgid "Prime de chantier"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__prime_chnt_air
+msgid "Prime de chantier Aéroport"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__prime_cpmnt
+msgid "Prime de comportement"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__prime_de_depart
+msgid "Prime de départ"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__prime_fin_annee
+msgid "Prime de fin d'année"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__prime_fct
+msgid "Prime de fonction"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__prime_grtf
+msgid "Prime de gratification"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__prime_prod
+msgid "Prime de productivité"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__prime_rdmnt
+msgid "Prime de rendement"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__prime_de_retraite
+msgid "Prime de retraite"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__prime_de_risque
+msgid "Prime de risque"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__prime_expt
+msgid "Prime exceptionnelle"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__prime_hyg_srv_m1
+msgid "Prime hygiène / Service M-1"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__prime_interessement
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__prime_intrs
+msgid "Prime intéressement"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__prime_rappel_risque
+msgid "Prime rappel de risque"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__prime_var_mens
+msgid "Prime variable mensuelle"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__primes_diverses
+msgid "Primes diverses"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__preavis_non_effectue
+msgid "Préavis non effectué"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.ballou_payslip_template
+msgid "RCS"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.ballou_payslip_template
+msgid "REGULATORY DEDUCTION"
+msgstr "DEDUCTIONS REGLEMENTAIRES"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_account_setup_bank_manual_config__rib_key
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_res_bank__rib_key
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_res_partner_bank__rib_key
+msgid "RIB Key"
+msgstr "Clé RIB"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__rappel
+msgid "Rappel"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__rappel_prime_ca_m1
+msgid "Rappel prime CA M-1"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__rappel_prime_clo_exr
+msgid "Rappel prime clôture exercice"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__rappel_prime_anciennete
+msgid "Rappel prime d'ancienneté"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__rappel_prime_asdt
+msgid "Rappel prime d'assiduité"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__rappel_prime_astr
+msgid "Rappel prime d'astreinte"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__rappel_prime_chantier
+msgid "Rappel prime de chantier"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__rappel_prime_chantier_air
+msgid "Rappel prime de chantier aéroport"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__rappel_prime_cpmnt
+msgid "Rappel prime de comportement"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__rappel_prime_fin_annee
+msgid "Rappel prime de fin d'année"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__rappel_prime_fct
+msgid "Rappel prime de fonction"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__rappel_prime_grtf
+msgid "Rappel prime de gratification"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__rappel_prime_prod
+msgid "Rappel prime de productivité"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__rappel_prime_rdmnt
+msgid "Rappel prime de rendement"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__rappel_prime_expt
+msgid "Rappel prime exceptionnelle"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__rappel_prime_hyg_srv_m1
+msgid "Rappel prime hygiène / Service M-1"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__rappel_prime_intrs
+msgid "Rappel prime intéressement"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__rappel_prime_obj_m1
+msgid "Rappel prime objectif M-1"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__rappel_prime_var_mens
+msgid "Rappel prime variable mensuelle"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__rappel_primes_diverses
+msgid "Rappel primes diverses"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__rappel_alloc_conge
+msgid "Rappel sur les allocations de congé"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__rappel_salaire
+msgid "Rappel sur salaire"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.payslip_resume_view_search2
+msgid "Recherche Etat de Paie"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.ballou_payslip_template
+msgid "Registration number:"
+msgstr "Matricule:"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_salary_rule__regulatory_deduction
+msgid "Regulatory Deduction"
+msgstr "Apparaît sur la déduction règlemenataire"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields.selection,name:ballou_hr_payroll.selection__payslip_resume__etat_bulletin__cancel
+msgid "Rejected"
+msgstr "Rejeté"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__retraite_complementaire
+msgid "Retraite complémentaire"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields.selection,name:ballou_hr_payroll.selection__hr_salary_rule__amount_column_position__right
+msgid "Right"
+msgstr "A droite"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__payslip_reference
+msgid "Référence bulletin"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__regul_cnaps
+msgid "Régul CNAPS"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__regul_ostie
+msgid "Régul OSTIE"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.ballou_payslip_template
+msgid "STAT"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__sal_net
+msgid "Salaire Net"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__brut
+msgid "Salaire brut"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__sb
+msgid "Salaire de Base (SB)"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__sb_j
+msgid "Salaire selon jour travaillé"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model,name:ballou_hr_payroll.model_hr_salary_rule
+msgid "Salary Rule"
+msgstr "Règles salariales"
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.payslip_resume_view_search2
+msgid "Service"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_salary_rule__show_on_amount_column
+msgid "Show On Amount Column"
+msgstr "Apparaît sur la colonne des montants"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields.selection,name:ballou_hr_payroll.selection__hr_payslip_config__view_mode__simple
+msgid "Simple"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.payslip_resume_view_search2
+msgid "Société"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__th
+msgid "Taux horaire"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_payslip_resume__tj
+msgid "Taux journalier"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.ballou_payslip_template
+msgid "Tel"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,help:ballou_hr_payroll.field_hr_payslip_worked_days__work_entry_type_id
+msgid "The code that can be used in the salary rules"
+msgstr "Code qui peut être utilisé dans les règles salariales"
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.ballou_payslip_template
+msgid "The employee,"
+msgstr "Le travailleur,"
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.ballou_payslip_template
+msgid "The employer,"
+msgstr "L'employeur,"
+
+#. module: ballou_hr_payroll
+#: code:addons/ballou_hr_payroll/models/hr_payslip.py:0
+#, python-format
+msgid "The month is not valid"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payslip_config__date_to
+msgid "To date"
+msgstr "Date fin"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payslip_worked_days__work_entry_type_id
+msgid "Type"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields,field_description:ballou_hr_payroll.field_hr_payslip_config__view_mode
+msgid "View mode"
+msgstr "Mode de vue"
+
+#. module: ballou_hr_payroll
+#: model:ir.model.fields.selection,name:ballou_hr_payroll.selection__payslip_resume__etat_bulletin__verify
+#: model:ir.model.fields.selection,name:ballou_hr_payroll.selection__payslip_resume__etat_bulletin__waiting
+msgid "Waiting"
+msgstr "En attente"
+
+#. module: ballou_hr_payroll
+#: code:addons/ballou_hr_payroll/models/hr_payslip.py:0
+#, python-format
+msgid "Worked days number"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.ballou_payslip_template
+msgid "for period"
+msgstr "du"
+
+#. module: ballou_hr_payroll
+#: model:ir.model,name:ballou_hr_payroll.model_hr_payslip_config
+msgid "hr.payslip.config"
+msgstr ""
+
+#. module: ballou_hr_payroll
+#: model_terms:ir.ui.view,arch_db:ballou_hr_payroll.ballou_payslip_template
+msgid "to"
+msgstr "au"

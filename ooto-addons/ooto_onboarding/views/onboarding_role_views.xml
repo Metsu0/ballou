@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="onboarding_role_form_view" model="ir.ui.view">
+      <field name="name">onboarding.role.form.view</field>
+      <field name="model">onboarding.role</field>
+      <field name="arch" type="xml">
+        <form string="Onboarding Role">
+          <sheet>
+            <group>
+              <group>
+                <field name="name"/>
+              </group>
+              <group>
+                <field name="image" widget="image" class="oe_avatar"/>
+                <field name="image_name" invisible="1"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="onboarding_role_tree_view" model="ir.ui.view">
+      <field name="name">onboarding.role.tree.view</field>
+      <field name="model">onboarding.role</field>
+      <field name="arch" type="xml">
+        <tree string="Onboarding Role">
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="onboarding_role_search_view">
+      <field name="name">onboarding.role.search</field>
+      <field name="model">onboarding.role</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+        </search>
+      </field>
+    </record>
+
+    <record id="onboarding_role_action" model="ir.actions.act_window">
+      <field name="name">Onboarding role</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">onboarding.role</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="oe_view_nocontent_create">
+          Onboarding role
+        </p>
+        <p>
+          Create new Onboarding role
+        </p>
+      </field>
+    </record>
+
+    <menuitem id="menu_ooto_onboarding_role_configuration"
+              name="Onboarding Role"
+              parent="menu_ooto_onboarding_configuration"
+              action="ooto_onboarding.onboarding_role_action"
+              sequence="5"/>
+
+  </data>
+</odoo>

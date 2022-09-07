@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <template id="report_delivery_document" inherit_id="stock.report_delivery_document">
+      <xpath expr="//t[@t-set='address']" position="replace">
+        <!--div class="row">
+          <div class="col-12 text-center mb4">
+            <img t-if="o.company_id.logo" t-att-src="image_data_uri(o.company_id.logo)" style="max-height: 120px;" alt="Logo"/><br/>
+          </div>
+        </div-->
+        <div style="display: flow-root;" class="row address">
+          <div style="float: left;" class="col-7"/>
+          <div style="float: right;" class="col-5">
+            <div t-field="o.partner_id" t-options="{&quot;widget&quot;: &quot;contact&quot;, &quot;fields&quot;: [&quot;address&quot;, &quot;name&quot;], &quot;no_marker&quot;: True}"/>
+              <div t-if="o.partner_id.vat" class="mt16">
+                <t t-if="o.company_id.country_id.vat_label" t-esc="o.company_id.country_id.vat_label" id="inv_tax_id_label"/>
+                <t t-else="">Tax ID</t>:
+                <span t-field="o.partner_id.vat"/>
+              </div>
+              <div t-if="o.partner_id.nif">NIF:<span class="nif" t-field="o.partner_id.nif"/></div>
+              <div t-if="o.partner_id.stat">STAT: <span class="stat" t-field="o.partner_id.stat"/></div>
+              <div t-if="o.partner_id.rcs">RCS: <span class="rcs" t-field="o.partner_id.rcs"/></div>
+              <br/>
+            </div>
+          </div>
+      </xpath>
+      <xpath expr="//span[@t-field='o.name']" position="before">
+        <t t-if="o.picking_type_code == 'incoming'">
+          <span>Bon de réception</span>
+        </t>
+        <t t-if="o.picking_type_code == 'outgoing'">
+          <span>Bon de livraison</span>
+        </t>
+        <t t-if="o.picking_type_code not in ['incoming','outgoing']">
+          <span>Bon de transfert interne</span>
+        </t>
+      </xpath>
+      <xpath expr="//table[@name='stock_move_table']" position="replace">
+        <table class="table table-sm" t-if="o.state!='done'" name="stock_move_table">
+            <thead>
+                <tr>
+                    <th name="th_sm_product"><strong>Product</strong></th>
+                    <th name="th_sm_quantity"><strong>Quantity</strong></th>
+                    <th name="th_sm_quantity_done"><strong>Quantité délivrée</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <t t-set="lines" t-value="o.move_lines.filtered(lambda x: x.product_uom_qty)"/>
+                <tr t-foreach="lines" t-as="move">
+                    <td>
+                        <span t-field="move.product_id"/>
+                        <p t-if="move.description_picking != move.product_id.name">
+                            <span t-field="move.description_picking"/>
+                        </p>
+                    </td>
+                    <td>
+                        <span t-field="move.product_uom_qty"/>
+                        <span t-field="move.product_uom"/>
+                    </td>
+                    <td>
+                        <span t-field="move.quantity_done"/>
+                        <span t-field="move.product_uom"/>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+      </xpath>
+
+        <xpath expr="//table[@name='stock_backorder_table']" position="replace">
+            <p></p>
+        </xpath>
+    </template>
+  </data>
+</odoo>

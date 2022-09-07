@@ -1,0 +1,10 @@
+@font-face {font-family: "PrimaSans BT"; src: url("../fonts/PrimaSans_BT_Roman.ttf?1457438406") format('truetype'); font-weight: normal; font-size: 20px;}
+@font-face {font-family: "PrimaSans bold"; src: url("../fonts/PrimaSans_BT_Bold.ttf") format('truetype'); font-weight: bold; font-size: 50px;}
+
+.address, .amount, .taxe_class, .o_subtotal, #subtotal {font-family: "PrimaSans bold", serif !important;}
+.address {font-size: 16px;}
+.receipt {font-family: "PrimaSans BT", serif;}
+
+div#total table tr.o_subtotal td, div#total table tr.o_total td, .border-black {border-top: 1px solid black !important;font-family: "PrimaSans bold", serif !important;}
+
+.text-right {white-space: nowrap}

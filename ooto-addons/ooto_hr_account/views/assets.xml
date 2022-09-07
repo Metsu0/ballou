@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <template id="assets_frontend_ooto_hr_account" name="Ooto hr account assets" inherit_id="web.assets_frontend">
+      <xpath expr="." position="inside">
+        <link rel="stylesheet" type="text/scss" href="/ooto_hr_account/static/src/scss/hr_account.scss"/>
+        <script type="text/javascript" src="/ooto_hr_account/static/src/js/portal.js"></script>
+        <script type="text/javascript" src="/ooto_hr_account/static/src/js/fr.js"></script>
+        <script type="text/javascript" src="/ooto_hr_account/static/src/js/skroll.min.js"></script>
+			</xpath>
+    </template>
+  </data>
+</odoo>

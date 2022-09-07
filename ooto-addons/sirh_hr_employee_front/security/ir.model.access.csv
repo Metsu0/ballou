@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sirh_hr_employee_front_sirh_hr_employee_front,sirh_hr_employee_front.sirh_hr_employee_front,model_sirh_hr_employee_front_sirh_hr_employee_front,base.group_user,1,1,1,1

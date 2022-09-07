@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+  <data>
+
+    <template id="report_certificate_work_document">
+      <t t-call="sirh_hr.sirh_certificate_work_layout">
+        <div class="page" style="padding-top: 50px">
+          <div id="payslip-content">
+            <p class="text-center" style="font-size: large">
+              CERTIFICATE OF WORK
+            </p>
+          </div>
+        </div>
+      </t>
+    </template>
+
+    <template id="sirh_certificate_work_layout">
+      <t t-set="company" t-value="doc.company_id"/>
+      <!-- HRN comment -->
+      <!-- <t t-esc="company.update_scss()"/> -->
+
+      <div class="header">
+        <div class="row" id="first-row">
+          <div class="col-1" id="logo-border">
+          </div>
+          <div class="col-3" style="margin-top:10px;">
+            <img t-if="company.logo" t-att-src="image_data_uri(company.logo)"
+                 style="width: 250px;height: 180px;margin-left: -55px;" alt="Logo"/>
+          </div>
+          <div class="col-8 text-right" style="margin-top:22px;"/>
+        </div>
+        <div t-if="company.logo or company.report_header" class="row zero_min_height">
+        </div>
+      </div>
+
+      <div id="layout-content" class="article o_report_layout_standard" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id"
+           t-att-data-oe-lang="o and o.env.context.get('lang')">
+        <t t-call="web.address_layout"/>
+        <t t-raw="0"/>
+      </div>
+
+      <div class="footer o_standard_footer">
+        <div class="text-center" id="sirh-footer" style="border-top: 1px solid black;">
+          <div name="financial_infos">
+            <span t-field="company.report_footer"/>
+          </div>
+        </div>
+      </div>
+    </template>
+
+
+    <template id="report_certificate_work">
+      <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="doc">
+          <t t-call="sirh_hr.report_certificate_work_document" t-lang="doc.sudo().employee_id.user_id.partner_id.lang"/>
+        </t>
+      </t>
+    </template>
+
+
+    <record id="certificate_paper_format" model="report.paperformat">
+      <field name="name">Certificate paper format</field>
+      <field name="default" eval="True"/>
+      <field name="format">A4</field>
+      <field name="orientation">Portrait</field>
+      <field name="header_line" eval="False"/>
+      <field name="header_spacing">40</field>
+      <field name="margin_top">35</field>
+      <field name="margin_left">0</field>
+      <field name="margin_right">0</field>
+      <field name="margin_bottom">15</field>
+      <field name="dpi">90</field>
+    </record>
+
+    <report
+        id="action_report_certificate_work"
+        model="hr.contract"
+        string="Certificate of work"
+        report_type="qweb-pdf"
+        paperformat="certificate_paper_format"
+        name="sirh_hr.report_certificate_work"
+        file="sirh_hr.report_certificate_work"
+        print_report_name="'Certificate of work for - %s' % (object.employee_id.name)"
+    />
+  </data>
+</odoo>

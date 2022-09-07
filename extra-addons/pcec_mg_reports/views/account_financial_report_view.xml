@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!--    menu_finance_reports-->
+    <menuitem id="account_reports_mg_menu" name="Madagascar PCEC" parent="account.menu_finance_reports"
+              sequence="0" groups="account.group_account_user"/>
+
+<!--    <template id="report_active_balance_sheet" name="Active Balance Sheet custom font"-->
+<!--              inherit_id="account_reports.line_template">-->
+<!--      <xpath expr="//tr[1]" position="attributes">-->
+<!--        <attribute name="t-if">line.get('is_hidden',False) == False</attribute>-->
+<!--      </xpath>-->
+<!--    </template>-->
+  </data>
+</odoo>

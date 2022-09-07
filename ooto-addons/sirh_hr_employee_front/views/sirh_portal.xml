@@ -1,0 +1,484 @@
+<odoo>
+  <data>
+    <template id="portal_my_details_inherit" inherit_id="ooto_hr_account.portal_my_details_inherit"
+              name="Portal Layout">
+      <xpath expr="//span[@class='content-topName font-30']" position="after">
+        <t t-if="partner.user_ids.employee_id.registration_number">
+          <br/>
+          <span class="content-topMail font-16">
+            Registration number :
+            <span t-esc="partner.user_ids.employee_id.registration_number"/>
+          </span>
+        </t>
+      </xpath>
+
+      <xpath expr="//div[@class='tab-pane fade portal_oto']" position="before">
+        <div class="tab-pane fade si_rh" id="nav_parent_tabs_content_2" role="tabpanel"
+             aria-labelledby="nav_parent_tabs_link_2">
+          <form id="employee_information_form2" action="/my/account" method="post">
+            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+            <div class="row">
+              <!--<div class="full">-->
+              <!--<div class="row">-->
+              <div class="col-lg-12">
+                <div class="tab-style-2 tab-style-2_ooto">
+                  <ul class="nav nav-tabs tab-information" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active o_default_snippet_text" id="nav_tabs_link_1" data-toggle="tab"
+                         href="#nav_tabs_content_1" role="tab" aria-controls="nav_tabs_content_1"
+                         aria-selected="true">
+                        Professional information
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link o_default_snippet_text" id="nav_tabs_link_2" data-toggle="tab"
+                         href="#nav_tabs_content_2" role="tab" aria-controls="nav_tabs_content_2"
+                         aria-selected="false">
+                        Private information
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link o_default_snippet_text" id="nav_tabs_link_5" data-toggle="tab"
+                         href="#nav_tabs_content_5" role="tab" aria-controls="nav_tabs_content_5"
+                         aria-selected="false">
+                        Evolutions
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="tab-content">
+                    <div class="tab-pane fade show active" id="nav_tabs_content_1" role="tabpanel"
+                         aria-labelledby="nav_tabs_link_1">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div t-if="error_message" class="alert alert-danger" role="alert">
+                            <t t-foreach="error_message" t-as="err">
+                              <t t-esc="err"/>
+                              <br/>
+                            </t>
+                          </div>
+                        </div>
+                        <div class="form-group col-xl-12">
+                          <h4 class="font-24">Contact Information</h4>
+                        </div>
+                        <div t-attf-class="form-group #{error.get('email') and 'o_has_error' or ''} col-xl-3">
+                          <label class="col-form-label font-14" for="email">Work Email</label>
+                          <input type="email" name="email"
+                                 t-attf-class="form-control #{error.get('email') and 'is-invalid' or ''}"
+                                 t-att-value="email or partner.email"/>
+                        </div>
+                        <div t-attf-class="form-group #{error.get('work_phone') and 'o_has_error' or ''} col-xl-6">
+                          <label class="col-form-label font-14" for="work_phone">Work Phone</label>
+                          <input type="tel" name="work_phone"
+                                 t-attf-class="form-control #{error.get('work_phone') and 'is-invalid' or ''}"
+                                 t-att-value="work_phone or partner.work_phone"/>
+                        </div>
+                        <div class="form-group col-xl-12">
+                          <h4>Post</h4>
+                        </div>
+                        <div t-attf-class="form-group #{error.get('department_id') and 'o_has_error' or ''} col-xl-4">
+                          <label class="col-form-label font-14" for="department_id">Department</label>
+                          <select disabled="True" name="department_id"
+                                  t-attf-class="form-control #{error.get('department_id') and 'is-invalid' or ''}">
+                            <!--<option value="">Department...</option>-->
+                            <t t-foreach="departments or []" t-as="department">
+                              <option t-att-value="department.id"
+                                      t-att-selected="department.id == int(department_id) if department_id else department.id == employee.department_id.id">
+                                <t t-esc="department.name"/>
+                              </option>
+                            </t>
+                          </select>
+                        </div>
+                        <div t-attf-class="form-group #{error.get('function') and 'o_has_error' or ''} col-xl-4">
+                          <label class="col-form-label font-14" for="function">Post</label>
+                          <div><t t-esc="job.name"/></div>
+<!--                          <select disabled="True" name="function"-->
+<!--                                  t-attf-class="form-control #{error.get('function') and 'is-invalid' or ''}">-->
+<!--                            &lt;!&ndash;<option value="">Post...</option>&ndash;&gt;-->
+
+<!--                            <t t-foreach="posts or []" t-as="job">-->
+<!--                              <option t-att-value="job.id"-->
+<!--                                      t-att-selected="job.id == int(function) if function else job.id == partner.function.id">-->
+<!--                                <t t-esc="job.name"/>-->
+<!--                              </option>-->
+<!--                            </t>-->
+<!--                          </select>-->
+                        </div>
+                        <div t-attf-class="form-group #{error.get('parent_id') and 'o_has_error' or ''} col-xl-4"
+                             id="manager">
+                          <label class="col-form-label font-14" for="parent_id">Manager</label>
+                          <select disabled="True" name="parent_id"
+                                  t-attf-class="form-control #{error.get('parent_id') and 'is-invalid' or ''}">
+                            <!--<option value="">Manager...</option>-->
+                            <t t-foreach="managers or []" t-as="manager">
+                              <option t-att-value="manager.id"
+                                      t-att-selected="manager.id == int(parent_id) if parent_id else manager.id == employee.parent_id.id">
+                                <t t-esc="manager.name"/>
+                              </option>
+                            </t>
+                          </select>
+                        </div>
+                        <div t-attf-class="form-group #{error.get('coach_id') and 'o_has_error' or ''} col-xl-4">
+                          <label class="col-form-label font-14" for="deputy_ids">Deputy</label>
+                          <t t-if="deputies">
+                            <t t-foreach="deputies" t-as="deputy">
+                              <div class="d-flex align-items-center justify-content-between manager-info">
+                                <div class="d-flex align-items-center">
+                                  <img
+                                      t-att-src="deputy.image_1920 and 'data:image/png;base64,%s'%(deputy.image_1920.decode('utf-8'))"
+                                      width="24" height="24" alt=""/>
+                                  <t t-esc="deputy.name"/>
+                                </div>
+                              </div>
+                            </t>
+                          </t>
+                        </div>
+                        <div t-attf-class="form-group #{error.get('spinneret_id') and 'o_has_error' or ''} col-xl-4"
+                             id="spinneret_id">
+                          <label class="col-form-label font-14" for="spinneret_id">Spinneret</label>
+                          <select disabled="True" name="spinneret_id"
+                                  t-attf-class="form-control #{error.get('spinneret_id') and 'is-invalid' or ''}">
+                            <!--<option value="">Spinneret...</option>-->
+                            <t t-foreach="spinnerets or []" t-as="spinneret">
+                              <option t-att-value="spinneret.id"
+                                      t-att-selected="spinneret.id == int(spinneret_id) if spinneret_id else spinneret.id == employee.spinneret_id.id">
+                                <t t-esc="spinneret.name"/>
+                              </option>
+                            </t>
+                          </select>
+                        </div>
+                        <div t-attf-class="form-group #{error.get('level_id') and 'o_has_error' or ''} col-xl-4">
+                          <label class="col-form-label font-14" for="level_id">Level</label>
+                          <select disabled="True" name="level_id"
+                                  t-attf-class="form-control #{error.get('level_id') and 'is-invalid' or ''}">
+                            <!--<option value="">Level...</option>-->
+                            <t t-foreach="levels or []" t-as="level">
+                              <option t-att-value="level.id"
+                                      t-att-selected="level.id == int(level_id) if level_id else level.id == employee.level_id.id">
+                                <t t-esc="level.name"/>
+                              </option>
+                            </t>
+                          </select>
+                        </div>
+                        <div t-attf-class="form-group #{error.get('direction_id') and 'o_has_error' or ''} col-xl-4">
+                          <label class="col-form-label font-14" for="direction_id">Direction</label>
+                          <select disabled="True" name="direction_id"
+                                  t-attf-class="form-control #{error.get('direction_id') and 'is-invalid' or ''}">
+                            <t t-foreach="directions or []" t-as="direction">
+                              <option t-att-value="direction.id"
+                                      t-att-selected="direction.id == int(direction_id) if direction_id else direction.id == employee.direction_id.id">
+                                <t t-if="direction">
+                                  <t t-esc="direction.name"/>
+                                </t>
+                              </option>
+                            </t>
+                          </select>
+                        </div>
+                        <div t-attf-class="form-group #{error.get('executive_id') and 'o_has_error' or ''} col-xl-4">
+                          <label class="col-form-label font-14" for="executive_id">Executive</label>
+                          <t t-if="employee2dir.executive_id">
+                            <div class="d-flex align-items-center justify-content-between manager-info">
+                              <div class="d-flex align-items-center">
+                                <img
+                                    t-att-src="employee2dir.executive_id.image_1920 and 'data:image/png;base64,%s'%(employee2dir.executive_id.image_1920.decode('utf-8'))"
+                                    width="24" height="24" alt=""/>
+                                <t t-esc="employee2dir.executive_id.name"/>
+                              </div>
+                            </div>
+                          </t>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="nav_tabs_content_2" role="tabpanel"
+                         aria-labelledby="nav_tabs_link_2">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div t-if="error_message" class="alert alert-danger" role="alert">
+                            <t t-foreach="error_message" t-as="err">
+                              <t t-esc="err"/>
+                              <br/>
+                            </t>
+                          </div>
+                        </div>
+                        <div t-attf-class="form-group #{error.get('firstname') and 'o_has_error' or ''} col-xl-3">
+                          <label class="col-form-label font-14" for="firstname">Firstname</label>
+                          <input type="text" name="firstname"
+                                 t-attf-class="form-control #{error.get('firstname') and 'is-invalid' or ''}"
+                                 t-att-value="firstname or partner.firstname"/>
+                        </div>
+                        <div t-attf-class="form-group #{error.get('lastname') and 'o_has_error' or ''} col-xl-3">
+                          <label class="col-form-label font-14" for="name">Lastname</label>
+                          <input type="text" name="lastname"
+                                 t-attf-class="form-control #{error.get('lastname') and 'is-invalid' or ''}"
+                                 t-att-value="lastname or partner.lastname"/>
+                        </div>
+
+                        <div class="form-group col-xl-12">
+                          <h4>Contact Information</h4>
+                        </div>
+                        <div t-attf-class="form-group #{error.get('street') and 'o_has_error' or ''} col-xl-3">
+                          <label class="col-form-label font-14" for="street">Street</label>
+                          <input type="text" name="street"
+                                 t-attf-class="form-control #{error.get('street') and 'is-invalid' or ''}"
+                                 t-att-value="street or partner.street"/>
+                        </div>
+                        <div t-attf-class="form-group #{error.get('city') and 'o_has_error' or ''} col-xl-3">
+                          <label class="col-form-label font-14" for="city">City</label>
+                          <input type="text" name="city"
+                                 t-attf-class="form-control #{error.get('city') and 'is-invalid' or ''}"
+                                 t-att-value="city or partner.city"/>
+                        </div>
+                        <div t-attf-class="form-group #{error.get('zipcode') and 'o_has_error' or ''} col-xl-3">
+                          <label class="col-form-label font-14" for="zipcode">Zip / Postal Code</label>
+                          <input type="text" name="zipcode"
+                                 t-attf-class="form-control #{error.get('zipcode') and 'is-invalid' or ''}"
+                                 t-att-value="zipcode or partner.zip"/>
+                        </div>
+                        <div
+                            t-attf-class="form-group #{error.get('emergency_contact') and 'o_has_error' or ''} col-xl-4">
+                          <label class="col-form-label font-14" for="emergency_contact">Emergency contact
+                          </label>
+                          <input type="text" name="emergency_contact"
+                                 t-attf-class="form-control #{error.get('emergency_contact') and 'is-invalid' or ''}"
+                                 t-att-value="emergency_contact or employee.emergency_contact"/>
+                        </div>
+                        <div t-attf-class="form-group #{error.get('emergency_phone') and 'o_has_error' or ''} col-xl-2">
+                          <label class="col-form-label font-14" for="emergency_phone">Emergency phone</label>
+                          <input type="text" name="emergency_phone"
+                                 t-attf-class="form-control #{error.get('emergency_phone') and 'is-invalid' or ''}"
+                                 t-att-value="emergency_phone or employee.emergency_phone"/>
+                        </div>
+                        <div t-attf-class="form-group #{error.get('km_home_work') and 'o_has_error' or ''} col-xl-3">
+                          <label class="col-form-label font-14" for="km_home_work">Km home work</label>
+                          <input type="number" name="km_home_work"
+                                 t-attf-class="form-control #{error.get('km_home_work') and 'is-invalid' or ''}"
+                                 t-att-value="km_home_work or employee.km_home_work"/>
+                        </div>
+
+                        <div class="form-group col-xl-12">
+                          <h4>Citizenship &amp; Other Information</h4>
+                        </div>
+                        <div t-attf-class="form-group #{error.get('country_id') and 'o_has_error' or ''} col-xl-3">
+                          <label class="col-form-label font-14" for="country_id">Country</label>
+                          <select name="country_id"
+                                  t-attf-class="form-control #{error.get('country_id') and 'is-invalid' or ''}">
+                            <!--<option value="">Country...</option>-->
+                            <t t-foreach="countries or []" t-as="country">
+                              <option t-att-value="country.id"
+                                      t-att-selected="country.id == int(country_id) if country_id else country.id == partner.country_id.id">
+                                <t t-esc="country.name"/>
+                              </option>
+                            </t>
+                          </select>
+                        </div>
+                        <div
+                            t-attf-class="form-group #{error.get('identification_id') and 'o_has_error' or ''} col-xl-3"
+                            id="identification_id">
+                          <label class="col-form-label font-14" for="identification_id">Identification ID
+                          </label>
+                          <input type="text" name="identification_id"
+                                 t-attf-class="form-control #{error.get('identification_id') and 'is-invalid' or ''}"
+                                 t-att-value="passport_id or employee.identification_id"/>
+                        </div>
+                        <div t-attf-class="form-group #{error.get('passport_id') and 'o_has_error' or ''} col-xl-3">
+                          <label class="col-form-label font-14" for="passport_id">Passport No</label>
+                          <input type="text" name="passport_id"
+                                 t-attf-class="form-control #{error.get('passport_id') and 'is-invalid' or ''}"
+                                 t-att-value="passport_id or employee.passport_id"/>
+                        </div>
+                        <div t-attf-class="form-group #{error.get('bank_account_id') and 'o_has_error' or ''} col-xl-4">
+                          <label class="col-form-label font-14" for="bank_account_id">Bank account</label>
+                          <select name="bank_account_id"
+                                  t-attf-class="form-control #{error.get('bank_account_id') and 'is-invalid' or ''}">
+                            <!--<option value="">Bank account...</option>-->
+                            <t t-foreach="accounts or []" t-as="account">
+                              <option t-att-value="account.id"
+                                      t-att-selected="account.id == int(bank_account_id) if bank_account_id else account.id == employee.bank_account_id.id">
+                                <t t-esc="account.acc_number"/>
+                              </option>
+                            </t>
+                          </select>
+                        </div>
+                        <div class="form-group col-xl-12">
+                          <h4>State</h4>
+                        </div>
+                        <div t-attf-class="form-group #{error.get('gender') and 'o_has_error' or ''} col-xl-3">
+                          <label class="col-form-label font-14" for="gender">Gender</label>
+                          <select name="gender"
+                                  t-attf-class="form-control #{error.get('gender') and 'is-invalid' or ''}">
+                            <t t-foreach="['male','female','other']" t-as="gender_">
+                              <option t-att-value="gender_"
+                                      t-att-selected="gender_ == gender if gender else gender_ == partner.gender">
+                                <t t-esc="gender_"/>
+                              </option>
+                            </t>
+                          </select>
+                        </div>
+                        <div t-attf-class="form-group #{error.get('marital_status') and 'o_has_error' or ''} col-xl-3">
+                          <label class="col-form-label font-14" for="marital_status">Marital status</label>
+                          <select name="marital_status"
+                                  t-attf-class="form-control #{error.get('marital_status') and 'is-invalid' or ''}">
+                            <t t-foreach="['single','divorced','married','pacs','widower']"
+                               t-as="marital_status_">
+                              <option t-att-value="marital_status_"
+                                      t-att-selected="marital_status_ == marital_status if marital_status else marital_status_ == partner.marital_status">
+                                <t t-esc="marital_status_"/>
+                              </option>
+                            </t>
+                          </select>
+                        </div>
+                        <div class="form-group col-xl-12">
+                          <h4>Birth</h4>
+                        </div>
+                        <div t-attf-class="form-group #{error.get('birthday') and 'o_has_error' or ''} col-xl-3">
+                          <t t-if="partner.birthday">
+                            <t t-set="birthday"
+                               t-value="datetime.datetime.strftime(partner.birthday, '%d/%m/%Y')"/>
+                          </t>
+                          <t t-if="not partner.birthday">
+                            <t t-set="birthday" t-value="partner.birthday"/>
+                          </t>
+                          <label class="col-form-label font-14" for="birthday">Birthday</label>
+                          <input style="color: black;" id="mbr_date_birth" type="text" name="birthday"
+                                 class="datepicker custom-inputText text-center" t-attf-value="#{birthday}"/>
+                        </div>
+                        <div t-attf-class="form-group #{error.get('place_of_birth') and 'o_has_error' or ''} col-xl-3">
+                          <label class="col-form-label font-14" for="place_of_birth">Place of birth</label>
+                          <input type="text" name="place_of_birth"
+                                 t-attf-class="form-control #{error.get('place_of_birth') and 'is-invalid' or ''}"
+                                 t-att-value="place_of_birth or employee.place_of_birth"/>
+                        </div>
+                        <div
+                            t-attf-class="form-group #{error.get('country_of_birth') and 'o_has_error' or ''} col-xl-3">
+                          <label class="col-form-label font-14" for="country_of_birth">Country of birth</label>
+                          <select name="country_of_birth"
+                                  t-attf-class="form-control #{error.get('country_of_birth') and 'is-invalid' or ''}">
+                            <!--<option value="">Country of birth...</option>-->
+                            <t t-foreach="countries or []" t-as="country">
+                              <option t-att-value="country.id"
+                                      t-att-selected="country.id == int(country_of_birth) if country_of_birth else country.id == employee.country_of_birth.id">
+                                <t t-esc="country.name"/>
+                              </option>
+                            </t>
+                          </select>
+                        </div>
+                        <div class="form-group col-xl-12">
+                          <h4>Work Permit</h4>
+                        </div>
+                        <div t-attf-class="form-group #{error.get('visa_no') and 'o_has_error' or ''} col-xl-3">
+                          <label class="col-form-label font-14" for="visa_no">Visa No</label>
+                          <input type="text" name="visa_no"
+                                 t-attf-class="form-control #{error.get('visa_no') and 'is-invalid' or ''}"
+                                 t-att-value="visa_no or employee.visa_no"/>
+                        </div>
+                        <div t-attf-class="form-group #{error.get('permit_no') and 'o_has_error' or ''} col-xl-3">
+                          <label class="col-form-label font-14" for="permit_no">Permit No</label>
+                          <input type="text" name="permit_no"
+                                 t-attf-class="form-control #{error.get('permit_no') and 'is-invalid' or ''}"
+                                 t-att-value="permit_no or employee.permit_no"/>
+                        </div>
+                        <div t-attf-class="form-group #{error.get('visa_expire') and 'o_has_error' or ''} col-xl-3">
+                          <t t-if="employee.visa_expire">
+                            <t t-set="visa_expire"
+                               t-value="datetime.datetime.strftime(employee.visa_expire, '%d/%m/%Y')"/>
+                          </t>
+                          <t t-if="not employee.visa_expire">
+                            <t t-set="visa_expire" t-value="employee.visa_expire"/>
+                          </t>
+                          <label class="col-form-label font-14" for="visa_expire">Visa expire</label>
+                          <input style="color: black;" id="mbr_date_visa" type="text" name="visa_expire"
+                                 class="datepicker custom-inputText text-center" t-attf-value="#{visa_expire}"/>
+                        </div>
+
+                        <div class="form-group col-xl-12">
+                          <h4>Education</h4>
+                        </div>
+                        <div t-attf-class="form-group #{error.get('certificate') and 'o_has_error' or ''} col-xl-3">
+                          <label class="col-form-label font-14" for="certificate">Certificate</label>
+                          <select name="certificate"
+                                  t-attf-class="form-control #{error.get('certificate') and 'is-invalid' or ''}">
+                            <t t-foreach="['bachelor','master','other']" t-as="certificate_">
+                              <option t-att-value="certificate_"
+                                      t-att-selected="certificate_ == certificate if certificate else certificate_ == employee.certificate">
+                                <t t-esc="certificate_"/>
+                              </option>
+                            </t>
+                          </select>
+                        </div>
+                        <div t-attf-class="form-group #{error.get('study_field') and 'o_has_error' or ''} col-xl-3">
+                          <label class="col-form-label font-14" for="study_field">Study field</label>
+                          <input type="text" name="study_field"
+                                 t-attf-class="form-control #{error.get('study_field') and 'is-invalid' or ''}"
+                                 t-att-value="study_field or employee.study_field"/>
+                        </div>
+                        <div t-attf-class="form-group #{error.get('study_school') and 'o_has_error' or ''} col-xl-3">
+                          <label class="col-form-label font-14" for="study_school">Study school</label>
+                          <input type="text" name="study_school"
+                                 t-attf-class="form-control #{error.get('study_school') and 'is-invalid' or ''}"
+                                 t-att-value="study_school or employee.study_school"/>
+                        </div>
+                      </div>
+                      <!--</div>-->
+                      <!--</div>-->
+                    </div>
+                    <div class="tab-pane fade" id="nav_tabs_content_5" role="tabpanel"
+                         aria-labelledby="nav_tabs_link_5">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div t-if="error_message" class="alert alert-danger" role="alert">
+                            <t t-foreach="error_message" t-as="err">
+                              <t t-esc="err"/>
+                              <br/>
+                            </t>
+                          </div>
+                        </div>
+                        <t t-if="stories">
+                          <div class="form-group col-xl-12">
+                            <h4 class="font-24">Your evolutions</h4>
+                          </div>
+                        </t>
+                        <div style="padding:15px;margin-top: -50px;">
+                          <t t-set="last_date" t-value=""></t>
+                          <t t-foreach="stories" t-as="story">
+                            <t t-if="last_date != story.create_date">
+                              <br/>
+                              Updated on<t t-esc="story.create_date.strftime('%d/%m/%Y %H:%M:%S')"/>,
+                              <t t-set="last_date" t-value="story.create_date"/>
+                              <br/>
+                            </t>
+                            <div>
+                              <t t-esc="story.field_desc"/>:
+                              <t t-if="story.old_value_char">
+                                <t t-esc="story.old_value_char"/>
+                                <span t-if="story.old_value_char != story.new_value_char"
+                                      class="fa fa-long-arrow-right"
+                                      role="img"
+                                      aria-label="Changed" title="Changed"/>
+                              </t>
+                              <t t-if="story.new_value_char == '' ">
+                                <!-- <img width="20px" height="20px"
+                                     src="/ooto_hr_holidays_front/static/src/img/noedit.ico"/> -->
+                                
+                              </t>
+                              <t t-esc="story.new_value_char"/>
+                            </div>
+                          </t>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="clearfix submit_info">
+                  <button id="save-changes-sirh" type="submit" class="btn btn-primary float-right mb32 rose">
+                    Save changes
+                    <span class="fa fa-long-arrow-right"/>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </xpath>
+    </template>
+  </data>
+</odoo>

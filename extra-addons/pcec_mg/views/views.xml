@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="pcec_mg.list">
+      <field name="name">pcec_mg list</field>
+      <field name="model">pcec_mg.pcec_mg</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="pcec_mg.action_window">
+      <field name="name">pcec_mg window</field>
+      <field name="res_model">pcec_mg.pcec_mg</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="pcec_mg.action_server">
+      <field name="name">pcec_mg server</field>
+      <field name="model_id" ref="model_pcec_mg_pcec_mg"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="pcec_mg" id="pcec_mg.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="pcec_mg.menu_1" parent="pcec_mg.menu_root"/>
+    <menuitem name="Menu 2" id="pcec_mg.menu_2" parent="pcec_mg.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="pcec_mg.menu_1_list" parent="pcec_mg.menu_1"
+              action="pcec_mg.action_window"/>
+    <menuitem name="Server to list" id="pcec_mg" parent="pcec_mg.menu_2"
+              action="pcec_mg.action_server"/>
+-->
+  </data>
+</odoo>

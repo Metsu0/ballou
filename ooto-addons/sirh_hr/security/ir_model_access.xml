@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+  <record id="global_manager_security" model="ir.model.access">
+    <field name="name">global_manager_direction_security</field>
+    <field name="model_id" ref="sirh_hr.model_hr_direction"/>
+    <field name="group_id" ref="hr.group_hr_manager"/>
+    <field eval="1" name="perm_read"/>
+    <field eval="1" name="perm_write"/>
+    <field eval="1" name="perm_create"/>
+    <field eval="1" name="perm_unlink"/>
+  </record>
+
+  <!-- Valid (action_invoice_open) -->
+  <record id="hr_direction_model_deputy" model="ir.model.access">
+    <field name="name">hr_direction_model_deputy</field>
+    <field name="model_id" ref="sirh_hr.model_hr_direction"/>
+    <field name="group_id" ref="sirh_base_security.group_employee_etech_deputy"/>
+    <field eval="1" name="perm_read"/>
+    <field eval="1" name="perm_write"/>
+    <field eval="1" name="perm_create"/>
+    <field eval="0" name="perm_unlink"/>
+  </record>
+
+  <record id="hr_direction_model_manager" model="ir.model.access">
+    <field name="name">hr_direction_model_manager</field>
+    <field name="model_id" ref="sirh_hr.model_hr_direction"/>
+    <field name="group_id" ref="sirh_base_security.group_employee_etech_manager"/>
+    <field eval="1" name="perm_read"/>
+    <field eval="1" name="perm_write"/>
+    <field eval="1" name="perm_create"/>
+    <field eval="0" name="perm_unlink"/>
+  </record>
+
+  <record id="hr_direction_model_directeur" model="ir.model.access">
+    <field name="name">hr_direction_model_directeur</field>
+    <field name="model_id" ref="sirh_hr.model_hr_direction"/>
+    <field name="group_id" ref="sirh_base_security.group_employee_etech_directeur"/>
+    <field eval="1" name="perm_read"/>
+    <field eval="1" name="perm_write"/>
+    <field eval="1" name="perm_create"/>
+    <field eval="0" name="perm_unlink"/>
+  </record>
+
+</odoo>

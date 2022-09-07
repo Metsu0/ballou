@@ -1,0 +1,937 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,400i,700,700i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i&display=swap');
+//font-family: 'Nunito', sans-serif;
+//font-family:'Oswald', sans-serif;
+//font-family: 'Roboto', sans-serif;
+$font_family_nunito: 'Nunito',
+sans-serif;
+$font_family_oswald: 'Oswald',
+sans-serif;
+$font_family_roboto: 'Roboto',
+sans-serif;
+$color_fff: #fff;
+$rose: $as-theme!important;
+
+/*------------------------------ classe unique ------------------------------*/
+
+.bold {
+    font-weight: 700;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.color_7a8488 {
+    color: #7a8488;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.align_items_baseline {
+    align-items: baseline;
+}
+
+.row.content-top {
+    margin-top: 60px;
+}
+
+.mt-100 {
+    margin-top: 100px;
+}
+
+.fs-16 {
+    font-size: 16px;
+}
+
+.warning {
+    color: #e02020;
+}
+
+
+/*------------------------------ fin classe unique ------------------------------*/
+
+
+/*------------------------------ usable class ------------------------------*/
+
+.bouton_retour {
+    display: inline-block;
+    background-color: $color_fff;
+    color: #6d7278;
+    font-family: $font_family_roboto;
+    font-size: 12px;
+    border: none;
+    padding: 9px;
+    padding-left: 15px;
+    border-radius: 17px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    &::before {
+        content: '';
+        background: url("../img/dropdown.svg") center center no-repeat;
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+        vertical-align: middle;
+        transform: rotate(90deg);
+        margin-right: 8px;
+    }
+}
+
+.see_all {
+    display: inline-block;
+    width: 100%;
+    border-top: solid .3px #c7cedb;
+    padding: 15px;
+    margin-top: 18px;
+}
+
+.see_all_button {
+    display: inline-block;
+    width: 100%;
+    font-family: $font_family_nunito;
+    font-size: 15px;
+    color: #4a4a4a;
+    text-align: center;
+}
+
+@mixin appearancemix_none {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+
+/*------------------------------ fin usable class ------------------------------*/
+
+.bloc-dashboard {
+    background-color: $color_fff;
+    box-shadow: 0 8px 16px 0 rgba(124, 134, 138, 0.2);
+    padding: 20px;
+    padding-bottom: 0;
+    border-radius: 5px;
+    height: fit-content;
+}
+
+.titre_bloc_dashboard {
+    font-family: $font_family_nunito;
+    font-size: 12px;
+    font-weight: 700;
+    color: #4a4a4a;
+    text-transform: uppercase;
+    margin: 0!important;
+    text-align: center;
+}
+
+.conges_about_bloc_element {
+    display: flex;
+    justify-content: space-between;
+    font-family: $font_family_nunito;
+    font-size: 10px;
+    color: #4a4a4a;
+}
+
+.conges_about_bloc_first,
+.conges_about_bloc {
+    border-radius: 5px;
+    background-color: #eff1f6;
+    padding: 5px 10px;
+    margin-bottom: 1px;
+}
+
+.conges_about_bloc_first {
+    background-color: #d5d9e5;
+}
+
+.conges_about_bloc_element_left,
+.conges_about_bloc_element_right {
+    margin-bottom: 2px;
+}
+
+.lien_add_bloc_dashboard {
+    font-family: Nunito;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    padding: 10px 25px 10px 15px;
+    padding-left: 50px;
+    margin-bottom: 17px;
+    box-shadow: 0 4px 8px 0 rgba(140, 151, 158, 0.3);
+    //background-color: $rose;
+    border-radius: 18px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    &::before {
+        content: "+";
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        font-size: 17px;
+        text-align: center;
+        line-height: 0.9;
+        border: solid 1px #fff;
+        border-radius: 50%;
+    }
+    &:hover {
+        background: #fff!important;
+        //color: $rose;
+        //&:before {
+        //    border: solid 1px $rose;
+        //}
+    }
+}
+
+.soumettre_absence .titre_bloc_dashboard {
+    font-size: 16px;
+    color: #6d7278;
+    font-family: 'Nunito', sans-serif;
+}
+
+.conges_about.soumettre_absence {
+    margin: 0 30px 30px;
+}
+
+.soumettre_absence {
+    .conges_about_bloc_first,
+    .conges_about_bloc {
+        background-color: $color_fff;
+        box-shadow: 0 1px 0 0 #eff1f6;
+    }
+    .conges_about_bloc:last-child {
+        box-shadow: none;
+    }
+    .conges_about_bloc_element {
+        font-size: 11px;
+    }
+}
+
+.titre_bloc_soumettre_absence {
+    font-family: $font_family_oswald;
+    font-size: 20px;
+    font-weight: 700;
+    color: #4a4a4a;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.bloc_absence {
+    display: inline-block;
+    width: 100%;
+    border-radius: 5px;
+    background-color: $color_fff;
+    margin-bottom: 10px;
+}
+
+.bloc_absence_entete {
+    //padding: 14px 22px;
+    box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+    position: relative;
+    &:after {
+        content: '';
+        background: url("../img/ico-drop-up.svg") center center no-repeat;
+        width: 21px;
+        height: 21px;
+        display: inline-block;
+        position: absolute;
+        top: 13px;
+        right: 15px;
+        z-index: 5;
+    }
+    &.bloc_absence_type_absence.valider {
+        &:after {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.titre_bloc_absence_entete {
+    font-family: $font_family_nunito;
+    font-size: 10px;
+    font-weight: 700;
+    color: #4f5e65;
+    padding: 0;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 14px 22px;
+    position: relative;
+    z-index: 10;
+    &:before {
+        content: '';
+        background: url("../img/thick-no.svg") center center no-repeat;
+        width: 21px;
+        height: 21px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 12px;
+    }
+}
+
+.bloc_absence_type_absence.titre_bloc_absence_entete.valider {
+    &:before {
+        content: '\2713';
+        width: 21px;
+        height: 21px;
+        top: 10px;
+        left: 10px;
+        left: 13px;
+        font-size: 14px;
+        text-align: center;
+        line-height: 0.9;
+        //border: solid 1px $rose;
+        border-radius: 50%;
+        //color: $rose;
+        padding-top: 6px;
+        padding-left: 0px;
+        padding-right: 2px;
+        background: #00bd9c;
+        color: #fff;
+    }
+    &:after {
+        transform: rotate(180deg);
+    }
+}
+
+.bloc_absence_corps {
+    padding: 15px 15px 15px 75px;
+}
+
+.titre_bloc_absence_corps {
+    font-family: $font_family_nunito;
+    font-size: 14px;
+    font-weight: 700;
+    color: #6d7278;
+}
+
+.state_control {
+    font-family: $font_family_nunito;
+    font-size: 14px;
+    color: #8c979e;
+    position: relative;
+    width: 170px!important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("../img/drop.png") 150px 8px no-repeat;
+    cursor: pointer;
+    margin-bottom: 15px;
+    padding-right: 25px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    border-radius: 5px;
+    option {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+
+.button_file_absence {
+    font-family: $font_family_nunito;
+    font-size: 10px;
+    font-weight: 700;
+    color: #4a4a4a;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    padding: 7px 10px;
+    border-radius: 5px;
+    background-color: #edeef2;
+    display: inline-block;
+    width: 170px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-right: 5px;
+    &#remove-justificatory-create,
+    &#download-justificatory-create {
+        width: auto;
+    }
+}
+
+.absence_vide_erreur,
+.size_exceed {
+    font-family: $font_family_nunito;
+    font-size: 10px;
+    font-weight: 700;
+    color: #e74c3c;
+}
+
+.size_exceed {
+    margin-top: 10px;
+}
+
+.valide_type_absence {
+    @include appearancemix_none;
+    display: inline-block;
+    float: right;
+    margin-bottom: 15px;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 18px;
+    box-shadow: 0 4px 8px 0 rgba(140, 151, 158, 0.2);
+    //background-color: $rose;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding-left: 40px;
+    cursor: pointer;
+    position: relative;
+    &::before {
+        content: '\2713';
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        left: 14px;
+        font-size: 12px;
+        text-align: center;
+        line-height: 0.9;
+        border: solid 1px #fff;
+        border-radius: 50%;
+        color: #fff;
+        padding-top: 4px;
+        padding-left: 0px;
+    }
+    &:hover {
+        //color: $rose;
+        background: #fff!important;
+        //&::before {
+        //    border: solid 1px $rose;
+        //    color: $rose;
+        //}
+    }
+}
+
+.bloc_absence_corps.bloc_absence_corps_bas {
+    padding: 30px;
+}
+
+.bloc_absence_corps.bloc_absence_date {
+    display: none;
+}
+
+.input_form_absence_checkbox {
+    display: none;
+    +.form_absence_checkbox {
+        font-family: $font_family_nunito;
+        font-size: 14px;
+        color: #8c979e;
+        cursor: pointer;
+        margin-bottom: 10px;
+        &::before {
+            content: '';
+            display: inline-block;
+            font-family: FontAwesome;
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            border: solid 2px rgba(0, 0, 0, 0.3);
+            border-radius: 3px;
+            margin-right: 15px;
+            line-height: 1;
+        }
+    }
+    //&:checked+.form_absence_checkbox {
+    //    color: $rose;
+    //}
+    &:checked+.form_absence_checkbox::before {
+        content: '\f00c';
+        font-family: 'FontAwesome';
+        font-size: 16px;
+        //color: $rose;
+        //border: solid 2px $rose;
+    }
+}
+
+.absence_date {
+    font-family: $font_family_nunito;
+    font-size: 14px;
+    font-weight: 700;
+    color: #6d7278;
+}
+
+.absence_date_input,
+.absence_date_select {
+    font-size: 14px;
+    color: #8c979e;
+    -webkit-appearance: none;
+    border-radius: 5px;
+    border: solid 1px #e4e7ee;
+    cursor: pointer;
+    margin-bottom: 20px;
+    @include appearancemix_none;
+    background: url("../img/drop.svg") 160px 8px no-repeat;
+    background-position-x: 97%;
+    padding-right: 22px;
+}
+
+.absence_date_input:hover {
+    background: none;
+}
+
+.absence_soumettre_footer.modal-footer {
+    border-top: none;
+    padding: 0;
+    padding-top: 20px;
+}
+
+.valide_type_absence.absence_soumettre_footer_boutonannuler {
+    background-color: rgba(140, 151, 158, 0.3)!important;
+    color: #4a4a4a;
+    margin-right: 10px;
+    margin-bottom: 0;
+    &::before {
+        content: "\0000D7";
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        top: 10px;
+        left: 14px;
+        font-size: 17px;
+        text-align: center;
+        line-height: 0.9;
+        border: solid 1px #4a4a4a;
+        border-radius: 50%;
+        padding-top: 0;
+        color: #4a4a4a;
+    }
+    &:hover {
+        //color: $rose;
+        background: #fff!important;
+        //&::before {
+        //    color: $rose;
+        //}
+    }
+}
+
+
+/*.valide_type_absence.absence_soumettre_footer_boutonvalider {
+    margin-bottom: 0;
+    background: $rose;
+}*/
+
+
+/*.calendar {
+  //pointer-events: none;
+  .pignose-calendar {
+    width: 100%;
+    border: solid 1px #e4e7ee;
+    box-shadow: none;
+  }
+
+  .pignose-calendar .pignose-calendar-top
+  {
+    background-color: $color_fff;
+    box-shadow: none;
+    border: none;
+    padding: 20px 0;
+  }
+
+  .pignose-calendar .pignose-calendar-top .pignose-calendar-top-month,.pignose-calendar .pignose-calendar-top .pignose-calendar-top-year
+  {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #2c3135;
+    text-transform: uppercase;
+  }
+  .pignose-calendar .pignose-calendar-top .pignose-calendar-top-nav .pignose-calendar-top-icon,
+  .pignose-calendar .pignose-calendar-header .pignose-calendar-week.pignose-calendar-week-sat, .pignose-calendar .pignose-calendar-header .pignose-calendar-week.pignose-calendar-week-sun
+  {
+    color: #7f8fa4;
+  }
+
+  .pignose-calendar .pignose-calendar-header
+  {
+    margin-top: 0;
+  }
+
+  .pignose-calendar .pignose-calendar-header .pignose-calendar-week,
+  .calendar .pignose-calendar .pignose-calendar-top .pignose-calendar-top-nav .pignose-calendar-top-icon, .calendar .pignose-calendar .pignose-calendar-header .pignose-calendar-week.pignose-calendar-week-sat, .calendar .pignose-calendar .pignose-calendar-header .pignose-calendar-week.pignose-calendar-week-sun
+  {
+    font-family: $font_family_nunito;
+    font-size: 12px;
+    color: #7f8fa4;
+  }
+  .pignose-calendar .pignose-calendar-unit
+  {
+    height: 2.5em;
+    line-height: 2.5em;
+  }
+
+  .pignose-calendar-body
+  {
+    padding-top: 0 !important;
+  }
+
+  .pignose-calendar .pignose-calendar-unit.pignose-calendar-unit-sat a, .pignose-calendar .pignose-calendar-unit.pignose-calendar-unit-sun a
+  {
+    color: #2c3135;
+  }
+
+  .pignose-calendar .pignose-calendar-unit a
+  {
+    font-size: 12px;
+    text-align: center;
+    color: #2c3135;
+  }
+
+  .pignose-calendar .pignose-calendar-unit.pignose-calendar-unit-disabled a
+  {
+    opacity: 1;
+    background-color: #fc3471;
+    color: $color_fff;
+    font-weight: 700;
+    border-radius: 0;
+    //border-radius: 13px 0px 0px 13px;
+    position: relative;
+    z-index: 25;
+    width: 2em;
+    &:after
+    {
+      content: '';
+      display: inline-block;
+      width: 1.7em;
+      height: 2.4em;
+      right: -16px;
+      position: absolute;
+      background-color: #fc3471;
+      z-index: -1;
+      border-radius: 0 15px 15px 0;
+    }
+    &:before
+    {
+      content: '';
+      display: inline-block;
+      width: 1.7em;
+      height: 2.4em;
+      right: 18px;
+      position: absolute;
+      background-color: #fc3471;
+      z-index: -1;
+      border-radius: 15px 0 0 15px;
+    }
+  }
+*/
+
+
+/**.pignose-calendar-body .pignose-calendar-row .pignose-calendar-unit.pignose-calendar-unit-disabled:first-child a {
+
+    border-radius: 15px 0px 0px 15px;
+  }
+
+    {
+          border-radius: 0 15px 15px 0;
+    }*/
+
+
+/*.pignose-calendar .pignose-calendar-unit.pignose-calendar-unit-active a
+  {
+    background-color: $color_fff;
+    color: #2c3135 !important;
+    box-shadow: none;
+    font-weight: 400;
+  }
+}*/
+
+.pignose-calendar {
+    width: 100%!important;
+    box-shadow: none!important;
+}
+
+.pignose-calendar .pignose-calendar-top {
+    box-shadow: none!important;
+    background: #fff!important;
+    border: none!important;
+    padding: 1.6rem 0!important;
+}
+
+.pignose-calendar .pignose-calendar-top .pignose-calendar-top-date {
+    display: flex;
+    color: #2c3135!important;
+    font-weight: 700!important;
+    top: 3px!important;
+    .pignose-calendar-top-month {
+        width: 50%;
+        padding-right: 2px;
+        text-align: right;
+        text-align: right;
+    }
+    .pignose-calendar-top-year {
+        width: 50%;
+        padding-left: 2px;
+        text-align: left;
+    }
+}
+
+.pignose-calendar-top-year,
+.pignose-calendar-top-month {
+    color: #2c3135!important;
+    font-size: 12px!important;
+}
+
+.pignose-calendar .pignose-calendar-header {
+    margin: 0!important;
+}
+
+.pignose-calendar .pignose-calendar-header .pignose-calendar-week.pignose-calendar-week-sat,
+.pignose-calendar .pignose-calendar-header .pignose-calendar-week.pignose-calendar-week-sun,
+.pignose-calendar .pignose-calendar-header .pignose-calendar-week {
+    color: #7f8fa4!important;
+    text-transform: lowercase;
+}
+
+.pignose-calendar .pignose-calendar-unit a {
+    color: #2c3135!important;
+}
+
+.pignose-calendar .pignose-calendar-unit.pignose-calendar-unit-active a {
+    background: $rose;
+    color: #fff!important;
+    box-shadow: none!important;
+    position: relative;
+    z-index: 3;
+}
+
+.pignose-calendar .icon-arrow-left:before,
+.pignose-calendar .icon-arrow-right:before {
+    color: #d8d8d8;
+}
+
+// .pignose-calendar-unit.pignose-calendar-unit-date.pignose-calendar-unit-active.pignose-calendar-unit-first-active a {
+//     border-radius: 50% 0 0 50%!important;
+//     width: 100%;
+// }
+// .pignose-calendar-unit.pignose-calendar-unit-date.pignose-calendar-unit-active.pignose-calendar-unit-second-active a {
+//     border-radius: 0 50% 50% 0!important;
+//     width: 100%;
+// }
+.pignose-calendar .pignose-calendar-unit.pignose-calendar-unit-range.pignose-calendar-unit-range-first a {
+    border-top-left-radius: 0!important;
+    border-bottom-left-radius: 0!important;
+    position: relative;
+    z-index: 2;
+}
+
+.pignose-calendar .pignose-calendar-unit.pignose-calendar-unit-range.pignose-calendar-unit-range-last a {
+    border-top-right-radius: 0!important;
+    border-bottom-right-radius: 0!important;
+    position: relative;
+    z-index: 2;
+}
+
+.pignose-calendar-unit.pignose-calendar-unit-date.pignose-calendar-unit-wed.pignose-calendar-unit-range {
+    position: relative;
+    z-index: 1;
+}
+
+.pignose-calendar .pignose-calendar-unit.pignose-calendar-unit-range a {
+    background: $rose;
+    color: #fff!important;
+}
+
+.pignose-calendar-unit.pignose-calendar-unit-date.pignose-calendar-unit-range.pignose-calendar-unit-range-first a {
+    position: relative;
+    z-index: 0;
+    &::after {
+        content: "";
+        position: absolute;
+        height: 33.59px;
+        width: 30px;
+        background: $rose;
+        left: -20px;
+        z-index: 0;
+    }
+}
+
+.pignose-calendar .pignose-calendar-unit.pignose-calendar-unit-range.pignose-calendar-unit-range-last a {
+    position: relative;
+    z-index: 0;
+    &::before {
+        content: "";
+        position: absolute;
+        height: 33.59px;
+        width: 30px;
+        background: $rose;
+        right: -22px;
+        z-index: 0;
+    }
+}
+
+.pignose-calendar-unit.pignose-calendar-unit-date.pignose-calendar-unit-tue.pignose-calendar-unit-range.pignose-calendar-unit-range-first.pignose-calendar-unit-range-last {
+    position: relative;
+    z-index: 1;
+}
+
+.pignose-calendar .pignose-calendar-unit
+  {
+    height: 3em !important;
+  }
+
+.creer_solde_bloc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bouton_solde_absence {
+    border-radius: 5px;
+    background-color: #8c979e;
+    font-family: $font_family_roboto;
+    font-size: 10px;
+    font-weight: 700;
+    color: $color_fff;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    &:hover {
+        background-color: $color_fff;
+        color: #8c979e;
+    }
+}
+
+.file-name-justificatory {
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 0;
+}
+
+.bloc_absence_corps_button {
+    display: flex;
+}
+
+.bloc_button {
+    width: 100%;
+    margin-top: 0px;
+    text-align: left;
+}
+
+[data-view-xmlid="ooto_hr_holidays_front.absence_request_templates"] .o_portal_wrap.oe_website_sale {
+    .container {
+        .row {
+            margin: 0!important;
+        }
+    }
+}
+
+[data-view-xmlid="ooto_hr_holidays_front.registration_leave"] .mt-100 {
+    display: none!important;
+}
+
+.file-name-justificatory,
+button#remove-justificatory-create {
+    background-color: rgba(0, 189, 156, 0.1);
+}
+
+button#remove-justificatory-create {
+    border-radius: 0 2px 2px 0;
+}
+
+.file-name-justificatory {
+    margin-right: 0;
+    border-radius: 2px 0 0 2px;
+    padding-right: 0;
+    text-decoration: underline;
+}
+
+.no_list {
+    text-align: center;
+}
+
+.modal.show .notif.modal-dialog {
+    transform: translate(0, 0);
+    height: 100%;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    .modal-content {
+        padding: 20px 10px 20px 58px;
+        background: url(/ooto_hr_holidays_front/static/src/img/success.png) no-repeat left center, #fff;
+        background-position: 3%;
+        font-weight: 700;
+        color: #4a4a4a;
+        width: auto;
+    }
+    .modal-content.file {
+        background: #fff;
+        &:before {
+            content: "\0000D7";
+            width: 38px;
+            height: 38px;
+            position: absolute;
+            top: 23px;
+            left: 10px;
+            font-size: 37px;
+            text-align: center;
+            line-height: 0.9;
+            border: solid 1px red;
+            color: red;
+            border-radius: 50%;
+            padding-top: 0;
+        }
+    }
+}
+
+.solde_link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    .bouton_retour {
+        margin: 0;
+    }
+    .bouton_solde_absence {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 768px) {
+    .lien_add_bloc_dashboard {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .titre_bloc_soumettre_absence {
+        margin-top: 10px;
+    }
+    .creer_solde_bloc.mt-100 {
+        margin-top: 20px!important;
+    }
+    .mt-100 {
+        margin-top: 20px;
+    }
+    .bloc_absence_corps_button {
+        margin-bottom: 10px;
+    }
+    .solde_link {
+        .bouton_solde_absence {
+            display: block;
+        }
+    }
+    .modal-content {
+        margin: 0 auto;
+    }
+
+    .conges_about
+    {
+        margin: 0 10%;
+    }
+}
+
+@media (max-width:360px) {
+    .pignose-calendar .pignose-calendar-body {
+        padding: 0 !important;
+    }
+}
